@@ -3,6 +3,16 @@
  * Hero section component - the main above-the-fold content.
  * Includes headline, subheadline, CTAs, and a visual demo.
  */
+
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+
+if (!t || !t.hero) {
+  throw new Error('Hero component requires translations prop (t) with hero section');
+}
 ---
 
 <section class="relative pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden">
@@ -15,23 +25,22 @@
       <!-- Badge -->
       <div class="inline-flex items-center px-4 py-1.5 mb-6 text-sm font-medium text-indigo-300 bg-indigo-500/10 rounded-full border border-indigo-500/20">
         <span class="mr-2">🖥️</span>
-        Desktop Transliteration Suite for 13+ Languages
+        {t.hero.badge}
       </div>
 
       <!-- Headline -->
       <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-        <span class="text-white">Type in </span>
+        <span class="text-white">{t.hero.headline1} </span>
         <span class="bg-gradient-to-r from-indigo-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
-          Any Script
+          {t.hero.headline2}
         </span>
         <br />
-        <span class="text-white">Using Your Keyboard</span>
+        <span class="text-white">{t.hero.headline3}</span>
       </h1>
 
       <!-- Subheadline -->
       <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-        Transliterate to Cyrillic, Hebrew, Greek, Georgian, Armenian, and more — all from your Latin keyboard.
-        Plus translation, spellcheck, and a powerful editor. Add any language you need.
+        {t.hero.subheadline}
       </p>
 
       <!-- CTA Buttons -->
@@ -40,16 +49,16 @@
           href="https://app.translitpro.com"
           class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40"
         >
-          Start Typing Free
+          {t.hero.ctaPrimary}
           <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
         <a
-          href="#features"
+          href="#pricing"
           class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 rounded-xl transition-colors"
         >
-          See How It Works
+          {t.hero.ctaSecondary}
         </a>
       </div>
 
@@ -102,19 +111,19 @@
           <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
           </svg>
-          <span>No signup required</span>
+          <span>{t.hero.trustBadge1}</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
           </svg>
-          <span>13+ languages built-in</span>
+          <span>{t.hero.trustBadge2}</span>
         </div>
         <div class="flex items-center gap-2">
           <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
           </svg>
-          <span>Add your own languages</span>
+          <span>{t.hero.trustBadge3}</span>
         </div>
       </div>
     </div>

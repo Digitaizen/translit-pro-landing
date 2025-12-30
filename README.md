@@ -11,7 +11,8 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 - **Framework**: [Astro](https://astro.build/) v5.x
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) v4.x
 - **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
-- **SEO**: Auto-generated sitemap, structured data for FAQs
+- **i18n**: Multi-language support for 13 languages
+- **SEO**: Auto-generated sitemap, structured data for FAQs, hreflang tags
 
 ## Project Structure
 
@@ -24,16 +25,35 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   └── robots.txt            # Search engine directives
 ├── src/
 │   ├── components/
-│   │   ├── Header.astro      # Navigation header
+│   │   ├── Header.astro      # Navigation header with language dropdown
 │   │   ├── Hero.astro        # Hero section with CTA
 │   │   ├── Features.astro    # Features grid
 │   │   ├── Pricing.astro     # Pricing tiers
 │   │   ├── FAQ.astro         # FAQ accordion with structured data
-│   │   └── Footer.astro      # Footer with links
+│   │   ├── Footer.astro      # Footer with links
+│   │   └── LanguageDropdown.astro  # Language switcher component
+│   ├── i18n/
+│   │   ├── locales/          # Translation files for all languages
+│   │   │   ├── en.json       # English (default)
+│   │   │   ├── ru.json       # Russian
+│   │   │   ├── uk.json       # Ukrainian
+│   │   │   ├── be.json       # Belarusian
+│   │   │   ├── bg.json       # Bulgarian
+│   │   │   ├── he.json       # Hebrew
+│   │   │   ├── hy.json       # Armenian
+│   │   │   ├── ka.json       # Georgian
+│   │   │   ├── el.json       # Greek
+│   │   │   ├── lt.json       # Lithuanian
+│   │   │   ├── tg.json       # Tajik
+│   │   │   ├── rue.json      # Rusyn
+│   │   │   └── kk.json       # Kazakh
+│   │   └── utils.ts          # i18n utilities and language config
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # Base HTML layout with SEO meta tags
 │   ├── pages/
-│   │   └── index.astro       # Main landing page
+│   │   ├── index.astro       # Main landing page (English)
+│   │   └── [lang]/
+│   │       └── index.astro   # Localized landing pages
 │   └── styles/
 │       └── global.css        # Global styles (Tailwind imports)
 ├── astro.config.mjs          # Astro configuration
@@ -77,6 +97,42 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 5. **FAQ** - 8 expandable questions with SEO structured data
 6. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
 
+## Internationalization (i18n)
+
+The landing page supports 13 languages with full localization:
+
+### Supported Languages
+
+1. **English** (en) - Default at `/`
+2. **Russian** (ru) - `/ru/`
+3. **Ukrainian** (uk) - `/uk/`
+4. **Belarusian** (be) - `/be/`
+5. **Bulgarian** (bg) - `/bg/`
+6. **Hebrew** (he) - `/he/` (RTL support)
+7. **Armenian** (hy) - `/hy/`
+8. **Georgian** (ka) - `/ka/`
+9. **Greek** (el) - `/el/`
+10. **Lithuanian** (lt) - `/lt/`
+11. **Tajik** (tg) - `/tg/`
+12. **Rusyn** (rue) - `/rue/`
+13. **Kazakh** (kk) - `/kk/`
+
+### Features
+
+- **Language Switcher**: Dropdown in header with native language names
+- **Static Generation**: All language pages pre-rendered at build time
+- **SEO Optimized**: Proper `hreflang` tags for all language variants
+- **RTL Support**: Right-to-left layout for Hebrew
+- **Localized Content**: All sections (hero, features, pricing, FAQ, footer) fully translated
+
+### Adding a New Language
+
+1. Create a new translation file in `src/i18n/locales/{lang}.json`
+2. Add the language to `SUPPORTED_LANGUAGES` in `src/i18n/utils.ts`
+3. Import the translation file in `src/i18n/utils.ts`
+4. Add the language to the `translations` object
+5. Build the site - the new language page will be auto-generated
+
 ## SEO Features
 
 - Open Graph meta tags for social sharing
@@ -84,6 +140,8 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 - FAQ structured data (JSON-LD) for rich snippets
 - Auto-generated sitemap at `/sitemap-index.xml`
 - robots.txt configured
+- hreflang tags for all language variants
+- Canonical URLs for each language
 
 ## Next Steps Checklist
 

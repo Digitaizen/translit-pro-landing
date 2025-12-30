@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import Pricing from '../../components/Pricing.astro';
+import FAQ from '../../components/FAQ.astro';
+import Footer from '../../components/Footer.astro';
+import { languages } from '../../i18n/languages';
+import { getTranslations } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  return languages
+    .filter(lang => lang.code !== 'en') // English is at root
+    .map(lang => ({
+      params: { lang: lang.code },
+    }));
+}
+
+const { lang } = Astro.params;
+const t = getTranslations(lang as string);
+---
+
+<BaseLayout 
+  title={t.meta.title} 
+  description={t.meta.description}
+  currentLang={lang}
+>
+  <Header currentLang={lang} t={t} />
+  <main>
+    <Hero t={t} />
+    <Features t={t} />
+    <Pricing t={t} />
+    <FAQ t={t} />
+  </main>
+  <Footer t={t} />
+</BaseLayout>
+

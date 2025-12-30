@@ -1,9 +1,11 @@
 ---
 import '../styles/global.css';
+import { languages, getLanguageByCode } from '../i18n/languages';
 
 interface Props {
   title: string;
   description: string;
+  currentLang?: string;
   canonicalURL?: string;
   ogImage?: string;
 }
@@ -11,16 +13,26 @@ interface Props {
 const {
   title,
   description,
+  currentLang = 'en',
   canonicalURL = Astro.url.href,
   ogImage = '/og-image.png'
 } = Astro.props;
 
 const siteName = 'TranslitPro';
 const fullTitle = `${title} | ${siteName}`;
+const currentLanguage = getLanguageByCode(currentLang);
+const langDir = currentLanguage?.dir || 'ltr';
+
+// Generate hreflang URLs for all languages
+const baseUrl = Astro.site?.toString() || 'https://www.translitpro.com';
+const hreflangs = languages.map(lang => ({
+  lang: lang.code,
+  url: lang.code === 'en' ? baseUrl : `${baseUrl}${lang.code}/`
+}));
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={currentLang} dir={langDir}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +47,13 @@ const fullTitle = `${title} | ${siteName}`;
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    
+
+    <!-- Alternate Language Links (hreflang) -->
+    {hreflangs.map(({ lang, url }) => (
+      <link rel="alternate" hreflang={lang} href={url} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={baseUrl} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />

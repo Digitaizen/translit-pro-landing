@@ -4,39 +4,21 @@
  * Expandable accordion-style questions and answers.
  */
 
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+
 const faqs = [
-  {
-    question: 'What is transliteration?',
-    answer: 'Transliteration is the process of converting text from one script to another. TranslitPro converts Latin characters (like "privet") into other scripts (like "привет" in Russian) in real-time as you type.'
-  },
-  {
-    question: 'Which languages are supported?',
-    answer: 'TranslitPro has 13+ languages built-in: Russian, Ukrainian, Belarusian, Bulgarian, Hebrew, Armenian, Georgian, Greek, Lithuanian, Tajik, Rusyn, Kazakh, and more. You can also add your own custom languages and keyboard layouts.'
-  },
-  {
-    question: 'Is TranslitPro for mobile or desktop?',
-    answer: 'TranslitPro is primarily designed for desktop users. Mobile users typically have built-in keyboards for different scripts. Our app works best on desktop browsers where you want to type in non-Latin scripts using your standard keyboard.'
-  },
-  {
-    question: 'What is the bookmarklet?',
-    answer: 'The bookmarklet (Pro only) lets you type in your target script directly on most websites. It works on social media, forums, and many web apps. Note: It doesn\'t work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.).'
-  },
-  {
-    question: 'What can I do beyond transliteration?',
-    answer: 'TranslitPro includes a powerful rich text editor, translation to multiple languages, AI-powered spellcheck in your target language, and export to TXT, RTF, HTML, Markdown, DOCX, or PDF.'
-  },
-  {
-    question: 'Is there a free trial?',
-    answer: 'Yes! You can use the basic transliteration features completely free, forever. When you sign up, you also get a trial of Pro features including the bookmarklet, AI spellcheck, and cloud storage.'
-  },
-  {
-    question: 'Can I add my own language?',
-    answer: 'Yes! With a Basic plan or higher, you can create custom transliteration schemas and keyboard layouts for any language. Perfect if you need a specific romanization system or a language not built into the app.'
-  },
-  {
-    question: 'Can I cancel my subscription anytime?',
-    answer: 'Absolutely! You can cancel your subscription at any time from your account settings. You\'ll continue to have access to paid features until the end of your billing period.'
-  }
+  t.faq.questions.whatIsTransliteration,
+  t.faq.questions.whichLanguages,
+  t.faq.questions.mobileOrDesktop,
+  t.faq.questions.whatIsBookmarklet,
+  t.faq.questions.beyondTransliteration,
+  t.faq.questions.freeTrial,
+  t.faq.questions.addOwnLanguage,
+  t.faq.questions.cancelAnytime
 ];
 
 // Generate FAQ structured data for SEO
@@ -62,10 +44,10 @@ const faqStructuredData = {
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        Frequently Asked Questions
+        {t.faq.title}
       </h2>
       <p class="text-lg text-slate-400">
-        Got questions? We've got answers.
+        {t.faq.subtitle}
       </p>
     </div>
     

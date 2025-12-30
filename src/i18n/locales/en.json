@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Transliteration Tool for 13+ Languages",
+    "description": "Type in Latin, get Cyrillic, Hebrew, Greek, Georgian, Armenian, and more. Desktop transliteration suite with translation, AI spellcheck, and a powerful editor. Add any language you need.",
+    "siteName": "TranslitPro"
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "signIn": "Sign In",
+    "tryFree": "Try Free"
+  },
+  "hero": {
+    "badge": "Desktop Transliteration Suite for 13+ Languages",
+    "headline1": "Type in",
+    "headline2": "Any Script",
+    "headline3": "Using Your Keyboard",
+    "subheadline": "Transliterate to Cyrillic, Hebrew, Greek, Georgian, Armenian, and more — all from your Latin keyboard. Plus translation, spellcheck, and a powerful editor. Add any language you need.",
+    "ctaPrimary": "Start Free — No Signup",
+    "ctaSecondary": "View Pricing",
+    "trustBadge1": "No credit card required",
+    "trustBadge2": "13+ languages built-in",
+    "trustBadge3": "Add your own languages"
+  },
+  "features": {
+    "title": "More Than Just Transliteration",
+    "subtitle": "A complete desktop writing suite with transliteration, translation, spellcheck, and a powerful editor — for any script you need.",
+    "typeNaturally": {
+      "title": "Type Naturally",
+      "description": "Use your regular Latin keyboard on desktop. No need to learn new layouts or switch keyboard settings."
+    },
+    "languages": {
+      "title": "13+ Languages",
+      "description": "Russian, Ukrainian, Hebrew, Greek, Georgian, Armenian, Lithuanian, Bulgarian, and more — all built-in."
+    },
+    "addLanguage": {
+      "title": "Add Any Language",
+      "description": "Create custom transliteration schemas for any language. Define your own keyboard layouts and mappings."
+    },
+    "bookmarklet": {
+      "title": "Bookmarklet (Pro)",
+      "description": "Type in your target script on most websites. Works everywhere except sites with strict CSP like Google."
+    },
+    "translation": {
+      "title": "Translation",
+      "description": "Translate your text to multiple languages directly within the editor. No need to switch apps."
+    },
+    "aiSpellcheck": {
+      "title": "AI Spellcheck",
+      "description": "Smart spellchecking powered by AI. Catch typos and get suggestions in your target language."
+    },
+    "editor": {
+      "title": "Powerful Editor",
+      "description": "Rich text editor with formatting, styling, and seamless transliteration as you type."
+    },
+    "export": {
+      "title": "Export Anywhere",
+      "description": "Export to TXT, RTF, HTML, Markdown, DOCX, or PDF. Your content, your format."
+    },
+    "exploreAll": "Explore all features"
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Start free, upgrade when you need more. No hidden fees, cancel anytime.",
+    "free": {
+      "name": "Free",
+      "tagline": "Try instantly, no signup",
+      "price": "$0",
+      "period": "forever",
+      "cta": "Start Free",
+      "features": [
+        "Transliteration in editor",
+        "All 13+ built-in languages",
+        "Clipboard copy",
+        "3 search buttons"
+      ],
+      "limitations": [
+        "Ads displayed",
+        "No document saving",
+        "No custom languages"
+      ]
+    },
+    "basic": {
+      "name": "Basic",
+      "tagline": "Make it yours",
+      "price": "$1.50",
+      "period": "/month",
+      "cta": "Start Basic",
+      "features": [
+        "Everything in Free",
+        "Custom transliteration schemas",
+        "Custom keyboard layouts",
+        "Custom UI languages"
+      ],
+      "limitations": [
+        "Ads displayed",
+        "Editor only (no bookmarklet)",
+        "No cloud sync"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Type anywhere, save everything",
+      "price": "$5",
+      "period": "/month",
+      "cta": "Go Pro",
+      "badge": "Most Popular",
+      "features": [
+        "Everything in Basic",
+        "Bookmarklet (most websites)",
+        "Cloud sync & storage",
+        "Unlimited AI spellcheck",
+        "All export formats",
+        "No ads"
+      ],
+      "limitations": []
+    },
+    "founder": {
+      "name": "Founder",
+      "tagline": "Lifetime Pro for early supporters",
+      "price": "$50",
+      "period": "once",
+      "cta": "Become a Founder",
+      "badge": "Limited Time",
+      "features": [
+        "Everything in Pro",
+        "Lifetime access",
+        "Never pay again",
+        "Founder badge 👑",
+        "Priority support"
+      ],
+      "limitations": []
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Got questions? We've got answers.",
+    "questions": {
+      "whatIsTransliteration": {
+        "question": "What is transliteration?",
+        "answer": "Transliteration is the process of converting text from one script to another. TranslitPro converts Latin characters (like \"privet\") into other scripts (like \"привет\" in Russian) in real-time as you type."
+      },
+      "whichLanguages": {
+        "question": "Which languages are supported?",
+        "answer": "TranslitPro has 13+ languages built-in: Russian, Ukrainian, Belarusian, Bulgarian, Hebrew, Armenian, Georgian, Greek, Lithuanian, Tajik, Rusyn, Kazakh, and more. You can also add your own custom languages and keyboard layouts."
+      },
+      "mobileOrDesktop": {
+        "question": "Is TranslitPro for mobile or desktop?",
+        "answer": "TranslitPro is primarily designed for desktop users. Mobile users typically have built-in keyboards for different scripts. Our app works best on desktop browsers where you want to type in non-Latin scripts using your standard keyboard."
+      },
+      "whatIsBookmarklet": {
+        "question": "What is the bookmarklet?",
+        "answer": "The bookmarklet (Pro only) lets you type in your target script directly on most websites. It works on social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
+      },
+      "beyondTransliteration": {
+        "question": "What can I do beyond transliteration?",
+        "answer": "TranslitPro includes a powerful rich text editor, translation to multiple languages, AI-powered spellcheck in your target language, and export to TXT, RTF, HTML, Markdown, DOCX, or PDF."
+      },
+      "freeTrial": {
+        "question": "Is there a free trial?",
+        "answer": "Yes! You can use the basic transliteration features completely free, forever. When you sign up, you also get a trial of Pro features including the bookmarklet, AI spellcheck, and cloud storage."
+      },
+      "addOwnLanguage": {
+        "question": "Can I add my own language?",
+        "answer": "Yes! With a Basic plan or higher, you can create custom transliteration schemas and keyboard layouts for any language. Perfect if you need a specific romanization system or a language not built into the app."
+      },
+      "cancelAnytime": {
+        "question": "Can I cancel my subscription anytime?",
+        "answer": "Absolutely! You can cancel your subscription at any time from your account settings. You'll continue to have access to paid features until the end of your billing period."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Desktop transliteration suite for 13+ languages. Type in Latin, get Cyrillic, Hebrew, Greek, and more.",
+    "product": "Product",
+    "scripts": "Scripts",
+    "legal": "Legal",
+    "openApp": "Open App",
+    "cyrillic": "Cyrillic",
+    "hebrew": "Hebrew",
+    "greek": "Greek",
+    "georgian": "Georgian",
+    "armenian": "Armenian",
+    "custom": "+ Custom",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "copyright": "© {{year}} TranslitPro. All rights reserved."
+  }
+}
+

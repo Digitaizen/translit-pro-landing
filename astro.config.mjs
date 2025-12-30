@@ -9,8 +9,18 @@ export default defineConfig({
   site: 'https://www.translitpro.com',
   output: 'static',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    build: {
+      target: 'es2020'
+    }
   },
   adapter: cloudflare(),
   integrations: [sitemap()],
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ru', 'uk', 'be', 'bg', 'he', 'hy', 'ka', 'el', 'lt', 'tg', 'rue', 'kk'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  }
 });

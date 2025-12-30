@@ -3,28 +3,12 @@
  * Footer component with links, legal info, and social media.
  */
 
-const currentYear = new Date().getFullYear();
+interface Props {
+  t: any;
+}
 
-const footerLinks = {
-  product: [
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Open App', href: 'https://app.translitpro.com' },
-  ],
-  scripts: [
-    { name: 'Cyrillic', href: 'https://app.translitpro.com?lang=ru' },
-    { name: 'Hebrew', href: 'https://app.translitpro.com?lang=he' },
-    { name: 'Greek', href: 'https://app.translitpro.com?lang=el' },
-    { name: 'Georgian', href: 'https://app.translitpro.com?lang=ka' },
-    { name: 'Armenian', href: 'https://app.translitpro.com?lang=hy' },
-    { name: '+ Custom', href: 'https://app.translitpro.com' },
-  ],
-  legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-  ],
-};
+const { t } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-slate-950 border-t border-slate-800">
@@ -37,49 +21,40 @@ const footerLinks = {
           <img src="/title.png" alt="TranslitPro" class="h-8" />
         </a>
         <p class="text-slate-400 text-sm leading-relaxed">
-          Desktop transliteration suite for 13+ languages. Type in Latin, get Cyrillic, Hebrew, Greek, and more.
+          {t.footer.tagline}
         </p>
       </div>
-      
+
       <!-- Product Links -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Product</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t.footer.product}</h4>
         <ul class="space-y-3">
-          {footerLinks.product.map((link) => (
-            <li>
-              <a href={link.href} class="text-slate-400 hover:text-white text-sm transition-colors">
-                {link.name}
-              </a>
-            </li>
-          ))}
+          <li><a href="#features" class="text-slate-400 hover:text-white text-sm transition-colors">{t.nav.features}</a></li>
+          <li><a href="#pricing" class="text-slate-400 hover:text-white text-sm transition-colors">{t.nav.pricing}</a></li>
+          <li><a href="#faq" class="text-slate-400 hover:text-white text-sm transition-colors">{t.nav.faq}</a></li>
+          <li><a href="https://app.translitpro.com" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.openApp}</a></li>
         </ul>
       </div>
-      
+
       <!-- Scripts Links -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Scripts</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t.footer.scripts}</h4>
         <ul class="space-y-3">
-          {footerLinks.scripts.map((link) => (
-            <li>
-              <a href={link.href} class="text-slate-400 hover:text-white text-sm transition-colors">
-                {link.name}
-              </a>
-            </li>
-          ))}
+          <li><a href="https://app.translitpro.com?lang=ru" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.cyrillic}</a></li>
+          <li><a href="https://app.translitpro.com?lang=he" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.hebrew}</a></li>
+          <li><a href="https://app.translitpro.com?lang=el" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.greek}</a></li>
+          <li><a href="https://app.translitpro.com?lang=ka" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.georgian}</a></li>
+          <li><a href="https://app.translitpro.com?lang=hy" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.armenian}</a></li>
+          <li><a href="https://app.translitpro.com" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.custom}</a></li>
         </ul>
       </div>
-      
+
       <!-- Legal Links -->
       <div>
-        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Legal</h4>
+        <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">{t.footer.legal}</h4>
         <ul class="space-y-3">
-          {footerLinks.legal.map((link) => (
-            <li>
-              <a href={link.href} class="text-slate-400 hover:text-white text-sm transition-colors">
-                {link.name}
-              </a>
-            </li>
-          ))}
+          <li><a href="/privacy" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.privacyPolicy}</a></li>
+          <li><a href="/terms" class="text-slate-400 hover:text-white text-sm transition-colors">{t.footer.termsOfService}</a></li>
         </ul>
       </div>
     </div>
@@ -87,7 +62,7 @@ const footerLinks = {
     <!-- Bottom Bar -->
     <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-slate-500 text-sm">
-        © {currentYear} TranslitPro. All rights reserved.
+        {t.footer.copyright.replace('{{year}}', currentYear.toString())}
       </p>
       
       <!-- Social Links -->

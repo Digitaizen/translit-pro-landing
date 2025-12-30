@@ -1,0 +1,138 @@
+---
+/**
+ * Language dropdown component for switching between supported languages.
+ * Matches the design from the TranslitPro app.
+ */
+
+import { languages, getLanguageByCode } from '../i18n/languages';
+
+interface Props {
+  currentLang: string;
+}
+
+const { currentLang } = Astro.props;
+const currentLanguage = getLanguageByCode(currentLang) || languages[0];
+---
+
+<div class="relative language-dropdown">
+  <button
+    id="language-button"
+    class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50"
+    aria-label="Select language"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+    </svg>
+    <span class="hidden sm:inline">{currentLanguage.nativeName}</span>
+    <svg class="w-4 h-4 transition-transform" id="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+
+  <div
+    id="language-menu"
+    class="hidden absolute right-0 mt-2 w-56 bg-slate-800 border border-slate-700 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto"
+    role="menu"
+    aria-orientation="vertical"
+  >
+    <div class="py-2">
+      {languages.map((lang) => (
+        <a
+          href={lang.code === 'en' ? '/' : `/${lang.code}`}
+          class:list={[
+            "block px-4 py-2 text-sm transition-colors",
+            currentLang === lang.code
+              ? "bg-indigo-600 text-white"
+              : "text-slate-300 hover:bg-slate-700 hover:text-white"
+          ]}
+          role="menuitem"
+          dir={lang.dir}
+        >
+          <div class="flex items-center justify-between">
+            <span class="font-medium">{lang.nativeName}</span>
+            {lang.code !== lang.nativeName.toLowerCase().slice(0, 2) && (
+              <span class="text-xs opacity-60">{lang.name}</span>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+  const button = document.getElementById('language-button');
+  const menu = document.getElementById('language-menu');
+  const chevron = document.getElementById('chevron');
+
+  function toggleMenu() {
+    const isHidden = menu?.classList.contains('hidden');
+    
+    if (isHidden) {
+      menu?.classList.remove('hidden');
+      button?.setAttribute('aria-expanded', 'true');
+      chevron?.classList.add('rotate-180');
+    } else {
+      menu?.classList.add('hidden');
+      button?.setAttribute('aria-expanded', 'false');
+      chevron?.classList.remove('rotate-180');
+    }
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    button?.setAttribute('aria-expanded', 'false');
+    chevron?.classList.remove('rotate-180');
+  }
+
+  button?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menu?.contains(e.target as Node) && !button?.contains(e.target as Node)) {
+      closeMenu();
+    }
+  });
+
+  // Close menu when pressing Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  });
+</script>
+
+<style>
+  .language-dropdown {
+    position: relative;
+  }
+
+  #language-menu {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(71 85 105) rgb(30 41 59);
+  }
+
+  #language-menu::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  #language-menu::-webkit-scrollbar-track {
+    background: rgb(30 41 59);
+    border-radius: 4px;
+  }
+
+  #language-menu::-webkit-scrollbar-thumb {
+    background: rgb(71 85 105);
+    border-radius: 4px;
+  }
+
+  #language-menu::-webkit-scrollbar-thumb:hover {
+    background: rgb(100 116 139);
+  }
+</style>
+

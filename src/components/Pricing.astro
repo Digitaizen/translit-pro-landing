@@ -4,85 +4,36 @@
  * Highlights the Pro tier as "Most Popular".
  */
 
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+
 const tiers = [
   {
-    name: 'Free',
-    tagline: 'Try instantly, no signup',
-    price: '$0',
-    period: 'forever',
-    features: [
-      'Transliteration in editor',
-      'All 13+ built-in languages',
-      'Clipboard copy',
-      '3 search buttons',
-    ],
-    limitations: [
-      'Ads displayed',
-      'No document saving',
-      'No custom languages',
-    ],
-    cta: 'Start Free',
+    ...t.pricing.free,
     href: 'https://app.translitpro.com',
     highlighted: false,
     badge: null,
   },
   {
-    name: 'Basic',
-    tagline: 'Make it yours',
-    price: '$1.50',
-    period: '/month',
-    features: [
-      'Everything in Free',
-      'Custom transliteration schemas',
-      'Custom keyboard layouts',
-      'Custom UI languages',
-    ],
-    limitations: [
-      'Ads displayed',
-      'Editor only (no bookmarklet)',
-      'No cloud sync',
-    ],
-    cta: 'Start Basic',
+    ...t.pricing.basic,
     href: 'https://app.translitpro.com/signup?plan=basic',
     highlighted: false,
     badge: null,
   },
   {
-    name: 'Pro',
-    tagline: 'Type anywhere, save everything',
-    price: '$5',
-    period: '/month',
-    features: [
-      'Everything in Basic',
-      'Bookmarklet (most websites)',
-      'Cloud sync & storage',
-      'Unlimited AI spellcheck',
-      'All export formats',
-      'No ads',
-    ],
-    limitations: [],
-    cta: 'Go Pro',
+    ...t.pricing.pro,
     href: 'https://app.translitpro.com/signup?plan=pro',
     highlighted: true,
-    badge: 'Most Popular',
+    badge: t.pricing.pro.badge,
   },
   {
-    name: 'Founder',
-    tagline: 'Lifetime Pro for early supporters',
-    price: '$50',
-    period: 'once',
-    features: [
-      'Everything in Pro',
-      'Lifetime access',
-      'Never pay again',
-      'Founder badge 👑',
-      'Priority support',
-    ],
-    limitations: [],
-    cta: 'Become a Founder',
+    ...t.pricing.founder,
     href: 'https://app.translitpro.com/signup?plan=founder',
     highlighted: false,
-    badge: 'Limited Time',
+    badge: t.pricing.founder.badge,
   },
 ];
 ---
@@ -92,10 +43,10 @@ const tiers = [
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        Simple, Transparent Pricing
+        {t.pricing.title}
       </h2>
       <p class="text-lg text-slate-400">
-        Start free, upgrade when you need more. No hidden fees, cancel anytime.
+        {t.pricing.subtitle}
       </p>
     </div>
     

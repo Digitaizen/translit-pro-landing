@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "Transliteracijos įrankis 13+ kalbų",
+    "description": "Rašykite lotyniškais rašmenimis, gaukite kirilicą, hebrajų, graikų, sakartvelų, armėnų ir kitas kalbas. Stalinis transliteracijos rinkinys su vertimu, DI rašybos tikrinimu ir galingu redaktoriumi. Pridėkite bet kurią reikiamą kalbą.",
+    "siteName": "TranslitPro"
+  },
+  "nav": {
+    "features": "Funkcijos",
+    "pricing": "Kainos",
+    "faq": "DUK",
+    "signIn": "Prisijungti",
+    "tryFree": "Išbandyti nemokamai"
+  },
+  "hero": {
+    "badge": "Stalinis transliteracijos rinkinys 13+ kalbų",
+    "headline1": "Rašykite",
+    "headline2": "bet kokiu raštu",
+    "headline3": "naudodami savo klaviatūrą",
+    "subheadline": "Transliteruokite į kirilicą, hebrajų, graikų, sakartvelų, armėnų ir kitas kalbas tiesiai iš savo lotyniškos klaviatūros. Papildomai – vertimas, rašybos tikrinimas ir galingas redaktorius. Pridėkite bet kurią kalbą, kurios jums reikia.",
+    "ctaPrimary": "Pradėti nemokamai – be registracijos",
+    "ctaSecondary": "Žiūrėti kainas",
+    "trustBadge1": "Kreditinė kortelė nereikalinga",
+    "trustBadge2": "13+ integruotų kalbų",
+    "trustBadge3": "Pridėkite savo kalbas"
+  },
+  "features": {
+    "title": "Daugiau nei tik transliteracija",
+    "subtitle": "Išsamus rašymo įrankių rinkinys su transliteracija, vertimu, rašybos tikrinimu ir galingu redaktoriumi – bet kokiam jums reikalingam raštui.",
+    "typeNaturally": {
+      "title": "Rašykite natūraliai",
+      "description": "Naudokite savo įprastą lotynišką klaviatūrą. Nereikia mokytis naujų išdėstymų ar keisti klaviatūros nustatymų."
+    },
+    "languages": {
+      "title": "13+ kalbų",
+      "description": "Lietuvių, ukrainiečių, rusų, hebrajų, graikų, sakartvelų, armėnų, bulgarų ir kitos – visos integruotos programoje."
+    },
+    "addLanguage": {
+      "title": "Pridėkite bet kurią kalbą",
+      "description": "Kurkite pasirinktines transliteracijos schemas bet kuriai kalbai. Apibrėžkite savo klaviatūros išdėstymus ir atitikmenis."
+    },
+    "bookmarklet": {
+      "title": "Adresyno nuoroda (Pro)",
+      "description": "Rašykite pasirinktu raštu daugumoje svetainių. Veikia visur, išskyrus griežtą CSP politiką turinčias svetaines, tokias kaip „Google“."
+    },
+    "translation": {
+      "title": "Vertimas",
+      "description": "Verskite tekstą į kelias kalbas tiesiai redaktoriuje. Nereikia perjunginėti programų."
+    },
+    "aiSpellcheck": {
+      "title": "DI rašybos patikra",
+      "description": "Išmanioji rašybos patikra, pagrįsta dirbtiniu intelektu. Ištaisykite klaidas ir gaukite pasiūlymus tiksline kalba."
+    },
+    "editor": {
+      "title": "Galingas redaktorius",
+      "description": "Raiškiojo teksto redaktorius su formatavimu, stiliais ir sklandžia transliteracija rašant."
+    },
+    "export": {
+      "title": "Eksportuokite bet kur",
+      "description": "Eksportuokite į TXT, RTF, HTML, Markdown, DOCX arba PDF. Jūsų turinys, jūsų formatas."
+    },
+    "exploreAll": "Naršyti visas funkcijas"
+  },
+  "pricing": {
+    "title": "Paprasta ir aiški kainodara",
+    "subtitle": "Pradėkite nemokamai, atnaujinkite planą, kai prireiks daugiau. Jokių paslėptų mokesčių, atšaukite bet kada.",
+    "free": {
+      "name": "Nemokamas",
+      "tagline": "Išbandykite iškart, be registracijos",
+      "price": "0 €",
+      "period": "visada",
+      "cta": "Pradėti nemokamai",
+      "features": [
+        "Transliteracija redaktoriuje",
+        "Visos 13+ integruotų kalbų",
+        "Kopijavimas į iškarpinę",
+        "3 paieškos mygtukai"
+      ],
+      "limitations": [
+        "Rodomos reklamos",
+        "Nėra dokumentų išsaugojimo",
+        "Nėra pasirinktinių kalbų"
+      ]
+    },
+    "basic": {
+      "name": "Bazinis",
+      "tagline": "Padarykite jį savo",
+      "price": "1,50 €",
+      "period": "/ mėn.",
+      "cta": "Pradėti Bazinį",
+      "features": [
+        "Viskas, kas yra Nemokamame plane",
+        "Pasirinktinės transliteracijos schemos",
+        "Pasirinktiniai klaviatūros išdėstymai",
+        "Pasirinktinės sąsajos kalbos"
+      ],
+      "limitations": [
+        "Rodomos reklamos",
+        "Tik redaktorius (be adresyno nuorodos)",
+        "Nėra debesies sinchronizavimo"
+      ]
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Rašykite bet kur, saugokite viską",
+      "price": "5 €",
+      "period": "/ mėn.",
+      "cta": "Tapti Pro",
+      "badge": "Populiariausias",
+      "features": [
+        "Viskas, kas yra Baziniame plane",
+        "Adresyno nuoroda (daugumai svetainių)",
+        "Debesies sinchronizavimas ir saugykla",
+        "Neribota DI rašybos patikra",
+        "Visi eksporto formatai",
+        "Be reklamų"
+      ],
+      "limitations": []
+    },
+    "founder": {
+      "name": "Įkūrėjas",
+      "tagline": "Pro versija visam gyvenimui ankstyviesiems rėmėjams",
+      "price": "50 €",
+      "period": "vieną kartą",
+      "cta": "Tapti įkūrėju",
+      "badge": "Ribotas laikas",
+      "features": [
+        "Viskas, kas yra Pro plane",
+        "Prieiga visam gyvenimui",
+        "Niekada nemokėkite dar kartą",
+        "Įkūrėjo ženklelis 👑",
+        "Prioritetinė pagalba"
+      ],
+      "limitations": []
+    }
+  },
+  "faq": {
+    "title": "Dažniausiai užduodami klausimai",
+    "subtitle": "Turite klausimų? Mes turime atsakymus.",
+    "questions": {
+      "whatIsTransliteration": {
+        "question": "Kas yra transliteracija?",
+        "answer": "Transliteracija yra teksto konvertavimo iš vienos rašto sistemos į kitą procesas. „TranslitPro“ konvertuoja lotyniškus simbolius (pvz., „labas“) į kitus rašmenis realiuoju laiku, kol rašote."
+      },
+      "whichLanguages": {
+        "question": "Kurios kalbos yra palaikomos?",
+        "answer": "„TranslitPro“ turi 13+ integruotų kalbų: lietuvių, ukrainiečių, baltarusių, bulgarų, rusų, hebrajų, armėnų, sakartvelų, graikų, tadžikų, rusinų, kazachų ir kitas. Taip pat galite pridėti savo pasirinktines kalbas ir klaviatūros išdėstymus."
+      },
+      "mobileOrDesktop": {
+        "question": "Ar „TranslitPro“ skirtas mobiliesiems ar kompiuteriams?",
+        "answer": "„TranslitPro“ pirmiausia skirtas stalinio kompiuterio vartotojams. Mobilieji vartotojai paprastai turi integruotas klaviatūras skirtingiems raštams. Mūsų programėlė geriausiai veikia kompiuterių naršyklėse, kuriose norite rašyti nelotyniškais rašmenimis naudodami standartinę klaviatūrą."
+      },
+      "whatIsBookmarklet": {
+        "question": "Kas yra adresyno nuoroda (bookmarklet)?",
+        "answer": "Adresyno nuoroda (tik Pro plane) leidžia rašyti pasirinktu raštu tiesiogiai daugumoje svetainių. Ji veikia socialiniuose tinkluose, forumuose ir daugelyje žiniatinklio programų. Pastaba: ji neveikia svetainėse su griežta turinio saugumo politika (CSP), pvz., „Google“ paslaugose („Gmail“, „Docs“ ir kt.)."
+      },
+      "beyondTransliteration": {
+        "question": "Ką dar galiu daryti be transliteracijos?",
+        "answer": "„TranslitPro“ apima galingą raiškiojo teksto redaktorių, vertimą į kelias kalbas, DI pagrįstą rašybos tikrinimą tiksline kalba ir eksportą į TXT, RTF, HTML, Markdown, DOCX arba PDF."
+      },
+      "freeTrial": {
+        "question": "Ar yra nemokamas bandomasis laikotarpis?",
+        "answer": "Taip! Pagrindinėmis transliteracijos funkcijomis galite naudotis visiškai nemokamai visą laiką. Užsiregistravę taip pat gaunate Pro funkcijų bandomąją versiją, įskaitant adresyno nuorodą, DI rašybos patikrą ir saugyklą debesyje."
+      },
+      "addOwnLanguage": {
+        "question": "Ar galiu pridėti savo kalbą?",
+        "answer": "Taip! Turėdami „Basic“ ar aukštesnį planą, galite kurti pasirinktines transliteracijos schemas ir klaviatūros išdėstymus bet kuriai kalbai. Tai puikiai tinka, jei jums reikia specifinės romanizacijos sistemos arba kalbos, kurios nėra programoje."
+      },
+      "cancelAnytime": {
+        "question": "Ar galiu bet kada atšaukti prenumeratą?",
+        "answer": "Visiškai! Prenumeratą galite atšaukti bet kuriuo metu savo paskyros nustatymuose. Mokamomis funkcijomis galėsite naudotis iki atsiskaitymo laikotarpio pabaigos."
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Stalinis transliteracijos rinkinys 13+ kalbų. Rašykite lotyniškais rašmenimis, gaukite kirilicą, hebrajų, graikų ir kitas kalbas.",
+    "product": "Produktas",
+    "scripts": "Rašto sistemos",
+    "legal": "Teisinė informacija",
+    "openApp": "Atidaryti programą",
+    "cyrillic": "Kirilica",
+    "hebrew": "Hebrajų",
+    "greek": "Graikų",
+    "georgian": "Sakartvelų",
+    "armenian": "Armėnų",
+    "custom": "+ Pasirinktinė",
+    "privacyPolicy": "Privatumo politika",
+    "termsOfService": "Paslaugų teikimo sąlygos",
+    "copyright": "© {{year}} TranslitPro. Visos teisės saugomos."
+  }
+}
