@@ -18,7 +18,9 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 ```text
 /
 ├── public/
-│   ├── favicon.svg          # App favicon (Cyrillic Т)
+│   ├── logo.png              # App logo icon (keyboard with arrows)
+│   ├── title.png             # App title image (TranslitPro text)
+│   ├── favicon.png           # App favicon (simplified keyboard icon)
 │   └── robots.txt            # Search engine directives
 ├── src/
 │   ├── components/
@@ -92,7 +94,7 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 - [ ] **Social Media**: Create Twitter (@translitpro) and Facebook (facebook.com/translitpro) pages
 - [ ] **Analytics**: Add Cloudflare Web Analytics or Google Analytics
 - [ ] **Images**: Add Open Graph image (`/og-image.png`) for social sharing
-- [ ] **Favicons**: Generate full favicon set (apple-touch-icon, etc.)
+- [x] **Branding**: Logo, title, and favicon images integrated
 - [ ] **Contact Form**: Consider adding a contact form or support email
 - [ ] **Blog**: Consider adding a blog section for SEO content marketing
 - [ ] **A/B Testing**: Set up conversion tracking for CTA buttons
