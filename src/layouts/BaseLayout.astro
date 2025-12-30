@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalURL = Astro.url.href,
+  ogImage = '/og-image.png'
+} = Astro.props;
+
+const siteName = 'TranslitPro';
+const fullTitle = `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{fullTitle}</title>
+    <meta name="title" content={fullTitle} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={siteName} />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Structured Data for SoftwareApplication -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TranslitPro",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Web",
+      "description": "Professional transliteration tool for Russian, Ukrainian, Belarusian, and Bulgarian. Type in Latin letters, get Cyrillic output instantly.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Free",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "1.50",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "5",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Founder",
+          "price": "50",
+          "priceCurrency": "USD"
+        }
+      ]
+    })} />
+  </head>
+  <body class="bg-slate-900 text-white antialiased">
+    <slot />
+  </body>
+</html>
+

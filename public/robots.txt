@@ -1,0 +1,9 @@
+# Robots.txt for TranslitPro Landing Page
+# https://www.translitpro.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.translitpro.com/sitemap-index.xml
+

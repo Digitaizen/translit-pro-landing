@@ -1,0 +1,101 @@
+---
+/**
+ * FAQ section component with structured data for SEO.
+ * Expandable accordion-style questions and answers.
+ */
+
+const faqs = [
+  {
+    question: 'What is transliteration?',
+    answer: 'Transliteration is the process of converting text from one script to another. TranslitPro converts Latin characters (like "privet") into other scripts (like "привет" in Russian) in real-time as you type.'
+  },
+  {
+    question: 'Which languages are supported?',
+    answer: 'TranslitPro has 13+ languages built-in: Russian, Ukrainian, Belarusian, Bulgarian, Hebrew, Armenian, Georgian, Greek, Lithuanian, Tajik, Rusyn, Kazakh, and more. You can also add your own custom languages and keyboard layouts.'
+  },
+  {
+    question: 'Is TranslitPro for mobile or desktop?',
+    answer: 'TranslitPro is primarily designed for desktop users. Mobile users typically have built-in keyboards for different scripts. Our app works best on desktop browsers where you want to type in non-Latin scripts using your standard keyboard.'
+  },
+  {
+    question: 'What is the bookmarklet?',
+    answer: 'The bookmarklet (Pro only) lets you type in your target script directly on most websites. It works on social media, forums, and many web apps. Note: It doesn\'t work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.).'
+  },
+  {
+    question: 'What can I do beyond transliteration?',
+    answer: 'TranslitPro includes a powerful rich text editor, translation to multiple languages, AI-powered spellcheck in your target language, and export to TXT, RTF, HTML, Markdown, DOCX, or PDF.'
+  },
+  {
+    question: 'Is there a free trial?',
+    answer: 'Yes! You can use the basic transliteration features completely free, forever. When you sign up, you also get a trial of Pro features including the bookmarklet, AI spellcheck, and cloud storage.'
+  },
+  {
+    question: 'Can I add my own language?',
+    answer: 'Yes! With a Basic plan or higher, you can create custom transliteration schemas and keyboard layouts for any language. Perfect if you need a specific romanization system or a language not built into the app.'
+  },
+  {
+    question: 'Can I cancel my subscription anytime?',
+    answer: 'Absolutely! You can cancel your subscription at any time from your account settings. You\'ll continue to have access to paid features until the end of your billing period.'
+  }
+];
+
+// Generate FAQ structured data for SEO
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+
+<section id="faq" class="py-20 sm:py-32 bg-slate-900">
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)} />
+  
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-lg text-slate-400">
+        Got questions? We've got answers.
+      </p>
+    </div>
+    
+    <!-- FAQ List -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-slate-800/50 rounded-xl border border-slate-700/50">
+          <summary class="flex items-center justify-between cursor-pointer p-6 text-left">
+            <h3 class="text-lg font-medium text-white pr-4">{faq.question}</h3>
+            <svg class="w-5 h-5 text-slate-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6">
+            <p class="text-slate-400 leading-relaxed">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+    
+    <!-- Contact CTA -->
+    <div class="mt-12 text-center">
+      <p class="text-slate-400 mb-4">Still have questions?</p>
+      <a
+        href="mailto:support@translitpro.com"
+        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
+      >
+        Contact Support
+      </a>
+    </div>
+  </div>
+</section>
+

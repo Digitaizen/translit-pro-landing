@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Transliteration Tool for 13+ Languages';
+const description = 'Type in Latin, get Cyrillic, Hebrew, Greek, Georgian, Armenian, and more. Desktop transliteration suite with translation, AI spellcheck, and a powerful editor. Add any language you need.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <Pricing />
+    <FAQ />
+  </main>
+  <Footer />
+</BaseLayout>
