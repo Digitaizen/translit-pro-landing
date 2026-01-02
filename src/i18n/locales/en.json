@@ -159,7 +159,7 @@
       },
       "freeTrial": {
         "question": "Is there a free trial?",
-        "answer": "Yes! You can use the basic transliteration features completely free, forever. When you sign up, you also get a trial of Pro features including the bookmarklet, AI spellcheck, and cloud storage."
+        "answer": "Yes! You can use the basic transliteration features completely free, forever. When you sign up, you also get a trial of Pro features including the bookmarklet, AI spellcheck, export to different formats, and storage (local in Trial, cloud in Pro)."
       },
       "addOwnLanguage": {
         "question": "Can I add my own language?",
