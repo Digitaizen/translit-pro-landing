@@ -47,17 +47,22 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   │   ├── tg.json       # Tajik
 │   │   │   ├── rue.json      # Rusyn
 │   │   │   └── kk.json       # Kazakh
-│   │   └── utils.ts          # i18n utilities and language config
+│   │   ├── languages.ts      # Language configuration and metadata
+│   │   └── utils.ts          # i18n utilities and translation loader
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # Base HTML layout with SEO meta tags
 │   ├── pages/
 │   │   ├── index.astro       # Main landing page (English)
 │   │   └── [lang]/
 │   │       └── index.astro   # Localized landing pages
-│   └── styles/
-│       └── global.css        # Global styles (Tailwind imports)
+│   ├── styles/
+│   │   └── global.css        # Global styles (Tailwind imports)
+│   └── theme.config.ts       # Centralized theme configuration
 ├── astro.config.mjs          # Astro configuration
+├── tailwind.config.mjs       # Tailwind CSS configuration
 ├── wrangler.jsonc            # Cloudflare Workers config
+├── THEME.md                  # Theme customization guide
+├── THEME_SUMMARY.md          # Quick theme reference
 └── package.json
 ```
 
@@ -76,6 +81,53 @@ npm run build
 # Preview production build
 npm run preview
 ```
+
+## Theme Customization
+
+The landing page uses a centralized theme system that separates styling from content. All colors and design tokens are defined in `src/theme.config.ts`.
+
+### Quick Theme Change
+
+To change the color scheme (e.g., from indigo to blue):
+
+1. Open `src/theme.config.ts`
+2. Replace color values in the `theme.colors` object
+3. Rebuild the site with `npm run build`
+
+Example:
+```typescript
+primary: {
+  light: 'blue-400',   // was indigo-400
+  main: 'blue-500',    // was indigo-500
+  dark: 'blue-600',    // was indigo-600
+  darker: 'blue-900',  // was indigo-900
+}
+```
+
+### Current Theme
+
+- **Primary Brand**: Indigo (`indigo-400` to `indigo-900`)
+- **Secondary Accent**: Cyan (`cyan-500`)
+- **Backgrounds**: Dark slate (`slate-700` to `slate-950`)
+- **Text**: White, `slate-300`, `slate-400`
+
+### Documentation
+
+- **`THEME.md`** - Complete theme customization guide
+- **`THEME_SUMMARY.md`** - Quick reference with color palette and usage examples
+
+### Reusing in Main App
+
+To use this theme in your main TranslitPro app:
+
+1. Copy `src/theme.config.ts` to your app
+2. Import and use the theme object:
+   ```typescript
+   import { theme } from './theme.config';
+   const buttonClass = `bg-${theme.colors.primary.dark} text-${theme.colors.text.primary}`;
+   ```
+
+This ensures visual consistency between the landing page and the main application.
 
 ## Deployment
 

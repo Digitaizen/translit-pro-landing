@@ -3,6 +3,8 @@
  * Footer component with links, legal info, and social media.
  */
 
+import { theme } from '../theme.config';
+
 interface Props {
   t: any;
 }
@@ -11,7 +13,7 @@ const { t } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-slate-950 border-t border-slate-800">
+<footer class={`bg-${theme.colors.background.darker} border-t border-${theme.colors.border.subtle}`}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
       <!-- Brand Column -->
