@@ -1,13 +1,12 @@
 # Theme Customization Guide
 
-This document explains how to customize the color theme for the TranslitPro landing page.
+This document explains the color theme used in the TranslitPro landing page and how to customize it.
 
 ## Overview
 
-All color definitions are centralized in `src/theme.config.ts`. This makes it easy to:
-- Change the entire color scheme in one place
-- Maintain consistency across all components
-- Reuse the same theme in other applications (like the main TranslitPro app)
+The landing page uses **static Tailwind CSS classes** for all styling. The `src/theme.config.ts` file serves as a **reference document** showing the color palette, but components use hardcoded Tailwind classes directly.
+
+**Why static classes?** Tailwind v4's JIT (Just-In-Time) compiler doesn't support dynamic class generation using template literals (e.g., `` `bg-${variable}` ``). All classes must be statically analyzable at build time.
 
 ## Current Color Scheme
 
@@ -47,108 +46,102 @@ The landing page uses a **dark theme** with the following color palette:
 
 ## How to Change the Theme
 
-### Option 1: Quick Color Swap
+Since all components use static Tailwind classes, changing the theme requires **find-and-replace** across component files.
 
-To change to a different color scheme (e.g., from indigo to blue):
+### Option 1: Quick Color Swap (e.g., Indigo → Blue)
 
-1. Open `src/theme.config.ts`
-2. Replace all `indigo-*` values with your preferred color (e.g., `blue-*`)
-3. Rebuild the site with `npm run build`
+1. **Search and replace** across all files in `src/components/`:
+   - `indigo-400` → `blue-400`
+   - `indigo-500` → `blue-500`
+   - `indigo-600` → `blue-600`
+   - `indigo-900` → `blue-900`
 
-Example:
-```typescript
-primary: {
-  light: 'blue-400',    // was indigo-400
-  main: 'blue-500',     // was indigo-500
-  dark: 'blue-600',     // was indigo-600
-  darker: 'blue-900',   // was indigo-900
-},
-```
+2. Update `src/theme.config.ts` to reflect the new colors (for documentation)
+
+3. Rebuild: `npm run build`
 
 ### Option 2: Complete Theme Overhaul
 
 To create a completely custom theme:
 
-1. Open `src/theme.config.ts`
-2. Update all color values in the `theme.colors` object
-3. Keep the same structure (primary, background, border, text, status)
-4. Rebuild the site
-
-Example for a green theme:
-```typescript
-export const theme = {
-  colors: {
-    primary: {
-      light: 'emerald-400',
-      main: 'emerald-500',
-      dark: 'emerald-600',
-      darker: 'emerald-900',
-    },
-    secondary: {
-      main: 'teal-500',
-    },
-    // ... rest of the colors
-  },
-  // ...
-}
-```
+1. **Plan your color palette** using Tailwind's color system
+2. **Find and replace** all color classes in `src/components/`:
+   - Primary colors: `indigo-*` → your brand color
+   - Backgrounds: `slate-*` → your background colors
+   - Text colors: `white`, `slate-300`, `slate-400` → your text colors
+3. **Update** `src/theme.config.ts` for reference
+4. **Test** all components for proper contrast and accessibility
+5. **Rebuild**: `npm run build`
 
 ### Option 3: Light Theme
 
-To convert to a light theme:
+To convert to a light theme, replace:
 
-1. Update background colors to light variants:
-   ```typescript
-   background: {
-     base: 'white',
-     elevated: 'gray-50',
-     darker: 'gray-100',
-     subtle: 'gray-200',
+**Backgrounds:**
+- `bg-slate-900` → `bg-white`
+- `bg-slate-800` → `bg-gray-50`
+- `bg-slate-950` → `bg-gray-100`
+- `bg-slate-700` → `bg-gray-200`
+
+**Text:**
+- `text-white` → `text-gray-900`
+- `text-slate-300` → `text-gray-700`
+- `text-slate-400` → `text-gray-500`
+
+**Borders:**
+- `border-slate-700` → `border-gray-300`
+- `border-slate-800` → `border-gray-200`
+
+## Dynamic Theme Switching
+
+The current implementation **does not support runtime theme switching**. All classes are static and compiled at build time.
+
+### To Enable Dynamic Themes:
+
+If you need runtime theme switching (e.g., light/dark mode toggle), consider:
+
+1. **CSS Variables** (Recommended):
+   ```css
+   :root {
+     --color-primary: #6366f1;
+     --color-bg: #0f172a;
+   }
+   [data-theme="light"] {
+     --color-bg: #ffffff;
+   }
+   ```
+   Then use: `style="background: var(--color-bg)"`
+
+2. **Tailwind Safelist**:
+   Add all possible theme classes to `tailwind.config.mjs`:
+   ```js
+   safelist: ['bg-indigo-600', 'bg-blue-600', ...]
+   ```
+
+3. **Class Toggling**:
+   Use JavaScript to toggle classes like `dark` mode:
+   ```html
+   <body class="dark">
+   <div class="bg-white dark:bg-slate-900">
+   ```
+
+## Reusing Colors in Other Apps
+
+To maintain visual consistency with your main TranslitPro app:
+
+1. **Copy the color palette** from `src/theme.config.ts`
+2. **Use the same Tailwind color tokens** in your app
+3. **Or extract to CSS variables** for framework-agnostic usage:
+   ```css
+   :root {
+     --color-primary: #4f46e5; /* indigo-600 */
+     --color-bg: #0f172a;      /* slate-900 */
    }
    ```
 
-2. Update text colors to dark variants:
-   ```typescript
-   text: {
-     primary: 'gray-900',
-     secondary: 'gray-700',
-     muted: 'gray-500',
-   }
-   ```
+## Components Using Static Tailwind Classes
 
-3. Update border colors:
-   ```typescript
-   border: {
-     default: 'gray-300',
-     subtle: 'gray-200',
-     primary: 'indigo-500', // Keep brand color
-   }
-   ```
-
-## Using the Theme in Other Apps
-
-To use this theme in the main TranslitPro app:
-
-1. Copy `src/theme.config.ts` to your app's source directory
-2. Import and use the theme object:
-   ```typescript
-   import { theme } from './theme.config';
-   
-   // Use in your components
-   const buttonClass = `bg-${theme.colors.primary.dark} text-${theme.colors.text.primary}`;
-   ```
-
-3. Or use the helper function:
-   ```typescript
-   import { getThemeColor } from './theme.config';
-   
-   const bgClass = getThemeColor('primary.dark', 'bg');
-   const textClass = getThemeColor('text.primary', 'text');
-   ```
-
-## Components Using the Theme
-
-All components have been updated to use the centralized theme:
+All components use static Tailwind classes directly:
 
 - `src/components/Header.astro` - Navigation and CTAs
 - `src/components/Hero.astro` - Hero section with gradients
@@ -158,6 +151,8 @@ All components have been updated to use the centralized theme:
 - `src/components/Footer.astro` - Footer section
 - `src/components/LanguageDropdown.astro` - Language selector
 - `src/layouts/BaseLayout.astro` - Base page layout
+
+**Note**: `src/theme.config.ts` exists for reference only and is not imported by components.
 
 ## Testing Your Changes
 

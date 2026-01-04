@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import { languages, getLanguageByCode } from '../i18n/languages';
-import { theme } from '../theme.config';
 
 interface Props {
   title: string;
@@ -114,7 +113,7 @@ const hreflangs = languages.map(lang => ({
       ]
     })} />
   </head>
-  <body class={`bg-${theme.colors.background.base} text-${theme.colors.text.primary} antialiased`}>
+  <body class="bg-slate-900 text-white antialiased">
     <slot />
   </body>
 </html>

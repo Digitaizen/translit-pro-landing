@@ -82,52 +82,34 @@ npm run build
 npm run preview
 ```
 
-## Theme Customization
+## Styling
 
-The landing page uses a centralized theme system that separates styling from content. All colors and design tokens are defined in `src/theme.config.ts`.
+The landing page uses **Tailwind CSS v4** with static utility classes for styling.
 
-### Quick Theme Change
-
-To change the color scheme (e.g., from indigo to blue):
-
-1. Open `src/theme.config.ts`
-2. Replace color values in the `theme.colors` object
-3. Rebuild the site with `npm run build`
-
-Example:
-```typescript
-primary: {
-  light: 'blue-400',   // was indigo-400
-  main: 'blue-500',    // was indigo-500
-  dark: 'blue-600',    // was indigo-600
-  darker: 'blue-900',  // was indigo-900
-}
-```
-
-### Current Theme
+### Current Color Scheme
 
 - **Primary Brand**: Indigo (`indigo-400` to `indigo-900`)
-- **Secondary Accent**: Cyan (`cyan-500`)
+- **Secondary Accent**: Purple (`purple-400`)
 - **Backgrounds**: Dark slate (`slate-700` to `slate-950`)
 - **Text**: White, `slate-300`, `slate-400`
 
-### Documentation
+### Changing Colors
 
-- **`THEME.md`** - Complete theme customization guide
-- **`THEME_SUMMARY.md`** - Quick reference with color palette and usage examples
+All components use static Tailwind classes directly in the markup. To change the color scheme:
 
-### Reusing in Main App
+1. **Find and replace** color classes across component files in `src/components/`
+2. Example: Replace all `indigo-600` with `blue-600` for a blue theme
+3. Rebuild the site with `npm run build`
 
-To use this theme in your main TranslitPro app:
+**Note**: The site currently uses static Tailwind classes (not dynamic theme variables) for compatibility with Tailwind v4's JIT compiler. Dynamic class generation using template literals is not supported.
 
-1. Copy `src/theme.config.ts` to your app
-2. Import and use the theme object:
-   ```typescript
-   import { theme } from './theme.config';
-   const buttonClass = `bg-${theme.colors.primary.dark} text-${theme.colors.text.primary}`;
-   ```
+### Theme Reference
 
-This ensures visual consistency between the landing page and the main application.
+See `src/theme.config.ts` for a reference of the color palette used throughout the site. This file is **for documentation purposes only** and is not actively used by components.
+
+For detailed color usage, see:
+- **`THEME.md`** - Complete color palette and usage guide
+- **`THEME_SUMMARY.md`** - Quick reference with all colors and their hex values
 
 ## Deployment
 

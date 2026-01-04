@@ -4,6 +4,8 @@
 
 This is a quick reference for the current color theme used in the TranslitPro landing page.
 
+**Note**: All components use **static Tailwind classes**. The color palette below is for reference only. Components do not dynamically import from `src/theme.config.ts`.
+
 ### Color Palette
 
 ```typescript
@@ -66,28 +68,29 @@ This is a quick reference for the current color theme used in the TranslitPro la
 
 ## Usage in Components
 
+All components use **static Tailwind classes** directly in the markup:
+
 ### Example 1: Primary Button
 ```astro
-<button class={`bg-${theme.colors.primary.dark} text-${theme.colors.text.primary} hover:bg-${theme.colors.primary.main}`}>
+<button class="bg-indigo-600 text-white hover:bg-indigo-500">
   Click Me
 </button>
 ```
-Renders as: `bg-indigo-600 text-white hover:bg-indigo-500`
 
 ### Example 2: Card with Border
 ```astro
-<div class={`bg-${theme.colors.background.elevated}/${theme.opacity.subtle} border border-${theme.colors.border.default}`}>
+<div class="bg-slate-800/50 border border-slate-700">
   Card content
 </div>
 ```
-Renders as: `bg-slate-800/50 border border-slate-700`
 
 ### Example 3: Text Hierarchy
 ```astro
-<h1 class={`text-${theme.colors.text.primary}`}>Main Heading</h1>
-<p class={`text-${theme.colors.text.muted}`}>Description text</p>
+<h1 class="text-white">Main Heading</h1>
+<p class="text-slate-400">Description text</p>
 ```
-Renders as: `text-white` and `text-slate-400`
+
+**Note**: Classes are hardcoded, not generated from variables. This ensures compatibility with Tailwind v4's JIT compiler.
 
 ## Visual Hierarchy
 
@@ -136,14 +139,25 @@ Renders as: `text-white` and `text-slate-400`
 
 ## Reusing in Main App
 
-To use this exact theme in your main TranslitPro app:
+To maintain visual consistency with your main TranslitPro app:
 
-1. Copy `src/theme.config.ts` to your app
-2. Import and use:
-   ```typescript
-   import { theme } from './theme.config';
-   ```
-3. Apply the same color tokens in your components
+### Option 1: Use the Same Tailwind Classes
+Copy the color classes directly from the landing page components:
+- Primary buttons: `bg-indigo-600 hover:bg-indigo-500`
+- Backgrounds: `bg-slate-900`, `bg-slate-800`
+- Text: `text-white`, `text-slate-300`, `text-slate-400`
 
-This ensures visual consistency between the landing page and the main application.
+### Option 2: Extract to CSS Variables
+For framework-agnostic usage:
+```css
+:root {
+  --color-primary: #4f46e5;      /* indigo-600 */
+  --color-primary-hover: #6366f1; /* indigo-500 */
+  --color-bg: #0f172a;           /* slate-900 */
+  --color-text: #ffffff;         /* white */
+}
+```
+
+### Option 3: Reference File
+Use `src/theme.config.ts` as a reference document to see which Tailwind colors map to which semantic meanings (primary, background, text, etc.).
 
