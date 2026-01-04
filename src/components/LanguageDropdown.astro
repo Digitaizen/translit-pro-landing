@@ -34,16 +34,16 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
 
   <div
     id="language-menu"
-    class={`hidden absolute right-0 mt-2 w-56 bg-${theme.colors.background.elevated} border border-${theme.colors.border.default} rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto`}
+    class={`hidden absolute right-0 mt-2 w-96 bg-${theme.colors.background.elevated} border border-${theme.colors.border.default} rounded-lg shadow-xl z-50 p-3`}
     role="menu"
     aria-orientation="vertical"
   >
-    <div class="py-2">
+    <div class="grid grid-cols-3 gap-2">
       {languages.map((lang) => (
         <a
           href={lang.code === 'en' ? '/' : `/${lang.code}`}
           class:list={[
-            "block px-4 py-2 text-sm transition-colors",
+            "relative flex flex-col px-3 py-2 text-sm rounded-md transition-colors",
             currentLang === lang.code
               ? `bg-${theme.colors.primary.dark} text-${theme.colors.text.primary}`
               : `text-${theme.colors.text.secondary} hover:bg-${theme.colors.background.subtle} hover:text-${theme.colors.text.primary}`
@@ -51,12 +51,15 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
           role="menuitem"
           dir={lang.dir}
         >
-          <div class="flex items-center justify-between">
+          <div class="flex items-center justify-between w-full">
             <span class="font-medium">{lang.nativeName}</span>
-            {lang.code !== lang.nativeName.toLowerCase().slice(0, 2) && (
-              <span class="text-xs opacity-60">{lang.name}</span>
+            {currentLang === lang.code && (
+              <svg class="w-4 h-4 flex-shrink-0 absolute top-2 right-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
             )}
           </div>
+          <span class="text-xs opacity-60 mt-0.5">{lang.name}</span>
         </a>
       ))}
     </div>
@@ -111,29 +114,6 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
 <style>
   .language-dropdown {
     position: relative;
-  }
-
-  #language-menu {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(71 85 105) rgb(30 41 59);
-  }
-
-  #language-menu::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  #language-menu::-webkit-scrollbar-track {
-    background: rgb(30 41 59);
-    border-radius: 4px;
-  }
-
-  #language-menu::-webkit-scrollbar-thumb {
-    background: rgb(71 85 105);
-    border-radius: 4px;
-  }
-
-  #language-menu::-webkit-scrollbar-thumb:hover {
-    background: rgb(100 116 139);
   }
 </style>
 
