@@ -4,8 +4,6 @@
  * Highlights the Pro tier as "Most Popular".
  */
 
-import { theme } from '../theme.config';
-
 interface Props {
   t: any;
 }
@@ -40,14 +38,14 @@ const tiers = [
 ];
 ---
 
-<section id="pricing" class={`py-20 sm:py-32 bg-${theme.colors.background.darker}`}>
+<section id="pricing" class="py-20 sm:py-32 bg-slate-950">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class={`text-3xl sm:text-4xl font-bold text-${theme.colors.text.primary} mb-4`}>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
         {t.pricing.title}
       </h2>
-      <p class={`text-lg text-${theme.colors.text.muted}`}>
+      <p class="text-lg text-slate-400">
         {t.pricing.subtitle}
       </p>
     </div>
@@ -58,28 +56,28 @@ const tiers = [
         <div class:list={[
           "relative flex flex-col p-6 rounded-2xl border",
           tier.highlighted
-            ? `bg-${theme.colors.primary.dark} border-${theme.colors.border.primary} shadow-xl shadow-${theme.colors.primary.main}/${theme.opacity.light}`
-            : `bg-${theme.colors.background.elevated}/${theme.opacity.subtle} border-${theme.colors.border.default}`
+            ? "bg-indigo-600 border-indigo-500 shadow-xl shadow-indigo-500/20"
+            : "bg-slate-800/50 border-slate-700"
         ]}>
           {tier.badge && (
             <div class:list={[
               "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 text-xs font-semibold rounded-full flex items-center justify-center text-center",
-              tier.highlighted ? `bg-${theme.colors.text.primary} text-${theme.colors.primary.dark}` : `bg-${theme.colors.status.warning} text-${theme.colors.status.warningText}`
+              tier.highlighted ? "bg-white text-indigo-600" : "bg-amber-500 text-amber-950"
             ]}>
               {tier.badge}
             </div>
           )}
 
           <div class="mb-6">
-            <h3 class={`text-xl font-bold text-${theme.colors.text.primary} mb-1`}>{tier.name}</h3>
-            <p class:list={["text-sm", tier.highlighted ? `text-${theme.colors.primary.light}` : `text-${theme.colors.text.muted}`]}>
+            <h3 class="text-xl font-bold text-white mb-1">{tier.name}</h3>
+            <p class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
               {tier.tagline}
             </p>
           </div>
 
           <div class="mb-6">
-            <span class={`text-4xl font-bold text-${theme.colors.text.primary}`}>{tier.price}</span>
-            <span class:list={["text-sm", tier.highlighted ? `text-${theme.colors.primary.light}` : `text-${theme.colors.text.muted}`]}>
+            <span class="text-4xl font-bold text-white">{tier.price}</span>
+            <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
               {tier.period}
             </span>
           </div>
@@ -87,18 +85,18 @@ const tiers = [
           <ul class="flex-1 space-y-3 mb-6">
             {tier.features.map((feature: any) => (
               <li class="flex items-start gap-2">
-                <svg class:list={["w-5 h-5 shrink-0", tier.highlighted ? `text-${theme.colors.primary.light}` : `text-${theme.colors.status.success}`]} fill="currentColor" viewBox="0 0 20 20">
+                <svg class:list={["w-5 h-5 shrink-0", tier.highlighted ? "text-indigo-300" : "text-green-400"]} fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
-                <span class:list={["text-sm", tier.highlighted ? `text-${theme.colors.text.primary}` : `text-${theme.colors.text.secondary}`]}>{feature}</span>
+                <span class:list={["text-sm", tier.highlighted ? "text-white" : "text-slate-300"]}>{feature}</span>
               </li>
             ))}
             {tier.limitations.map((limitation: any) => (
               <li class="flex items-start gap-2">
-                <svg class={`w-5 h-5 shrink-0 text-${theme.colors.background.subtle}`} fill="currentColor" viewBox="0 0 20 20">
+                <svg class="w-5 h-5 shrink-0 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
                 </svg>
-                <span class={`text-sm text-${theme.colors.background.subtle}`}>{limitation}</span>
+                <span class="text-sm text-slate-700">{limitation}</span>
               </li>
             ))}
           </ul>
@@ -108,8 +106,8 @@ const tiers = [
             class:list={[
               "block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors",
               tier.highlighted
-                ? `bg-${theme.colors.text.primary} text-${theme.colors.primary.dark} hover:bg-${theme.colors.primary.light}`
-                : `bg-${theme.colors.background.subtle} text-${theme.colors.text.primary} hover:bg-${theme.colors.background.elevated}`
+                ? "bg-white text-indigo-600 hover:bg-indigo-100"
+                : "bg-slate-700 text-white hover:bg-slate-800"
             ]}
           >
             {tier.cta}

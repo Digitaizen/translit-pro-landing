@@ -5,7 +5,6 @@
  */
 
 import { languages, getLanguageByCode } from '../i18n/languages';
-import { theme } from '../theme.config';
 
 interface Props {
   currentLang: string;
@@ -18,7 +17,7 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
 <div class="relative language-dropdown">
   <button
     id="language-button"
-    class={`flex items-center gap-2 px-3 py-2 text-sm font-medium text-${theme.colors.text.secondary} hover:text-${theme.colors.text.primary} transition-colors rounded-lg hover:bg-${theme.colors.background.elevated}/${theme.opacity.subtle}`}
+    class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded-lg hover:bg-slate-800/50"
     aria-label="Select language"
     aria-haspopup="true"
     aria-expanded="false"
@@ -34,7 +33,7 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
 
   <div
     id="language-menu"
-    class={`hidden absolute right-0 mt-2 w-96 bg-${theme.colors.background.elevated} border border-${theme.colors.border.default} rounded-lg shadow-xl z-50 p-3`}
+    class="hidden absolute right-0 mt-2 w-96 bg-slate-800 border border-slate-700 rounded-lg shadow-xl z-50 p-3"
     role="menu"
     aria-orientation="vertical"
   >
@@ -45,8 +44,8 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
           class:list={[
             "relative flex flex-col px-3 py-2 text-sm rounded-md transition-colors",
             currentLang === lang.code
-              ? `bg-${theme.colors.primary.dark} text-${theme.colors.text.primary}`
-              : `text-${theme.colors.text.secondary} hover:bg-${theme.colors.background.subtle} hover:text-${theme.colors.text.primary}`
+              ? "bg-indigo-600 text-white"
+              : "text-slate-300 hover:bg-slate-700 hover:text-white"
           ]}
           role="menuitem"
           dir={lang.dir}
