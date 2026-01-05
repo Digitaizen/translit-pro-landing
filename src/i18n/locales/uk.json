@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "Зв'язатися з підтримкою",
+    "subtitle": "Ми відповімо якнайшвидше.",
+    "stillHaveQuestions": "Залишились питання?",
+    "contactSupport": "Зв'язатися з підтримкою",
+    "emailLabel": "Ваш email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Тема",
+    "subjectPlaceholder": "Чим ми можемо допомогти?",
+    "messageLabel": "Повідомлення",
+    "messagePlaceholder": "Опишіть вашу проблему або питання...",
+    "sendButton": "Надіслати",
+    "sending": "Надсилання...",
+    "successMessage": "Повідомлення успішно надіслано!",
+    "errorMessage": "Не вдалося надіслати повідомлення. Спробуйте ще раз."
+  },
   "footer": {
     "tagline": "Десктопний пакет транслітерації для 13+ мов. Пишіть латиницею, отримуйте кирилицю, іврит, грецьку та інші мови.",
     "product": "Продукт",

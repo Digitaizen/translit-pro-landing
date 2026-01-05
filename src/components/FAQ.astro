@@ -4,6 +4,8 @@
  * Expandable accordion-style questions and answers.
  */
 
+import ContactModal from './ContactModal.astro';
+
 interface Props {
   t: any;
 }
@@ -70,14 +72,18 @@ const faqStructuredData = {
 
     <!-- Contact CTA -->
     <div class="mt-12 text-center">
-      <p class="text-slate-400 mb-4">Still have questions?</p>
-      <a
-        href="mailto:support@translitpro.com"
-        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors"
+      <p class="text-slate-400 mb-4">{t.contact.stillHaveQuestions}</p>
+      <button
+        type="button"
+        onclick="window.openContactModal()"
+        class="inline-flex items-center px-6 py-3 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
       >
-        Contact Support
-      </a>
+        {t.contact.contactSupport}
+      </button>
     </div>
   </div>
 </section>
+
+<!-- Contact Support Modal -->
+<ContactModal t={t} />
 

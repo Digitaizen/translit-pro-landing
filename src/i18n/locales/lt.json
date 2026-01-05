@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "Susisiekite su palaikymu",
+    "subtitle": "Atsakysime kuo greičiau.",
+    "stillHaveQuestions": "Dar turite klausimų?",
+    "contactSupport": "Susisiekite su palaikymu",
+    "emailLabel": "Jūsų el. paštas",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Tema",
+    "subjectPlaceholder": "Kaip galime padėti?",
+    "messageLabel": "Žinutė",
+    "messagePlaceholder": "Aprašykite savo problemą ar klausimą...",
+    "sendButton": "Siųsti",
+    "sending": "Siunčiama...",
+    "successMessage": "Žinutė sėkmingai išsiųsta!",
+    "errorMessage": "Nepavyko išsiųsti žinutės. Bandykite dar kartą."
+  },
   "footer": {
     "tagline": "Stalinis transliteracijos rinkinys 13+ kalbų. Rašykite lotyniškais rašmenimis, gaukite kirilicą, hebrajų, graikų ir kitas kalbas.",
     "product": "Produktas",

@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "Звязацца з падтрымкай",
+    "subtitle": "Мы адкажам як мага хутчэй.",
+    "stillHaveQuestions": "Засталіся пытанні?",
+    "contactSupport": "Звязацца з падтрымкай",
+    "emailLabel": "Ваш email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Тэма",
+    "subjectPlaceholder": "Чым мы можам дапамагчы?",
+    "messageLabel": "Паведамленне",
+    "messagePlaceholder": "Апішыце вашу праблему або пытанне...",
+    "sendButton": "Адправіць",
+    "sending": "Адпраўка...",
+    "successMessage": "Паведамленне паспяхова адпраўлена!",
+    "errorMessage": "Не ўдалося адправіць паведамленне. Паспрабуйце яшчэ раз."
+  },
   "footer": {
     "tagline": "Дэсктопны пакет транслітарацыі для 13+ моў. Пішыце лацінкай, атрымлівайце кірыліцу, іўрыт, грэчаскую і іншае.",
     "product": "Прадукт",

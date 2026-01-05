@@ -1,0 +1,199 @@
+---
+/**
+ * Contact Support Modal component with EmailJS integration.
+ * Displays a form for users to send support messages.
+ */
+
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+---
+
+<!-- Modal Backdrop -->
+<div
+  id="contact-modal"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm"
+  data-sending={t.contact.sending}
+  data-success={t.contact.successMessage}
+  data-error={t.contact.errorMessage}
+  data-send-button={t.contact.sendButton}
+>
+  <!-- Modal Content -->
+  <div class="relative w-full max-w-2xl mx-4 bg-slate-800 rounded-2xl shadow-2xl border border-slate-700">
+    <!-- Close Button -->
+    <button
+      id="close-modal-btn"
+      class="absolute top-4 end-4 text-slate-400 hover:text-white transition-colors"
+      aria-label="Close modal"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- Modal Header -->
+    <div class="p-6 border-b border-slate-700">
+      <h3 class="text-xl font-semibold text-white">{t.contact.title}</h3>
+      <p class="text-sm text-slate-400 mt-1">{t.contact.subtitle}</p>
+    </div>
+
+    <!-- Form -->
+    <form id="contact-form" class="p-6 space-y-4">
+      <!-- From (Email) -->
+      <div>
+        <label for="from_email" class="block text-sm font-medium text-slate-300 mb-1">{t.contact.emailLabel}</label>
+        <input
+          type="email"
+          id="from_email"
+          name="from_email"
+          required
+          class="w-full px-4 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          placeholder={t.contact.emailPlaceholder}
+        />
+      </div>
+
+      <!-- Subject -->
+      <div>
+        <label for="subject" class="block text-sm font-medium text-slate-300 mb-1">{t.contact.subjectLabel}</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          required
+          class="w-full px-4 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          placeholder={t.contact.subjectPlaceholder}
+        />
+      </div>
+
+      <!-- Message -->
+      <div>
+        <label for="message" class="block text-sm font-medium text-slate-300 mb-1">{t.contact.messageLabel}</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          required
+          class="w-full px-4 py-2 bg-slate-900 border border-slate-600 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent resize-y min-h-[120px]"
+          placeholder={t.contact.messagePlaceholder}
+        ></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        id="submit-btn"
+        class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-slate-800"
+      >
+        {t.contact.sendButton}
+      </button>
+
+      <!-- Status Message -->
+      <div id="form-status" class="hidden text-center text-sm py-2 rounded-lg"></div>
+    </form>
+  </div>
+</div>
+
+<!-- EmailJS SDK -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script is:inline>
+  // EmailJS Configuration
+  var EMAILJS_PUBLIC_KEY = 'nojGLmPx9OsV5qy_7';
+  var EMAILJS_SERVICE_ID = 'service_urzvci7';
+  var EMAILJS_TEMPLATE_ID = 'template_hc32wc4';
+
+  // Initialize EmailJS
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+
+  var modal = document.getElementById('contact-modal');
+  var closeBtn = document.getElementById('close-modal-btn');
+  var form = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('submit-btn');
+  var formStatus = document.getElementById('form-status');
+
+  // Opens the contact support modal
+  window.openContactModal = function() {
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+    document.body.style.overflow = 'hidden';
+  };
+
+  // Close modal function
+  function closeModal() {
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+    document.body.style.overflow = '';
+    if (form) form.reset();
+    if (formStatus) formStatus.classList.add('hidden');
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+
+  if (modal) {
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // Handle escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Get translations from data attributes
+  var i18n = {
+    sending: modal ? modal.getAttribute('data-sending') : 'Sending...',
+    success: modal ? modal.getAttribute('data-success') : 'Message sent successfully!',
+    error: modal ? modal.getAttribute('data-error') : 'Failed to send message. Please try again.',
+    sendButton: modal ? modal.getAttribute('data-send-button') : 'Send Message'
+  };
+
+  // Form submission
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!submitBtn || !formStatus) return;
+
+      submitBtn.textContent = i18n.sending;
+      submitBtn.setAttribute('disabled', 'true');
+
+      var formData = new FormData(form);
+      var templateParams = {
+        from_email: formData.get('from_email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+        to_email: 'support@translitpro.com'
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+        .then(function() {
+          formStatus.textContent = i18n.success;
+          formStatus.className = 'text-center text-sm py-2 rounded-lg bg-green-900/50 text-green-400';
+          formStatus.classList.remove('hidden');
+          form.reset();
+          setTimeout(closeModal, 2000);
+        })
+        .catch(function() {
+          formStatus.textContent = i18n.error;
+          formStatus.className = 'text-center text-sm py-2 rounded-lg bg-red-900/50 text-red-400';
+          formStatus.classList.remove('hidden');
+        })
+        .finally(function() {
+          submitBtn.textContent = i18n.sendButton;
+          submitBtn.removeAttribute('disabled');
+        });
+    });
+  }
+</script>
+

@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "Связаться с поддержкой",
+    "subtitle": "Мы ответим вам как можно скорее.",
+    "stillHaveQuestions": "Остались вопросы?",
+    "contactSupport": "Связаться с поддержкой",
+    "emailLabel": "Ваш email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Тема",
+    "subjectPlaceholder": "Чем мы можем помочь?",
+    "messageLabel": "Сообщение",
+    "messagePlaceholder": "Опишите вашу проблему или вопрос...",
+    "sendButton": "Отправить",
+    "sending": "Отправка...",
+    "successMessage": "Сообщение успешно отправлено!",
+    "errorMessage": "Не удалось отправить сообщение. Попробуйте ещё раз."
+  },
   "footer": {
     "tagline": "Настольный пакет транслитерации для 13+ языков. Печатайте латиницей, получайте кириллицу, иврит, греческий и другие.",
     "product": "Продукт",

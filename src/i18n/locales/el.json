@@ -171,6 +171,38 @@
       }
     }
   },
+  "contact": {
+    "title": "Επικοινωνία με την Υποστήριξη",
+    "subtitle": "Θα σας απαντήσουμε το συντομότερο δυνατό.",
+    "stillHaveQuestions": "Έχετε ακόμα ερωτήσεις;",
+    "contactSupport": "Επικοινωνία με την Υποστήριξη",
+    "emailLabel": "Το email σας",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Θέμα",
+    "subjectPlaceholder": "Πώς μπορούμε να βοηθήσουμε;",
+    "messageLabel": "Μήνυμα",
+    "messagePlaceholder": "Περιγράψτε το πρόβλημα ή την ερώτησή σας...",
+    "sendButton": "Αποστολή",
+    "sending": "Αποστολή...",
+    "successMessage": "Το μήνυμα στάλθηκε επιτυχώς!",
+    "errorMessage": "Αποτυχία αποστολής μηνύματος. Παρακαλώ δοκιμάστε ξανά."
+  },
+  "contact": {
+    "title": "Επικοινωνία με την Υποστήριξη",
+    "subtitle": "Θα σας απαντήσουμε το συντομότερο δυνατό.",
+    "stillHaveQuestions": "Έχετε ακόμα ερωτήσεις;",
+    "contactSupport": "Επικοινωνία με την Υποστήριξη",
+    "emailLabel": "Το email σας",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Θέμα",
+    "subjectPlaceholder": "Πώς μπορούμε να βοηθήσουμε;",
+    "messageLabel": "Μήνυμα",
+    "messagePlaceholder": "Περιγράψτε το πρόβλημα ή την ερώτησή σας...",
+    "sendButton": "Αποστολή",
+    "sending": "Αποστολή...",
+    "successMessage": "Το μήνυμα στάλθηκε επιτυχώς!",
+    "errorMessage": "Αποτυχία αποστολής. Παρακαλώ δοκιμάστε ξανά."
+  },
   "footer": {
     "tagline": "Desktop σουίτα μεταγραμματισμού για 13+ γλώσσες. Πληκτρολογήστε σε Λατινικούς χαρακτήρες, λάβετε Κυριλλικά, Εβραϊκά, Ελληνικά και άλλα.",
     "product": "Προϊόν",

@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "Зв'язати ся з підтримков",
+    "subtitle": "Одповіме вам як найборже.",
+    "stillHaveQuestions": "Ще маєте питаня?",
+    "contactSupport": "Зв'язати ся з підтримков",
+    "emailLabel": "Ваш email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Тема",
+    "subjectPlaceholder": "Як можеме помочі?",
+    "messageLabel": "Повідомліня",
+    "messagePlaceholder": "Опиште свою проблему або питаня...",
+    "sendButton": "Послати",
+    "sending": "Посыламе...",
+    "successMessage": "Повідомліня успішно послане!",
+    "errorMessage": "Не удало ся послати повідомліня. Спробуйте знова."
+  },
   "footer": {
     "tagline": "Десктопный пакет транслітерації про 13+ языків. Пиште латинков, достаньте кирилицю, іврит, ґрецькый і інше.",
     "product": "Продукт",

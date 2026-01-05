@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "יצירת קשר עם התמיכה",
+    "subtitle": "נחזור אליך בהקדם האפשרי.",
+    "stillHaveQuestions": "עדיין יש לך שאלות?",
+    "contactSupport": "יצירת קשר עם התמיכה",
+    "emailLabel": "האימייל שלך",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "נושא",
+    "subjectPlaceholder": "איך נוכל לעזור?",
+    "messageLabel": "הודעה",
+    "messagePlaceholder": "תאר את הבעיה או השאלה שלך...",
+    "sendButton": "שליחה",
+    "sending": "שולח...",
+    "successMessage": "ההודעה נשלחה בהצלחה!",
+    "errorMessage": "שליחת ההודעה נכשלה. אנא נסה שוב."
+  },
   "footer": {
     "tagline": "חבילת תעתיק למחשב ליותר מ-13 שפות. הקלידו בלטינית, קבלו קירילית, עברית, יוונית ועוד.",
     "product": "מוצר",

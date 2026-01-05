@@ -31,6 +31,7 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   ├── Pricing.astro     # Pricing tiers
 │   │   ├── FAQ.astro         # FAQ accordion with structured data
 │   │   ├── Footer.astro      # Footer with links
+│   │   ├── ContactModal.astro # Contact support modal with EmailJS
 │   │   └── LanguageDropdown.astro  # Language switcher component
 │   ├── i18n/
 │   │   ├── locales/          # Translation files for all languages
@@ -128,8 +129,9 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 2. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
 3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
 4. **Pricing** - 4 tiers: Free, Basic ($1.50/mo), Pro ($5/mo), Founder ($50 once)
-5. **FAQ** - 8 expandable questions with SEO structured data
-6. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
+5. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
+6. **Contact Modal** - Contact support form with EmailJS integration (RTL-aware)
+7. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
 
 ## Internationalization (i18n)
 
@@ -187,7 +189,7 @@ The landing page supports 13 languages with full localization:
 - [ ] **Analytics**: Add Cloudflare Web Analytics or Google Analytics
 - [ ] **Images**: Add Open Graph image (`/og-image.png`) for social sharing
 - [x] **Branding**: Logo, title, and favicon images integrated
-- [ ] **Contact Form**: Consider adding a contact form or support email
+- [x] **Contact Form**: Contact support modal with EmailJS integration
 - [ ] **Blog**: Consider adding a blog section for SEO content marketing
 - [ ] **A/B Testing**: Set up conversion tracking for CTA buttons
 - [ ] **Performance**: Run Lighthouse audit and optimize as needed

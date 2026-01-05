@@ -171,6 +171,22 @@
       }
     }
   },
+  "contact": {
+    "title": "Contact Support",
+    "subtitle": "We'll get back to you as soon as possible.",
+    "stillHaveQuestions": "Still have questions?",
+    "contactSupport": "Contact Support",
+    "emailLabel": "Your Email",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "How can we help?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Describe your issue or question...",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Failed to send message. Please try again."
+  },
   "footer": {
     "tagline": "Desktop transliteration suite for 13+ languages. Type in Latin, get Cyrillic, Hebrew, Greek, and more.",
     "product": "Product",
