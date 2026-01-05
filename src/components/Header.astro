@@ -12,6 +12,15 @@ interface Props {
 }
 
 const { currentLang = 'en', t } = Astro.props;
+
+/**
+ * Build app URL with optional language parameter.
+ * Only appends lang param if not English (default).
+ */
+const buildAppUrl = (path: string = '') => {
+  const base = `https://app.translitpro.com${path}`;
+  return currentLang !== 'en' ? `${base}?lang=${currentLang}` : base;
+};
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
@@ -55,7 +64,7 @@ const { currentLang = 'en', t } = Astro.props;
 
         <!-- Sign In -->
         <a
-          href="https://app.translitpro.com"
+          href={buildAppUrl('/login')}
           class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors"
         >
           <!-- LogIn icon -->
@@ -67,9 +76,9 @@ const { currentLang = 'en', t } = Astro.props;
           <span class="text-sm text-slate-300">{t.nav.signIn}</span>
         </a>
 
-        <!-- Start Now -->
+        <!-- Start Now (Start Trial) -->
         <a
-          href="https://app.translitpro.com"
+          href={buildAppUrl('/trial')}
           class="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg transition-colors text-sm font-medium text-white"
         >
           <!-- Play icon -->

@@ -28,9 +28,9 @@ const t = getTranslations(lang as string);
 >
   <Header currentLang={lang} t={t} />
   <main>
-    <Hero t={t} />
-    <Features t={t} />
-    <Pricing t={t} />
+    <Hero t={t} currentLang={lang} />
+    <Features t={t} currentLang={lang} />
+    <Pricing t={t} currentLang={lang} />
     <FAQ t={t} />
   </main>
   <Footer t={t} />

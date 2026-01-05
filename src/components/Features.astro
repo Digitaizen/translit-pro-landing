@@ -4,7 +4,21 @@
  * Uses a grid layout with icons and descriptions.
  */
 
-const { t } = Astro.props;
+interface Props {
+  t: any;
+  currentLang?: string;
+}
+
+const { t, currentLang = 'en' } = Astro.props;
+
+/**
+ * Build app URL with optional language parameter.
+ * Only appends lang param if not English (default).
+ */
+const buildAppUrl = (path: string = '') => {
+  const base = `https://app.translitpro.com${path}`;
+  return currentLang !== 'en' ? `${base}?lang=${currentLang}` : base;
+};
 
 const features = [
   {
@@ -68,7 +82,7 @@ const features = [
     <!-- Bottom CTA -->
     <div class="mt-16 text-center">
       <a
-        href="https://app.translitpro.com"
+        href={buildAppUrl()}
         class="inline-flex items-center px-6 py-3 text-sm font-semibold text-indigo-400 hover:text-indigo-500 transition-colors"
       >
         {t.features.exploreAll}

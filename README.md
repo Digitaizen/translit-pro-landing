@@ -179,6 +179,43 @@ The landing page supports 13 languages with full localization:
 - hreflang tags for all language variants
 - Canonical URLs for each language
 
+## Main App Integration
+
+The landing page CTAs link directly to the main app at `app.translitpro.com` with deep linking support for authentication modals and language preferences.
+
+### Supported Routes
+
+| Route | Modal Opened |
+|-------|-------------|
+| `/login` | Login modal |
+| `/signup` | Signup modal (generic) |
+| `/trial` | Start Free Trial modal |
+| `/forgot-password` | Forgot password modal |
+
+### URL Parameters
+
+| Parameter | Values | Effect |
+|-----------|--------|--------|
+| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt` | Sets UI language |
+| `?action=` | `login`, `signup`, `trial`, `forgot-password` | Opens corresponding modal |
+| `?plan=` | `basic`, `pro`, `founder` | Pre-selects pricing plan |
+
+### Landing Page Button Mapping
+
+| Button | URL |
+|--------|-----|
+| Header: "Start Now" | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
+| Header: "Sign In" | `https://app.translitpro.com/login` |
+| Hero: Primary CTA | `https://app.translitpro.com` (+ `?lang=xx` if non-English) |
+| Pricing: Free tier | `https://app.translitpro.com` |
+| Pricing: Basic tier | `https://app.translitpro.com/signup?plan=basic` |
+| Pricing: Pro tier | `https://app.translitpro.com/signup?plan=pro` |
+| Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder` |
+
+### Language Pass-through
+
+When a user visits a localized landing page (e.g., `/ru/`), all CTA links automatically include the `?lang=xx` parameter to ensure a seamless language experience when transitioning to the main app. English users get clean URLs without the language parameter.
+
 ## Next Steps Checklist
 
 - [ ] **Domain Setup**: Point `translitpro.com` to Cloudflare Pages
