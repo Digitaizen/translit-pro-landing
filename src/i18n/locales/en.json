@@ -168,6 +168,10 @@
       "cancelAnytime": {
         "question": "Can I cancel my subscription anytime?",
         "answer": "Absolutely! You can cancel your subscription at any time from your account settings. You'll continue to have access to paid features until the end of your billing period."
+      },
+      "preventCombinations": {
+        "question": "Can I prevent certain letter combinations from being transliterated together?",
+        "answer": "Yes! Use the + symbol as a separator. This tells TranslitPro to transliterate each letter individually instead of as a pair. Examples (Cyrillic): s+h → \"сх\" (instead of \"ш\"), t+s → \"тс\" (instead of \"ц\"), z+h → \"зх\" (instead of \"ж\")."
       }
     }
   },

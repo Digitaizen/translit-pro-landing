@@ -4,21 +4,14 @@
  * Includes headline, subheadline, CTAs, and a visual demo.
  */
 
+import { buildAppUrl } from '../config';
+
 interface Props {
   t: any;
   currentLang?: string;
 }
 
 const { t, currentLang = 'en' } = Astro.props;
-
-/**
- * Build app URL with optional language parameter.
- * Only appends lang param if not English (default).
- */
-const buildAppUrl = (path: string = '') => {
-  const base = `https://app.translitpro.com${path}`;
-  return currentLang !== 'en' ? `${base}?lang=${currentLang}` : base;
-};
 
 if (!t || !t.hero) {
   throw new Error('Hero component requires translations prop (t) with hero section');
@@ -56,7 +49,7 @@ if (!t || !t.hero) {
       <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
         <a
-          href={buildAppUrl()}
+          href={buildAppUrl('', currentLang)}
           class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-500/25 transition-all hover:shadow-indigo-500/40"
         >
           {t.hero.ctaPrimary}

@@ -5,6 +5,7 @@
  */
 
 import LanguageDropdown from './LanguageDropdown.astro';
+import { buildAppUrl } from '../config';
 
 interface Props {
   currentLang?: string;
@@ -12,15 +13,6 @@ interface Props {
 }
 
 const { currentLang = 'en', t } = Astro.props;
-
-/**
- * Build app URL with optional language parameter.
- * Only appends lang param if not English (default).
- */
-const buildAppUrl = (path: string = '') => {
-  const base = `https://app.translitpro.com${path}`;
-  return currentLang !== 'en' ? `${base}?lang=${currentLang}` : base;
-};
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
@@ -64,7 +56,7 @@ const buildAppUrl = (path: string = '') => {
 
         <!-- Sign In -->
         <a
-          href={buildAppUrl('/login')}
+          href={buildAppUrl('/login', currentLang)}
           class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors"
         >
           <!-- LogIn icon -->
@@ -78,7 +70,7 @@ const buildAppUrl = (path: string = '') => {
 
         <!-- Start Now (Start Trial) -->
         <a
-          href={buildAppUrl('/trial')}
+          href={buildAppUrl('/trial', currentLang)}
           class="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg transition-colors text-sm font-medium text-white"
         >
           <!-- Play icon -->

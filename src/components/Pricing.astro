@@ -4,6 +4,8 @@
  * Highlights the Pro tier as "Most Popular".
  */
 
+import { buildAppUrl } from '../config';
+
 interface Props {
   t: any;
   currentLang?: string;
@@ -11,46 +13,28 @@ interface Props {
 
 const { t, currentLang = 'en' } = Astro.props;
 
-/**
- * Build app URL with optional language parameter.
- * Handles both paths and existing query parameters.
- */
-const buildAppUrl = (path: string = '', queryParams: string = '') => {
-  const base = `https://app.translitpro.com${path}`;
-  const langParam = currentLang !== 'en' ? `lang=${currentLang}` : '';
-
-  if (queryParams && langParam) {
-    return `${base}?${queryParams}&${langParam}`;
-  } else if (queryParams) {
-    return `${base}?${queryParams}`;
-  } else if (langParam) {
-    return `${base}?${langParam}`;
-  }
-  return base;
-};
-
 const tiers = [
   {
     ...t.pricing.free,
-    href: buildAppUrl(),
+    href: buildAppUrl('', currentLang),
     highlighted: false,
     badge: null,
   },
   {
     ...t.pricing.basic,
-    href: buildAppUrl('/signup', 'plan=basic'),
+    href: buildAppUrl('/signup', currentLang, 'plan=basic'),
     highlighted: false,
     badge: null,
   },
   {
     ...t.pricing.pro,
-    href: buildAppUrl('/signup', 'plan=pro'),
+    href: buildAppUrl('/signup', currentLang, 'plan=pro'),
     highlighted: true,
     badge: t.pricing.pro.badge,
   },
   {
     ...t.pricing.founder,
-    href: buildAppUrl('/signup', 'plan=founder'),
+    href: buildAppUrl('/signup', currentLang, 'plan=founder'),
     highlighted: false,
     badge: t.pricing.founder.badge,
   },

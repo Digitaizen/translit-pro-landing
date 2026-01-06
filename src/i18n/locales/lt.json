@@ -168,6 +168,10 @@
       "cancelAnytime": {
         "question": "Ar galiu bet kada atšaukti prenumeratą?",
         "answer": "Visiškai! Prenumeratą galite atšaukti bet kuriuo metu savo paskyros nustatymuose. Mokamomis funkcijomis galėsite naudotis iki atsiskaitymo laikotarpio pabaigos."
+      },
+      "preventCombinations": {
+        "question": "Ar galiu neleisti tam tikrų raidžių kombinacijų transliteruoti kartu?",
+        "answer": "Taip! Naudokite + simbolį kaip skyriklį. Tai nurodo TranslitPro transliteruoti kiekvieną raidę atskirai, o ne kaip porą. Pavyzdžiai (kirilica): s+h → «сх» (vietoj «ш»), t+s → «тс» (vietoj «ц»), z+h → «зх» (vietoj «ж»)."
       }
     }
   },

@@ -83,6 +83,28 @@ npm run build
 npm run preview
 ```
 
+### Local Testing with Main App
+
+To test the landing page CTAs with a locally running main app:
+
+1. Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Set `PUBLIC_APP_URL` in `.env` to your local app URL:
+   ```
+   PUBLIC_APP_URL=http://localhost:5173
+   ```
+
+3. Run both apps:
+   - Main app at `http://localhost:5173`
+   - Landing page at `http://localhost:4321`
+
+4. All CTA buttons will now link to your local app for testing.
+
+**Note:** Remove or comment out `PUBLIC_APP_URL` in `.env` before deploying, or simply delete the `.env` file. The production default (`https://app.translitpro.com`) will be used automatically.
+
 ## Styling
 
 The landing page uses **Tailwind CSS v4** with static utility classes for styling.
@@ -215,6 +237,12 @@ The landing page CTAs link directly to the main app at `app.translitpro.com` wit
 ### Language Pass-through
 
 When a user visits a localized landing page (e.g., `/ru/`), all CTA links automatically include the `?lang=xx` parameter to ensure a seamless language experience when transitioning to the main app. English users get clean URLs without the language parameter.
+
+## Translation TODOs
+
+The following translations need manual review:
+
+- [ ] **Armenian (hy.json)**: The `preventCombinations` FAQ entry has English placeholder text that needs to be translated to Armenian.
 
 ## Next Steps Checklist
 
