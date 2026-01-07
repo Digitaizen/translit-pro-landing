@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Дэсктопны пакет транслітарацыі для 13+ моў",
-    "headline1": "Пішыце",
-    "headline2": "Любым пісьмом",
-    "headline3": "Выкарыстоўваючы вашу клавіятуру",
+    "headline": "<span class=\"block whitespace-nowrap\">Пішыце <span class=\"text-emerald-500\">на любой роднай мове</span></span><span class=\"block whitespace-nowrap\">выкарыстоўваючы вашу <span class=\"text-indigo-500\">лацінскую клавіятуру</span></span>",
     "subheadline": "Транслітаруйце ў кірыліцу, іўрыт, грэчаскую, грузінскую, армянскую і іншыя мовы — усё з вашай лацінскай клавіятуры. Плюс пераклад, праверка арфаграфіі і магутны рэдактар. Дадавайце любую мову, якая вам патрэбна.",
     "ctaPrimary": "Пачаць бясплатна — без рэгістрацыі",
     "ctaSecondary": "Праглядзець цэны",
@@ -205,6 +203,7 @@
     "custom": "+ Уласная",
     "privacyPolicy": "Палітыка канфідэнцыяльнасці",
     "termsOfService": "Умовы выкарыстання",
-    "copyright": "© {{year}} TranslitPro. Усе правы абаронены."
+    "copyright": "© {{year}} TranslitPro. Усе правы абаронены.",
+    "ownership": "TranslitPro належыць і кіруецца кампаніяй 5am Works LLC."
   }
 }

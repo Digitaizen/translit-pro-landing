@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Десктопний пакет транслітерації для 13+ мов",
-    "headline1": "Пишіть",
-    "headline2": "Будь-яким письмом",
-    "headline3": "Використовуючи вашу клавіатуру",
+    "headline": "<span class=\"block whitespace-nowrap\">Пишіть <span class=\"text-emerald-500\">будь-якою рідною мовою</span></span><span class=\"block whitespace-nowrap\">використовуючи вашу <span class=\"text-indigo-500\">латинську клавіатуру</span></span>",
     "subheadline": "Транслітеруйте в кирилицю, іврит, грецьку, грузинську, вірменську та інші мови — усе з вашої латинської клавіатури. Плюс переклад, перевірка орфографії та потужний редактор. Додавайте будь-яку мову, яка вам потрібна.",
     "ctaPrimary": "Почати безкоштовно — без реєстрації",
     "ctaSecondary": "Переглянути ціни",
@@ -205,6 +203,7 @@
     "custom": "+ Власна",
     "privacyPolicy": "Політика конфіденційності",
     "termsOfService": "Умови використання",
-    "copyright": "© {{year}} TranslitPro. Усі права захищено."
+    "copyright": "© {{year}} TranslitPro. Усі права захищено.",
+    "ownership": "TranslitPro належить і управляється компанією 5am Works LLC."
   }
 }

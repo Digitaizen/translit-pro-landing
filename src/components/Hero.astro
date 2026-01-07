@@ -24,22 +24,18 @@ if (!t || !t.hero) {
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-indigo-500/20 rounded-full blur-3xl"></div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-4xl mx-auto">
-      <!-- Badge -->
-      <div class="inline-flex items-center px-4 py-1.5 mb-6 text-sm font-medium text-indigo-300 bg-indigo-500/10 rounded-full border border-indigo-500/20">
+    <!-- Badge - centered -->
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center px-4 py-1.5 text-sm font-medium text-indigo-300 bg-indigo-500/10 rounded-full border border-indigo-500/20">
         <span class="mr-2">🖥️</span>
         {t.hero.badge}
       </div>
+    </div>
 
-      <!-- Headline -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-        <span class="text-white">{t.hero.headline1} </span>
-        <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-          {t.hero.headline2}
-        </span>
-        <br />
-        <span class="text-white">{t.hero.headline3}</span>
-      </h1>
+    <!-- Headline - full width, centered, responsive font scaling -->
+    <h1 class="text-[clamp(1.75rem,5vw,3.75rem)] font-bold tracking-tight mb-6 text-white text-center" set:html={t.hero.headline} />
+
+    <div class="text-center max-w-4xl mx-auto">
 
       <!-- Subheadline -->
       <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10">

@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "13+ тілге арналған десктоптық транслитерация топтамасы",
-    "headline1": "Өз пернетақтаңызбен",
-    "headline2": "кез келген әліпбиде",
-    "headline3": "жазыңыз",
+    "headline": "<span class=\"block whitespace-nowrap\">Жазыңыз <span class=\"text-emerald-500\">кез келген ана тілінде</span></span><span class=\"block whitespace-nowrap\">өзіңіздің <span class=\"text-indigo-500\">латын пернетақтаңызбен</span></span>",
     "subheadline": "Латын пернетақтасынан кириллица, иврит, грек, грузин, армян және т.б. тілдерге транслитерация жасаңыз. Сонымен қатар аударма, емле тексерісі және қуатты редактор қолжетімді. Өзіңізге қажетті кез келген тілді қосыңыз.",
     "ctaPrimary": "Тегін бастау — тіркелусіз",
     "ctaSecondary": "Тарифтерді көру",
@@ -205,6 +203,7 @@
     "custom": "+ Жеке",
     "privacyPolicy": "Құпиялылық саясаты",
     "termsOfService": "Пайдалану шарттары",
-    "copyright": "© {{year}} TranslitPro. Барлық құқықтар қорғалған."
+    "copyright": "© {{year}} TranslitPro. Барлық құқықтар қорғалған.",
+    "ownership": "TranslitPro 5am Works LLC компаниясына тиесілі және басқарылады."
   }
 }

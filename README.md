@@ -182,6 +182,7 @@ The landing page supports 13 languages with full localization:
 - **SEO Optimized**: Proper `hreflang` tags for all language variants
 - **RTL Support**: Right-to-left layout for Hebrew
 - **Localized Content**: All sections (hero, features, pricing, FAQ, footer) fully translated
+- **Responsive Headlines**: Hero headlines use CSS `clamp()` for viewport-responsive font sizing that maintains 2-line layout across all languages
 
 ### Adding a New Language
 
@@ -242,19 +243,19 @@ When a user visits a localized landing page (e.g., `/ru/`), all CTA links automa
 
 The following translations need manual review:
 
-- [ ] **Armenian (hy.json)**: The `preventCombinations` FAQ entry has English placeholder text that needs to be translated to Armenian.
+- [x] **Armenian (hy.json)**: The `preventCombinations` FAQ entry has English placeholder text that needs to be translated to Armenian.
 
 ## Next Steps Checklist
 
 - [ ] **Domain Setup**: Point `translitpro.com` to Cloudflare Pages
 - [ ] **App Subdomain**: Ensure `app.translitpro.com` points to the main app
-- [ ] **Privacy Policy**: Create `/privacy` page with privacy policy content
-- [ ] **Terms of Service**: Create `/terms` page with terms content
-- [ ] **Social Media**: Create Twitter (@translitpro) and Facebook (facebook.com/translitpro) pages
-- [ ] **Analytics**: Add Cloudflare Web Analytics or Google Analytics
-- [ ] **Images**: Add Open Graph image (`/og-image.png`) for social sharing
+- [x] **Privacy Policy**: Create `/privacy` page with privacy policy content (app.translitpro.com/privacy)
+- [x] **Terms of Service**: Create `/terms` page with terms content (app.translitpro.com/terms)
+- [x] **Social Media**: Create Facebook (facebook.com/translitpro) pages
+- [x] **Images**: Add Open Graph image (`/og-image.png`) for social sharing
 - [x] **Branding**: Logo, title, and favicon images integrated
 - [x] **Contact Form**: Contact support modal with EmailJS integration
+- [ ] **Analytics**: Add Cloudflare Web Analytics or Google Analytics
 - [ ] **Blog**: Consider adding a blog section for SEO content marketing
 - [ ] **A/B Testing**: Set up conversion tracking for CTA buttons
 - [ ] **Performance**: Run Lighthouse audit and optimize as needed

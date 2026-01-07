@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Настольный пакет транслитерации для 13+ языков",
-    "headline1": "Печатайте на",
-    "headline2": "любом алфавите",
-    "headline3": "используя вашу клавиатуру",
+    "headline": "<span class=\"block whitespace-nowrap\">Пишите на <span class=\"text-emerald-500\">любом родном языке</span></span><span class=\"block whitespace-nowrap\">используя вашу <span class=\"text-indigo-500\">латинскую клавиатуру</span></span>",
     "subheadline": "Транслитерация на кириллицу, иврит, греческий, грузинский, армянский и другие — всё с вашей латинской клавиатуры. Плюс перевод, проверка орфографии и мощный редактор. Добавьте любой нужный язык.",
     "ctaPrimary": "Начать бесплатно — без регистрации",
     "ctaSecondary": "Посмотреть цены",
@@ -205,7 +203,8 @@
     "custom": "+ Свой",
     "privacyPolicy": "Политика конфиденциальности",
     "termsOfService": "Условия использования",
-    "copyright": "© {{year}} TranslitPro. Все права защищены."
+    "copyright": "© {{year}} TranslitPro. Все права защищены.",
+    "ownership": "TranslitPro принадлежит и управляется компанией 5am Works LLC."
   }
 }
 

@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Маҷмӯи транслитератсияи мизи корӣ барои 13+ забон",
-    "headline1": "Бо клавиатураи худ",
-    "headline2": "бо ҳар хатте",
-    "headline3": "бинависед",
+    "headline": "<span class=\"block whitespace-nowrap\">Бинависед бо <span class=\"text-emerald-500\">ҳар забони модарӣ</span></span><span class=\"block whitespace-nowrap\">бо <span class=\"text-indigo-500\">клавиатураи лотинии худ</span></span>",
     "subheadline": "Транслитератсия ба кирилӣ, ибрӣ, юнонӣ, гурҷӣ, арманӣ ва ғайра — ҳама аз клавиатураи лотинии шумо. Илова бар ин тарҷума, санҷиши имло ва муҳаррири тавоно. Ҳар забонеро, ки бароятон лозим аст, илова кунед.",
     "ctaPrimary": "Оғози ройгон — бидуни сабти ном",
     "ctaSecondary": "Дидани нархҳо",
@@ -205,6 +203,7 @@
     "custom": "+ Фармоишӣ",
     "privacyPolicy": "Сиёсати махфият",
     "termsOfService": "Шартҳои истифода",
-    "copyright": "© {{year}} TranslitPro. Ҳамаи ҳуқуқҳо маҳфузанд."
+    "copyright": "© {{year}} TranslitPro. Ҳамаи ҳуқуқҳо маҳфузанд.",
+    "ownership": "TranslitPro моликият ва идоракунии 5am Works LLC мебошад."
   }
 }

@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Stalinis transliteracijos rinkinys 13+ kalbų",
-    "headline1": "Rašykite",
-    "headline2": "bet kokiu raštu",
-    "headline3": "naudodami savo klaviatūrą",
+    "headline": "<span class=\"block whitespace-nowrap\">Rašykite <span class=\"text-emerald-500\">bet kuria gimtąja kalba</span></span><span class=\"block whitespace-nowrap\">naudodami savo <span class=\"text-indigo-500\">lotynišką klaviatūrą</span></span>",
     "subheadline": "Transliteruokite į kirilicą, hebrajų, graikų, sakartvelų, armėnų ir kitas kalbas tiesiai iš savo lotyniškos klaviatūros. Papildomai – vertimas, rašybos tikrinimas ir galingas redaktorius. Pridėkite bet kurią kalbą, kurios jums reikia.",
     "ctaPrimary": "Pradėti nemokamai – be registracijos",
     "ctaSecondary": "Žiūrėti kainas",
@@ -205,6 +203,7 @@
     "custom": "+ Pasirinktinė",
     "privacyPolicy": "Privatumo politika",
     "termsOfService": "Paslaugų teikimo sąlygos",
-    "copyright": "© {{year}} TranslitPro. Visos teisės saugomos."
+    "copyright": "© {{year}} TranslitPro. Visos teisės saugomos.",
+    "ownership": "TranslitPro priklauso ir yra valdoma 5am Works LLC."
   }
 }

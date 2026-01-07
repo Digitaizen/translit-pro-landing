@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Desktop Σουίτα Μεταγραμματισμού για 13+ Γλώσσες",
-    "headline1": "Γράψτε σε",
-    "headline2": "Οποιαδήποτε Γραφή",
-    "headline3": "με το Πληκτρολόγιό σας",
+    "headline": "<span class=\"block whitespace-nowrap\">Γράψτε σε <span class=\"text-emerald-500\">Οποιαδήποτε Μητρική Γλώσσα</span></span><span class=\"block whitespace-nowrap\">με το <span class=\"text-indigo-500\">Λατινικό Πληκτρολόγιό σας</span></span>",
     "subheadline": "Μεταγραμματίστε σε Κυριλλικά, Εβραϊκά, Ελληνικά, Γεωργιανά, Αρμενικά και άλλα — όλα από το λατινικό σας πληκτρολόγιο. Επιπλέον μετάφραση, ορθογραφικός έλεγχος και ένας ισχυρός επεξεργαστής. Προσθέστε όποια γλώσσα χρειάζεστε.",
     "ctaPrimary": "Ξεκινήστε Δωρεάν — Χωρίς Εγγραφή",
     "ctaSecondary": "Δείτε την Τιμολόγηση",
@@ -221,6 +219,7 @@
     "custom": "+ Προσαρμοσμένη",
     "privacyPolicy": "Πολιτική Απορρήτου",
     "termsOfService": "Όροι Χρήσης",
-    "copyright": "© {{year}} TranslitPro. Με την επιφύλαξη παντός δικαιώματος."
+    "copyright": "© {{year}} TranslitPro. Με την επιφύλαξη παντός δικαιώματος.",
+    "ownership": "Το TranslitPro ανήκει και διαχειρίζεται από την 5am Works LLC."
   }
 }
