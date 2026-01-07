@@ -4,34 +4,37 @@
  * Highlights the Pro tier as "Most Popular".
  */
 
+import { buildAppUrl } from '../config';
+
 interface Props {
   t: any;
+  currentLang?: string;
 }
 
-const { t } = Astro.props;
+const { t, currentLang = 'en' } = Astro.props;
 
 const tiers = [
   {
     ...t.pricing.free,
-    href: 'https://app.translitpro.com',
+    href: buildAppUrl('', currentLang),
     highlighted: false,
     badge: null,
   },
   {
     ...t.pricing.basic,
-    href: 'https://app.translitpro.com/signup?plan=basic',
+    href: buildAppUrl('/signup', currentLang, 'plan=basic'),
     highlighted: false,
     badge: null,
   },
   {
     ...t.pricing.pro,
-    href: 'https://app.translitpro.com/signup?plan=pro',
+    href: buildAppUrl('/signup', currentLang, 'plan=pro'),
     highlighted: true,
     badge: t.pricing.pro.badge,
   },
   {
     ...t.pricing.founder,
-    href: 'https://app.translitpro.com/signup?plan=founder',
+    href: buildAppUrl('/signup', currentLang, 'plan=founder'),
     highlighted: false,
     badge: t.pricing.founder.badge,
   },

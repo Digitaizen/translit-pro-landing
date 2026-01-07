@@ -63,12 +63,13 @@ const currentYear = new Date().getFullYear();
     <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="text-slate-500 text-sm text-center sm:text-left">
         <p>{t.footer.copyright.replace('{{year}}', currentYear.toString())}</p>
-        <p class="mt-1">TranslitPro is owned and operated by 5am Works LLC.</p>
+        <p class="mt-1">{t.footer.ownership}</p>
       </div>
       
       <!-- Social Links -->
       <div class="flex items-center gap-4">
-        <a href="https://twitter.com/translitpro" class="text-slate-400 hover:text-white transition-colors" aria-label="Twitter">
+        <!-- Hidden until X page exists -->
+        <a href="https://twitter.com/translitpro" class="hidden text-slate-400 hover:text-white transition-colors" aria-label="Twitter">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
           </svg>

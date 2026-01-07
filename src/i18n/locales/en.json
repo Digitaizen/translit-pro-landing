@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "Desktop Transliteration Suite for 13+ Languages",
-    "headline1": "Type in",
-    "headline2": "Any Script",
-    "headline3": "Using Your Keyboard",
+    "headline": "<span class=\"block whitespace-nowrap\">Type in <span class=\"text-emerald-500\">Any Native Language</span> Script</span><span class=\"block whitespace-nowrap\">Using Your <span class=\"text-indigo-500\">Latin Keyboard</span></span>",
     "subheadline": "Transliterate to Cyrillic, Hebrew, Greek, Georgian, Armenian, and more — all from your Latin keyboard. Plus translation, spellcheck, and a powerful editor. Add any language you need.",
     "ctaPrimary": "Start Free — No Signup",
     "ctaSecondary": "View Pricing",
@@ -168,6 +166,10 @@
       "cancelAnytime": {
         "question": "Can I cancel my subscription anytime?",
         "answer": "Absolutely! You can cancel your subscription at any time from your account settings. You'll continue to have access to paid features until the end of your billing period."
+      },
+      "preventCombinations": {
+        "question": "Can I prevent certain letter combinations from being transliterated together?",
+        "answer": "Yes! Use the + symbol as a separator. This tells TranslitPro to transliterate each letter individually instead of as a pair. Examples (Cyrillic): s+h → \"сх\" (instead of \"ш\"), t+s → \"тс\" (instead of \"ц\"), z+h → \"зх\" (instead of \"ж\")."
       }
     }
   },
@@ -201,7 +203,8 @@
     "custom": "+ Custom",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
-    "copyright": "© {{year}} TranslitPro. All rights reserved."
+    "copyright": "© {{year}} TranslitPro. All rights reserved.",
+    "ownership": "TranslitPro is owned and operated by 5am Works LLC."
   }
 }
 

@@ -13,9 +13,7 @@
   },
   "hero": {
     "badge": "חבילת תעתיק לשולחן העבודה ליותר מ-13 שפות",
-    "headline1": "כתבו ב",
-    "headline2": "כל סוג כתב",
-    "headline3": "באמצעות המקלדת שלכם",
+    "headline": "<span class=\"block whitespace-nowrap\">כתבו בכל <span class=\"text-emerald-500\">שפת אם</span></span><span class=\"block whitespace-nowrap\">באמצעות <span class=\"text-indigo-500\">המקלדת הלטינית שלכם</span></span>",
     "subheadline": "בצעו תעתיק לקירילית, עברית, יוונית, גיאורגית, ארמנית ועוד — הכל מהמקלדת הלטינית שלכם. בנוסף לתרגום, בדיקת איות ועורך טקסט חזק. הוסיפו כל שפה שתרצו.",
     "ctaPrimary": "התחילו בחינם — ללא הרשמה",
     "ctaSecondary": "צפו במחירים",
@@ -168,6 +166,10 @@
       "cancelAnytime": {
         "question": "האם אפשר לבטל את המנוי בכל עת?",
         "answer": "בהחלט! ניתן לבטל את המנוי בכל עת דרך הגדרות החשבון. הגישה לתכונות בתשלום תימשך עד סוף תקופת החיוב הנוכחית."
+      },
+      "preventCombinations": {
+        "question": "האם ניתן למנוע תעתיק של שילובי אותיות מסוימים?",
+        "answer": "כן! השתמשו בסימן + כמפריד. זה אומר ל-TranslitPro לתעתק כל אות בנפרד במקום כזוג. דוגמאות (קירילית): s+h → «сх» (במקום «ш»), t+s → «тс» (במקום «ц»), z+h → «зх» (במקום «ж»)."
       }
     }
   },
@@ -201,6 +203,7 @@
     "custom": "+ מותאם אישית",
     "privacyPolicy": "מדיניות פרטיות",
     "termsOfService": "תנאי שימוש",
-    "copyright": "© {{year}} TranslitPro. כל הזכויות שמורות."
+    "copyright": "© {{year}} TranslitPro. כל הזכויות שמורות.",
+    "ownership": "TranslitPro בבעלות ומופעל על ידי 5am Works LLC."
   }
 }
