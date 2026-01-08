@@ -4,6 +4,12 @@
  */
 
 /**
+ * Show/hide the "Under Construction" banner in the header.
+ * Set to true to display the banner, false to hide it.
+ */
+export const SHOW_UNDER_CONSTRUCTION = true;
+
+/**
  * Base URL for the main TranslitPro app.
  * - Development: Set PUBLIC_APP_URL in .env to your local app URL
  * - Production: Defaults to https://app.translitpro.com
