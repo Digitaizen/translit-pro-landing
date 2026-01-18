@@ -23,6 +23,12 @@ const fullTitle = `${title} | ${siteName}`;
 const currentLanguage = getLanguageByCode(currentLang);
 const langDir = currentLanguage?.dir || 'ltr';
 
+/**
+ * List of supported language codes that can be requested via the `?lang=` query parameter.
+ * This is embedded into the client-side redirect script.
+ */
+const supportedLangCodes = languages.map((lang) => lang.code);
+
 // Generate hreflang URLs for all languages
 const baseUrl = Astro.site?.toString() || 'https://www.translitpro.com';
 const hreflangs = languages.map(lang => ({
@@ -37,6 +43,43 @@ const hreflangs = languages.map(lang => ({
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+	  
+	  <!--
+	    Optional UI language override via query param.
+	    Example: /?lang=ru or /?lang=ru#pricing
+	    Redirects to the corresponding localized route (e.g. /ru/) while preserving hash.
+	  -->
+	  <script is:inline>
+	    (() => {
+	      const supportedLangs = {JSON.stringify(supportedLangCodes)};
+	      const currentLang = {JSON.stringify(currentLang)};
+
+	      const url = new URL(window.location.href);
+	      const requestedLang = url.searchParams.get('lang');
+	      if (!requestedLang) return;
+	      if (!supportedLangs.includes(requestedLang)) return;
+
+	      // If the requested language matches the current page language, just clean the URL.
+	      if (requestedLang === currentLang) {
+	        url.searchParams.delete('lang');
+	        const cleaned = url.pathname + (url.search ? url.search : '') + (url.hash ? url.hash : '');
+	        if (cleaned !== window.location.pathname + window.location.search + window.location.hash) {
+	          window.history.replaceState({}, '', cleaned);
+	        }
+	        return;
+	      }
+
+	      // Build the target localized path (English lives at the root).
+	      const targetPath = requestedLang === 'en' ? '/' : `/${requestedLang}/`;
+
+	      // Preserve any other query parameters, but remove `lang`.
+	      url.searchParams.delete('lang');
+	      const restQuery = url.searchParams.toString();
+	      const targetUrl = targetPath + (restQuery ? `?${restQuery}` : '') + (url.hash || '');
+
+	      window.location.replace(targetUrl);
+	    })();
+	  </script>
     
     <!-- Primary Meta Tags -->
     <title>{fullTitle}</title>

@@ -206,34 +206,43 @@ The landing page supports 13 languages with full localization:
 
 The landing page CTAs link directly to the main app at `app.translitpro.com` with deep linking support for authentication modals and language preferences.
 
+### Landing Page inbound deep links
+
+The main app can link to the landing page with a `?lang=xx` query parameter to automatically set the landing page UI language.
+
+- Example (open landing in Russian): `https://www.translitpro.com/?lang=ru`
+- Example (open a specific section in Russian): `https://www.translitpro.com/?lang=ru#features`
+
+The landing page will redirect to the corresponding localized route (e.g. `/ru/`) while preserving the hash (e.g. `#features`, `#pricing`, `#faq`).
+
 ### Supported Routes
 
-| Route | Modal Opened |
-|-------|-------------|
-| `/login` | Login modal |
-| `/signup` | Signup modal (generic) |
-| `/trial` | Start Free Trial modal |
-| `/forgot-password` | Forgot password modal |
+| Route              | Modal Opened           |
+| ------------------ | ---------------------- |
+| `/login`           | Login modal            |
+| `/signup`          | Signup modal (generic) |
+| `/trial`           | Start Free Trial modal |
+| `/forgot-password` | Forgot password modal  |
 
-### URL Parameters
+### Main app URL parameters
 
-| Parameter | Values | Effect |
-|-----------|--------|--------|
-| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt` | Sets UI language |
-| `?action=` | `login`, `signup`, `trial`, `forgot-password` | Opens corresponding modal |
-| `?plan=` | `basic`, `pro`, `founder` | Pre-selects pricing plan |
+| Parameter  | Values                                                                        | Effect                    |
+| ---------- | ----------------------------------------------------------------------------- | ------------------------- |
+| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt` | Sets UI language          |
+| `?action=` | `login`, `signup`, `trial`, `forgot-password`                                 | Opens corresponding modal |
+| `?plan=`   | `basic`, `pro`, `founder`                                                     | Pre-selects pricing plan  |
 
 ### Landing Page Button Mapping
 
-| Button | URL |
-|--------|-----|
-| Header: "Start Now" | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
-| Header: "Sign In" | `https://app.translitpro.com/login` |
-| Hero: Primary CTA | `https://app.translitpro.com` (+ `?lang=xx` if non-English) |
-| Pricing: Free tier | `https://app.translitpro.com` |
-| Pricing: Basic tier | `https://app.translitpro.com/signup?plan=basic` |
-| Pricing: Pro tier | `https://app.translitpro.com/signup?plan=pro` |
-| Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder` |
+| Button                | URL                                                               |
+| --------------------- | ----------------------------------------------------------------- |
+| Header: "Start Now"   | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
+| Header: "Sign In"     | `https://app.translitpro.com/login`                               |
+| Hero: Primary CTA     | `https://app.translitpro.com` (+ `?lang=xx` if non-English)       |
+| Pricing: Free tier    | `https://app.translitpro.com`                                     |
+| Pricing: Basic tier   | `https://app.translitpro.com/signup?plan=basic`                   |
+| Pricing: Pro tier     | `https://app.translitpro.com/signup?plan=pro`                     |
+| Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder`                 |
 
 ### Language Pass-through
 
