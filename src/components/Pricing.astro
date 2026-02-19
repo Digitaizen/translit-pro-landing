@@ -5,6 +5,7 @@
  */
 
 import { buildAppUrl } from '../config';
+import { getPricingTiers } from '../features/pricing/getPricingTiers';
 
 interface Props {
   t: any;
@@ -13,27 +14,33 @@ interface Props {
 
 const { t, currentLang = 'en' } = Astro.props;
 
+const pricing = getPricingTiers();
+
 const tiers = [
   {
     ...t.pricing.free,
+    ...pricing.free,
     href: buildAppUrl('', currentLang),
     highlighted: false,
     badge: null,
   },
   {
     ...t.pricing.basic,
+    ...pricing.basic,
     href: buildAppUrl('/signup', currentLang, 'plan=basic'),
     highlighted: false,
     badge: null,
   },
   {
     ...t.pricing.pro,
+    ...pricing.pro,
     href: buildAppUrl('/signup', currentLang, 'plan=pro'),
     highlighted: true,
     badge: t.pricing.pro.badge,
   },
   {
     ...t.pricing.founder,
+    ...pricing.founder,
     href: buildAppUrl('/signup', currentLang, 'plan=founder'),
     highlighted: false,
     badge: t.pricing.founder.badge,
@@ -78,12 +85,23 @@ const tiers = [
             </p>
           </div>
 
-          <div class="mb-6">
-            <span class="text-4xl font-bold text-white">{tier.price}</span>
-            <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-              {tier.period}
-            </span>
-          </div>
+              <div class="mb-6">
+                <div>
+                  <span class="text-4xl font-bold text-white">{tier.price}</span>
+                  <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+                    {tier.period}
+                  </span>
+                </div>
+
+                {tier.annualPrice && tier.periodAnnual && (
+                  <div class:list={["mt-2 text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+                    <span class="font-semibold text-white">{tier.annualPrice}</span>
+                    <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+                      {tier.periodAnnual}
+                    </span>
+                  </div>
+                )}
+              </div>
 
           <ul class="flex-1 space-y-3 mb-6">
             {tier.features.map((feature: any) => (

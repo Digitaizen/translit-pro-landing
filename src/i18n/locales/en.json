@@ -65,7 +65,6 @@
     "free": {
       "name": "Free",
       "tagline": "Try instantly, no signup",
-      "price": "$0",
       "period": "forever",
       "cta": "Start Free",
       "features": [
@@ -83,8 +82,8 @@
     "basic": {
       "name": "Basic",
       "tagline": "Make it yours",
-      "price": "$1.50",
       "period": "/month",
+      "periodAnnual": "/annual",
       "cta": "Start Basic",
       "features": [
         "Everything in Free",
@@ -101,8 +100,8 @@
     "pro": {
       "name": "Pro",
       "tagline": "Type anywhere, save everything",
-      "price": "$5",
       "period": "/month",
+      "periodAnnual": "/annual",
       "cta": "Go Pro",
       "badge": "Most Popular",
       "features": [
@@ -118,8 +117,7 @@
     "founder": {
       "name": "Founder",
       "tagline": "Lifetime Pro for early supporters",
-      "price": "$50",
-      "period": "once",
+      "period": "/onetime",
       "cta": "Become a Founder",
       "badge": "Limited Time",
       "features": [

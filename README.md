@@ -33,6 +33,9 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   ├── Footer.astro      # Footer with links
 │   │   ├── ContactModal.astro # Contact support modal with EmailJS
 │   │   └── LanguageDropdown.astro  # Language switcher component
+│   ├── features/
+│   │   └── pricing/
+│   │       └── getPricingTiers.ts # Centralized plan prices (single source of truth)
 │   ├── i18n/
 │   │   ├── locales/          # Translation files for all languages
 │   │   │   ├── en.json       # English (default)
@@ -150,10 +153,19 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In and Try Free CTAs
 2. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
 3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
-4. **Pricing** - 4 tiers: Free, Basic ($1.50/mo), Pro ($5/mo), Founder ($50 once)
+4. **Pricing** - 4 tiers: Free, Basic ($3/mo or $29/annual), Pro ($7/mo or $69/annual), Founder ($79 one-time)
 5. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
 6. **Contact Modal** - Contact support form with EmailJS integration (RTL-aware)
 7. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
+
+### Pricing configuration
+
+Plan prices are **not** stored in translation files anymore.
+
+- **Single source of truth**: `src/features/pricing/getPricingTiers.ts`
+- **i18n locales** (`src/i18n/locales/*.json`) contain only localized copy (plan names, taglines, features) and period labels (e.g. `period`, `periodAnnual`).
+
+To update prices, edit the constants in `getPricingTiers.ts` and rebuild.
 
 ## Internationalization (i18n)
 

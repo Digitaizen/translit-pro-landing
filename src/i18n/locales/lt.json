@@ -65,7 +65,6 @@
     "free": {
       "name": "Nemokamas",
       "tagline": "Išbandykite iškart, be registracijos",
-      "price": "0 €",
       "period": "visada",
       "cta": "Pradėti nemokamai",
       "features": [
@@ -83,8 +82,8 @@
     "basic": {
       "name": "Bazinis",
       "tagline": "Padarykite jį savo",
-      "price": "1,50 €",
       "period": "/ mėn.",
+      "periodAnnual": "/ metus",
       "cta": "Pradėti Bazinį",
       "features": [
         "Viskas, kas yra Nemokamame plane",
@@ -101,8 +100,8 @@
     "pro": {
       "name": "Pro",
       "tagline": "Rašykite bet kur, saugokite viską",
-      "price": "5 €",
       "period": "/ mėn.",
+      "periodAnnual": "/ metus",
       "cta": "Tapti Pro",
       "badge": "Populiariausias",
       "features": [
@@ -118,7 +117,6 @@
     "founder": {
       "name": "Įkūrėjas",
       "tagline": "Pro versija visam gyvenimui ankstyviesiems rėmėjams",
-      "price": "50 €",
       "period": "vieną kartą",
       "cta": "Tapti įkūrėju",
       "badge": "Ribotas laikas",
