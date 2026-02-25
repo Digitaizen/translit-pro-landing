@@ -1,7 +1,15 @@
 ---
 /**
- * Pricing section component - displays all pricing tiers.
- * Highlights the Pro tier as "Most Popular".
+ * Pricing section component.
+ *
+ * EN (master) supports a tabbed pricing UI:
+ * - Starter: Anonymous | Registered
+ * - Basic: Monthly | Annual (shows "Save $X")
+ * - Pro: Monthly | Annual (shows "Save $X")
+ * - Founder: no tabs
+ *
+ * Other locales may not have the new pricing copy yet; this component includes
+ * a legacy fallback rendering to keep all locale routes prerenderable.
  */
 
 import { buildAppUrl } from '../config';
@@ -16,36 +24,55 @@ const { t, currentLang = 'en' } = Astro.props;
 
 const pricing = getPricingTiers();
 
-const tiers = [
-  {
-    ...t.pricing.free,
-    ...pricing.free,
-    href: buildAppUrl('', currentLang),
-    highlighted: false,
-    badge: null,
-  },
-  {
-    ...t.pricing.basic,
-    ...pricing.basic,
-    href: buildAppUrl('/signup', currentLang, 'plan=basic'),
-    highlighted: false,
-    badge: null,
-  },
-  {
-    ...t.pricing.pro,
-    ...pricing.pro,
-    href: buildAppUrl('/signup', currentLang, 'plan=pro'),
-    highlighted: true,
-    badge: t.pricing.pro.badge,
-  },
-  {
-    ...t.pricing.founder,
-    ...pricing.founder,
-    href: buildAppUrl('/signup', currentLang, 'plan=founder'),
-    highlighted: false,
-    badge: t.pricing.founder.badge,
-  },
-];
+/**
+ * Whether current locale already contains the new tabbed pricing copy structure.
+ * This is true for English, and false for other locales until they are updated.
+ */
+const isTabbedPricingCopy = Boolean(
+  t?.pricing?.tabs &&
+    t?.pricing?.free?.anonymous &&
+    t?.pricing?.free?.registered &&
+    t?.pricing?.basic &&
+    t?.pricing?.pro &&
+    t?.pricing?.founder
+);
+
+/**
+ * Legacy tiers to keep other locales building until they are updated.
+ * Note: no "trial" tier is rendered anymore (4 plans total).
+ */
+const legacyTiers = !isTabbedPricingCopy
+  ? [
+      {
+        ...t.pricing.free,
+        ...pricing.free,
+        href: buildAppUrl('', currentLang),
+        highlighted: false,
+        badge: null,
+      },
+      {
+        ...t.pricing.basic,
+        ...pricing.basic,
+        href: buildAppUrl('/signup', currentLang, 'plan=basic'),
+        highlighted: false,
+        badge: null,
+      },
+      {
+        ...t.pricing.pro,
+        ...pricing.pro,
+        href: buildAppUrl('/signup', currentLang, 'plan=pro'),
+        highlighted: true,
+        badge: t.pricing.pro.badge,
+      },
+      {
+        ...t.pricing.founder,
+        ...pricing.founder,
+        href: buildAppUrl('/signup', currentLang, 'plan=founder'),
+        highlighted: false,
+        badge: t.pricing.founder.badge,
+      },
+    ]
+  : [];
 ---
 
 <section id="pricing" class="py-20 sm:py-32 bg-slate-950">
@@ -60,82 +87,389 @@ const tiers = [
       </p>
     </div>
 
-    <!-- Pricing Grid -->
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-      {tiers.map((tier: any) => (
-        <div class:list={[
-          "relative flex flex-col p-6 rounded-2xl border",
-          tier.highlighted
-            ? "bg-indigo-600 border-indigo-500 shadow-xl shadow-indigo-500/20"
-            : "bg-slate-800/50 border-slate-700"
-        ]}>
-          {tier.badge && (
-            <div class:list={[
-              "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 text-xs font-semibold rounded-full flex items-center justify-center text-center",
-              tier.highlighted ? "bg-white text-indigo-600" : "bg-amber-500 text-amber-950"
-            ]}>
-              {tier.badge}
-            </div>
-          )}
+	    {isTabbedPricingCopy ? (
+	      <!-- Pricing Grid (tabbed, EN master copy) -->
+	      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+		        <!-- Free (Preview | Workspace) -->
+	        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
+		          <div data-pricing-tabs-root data-default-tab="anonymous" data-tab-style="slate" class="flex flex-col flex-1">
+		            <div class="mb-6">
+		              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.free.name}</h3>
 
-          <div class="mb-6">
-            <h3 class="text-xl font-bold text-white mb-1">{tier.name}</h3>
-            <p class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-              {tier.tagline}
-            </p>
-          </div>
+		              <!-- Slogan (tabbed) -->
+		              <div data-tab-panels>
+		                <p data-panel="anonymous" class="text-sm text-slate-400">{t.pricing.free.anonymous.tagline}</p>
+		                <p data-panel="registered" class="hidden text-sm text-slate-400">{t.pricing.free.registered.tagline}</p>
+		              </div>
 
-              <div class="mb-6">
-                <div>
-                  <span class="text-4xl font-bold text-white">{tier.price}</span>
-                  <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-                    {tier.period}
-                  </span>
-                </div>
+		              <!-- Tabs (centered) -->
+		              <div class="mt-4 flex justify-center">
+		                <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" role="tablist">
+		                  <button
+		                    type="button"
+		                    data-tab="anonymous"
+		                    role="tab"
+		                    aria-selected="true"
+		                    class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-700 text-white"
+		                  >
+		                    {t.pricing.tabs.anonymous}
+		                  </button>
+		                  <button
+		                    type="button"
+		                    data-tab="registered"
+		                    role="tab"
+		                    aria-selected="false"
+		                    class="px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white"
+		                  >
+		                    {t.pricing.tabs.registered}
+		                  </button>
+		                </div>
+		              </div>
 
-                {tier.annualPrice && tier.periodAnnual && (
-                  <div class:list={["mt-2 text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-                    <span class="font-semibold text-white">{tier.annualPrice}</span>
-                    <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-                      {tier.periodAnnual}
-                    </span>
-                  </div>
-                )}
-              </div>
+		              <!-- Price (tabbed) -->
+		              <div class="mt-4" data-tab-panels>
+		                <div data-panel="anonymous">
+		                  <span class="text-4xl font-bold text-white">{pricing.free.price}</span>
+		                  <span class="text-md text-slate-400"> {t.pricing.free.anonymous.period}</span>
+		                </div>
+		                <div data-panel="registered" class="hidden">
+		                  <span class="text-4xl font-bold text-white">{pricing.free.price}</span>
+		                  <span class="text-md text-slate-400"> {t.pricing.free.registered.period}</span>
+		                </div>
+		              </div>
+		            </div>
 
-          <ul class="flex-1 space-y-3 mb-6">
-            {tier.features.map((feature: any) => (
-              <li class="flex items-start gap-2">
-                <svg class:list={["w-5 h-5 shrink-0", tier.highlighted ? "text-indigo-300" : "text-green-400"]} fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <span class:list={["text-sm", tier.highlighted ? "text-white" : "text-slate-300"]}>{feature}</span>
-              </li>
-            ))}
-            {tier.limitations.map((limitation: any) => (
-              <li class="flex items-start gap-2">
-                <svg class="w-5 h-5 shrink-0 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                </svg>
-                <span class="text-sm text-slate-700">{limitation}</span>
-              </li>
-            ))}
-          </ul>
+		            <!-- Features (tabbed) -->
+		            <div class="flex-1 mb-6" data-tab-panels>
+			            <div data-panel="anonymous">
+			              <ul class="flex-1 space-y-3">
+			                {t.pricing.free.anonymous.features.map((feature: any) => (
+			                  <li class="flex items-start gap-2">
+			                    <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+			                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+			                    </svg>
+			                    <span class="text-sm text-slate-300">{feature}</span>
+			                  </li>
+			                ))}
+			              </ul>
+			            </div>
 
-          <a
-            href={tier.href}
-            class:list={[
-              "block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors",
-              tier.highlighted
-                ? "bg-white text-indigo-600 hover:bg-indigo-100"
-                : "bg-slate-700 text-white hover:bg-slate-800"
-            ]}
-          >
-            {tier.cta}
-          </a>
-        </div>
-      ))}
-    </div>
+			            <div data-panel="registered" class="hidden">
+			              <ul class="flex-1 space-y-3">
+			                {t.pricing.free.registered.features.map((feature: any) => (
+			                  <li class="flex items-start gap-2">
+			                    <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+			                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+			                    </svg>
+			                    <span class="text-sm text-slate-300">{feature}</span>
+			                  </li>
+			                ))}
+			              </ul>
+			            </div>
+			          </div>
+		          <!-- CTA (tabbed) -->
+		          <div data-tab-panels>
+			            <a
+			              data-panel="anonymous"
+			              href={buildAppUrl('', currentLang)}
+			              class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
+			            >
+			              {t.pricing.free.anonymous.cta}
+			            </a>
+			            <a
+			              data-panel="registered"
+			              href={buildAppUrl('/signup', currentLang)}
+			              class="hidden block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
+			            >
+			              {t.pricing.free.registered.cta}
+			            </a>
+			          </div>
+		        </div>
+	        </div>
+
+	        <!-- Basic (Monthly | Annual) -->
+	        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
+	          <div class="mb-6">
+	            <h3 class="text-xl font-bold text-white mb-1">{t.pricing.basic.name}</h3>
+	            <p class="text-sm text-slate-400">{t.pricing.basic.tagline}</p>
+
+			            <div class="mt-4" data-pricing-tabs-root data-default-tab="monthly" data-tab-style="slate">
+			              <div class="flex justify-center">
+			                <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" role="tablist">
+	                <button type="button" data-tab="monthly" role="tab" aria-selected="true" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-700 text-white">
+	                  {t.pricing.tabs.monthly}
+	                </button>
+	                <button type="button" data-tab="annual" role="tab" aria-selected="false" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white">
+	                  {t.pricing.tabs.annual}
+	                </button>
+			                </div>
+			              </div>
+
+	              <div class="mt-4" data-tab-panels>
+	                <div data-panel="monthly">
+	                  <span class="text-4xl font-bold text-white">{pricing.basic.price}</span>
+	                  <span class="text-md text-slate-400">{t.pricing.basic.period}</span>
+	                </div>
+	                <div data-panel="annual" class="hidden">
+	                  <span class="text-4xl font-bold text-white">{pricing.basic.annualPrice}</span>
+		                  <span class="text-md text-slate-400">
+		                    {t.pricing.basic.periodAnnual} ({t.pricing.saveLabel} {pricing.basic.annualSavings})
+		                  </span>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+
+	          <ul class="flex-1 space-y-3 mb-6">
+	            {t.pricing.basic.features.map((feature: any) => (
+	              <li class="flex items-start gap-2">
+	                <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+	                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+	                </svg>
+	                <span class="text-sm text-slate-300">{feature}</span>
+	              </li>
+	            ))}
+	          </ul>
+
+	          <a
+	            href={buildAppUrl('/signup', currentLang, 'plan=basic')}
+	            class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
+	          >
+	            {t.pricing.basic.cta}
+	          </a>
+	        </div>
+
+	        <!-- Pro (Monthly | Annual) -->
+	        <div class="relative flex flex-col p-6 rounded-2xl border bg-indigo-600 border-indigo-500 shadow-xl shadow-indigo-500/20">
+	          {t.pricing.pro.badge && (
+			            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-400 text-slate-950 text-center">
+	              {t.pricing.pro.badge}
+	            </div>
+	          )}
+
+	          <div class="mb-6">
+	            <h3 class="text-xl font-bold text-white mb-1">{t.pricing.pro.name}</h3>
+	            <p class="text-sm text-indigo-200">{t.pricing.pro.tagline}</p>
+
+			            <div class="mt-4" data-pricing-tabs-root data-default-tab="monthly" data-tab-style="indigo">
+			              <div class="flex justify-center">
+			                <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-indigo-500/20 border border-indigo-400/30" role="tablist">
+	                <button type="button" data-tab="monthly" role="tab" aria-selected="true" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-indigo-700">
+	                  {t.pricing.tabs.monthly}
+	                </button>
+	                <button type="button" data-tab="annual" role="tab" aria-selected="false" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-indigo-100 hover:text-white">
+	                  {t.pricing.tabs.annual}
+	                </button>
+			                </div>
+			              </div>
+
+	              <div class="mt-4" data-tab-panels>
+	                <div data-panel="monthly">
+	                  <span class="text-4xl font-bold text-white">{pricing.pro.price}</span>
+	                  <span class="text-md text-indigo-200">{t.pricing.pro.period}</span>
+	                </div>
+	                <div data-panel="annual" class="hidden">
+	                  <span class="text-4xl font-bold text-white">{pricing.pro.annualPrice}</span>
+		                  <span class="text-md text-indigo-200">
+		                    {t.pricing.pro.periodAnnual} ({t.pricing.saveLabel} {pricing.pro.annualSavings})
+		                  </span>
+	                </div>
+	              </div>
+	            </div>
+	          </div>
+
+	          <ul class="flex-1 space-y-3 mb-6">
+	            {t.pricing.pro.features.map((feature: any) => (
+	              <li class="flex items-start gap-2">
+	                <svg class="w-5 h-5 shrink-0 text-indigo-200" fill="currentColor" viewBox="0 0 20 20">
+	                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+	                </svg>
+	                <span class="text-sm text-white">{feature}</span>
+	              </li>
+	            ))}
+	          </ul>
+
+	          <a
+	            href={buildAppUrl('/signup', currentLang, 'plan=pro')}
+	            class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-white text-indigo-600 hover:bg-indigo-100"
+	          >
+	            {t.pricing.pro.cta}
+	          </a>
+	        </div>
+
+	        <!-- Founder (no tabs) -->
+	        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
+	          <div class="mb-6">
+	            <h3 class="text-xl font-bold text-white mb-1">{t.pricing.founder.name}</h3>
+	            <p class="text-sm text-slate-400">{t.pricing.founder.tagline}</p>
+			            <div class="mt-4 flex justify-center">
+			              <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" aria-hidden="true">
+			                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white text-center">
+			                  {t.pricing.founder.badge}
+			                </span>
+			              </div>
+			            </div>
+	            <div class="mt-4">
+	              <span class="text-4xl font-bold text-white">{pricing.founder.price}</span>
+	              <span class="text-md text-slate-400"> {t.pricing.founder.period}</span>
+                <br/>
+		            <span class="text-sm text-slate-500 mt-2">{t.pricing.founder.launchPricingNote}</span>
+	            </div>
+	          </div>
+
+	          <ul class="flex-1 space-y-3 mb-6">
+	            {t.pricing.founder.features.map((feature: any) => (
+	              <li class="flex items-start gap-2">
+	                <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+	                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+	                </svg>
+	                <span class="text-sm text-slate-300">{feature}</span>
+	              </li>
+	            ))}
+	          </ul>
+
+	          <a
+	            href={buildAppUrl('/signup', currentLang, 'plan=founder')}
+	            class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
+	          >
+	            {t.pricing.founder.cta}
+	          </a>
+	        </div>
+	      </div>
+	    ) : (
+	      <!-- Pricing Grid (legacy fallback for other locales) -->
+	      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+	        {legacyTiers.map((tier: any) => (
+	          <div class:list={[
+	            "relative flex flex-col p-6 rounded-2xl border",
+	            tier.highlighted
+	              ? "bg-indigo-600 border-indigo-500 shadow-xl shadow-indigo-500/20"
+	              : "bg-slate-800/50 border-slate-700"
+	          ]}>
+	            {tier.badge && (
+	              <div class:list={[
+	                "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 text-xs font-semibold rounded-full flex items-center justify-center text-center",
+			                tier.highlighted ? "bg-yellow-400 text-slate-950" : "bg-indigo-600 text-white"
+	              ]}>
+	                {tier.badge}
+	              </div>
+	            )}
+
+	            <div class="mb-6">
+	              <h3 class="text-xl font-bold text-white mb-1">{tier.name}</h3>
+	              <p class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+	                {tier.tagline}
+	              </p>
+	            </div>
+
+	            <div class="mb-6">
+	              <div>
+	                <span class="text-4xl font-bold text-white">{tier.price}</span>
+	                <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+	                  {tier.period}
+	                </span>
+	              </div>
+
+	              {tier.annualPrice && tier.periodAnnual && (
+	                <div class:list={["mt-2 text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+	                  <span class="font-semibold text-white">{tier.annualPrice}</span>
+	                  <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
+	                    {tier.periodAnnual}
+	                  </span>
+	                </div>
+	              )}
+	            </div>
+
+	            <ul class="flex-1 space-y-3 mb-6">
+	              {tier.features.map((feature: any) => (
+	                <li class="flex items-start gap-2">
+	                  <svg class:list={["w-5 h-5 shrink-0", tier.highlighted ? "text-indigo-300" : "text-green-400"]} fill="currentColor" viewBox="0 0 20 20">
+	                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+	                  </svg>
+	                  <span class:list={["text-sm", tier.highlighted ? "text-white" : "text-slate-300"]}>{feature}</span>
+	                </li>
+	              ))}
+	            </ul>
+
+	            <a
+	              href={tier.href}
+	              class:list={[
+	                "block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors",
+	                tier.highlighted
+	                  ? "bg-white text-indigo-600 hover:bg-indigo-100"
+	                  : "bg-slate-700 text-white hover:bg-slate-800"
+	              ]}
+	            >
+	              {tier.cta}
+	            </a>
+	          </div>
+	        ))}
+	      </div>
+	    )}
   </div>
 </section>
+
+<script>
+  /**
+   * Initialize all pricing tab roots on the page.
+   *
+   * Markup contract:
+   * - Root: [data-pricing-tabs-root][data-default-tab]
+   * - Buttons: button[data-tab]
+   * - Panels: [data-tab-panels] [data-panel]
+   */
+  function initPricingTabs() {
+	    const TAB_BASE_CLASSES = 'px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors';
+	    const TAB_STYLES = {
+	      slate: {
+	        active: 'bg-slate-700 text-white',
+	        inactive: 'text-slate-300 hover:text-white',
+	      },
+	      indigo: {
+	        active: 'bg-white text-indigo-700',
+	        inactive: 'text-indigo-100 hover:text-white',
+	      },
+	    };
+
+    const roots = document.querySelectorAll('[data-pricing-tabs-root]');
+
+    function setActive(root, tab) {
+      const buttons = root.querySelectorAll('button[data-tab]');
+      const panels = root.querySelectorAll('[data-tab-panels] [data-panel]');
+	      const styleKey = root.getAttribute('data-tab-style') || 'slate';
+	      const style = TAB_STYLES[styleKey] || TAB_STYLES.slate;
+
+      buttons.forEach((btn) => {
+        const isActive = btn.getAttribute('data-tab') === tab;
+        btn.setAttribute('aria-selected', String(isActive));
+	        btn.className = `${TAB_BASE_CLASSES} ${isActive ? style.active : style.inactive}`;
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.getAttribute('data-panel') === tab;
+        panel.classList.toggle('hidden', !isActive);
+      });
+    }
+
+    roots.forEach((root) => {
+      const defaultTab = root.getAttribute('data-default-tab');
+      const firstButton = root.querySelector('button[data-tab]');
+      const initialTab = defaultTab || firstButton?.getAttribute('data-tab');
+
+      if (initialTab) {
+        setActive(root, initialTab);
+      }
+
+      const buttons = root.querySelectorAll('button[data-tab]');
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const next = btn.getAttribute('data-tab');
+          if (next) setActive(root, next);
+        });
+      });
+    });
+  }
+
+  initPricingTabs();
+</script>
 

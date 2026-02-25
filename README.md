@@ -153,17 +153,30 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In and Try Free CTAs
 2. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
 3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
-4. **Pricing** - 4 tiers: Free, Basic ($3/mo or $29/annual), Pro ($7/mo or $69/annual), Founder ($79 one-time)
+4. **Pricing** - 4 tiers with tabbed cards:
+   - **Free** — Preview tab (no account) / Workspace tab (free account); different feature lists per tab
+   - **Basic** — $3/mo or $29/yr; Monthly/Annual tabs with savings shown next to annual price
+   - **Pro** — $7/mo or $69/yr; Monthly/Annual tabs with savings shown next to annual price; "Most Popular" yellow badge
+   - **Founder** — $79 one-time; "Limited Time" brand-purple badge in tab-sized frame; launch pricing note below price
 5. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
 6. **Contact Modal** - Contact support form with EmailJS integration (RTL-aware)
 7. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
 
 ### Pricing configuration
 
-Plan prices are **not** stored in translation files anymore.
+Plan prices are **not** stored in translation files.
 
-- **Single source of truth**: `src/features/pricing/getPricingTiers.ts`
-- **i18n locales** (`src/i18n/locales/*.json`) contain only localized copy (plan names, taglines, features) and period labels (e.g. `period`, `periodAnnual`).
+- **Single source of truth**: `src/features/pricing/getPricingTiers.ts` — edit constants here to change prices. The file also computes `annualSavings` for Basic and Pro.
+- **i18n locales** (`src/i18n/locales/*.json`) contain only localized copy: plan names, taglines, feature lists, period labels, CTA text, badge text, and the `launchPricingNote` for the Founder tier.
+
+Key i18n keys under `pricing` in `en.json`:
+- `tabs.anonymous` / `tabs.registered` — tab labels for the Free card
+- `tabs.monthly` / `tabs.annual` — tab labels for Basic and Pro cards
+- `free.anonymous` / `free.registered` — separate tagline, period, CTA, and features per Free tab
+- `founder.launchPricingNote` — subtle note displayed below the Founder price
+- `saveLabel` — prefix used in savings display (e.g. "Save $7")
+
+**Translation workflow**: finalize `en.json` first; other locale files use a legacy fallback renderer and must be updated separately once English copy is confirmed.
 
 To update prices, edit the constants in `getPricingTiers.ts` and rebuild.
 
@@ -251,7 +264,8 @@ The landing page will redirect to the corresponding localized route (e.g. `/ru/`
 | Header: "Start Now"   | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
 | Header: "Sign In"     | `https://app.translitpro.com/login`                               |
 | Hero: Primary CTA     | `https://app.translitpro.com` (+ `?lang=xx` if non-English)       |
-| Pricing: Free tier    | `https://app.translitpro.com`                                     |
+| Pricing: Free (Preview) | `https://app.translitpro.com`                                   |
+| Pricing: Free (Workspace) | `https://app.translitpro.com/signup`                          |
 | Pricing: Basic tier   | `https://app.translitpro.com/signup?plan=basic`                   |
 | Pricing: Pro tier     | `https://app.translitpro.com/signup?plan=pro`                     |
 | Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder`                 |

@@ -7,7 +7,7 @@
  * Show/hide the "Under Construction" banner in the header.
  * Set to true to display the banner, false to hide it.
  */
-export const SHOW_UNDER_CONSTRUCTION = true;
+export const SHOW_UNDER_CONSTRUCTION = false;
 
 /**
  * Base URL for the main TranslitPro app.

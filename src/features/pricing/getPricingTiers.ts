@@ -24,6 +24,10 @@ export function getPricingTiers() {
 
   const format = (amount: number): string => `${CURRENCY_SYMBOL}${amount}`;
 
+  /** Annual savings = (monthly × 12) − annual price */
+  const annualSavings = (monthly: number, annual: number): string =>
+    format(monthly * 12 - annual);
+
   return {
     free: {
       price: format(FREE),
@@ -31,10 +35,12 @@ export function getPricingTiers() {
     basic: {
       price: format(BASIC_MONTHLY),
       annualPrice: format(BASIC_ANNUAL),
+      annualSavings: annualSavings(BASIC_MONTHLY, BASIC_ANNUAL),
     },
     pro: {
       price: format(PRO_MONTHLY),
       annualPrice: format(PRO_ANNUAL),
+      annualSavings: annualSavings(PRO_MONTHLY, PRO_ANNUAL),
     },
     founder: {
       price: format(FOUNDER_ONETIME),

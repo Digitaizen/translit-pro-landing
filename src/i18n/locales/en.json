@@ -38,8 +38,8 @@
       "description": "Create custom transliteration schemas for any language. Define your own keyboard layouts and mappings."
     },
     "bookmarklet": {
-      "title": "Bookmarklet (Pro)",
-      "description": "Type in your target script on most websites. Works everywhere except sites with strict CSP like Google."
+	      "title": "Bookmarklet (Free — login required)",
+	      "description": "Free for all logged-in users. Create a free account to unlock it, then type in your target script directly on most websites — social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
     },
     "translation": {
       "title": "Translation",
@@ -62,73 +62,96 @@
   "pricing": {
     "title": "Simple, Transparent Pricing",
     "subtitle": "Start free, upgrade when you need more. No hidden fees, cancel anytime.",
+    "tabs": {
+	      "anonymous": "Preview",
+	      "registered": "Workspace",
+      "monthly": "Monthly",
+      "annual": "Annual"
+    },
     "free": {
-      "name": "Free",
-      "tagline": "Try instantly, no signup",
-      "period": "forever",
-      "cta": "Start Free",
-      "features": [
-        "Transliteration in editor",
-        "All 13+ built-in languages",
-        "Clipboard copy",
-        "3 search buttons"
-      ],
-      "limitations": [
-        "Ads displayed",
-        "No document saving",
-        "No custom languages"
-      ]
+	      "name": "Free",
+      "anonymous": {
+	        "tagline": "Try instantly. No account required.",
+        "period": "forever",
+        "cta": "Start Free",
+        "features": [
+	          "Type in 13+ languages",
+	          "Popular keyboard layouts",
+	          "Translation",
+	          "3 search buttons",
+	          "Font styling"
+        ],
+	        "limitations": []
+      },
+      "registered": {
+	        "tagline": "Save your work. Unlock more tools.",
+        "period": "forever",
+        "cta": "Create Free Account",
+        "features": [
+	          "Everything from Preview",
+	          "Bookmarklet (type in your language on any website)",
+	          "Full editor tools",
+	          "Save up to 5 documents",
+	          "AI corrections (50/day)",
+	          "Export to TXT"
+        ],
+	        "limitations": []
+      }
     },
     "basic": {
       "name": "Basic",
-      "tagline": "Make it yours",
+	      "tagline": "Your language, your rules.",
       "period": "/month",
-      "periodAnnual": "/annual",
-      "cta": "Start Basic",
+      "periodAnnual": "/year",
+	      "cta": "Upgrade to Basic",
       "features": [
-        "Everything in Free",
-        "Custom transliteration schemas",
+	        "Everything from Free",
+	        "Custom transliteration rules",
         "Custom keyboard layouts",
-        "Custom UI languages"
+        "Custom UI languages",
+	        "Save up to 50 documents",
+	        "AI corrections (100/day)",
+	        "5 search buttons",
+	        "Export to TXT, DOCX & PDF",
+	        "No ads"
       ],
-      "limitations": [
-        "Ads displayed",
-        "Editor only (no bookmarklet)",
-        "No cloud sync"
-      ]
+	      "limitations": []
     },
     "pro": {
       "name": "Pro",
-      "tagline": "Type anywhere, save everything",
+	      "tagline": "Have it all with no limits.",
       "period": "/month",
-      "periodAnnual": "/annual",
+      "periodAnnual": "/year",
       "cta": "Go Pro",
       "badge": "Most Popular",
       "features": [
-        "Everything in Basic",
-        "Bookmarklet (most websites)",
-        "Cloud sync & storage",
-        "Unlimited AI spellcheck",
-        "All export formats",
-        "No ads"
+	        "Everything from Basic",
+	        "Unlimited AI corrections",
+	        "Unlimited documents",
+	        "Document folders",
+	        "All search buttons",
+	        "All export formats",
+	        "Theme customization"
       ],
       "limitations": []
     },
     "founder": {
       "name": "Founder",
-      "tagline": "Lifetime Pro for early supporters",
-      "period": "/onetime",
+	      "tagline": "Pay once, own Pro forever.",
+      "period": "one-time",
+      "launchPricingNote": "Launch pricing - price will increase.",
       "cta": "Become a Founder",
       "badge": "Limited Time",
       "features": [
-        "Everything in Pro",
+	        "Everything from Pro",
         "Lifetime access",
         "Never pay again",
-        "Founder badge 👑",
+	        "Founder badge",
         "Priority support"
       ],
       "limitations": []
-    }
+    },
+    "saveLabel": "Save"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -148,7 +171,7 @@
       },
       "whatIsBookmarklet": {
         "question": "What is the bookmarklet?",
-        "answer": "The bookmarklet (Pro only) lets you type in your target script directly on most websites. It works on social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
+        "answer": "The bookmarklet is a completely free tool for logged-in users that lets you type in your target script directly on most websites. It works on social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
       },
       "beyondTransliteration": {
         "question": "What can I do beyond transliteration?",
@@ -156,7 +179,7 @@
       },
       "freeTrial": {
         "question": "Is there a free trial?",
-        "answer": "Yes! You can use the basic transliteration features completely free, forever. When you sign up, you also get a trial of Pro features including the bookmarklet, AI spellcheck, export to different formats, and storage (local in Trial, cloud in Pro)."
+        "answer": "Yes! You can use the basic transliteration features completely free, forever — no signup required. If you create a free account, the bookmarklet is yours free forever, and you also get a 30-day trial of advanced features including AI spellcheck, export, and cloud storage (5 docs in free account, 50 in Basic, unlimited in Pro)."
       },
       "addOwnLanguage": {
         "question": "Can I add my own language?",
