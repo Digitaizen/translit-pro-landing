@@ -59,77 +59,100 @@
     },
     "exploreAll": "Naršyti visas funkcijas"
   },
-  "pricing": {
-    "title": "Paprasta ir aiški kainodara",
-    "subtitle": "Pradėkite nemokamai, atnaujinkite planą, kai prireiks daugiau. Jokių paslėptų mokesčių, atšaukite bet kada.",
-    "free": {
-      "name": "Nemokamas",
-      "tagline": "Išbandykite iškart, be registracijos",
-      "period": "visada",
-      "cta": "Pradėti nemokamai",
-      "features": [
-        "Transliteracija redaktoriuje",
-        "Visos 13+ integruotų kalbų",
-        "Kopijavimas į iškarpinę",
-        "3 paieškos mygtukai"
-      ],
-      "limitations": [
-        "Rodomos reklamos",
-        "Nėra dokumentų išsaugojimo",
-        "Nėra pasirinktinių kalbų"
-      ]
-    },
-    "basic": {
-      "name": "Bazinis",
-      "tagline": "Padarykite jį savo",
-      "period": "/ mėn.",
-      "periodAnnual": "/ metus",
-      "cta": "Pradėti Bazinį",
-      "features": [
-        "Viskas, kas yra Nemokamame plane",
-        "Pasirinktinės transliteracijos schemos",
-        "Pasirinktiniai klaviatūros išdėstymai",
-        "Pasirinktinės sąsajos kalbos"
-      ],
-      "limitations": [
-        "Rodomos reklamos",
-        "Tik redaktorius (be adresyno nuorodos)",
-        "Nėra debesies sinchronizavimo"
-      ]
-    },
-    "pro": {
-      "name": "Pro",
-      "tagline": "Rašykite bet kur, saugokite viską",
-      "period": "/ mėn.",
-      "periodAnnual": "/ metus",
-      "cta": "Tapti Pro",
-      "badge": "Populiariausias",
-      "features": [
-        "Viskas, kas yra Baziniame plane",
-        "Adresyno nuoroda (daugumai svetainių)",
-        "Debesies sinchronizavimas ir saugykla",
-        "Neribota DI rašybos patikra",
-        "Visi eksporto formatai",
-        "Be reklamų"
-      ],
-      "limitations": []
-    },
-    "founder": {
-      "name": "Įkūrėjas",
-      "tagline": "Pro versija visam gyvenimui ankstyviesiems rėmėjams",
-      "period": "vieną kartą",
-      "cta": "Tapti įkūrėju",
-      "badge": "Ribotas laikas",
-      "features": [
-        "Viskas, kas yra Pro plane",
-        "Prieiga visam gyvenimui",
-        "Niekada nemokėkite dar kartą",
-        "Įkūrėjo ženklelis 👑",
-        "Prioritetinė pagalba"
-      ],
-      "limitations": []
-    }
-  },
+	  "pricing": {
+	    "title": "Paprastos ir skaidrios kainos",
+	    "subtitle": "Pradėkite nemokamai ir atnaujinkite, kai prireiks daugiau. Jokių paslėptų mokesčių, galite bet kada atšaukti.",
+	    "tabs": {
+		      "anonymous": "Peržiūra",
+		      "registered": "Darbo sritis",
+	      "monthly": "Mėnesinis",
+	      "annual": "Metinis"
+	    },
+		    "free": {
+			      "name": "Nemokamai",
+		      "anonymous": {
+			        "tagline": "Išbandykite akimirksniu. Paskyra nereikalinga.",
+		        "period": "amžinai",
+		        "cta": "Pradėti nemokamai",
+	        "features": [
+		          "Rašykite 13+ kalbomis",
+		          "Populiarūs klaviatūros išdėstymai",
+		          "Vertimas",
+		          "3 paieškos mygtukai",
+		          "Šrifto stiliaus valdymas"
+	        ],
+		        "limitations": []
+		      },
+		      "registered": {
+			        "tagline": "Išsaugokite savo darbą ir atrakinkite daugiau įrankių.",
+		        "period": "amžinai",
+		        "cta": "Sukurti nemokamą paskyrą",
+	        "features": [
+		          "Viskas iš Peržiūros režimo",
+		          "Adresyno nuoroda (rašykite savo kalba bet kuriame tinklalapyje)",
+		          "Pilnas redaktoriaus įrankių rinkinys",
+		          "Išsaugojimas iki 5 dokumentų",
+		          "DI taisymai (50 per dieną)",
+		          "Eksportas į TXT"
+	        ],
+		        "limitations": []
+	      }
+	    },
+		    "basic": {
+		      "name": "Basic",
+			      "tagline": "Jūsų kalba, jūsų taisyklės.",
+		      "period": "/mėn.",
+		      "periodAnnual": "/metus",
+		      "cta": "Atnaujinti į Basic",
+	      "features": [
+		        "Viskas iš Nemokamo plano",
+		        "Pasirinktinės transliteracijos taisyklės",
+	        "Pasirinktiniai klaviatūros išdėstymai",
+	        "Pasirinktinės sąsajos kalbos",
+		        "Išsaugojimas iki 50 dokumentų",
+		        "DI taisymai (100 per dieną)",
+		        "5 paieškos mygtukai",
+		        "Eksportas į TXT, DOCX ir PDF",
+		        "Jokių reklamų"
+	      ],
+		      "limitations": []
+	    },
+		    "pro": {
+		      "name": "Pro",
+			      "tagline": "Visos galimybės be apribojimų.",
+		      "period": "/mėn.",
+		      "periodAnnual": "/metus",
+	      "cta": "Pereiti į Pro",
+	      "badge": "Populiariausias",
+	      "features": [
+		        "Viskas iš Basic plano",
+		        "Neriboti DI taisymai",
+		        "Neribotas dokumentų skaičius",
+		        "Dokumentų aplankai",
+		        "Visi paieškos mygtukai",
+		        "Visi eksporto formatai",
+		        "Temos pritaikymas"
+	      ],
+	      "limitations": []
+	    },
+		    "founder": {
+		      "name": "Įkūrėjas",
+			      "tagline": "Sumokėkite kartą ir turėkite Pro visam laikui.",
+		      "period": "vienkartinis",
+	      "launchPricingNote": "Pradinė kaina – vėliau ji didės.",
+	      "cta": "Tapti įkūrėju",
+	      "badge": "Riboto laiko pasiūlymas",
+	      "features": [
+		        "Viskas iš Pro plano",
+	        "Prieiga visam gyvenimui",
+	        "Daugiau niekada nemokėsite",
+		        "Įkūrėjo ženklelis",
+	        "Prioritetinis palaikymas"
+	      ],
+	      "limitations": []
+	    },
+	    "saveLabel": "Sutaupykite"
+	  },
   "faq": {
     "title": "Dažniausiai užduodami klausimai",
     "subtitle": "Turite klausimų? Mes turime atsakymus.",
