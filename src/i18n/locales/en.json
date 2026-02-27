@@ -158,7 +158,8 @@
       ],
       "limitations": []
     },
-    "saveLabel": "Save"
+    "saveLabel": "Save",
+    "perDayLabel": "/day"
   },
   "faq": {
     "title": "Frequently Asked Questions",

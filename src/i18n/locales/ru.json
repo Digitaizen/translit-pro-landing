@@ -158,7 +158,8 @@
 			],
 			"limitations": []
 		},
-		"saveLabel": "Сохранить"
+		"saveLabel": "Сохранить",
+		"perDayLabel": "/день"
 	},
   "faq": {
     "title": "Часто задаваемые вопросы",

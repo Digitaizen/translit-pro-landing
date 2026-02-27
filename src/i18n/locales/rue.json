@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "Ушпорити"
+	    "saveLabel": "Ушпорити",
+    "perDayLabel": "/день"
 	  },
   "faq": {
     "title": "Часты звіданя",

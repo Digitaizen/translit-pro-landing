@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "Сарфа"
+	    "saveLabel": "Сарфа",
+    "perDayLabel": "/рӯз"
 	  },
   "faq": {
     "title": "Саволҳои зиёд додашаванда",

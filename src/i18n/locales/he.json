@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "שמור"
+	    "saveLabel": "שמור",
+    "perDayLabel": "/יום"
 	  },
   "faq": {
     "title": "שאלות נפוצות",

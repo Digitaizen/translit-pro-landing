@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "Sutaupykite"
+	    "saveLabel": "Sutaupykite",
+    "perDayLabel": "/dieną"
 	  },
   "faq": {
     "title": "Dažniausiai užduodami klausimai",

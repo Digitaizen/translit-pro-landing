@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "Αποθήκευση"
+	    "saveLabel": "Αποθήκευση",
+    "perDayLabel": "/ημέρα"
 	  },
   "faq": {
     "title": "Συχνές Ερωτήσεις",

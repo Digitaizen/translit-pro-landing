@@ -37,6 +37,22 @@ export function getPricingTiers() {
   const computeAnnualSavingsAmount = (monthly: number, annual: number): number =>
     monthly * 12 - annual;
 
+  /** Number of days used to compute the daily cost from a monthly price. */
+  const DAYS_PER_MONTH = 30;
+
+  /**
+   * Whether to display the approximate cost per day below the monthly price.
+   * Set to `false` to hide the cost-per-day line without touching the template.
+   */
+  const SHOW_COST_PER_DAY = true;
+
+  /**
+   * Computes the approximate daily cost from a monthly price.
+   * Returns a string rounded to two decimal places (e.g. "0.10").
+   */
+  const computeCostPerDay = (monthly: number): string =>
+    (monthly / DAYS_PER_MONTH).toFixed(2);
+
   const basicAnnualSavingsAmount = computeAnnualSavingsAmount(
     BASIC_MONTHLY,
     BASIC_ANNUAL,
@@ -50,6 +66,13 @@ export function getPricingTiers() {
     /** Shared currency symbol so the UI can render it separately. */
     currencySymbol: CURRENCY_SYMBOL,
 
+    /**
+     * When `true`, the monthly-price panel for Basic and Pro shows an
+     * approximate cost-per-day line (e.g. "~$0.10/day").
+     * Toggle this flag here to show or hide the line globally.
+     */
+    showCostPerDay: SHOW_COST_PER_DAY,
+
     free: {
       /** Numeric amount for the Free tier (used for the large number). */
       amount: FREE,
@@ -62,6 +85,8 @@ export function getPricingTiers() {
       amount: BASIC_MONTHLY,
       /** Monthly price formatted with currency, e.g. "$3". */
       price: formatWithCurrency(BASIC_MONTHLY),
+      /** Approximate daily cost derived from the monthly price, e.g. "0.10". */
+      costPerDay: computeCostPerDay(BASIC_MONTHLY),
 
       /** Numeric annual billing amount. */
       annualAmount: BASIC_ANNUAL,
@@ -79,6 +104,8 @@ export function getPricingTiers() {
       amount: PRO_MONTHLY,
       /** Monthly price formatted with currency, e.g. "$7". */
       price: formatWithCurrency(PRO_MONTHLY),
+      /** Approximate daily cost derived from the monthly price, e.g. "0.23". */
+      costPerDay: computeCostPerDay(PRO_MONTHLY),
 
       /** Numeric annual billing amount. */
       annualAmount: PRO_ANNUAL,

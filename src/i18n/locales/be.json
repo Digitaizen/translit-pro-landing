@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "Захаваць"
+	    "saveLabel": "Захаваць",
+    "perDayLabel": "/дзень"
 	  },
   "faq": {
     "title": "Частыя пытанні",

@@ -158,7 +158,8 @@
 	      ],
 	      "limitations": []
 	    },
-	    "saveLabel": "შენახვა"
+	    "saveLabel": "შენახვა",
+    "perDayLabel": "/დღე"
 	  },
   "faq": {
     "title": "ხშირად დასმული კითხვები",
