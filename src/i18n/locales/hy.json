@@ -11,6 +11,13 @@
     "signIn": "Մուտք գործել",
     "startNow": "Սկսել հիմա"
   },
+  "languageDropdown": {
+    "translationLabel": "Թարգմանություն",
+    "tipLabel": "Հուշում. Թարգմանել այս էջը",
+    "tipModalTitle": "Թարգմանել այս էջը",
+    "tipModalBody": "Այս էջն այլ լեզուներով դիտելու համար օգտագործեք ձեր բրաուզերի «Թարգմանել այս էջը» գործառույթը: Բրաուզերների մեծ մասում կարող եք աջ սեղմում կատարել էջի ցանկացած մասում և ընտրել «Թարգմանել [Ձեր լեզուն]» կամ օգտվել հասցեի տողում գտնվող թարգմանության պատկերակից:",
+    "tipModalClose": "Փակել"
+  },
   "hero": {
     "badge": "Տրանսլիտերացիայի համակարգչային փաթեթ 13+ լեզուների համար",
     "headline": "<span class=\"flex justify-center whitespace-nowrap\">Մուտքագրեք <span class=\"text-emerald-500\">ցանկացած մայրենի լեզվի</span> այբուբենով</span><span class=\"flex justify-center whitespace-nowrap\">օգտագործելով ձեր <span class=\"text-indigo-500\">լատինական ստեղնաշարը</span></span>",

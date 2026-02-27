@@ -12,6 +12,13 @@
     "startNow": "Start Now",
     "underConstruction": "Under Construction"
   },
+  "languageDropdown": {
+    "translationLabel": "Translation",
+    "tipLabel": "Tip: Translate this page",
+    "tipModalTitle": "Translate This Page",
+    "tipModalBody": "To view this page in other languages, use your browser's \"Translate this page\" feature. On most browsers, you can right-click anywhere on the page and choose \"Translate to [Your Language]\", or use the translate icon in the address bar.",
+    "tipModalClose": "Close"
+  },
   "hero": {
     "badge": "Desktop Transliteration Suite for 13+ Languages",
     "headline": "<span class=\"block whitespace-nowrap\">Type in <span class=\"text-emerald-500\">Any Native Language</span> Script</span><span class=\"block whitespace-nowrap\">Using Your <span class=\"text-indigo-500\">Latin Keyboard</span></span>",

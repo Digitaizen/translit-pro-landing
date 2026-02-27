@@ -12,6 +12,13 @@
     "startNow": "დაწყება",
     "underConstruction": "მშენებარე"
   },
+  "languageDropdown": {
+    "translationLabel": "თარგმანი",
+    "tipLabel": "რჩევა: თარგმნეთ ეს გვერდი",
+    "tipModalTitle": "ამ გვერდის თარგმნა",
+    "tipModalBody": "ამ გვერდის სხვა ენებზე სანახავად გამოიყენეთ თქვენი ბრაუზერის ფუნქცია „ამ გვერდის თარგმნა“. ბრაუზერების უმეტესობაში შეგიძლიათ დააჭიროთ მარჯვენა ღილაკს გვერდის ნებისმიერ ადგილას და აირჩიოთ „თარგმნა [თქვენს ენაზე]“ ან გამოიყენოთ თარგმნის ხატულა მისამართების ზოლში.",
+    "tipModalClose": "დახურვა"
+  },
   "hero": {
     "badge": "დესკტოპ ტრანსლიტერაციის ნაკრები 13+ ენისთვის",
     "headline": "<span class=\"block whitespace-nowrap\">წერეთ <span class=\"text-emerald-500\">ნებისმიერ მშობლიურ ენაზე</span></span><span class=\"block whitespace-nowrap\">თქვენი <span class=\"text-indigo-500\">ლათინური კლავიატურით</span></span>",

@@ -12,6 +12,13 @@
     "startNow": "Pradėti",
     "underConstruction": "Kuriama"
   },
+  "languageDropdown": {
+    "translationLabel": "Vertimas",
+    "tipLabel": "Patarimas: išverskite šį puslapį",
+    "tipModalTitle": "Išversti šį puslapį",
+    "tipModalBody": "Norėdami peržiūrėti šį puslapį kitomis kalbomis, naudokite naršyklės funkciją „Išversti šį puslapį“. Daugumoje naršyklių galite spustelėti dešiniuoju pelės mygtuku bet kurioje puslapio vietoje ir pasirinkti „Išversti į [Jūsų kalba]“ arba naudoti vertimo piktogramą adreso juostoje.",
+    "tipModalClose": "Uždaryti"
+  },
   "hero": {
     "badge": "Stalinis transliteracijos rinkinys 13+ kalbų",
     "headline": "<span class=\"block whitespace-nowrap\">Rašykite <span class=\"text-emerald-500\">bet kuria gimtąja kalba</span></span><span class=\"block whitespace-nowrap\">naudodami savo <span class=\"text-indigo-500\">lotynišką klaviatūrą</span></span>",

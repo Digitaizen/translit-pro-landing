@@ -2,16 +2,19 @@
 /**
  * Language dropdown component for switching between supported languages.
  * Matches the design from the TranslitPro app.
+ * Includes a footer tip that opens a "Translate This Page" info modal.
  */
 
 import { languages, getLanguageByCode } from '../i18n/languages';
 
 interface Props {
   currentLang: string;
+  t: any;
 }
 
-const { currentLang } = Astro.props;
+const { currentLang, t } = Astro.props;
 const currentLanguage = getLanguageByCode(currentLang) || languages[0];
+const ld = t.languageDropdown;
 ---
 
 <div class="relative language-dropdown">
@@ -66,6 +69,54 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
         </a>
       ))}
     </div>
+
+    <!-- Dropdown Footer -->
+    <div class="mt-2 pt-2 border-t border-slate-700 flex items-center justify-end">
+      <!-- Tip button -->
+      <button
+        id="translate-tip-btn"
+        class="flex items-center gap-1.5 text-xs text-amber-400 hover:text-amber-300 transition-colors"
+        type="button"
+        aria-label={ld.tipLabel}
+      >
+        <!-- Lightbulb icon -->
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a7 7 0 0 1 7 7c0 2.63-1.46 4.93-3.62 6.16V17a1 1 0 0 1-1 1h-4.76a1 1 0 0 1-1-1v-1.84A7 7 0 0 1 12 2zm-1.38 18h2.76a.5.5 0 0 1 0 1h-2.76a.5.5 0 0 1 0-1zm.38-16a5 5 0 0 0-3 9.02V17h6v-3.98A5 5 0 0 0 12 4z"/>
+        </svg>
+        {ld.tipLabel}
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Translate This Page Info Modal (outside the dropdown wrapper so fixed positioning is relative to the viewport) -->
+<div
+  id="translate-tip-modal"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/60 backdrop-blur-sm"
+>
+  <div class="relative w-full max-w-md mx-4 bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 p-6">
+    <!-- Modal Header -->
+    <div class="flex items-center gap-3 mb-4">
+      <!-- Info icon -->
+      <svg class="w-6 h-6 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" stroke-width="3" stroke-linecap="round" />
+      </svg>
+      <h3 class="text-lg font-semibold text-white">{ld.tipModalTitle}</h3>
+    </div>
+
+    <!-- Modal Body -->
+    <p class="text-slate-300 text-sm leading-relaxed mb-6">{ld.tipModalBody}</p>
+
+    <!-- Close Button -->
+    <button
+      id="translate-tip-modal-close"
+      class="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg transition-colors"
+      type="button"
+    >
+      {ld.tipModalClose}
+    </button>
   </div>
 </div>
 
@@ -73,10 +124,13 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
   const button = document.getElementById('language-button');
   const menu = document.getElementById('language-menu');
   const chevron = document.getElementById('chevron');
+  const tipBtn = document.getElementById('translate-tip-btn');
+  const tipModal = document.getElementById('translate-tip-modal');
+  const tipModalClose = document.getElementById('translate-tip-modal-close');
 
   function toggleMenu() {
     const isHidden = menu?.classList.contains('hidden');
-    
+
     if (isHidden) {
       menu?.classList.remove('hidden');
       button?.setAttribute('aria-expanded', 'true');
@@ -94,9 +148,39 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
     chevron?.classList.remove('rotate-180');
   }
 
+  function openTipModal() {
+    closeMenu();
+    if (!tipModal) return;
+    // Portal the modal to <body> so `fixed inset-0` is always relative to the viewport,
+    // not the fixed-positioned <header> ancestor which can act as a containing block.
+    if (tipModal.parentElement !== document.body) {
+      document.body.appendChild(tipModal);
+    }
+    tipModal.classList.remove('hidden');
+    tipModal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeTipModal() {
+    tipModal?.classList.add('hidden');
+    tipModal?.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
   button?.addEventListener('click', (e) => {
     e.stopPropagation();
     toggleMenu();
+  });
+
+  tipBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openTipModal();
+  });
+
+  tipModalClose?.addEventListener('click', closeTipModal);
+
+  tipModal?.addEventListener('click', (e) => {
+    if (e.target === tipModal) closeTipModal();
   });
 
   // Close menu when clicking outside
@@ -106,10 +190,14 @@ const currentLanguage = getLanguageByCode(currentLang) || languages[0];
     }
   });
 
-  // Close menu when pressing Escape
+  // Close menu/modal when pressing Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      closeMenu();
+      if (tipModal && !tipModal.classList.contains('hidden')) {
+        closeTipModal();
+      } else {
+        closeMenu();
+      }
     }
   });
 </script>
