@@ -232,7 +232,11 @@
     "custom": "+ Անհատական",
     "privacyPolicy": "Գաղտնիության քաղաքականություն",
     "termsOfService": "Օգտագործման պայմաններ",
-    "copyright": "© {{year}} TranslitPro: Բոլոր իրավունքները պաշտպանված են:", 
-    "ownership": "TranslitPro-ն պատկանում է և շահագործվում է «5am Works» ՍՊԸ-ի կողմից:"
+    "copyright": "© {{year}} TranslitPro: Բոլոր իրավունքները պաշտպանված են:",
+    "ownership": "TranslitPro-ն պատկանում է և շահագործվում է «5am Works» ՍՊԸ-ի կողմից:",
+    "followLabel": "Հետևեք:",
+    "shareLabel": "Կիսվել:",
+    "copyLink": "Պատճենել հղումը",
+    "linkCopied": "Պատճենված!"
   }
 }

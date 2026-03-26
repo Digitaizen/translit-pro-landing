@@ -234,6 +234,10 @@
     "privacyPolicy": "מדיניות פרטיות",
     "termsOfService": "תנאי שימוש",
     "copyright": "© {{year}} TranslitPro. כל הזכויות שמורות.",
-    "ownership": "TranslitPro בבעלות ומופעל על ידי 5am Works LLC."
+    "ownership": "TranslitPro בבעלות ומופעל על ידי 5am Works LLC.",
+    "followLabel": ":עקבו",
+    "shareLabel": ":שתפו",
+    "copyLink": "העתק קישור",
+    "linkCopied": "הועתק!"
   }
 }

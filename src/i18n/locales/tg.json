@@ -234,6 +234,10 @@
     "privacyPolicy": "Сиёсати махфият",
     "termsOfService": "Шартҳои истифода",
     "copyright": "© {{year}} TranslitPro. Ҳамаи ҳуқуқҳо маҳфузанд.",
-    "ownership": "TranslitPro моликият ва идоракунии 5am Works LLC мебошад."
+    "ownership": "TranslitPro моликият ва идоракунии 5am Works LLC мебошад.",
+    "followLabel": "Пайравӣ:",
+    "shareLabel": "Мубодила:",
+    "copyLink": "Нусхабардории пайванд",
+    "linkCopied": "Нусхабардорӣ шуд!"
   }
 }

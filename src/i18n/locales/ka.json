@@ -234,6 +234,10 @@
     "privacyPolicy": "კონფიდენციალურობის პოლიტიკა",
     "termsOfService": "მომსახურების პირობები",
     "copyright": "© {{year}} TranslitPro. ყველა უფლება დაცულია.",
-    "ownership": "TranslitPro-ს ფლობს და მართავს 5am Works LLC."
+    "ownership": "TranslitPro-ს ფლობს და მართავს 5am Works LLC.",
+    "followLabel": "გამოგვყევით:",
+    "shareLabel": "გაზიარება:",
+    "copyLink": "ბმულის კოპირება",
+    "linkCopied": "კოპირებულია!"
   }
 }

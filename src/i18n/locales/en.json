@@ -234,7 +234,11 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "copyright": "© {{year}} TranslitPro. All rights reserved.",
-    "ownership": "TranslitPro is owned and operated by 5am Works LLC."
+    "ownership": "TranslitPro is owned and operated by 5am Works LLC.",
+    "followLabel": "Follow:",
+    "shareLabel": "Share:",
+    "copyLink": "Copy link",
+    "linkCopied": "Copied!"
   }
 }
 

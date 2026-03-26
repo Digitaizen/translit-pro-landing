@@ -234,6 +234,10 @@
     "privacyPolicy": "Құпиялылық саясаты",
     "termsOfService": "Пайдалану шарттары",
     "copyright": "© {{year}} TranslitPro. Барлық құқықтар қорғалған.",
-    "ownership": "TranslitPro 5am Works LLC компаниясына тиесілі және басқарылады."
+    "ownership": "TranslitPro 5am Works LLC компаниясына тиесілі және басқарылады.",
+    "followLabel": "Бізді қадағалаңыз:",
+    "shareLabel": "Бөлісу:",
+    "copyLink": "Сілтемені көшіру",
+    "linkCopied": "Көшірілді!"
   }
 }

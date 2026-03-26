@@ -250,6 +250,10 @@
     "privacyPolicy": "Πολιτική Απορρήτου",
     "termsOfService": "Όροι Χρήσης",
     "copyright": "© {{year}} TranslitPro. Με την επιφύλαξη παντός δικαιώματος.",
-    "ownership": "Το TranslitPro ανήκει και διαχειρίζεται από την 5am Works LLC."
+    "ownership": "Το TranslitPro ανήκει και διαχειρίζεται από την 5am Works LLC.",
+    "followLabel": "Ακολουθήστε:",
+    "shareLabel": "Κοινοποίηση:",
+    "copyLink": "Αντιγραφή συνδέσμου",
+    "linkCopied": "Αντιγράφηκε!"
   }
 }

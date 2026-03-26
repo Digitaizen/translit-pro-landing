@@ -234,6 +234,10 @@
     "privacyPolicy": "Палітыка канфідэнцыяльнасці",
     "termsOfService": "Умовы выкарыстання",
     "copyright": "© {{year}} TranslitPro. Усе правы абаронены.",
-    "ownership": "TranslitPro належыць і кіруецца кампаніяй 5am Works LLC."
+    "ownership": "TranslitPro належыць і кіруецца кампаніяй 5am Works LLC.",
+    "followLabel": "Сачыце:",
+    "shareLabel": "Падзяліцца:",
+    "copyLink": "Скапіраваць спасылку",
+    "linkCopied": "Скапіравана!"
   }
 }

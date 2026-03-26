@@ -234,6 +234,10 @@
     "privacyPolicy": "Privatumo politika",
     "termsOfService": "Paslaugų teikimo sąlygos",
     "copyright": "© {{year}} TranslitPro. Visos teisės saugomos.",
-    "ownership": "TranslitPro priklauso ir yra valdoma 5am Works LLC."
+    "ownership": "TranslitPro priklauso ir yra valdoma 5am Works LLC.",
+    "followLabel": "Sekite:",
+    "shareLabel": "Dalintis:",
+    "copyLink": "Kopijuoti nuorodą",
+    "linkCopied": "Nukopijuota!"
   }
 }
