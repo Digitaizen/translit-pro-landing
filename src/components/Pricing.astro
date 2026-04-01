@@ -106,7 +106,7 @@ const legacyTiers = !isTabbedPricingCopy
 	                <h3 class="text-xl font-bold text-white mb-1">{t.pricing.free.name}</h3>
 
 	                <!-- Slogan (tabbed) -->
-	                <div data-tab-panels>
+	                <div data-tab-panels class="min-h-[2.5rem]">
 	                  <p data-panel="anonymous" class="text-sm text-slate-400">{t.pricing.free.anonymous.tagline}</p>
 	                  <p data-panel="registered" class="hidden text-sm text-slate-400">{t.pricing.free.registered.tagline}</p>
 	                </div>
@@ -206,7 +206,7 @@ const legacyTiers = !isTabbedPricingCopy
 		      <div class="mb-4 js-pricing-card-header">
 	            <div class="js-pricing-card-title">
 	              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.basic.name}</h3>
-	              <p class="text-sm text-slate-400">{t.pricing.basic.tagline}</p>
+	              <p class="text-sm text-slate-400 min-h-[2.5rem]">{t.pricing.basic.tagline}</p>
 	            </div>
 
 	            <div class="mt-4" data-pricing-tabs-root data-default-tab="monthly" data-tab-style="slate">
@@ -278,7 +278,7 @@ const legacyTiers = !isTabbedPricingCopy
 		      <div class="mb-4 js-pricing-card-header">
 	            <div class="js-pricing-card-title">
 	              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.pro.name}</h3>
-	              <p class="text-sm text-indigo-200">{t.pricing.pro.tagline}</p>
+	              <p class="text-sm text-indigo-200 min-h-[2.5rem]">{t.pricing.pro.tagline}</p>
 	            </div>
 
 	            <div class="mt-4" data-pricing-tabs-root data-default-tab="monthly" data-tab-style="indigo">
@@ -344,7 +344,7 @@ const legacyTiers = !isTabbedPricingCopy
 		          <div class="mb-4 js-pricing-card-header">
 	            <div class="js-pricing-card-title">
 	              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.founder.name}</h3>
-	              <p class="text-sm text-slate-400">{t.pricing.founder.tagline}</p>
+	              <p class="text-sm text-slate-400 min-h-[2.5rem]">{t.pricing.founder.tagline}</p>
 	            </div>
 	            <div class="mt-4 flex justify-center js-pricing-card-tabs">
 		              <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" aria-hidden="true">
@@ -500,15 +500,8 @@ const legacyTiers = !isTabbedPricingCopy
         panel.classList.toggle('hidden', !isActive);
       });
 
-			      // Re-sync heights whenever visible tab content changes,
-			      // so longer translations don't break horizontal alignment
-			      // and tab buttons keep a stable height.
-			      if (typeof syncPricingCardHeights === 'function') {
-			        syncPricingCardHeights();
-			      }
-			      if (typeof syncTabButtonHeights === 'function') {
-			        syncTabButtonHeights();
-			      }
+			      if (typeof syncPricingCardHeights === 'function') syncPricingCardHeights();
+			      if (typeof syncTabButtonHeights === 'function') syncTabButtonHeights();
     }
 
     roots.forEach((root) => {
@@ -534,7 +527,6 @@ const legacyTiers = !isTabbedPricingCopy
 		    const selectors = [
 		      '.js-pricing-card-header',
 		      '.js-pricing-card-title',
-		      '.js-pricing-card-tabs',
 		      '.js-pricing-card-price',
 		    ];
 
@@ -544,17 +536,17 @@ const legacyTiers = !isTabbedPricingCopy
 
 		      // Reset previous min-heights before measuring.
 		      elements.forEach((el) => {
-		        el.style.minHeight = '';
+		        (el as HTMLElement).style.minHeight = '';
 		      });
 
 		      let maxHeight = 0;
 		      elements.forEach((el) => {
-		        const height = el.offsetHeight;
+		        const height = (el as HTMLElement).offsetHeight;
 		        if (height > maxHeight) maxHeight = height;
 		      });
 
 		      elements.forEach((el) => {
-		        el.style.minHeight = `${maxHeight}px`;
+		        (el as HTMLElement).style.minHeight = `${maxHeight}px`;
 		      });
 		    });
 		  }
@@ -569,24 +561,35 @@ const legacyTiers = !isTabbedPricingCopy
 
 			    // Reset min-height before measuring.
 			    buttons.forEach((btn) => {
-			      btn.style.minHeight = '';
+			      (btn as HTMLElement).style.minHeight = '';
 			    });
-			
+
 			    let maxHeight = 0;
 			    buttons.forEach((btn) => {
-			      const height = btn.offsetHeight;
+			      const height = (btn as HTMLElement).offsetHeight;
 			      if (height > maxHeight) maxHeight = height;
 			    });
-			
+
 			    buttons.forEach((btn) => {
-			      btn.style.minHeight = `${maxHeight}px`;
+			      (btn as HTMLElement).style.minHeight = `${maxHeight}px`;
 			    });
 			  }
 
+		  function runAllSyncs() {
+		    syncPricingCardHeights();
+		    syncTabButtonHeights();
+		  }
+
 		  initPricingTabs();
-		  syncPricingCardHeights();
-		  syncTabButtonHeights();
-		  window.addEventListener('resize', syncPricingCardHeights);
-		  window.addEventListener('resize', syncTabButtonHeights);
+		  runAllSyncs();
+
+		  // Re-sync after web fonts finish loading — text may reflow once real fonts
+		  // replace fallback fonts, changing element heights and breaking alignment.
+		  document.fonts.ready.then(runAllSyncs);
+
+		  // Re-sync after all page resources have loaded (belt-and-suspenders).
+		  window.addEventListener('load', runAllSyncs);
+
+		  window.addEventListener('resize', runAllSyncs);
 </script>
 
