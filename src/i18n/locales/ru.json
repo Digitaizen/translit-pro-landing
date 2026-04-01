@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Настольный пакет транслитерации для 13+ языков",
-    "headline": "<span class=\"block whitespace-nowrap\">Пишите на <span class=\"text-emerald-500\">любом родном языке</span></span><span class=\"block whitespace-nowrap\">используя вашу <span class=\"text-indigo-500\">латинскую клавиатуру</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Пишите на&nbsp;<span class=\"text-emerald-500\">любом родном языке</span></span><span class=\"flex justify-center whitespace-nowrap\">используя вашу&nbsp;<span class=\"text-indigo-500\">латинскую клавиатуру</span></span>",
     "subheadline": "Транслитерация на кириллицу, иврит, греческий, грузинский, армянский и другие — всё с вашей латинской клавиатуры. Плюс перевод, проверка орфографии и мощный редактор. Добавьте любой нужный язык.",
     "ctaPrimary": "Начать бесплатно — без регистрации",
     "ctaSecondary": "Посмотреть цены",

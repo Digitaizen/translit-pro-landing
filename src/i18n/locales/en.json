@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Desktop Transliteration Suite for 13+ Languages",
-    "headline": "<span class=\"block whitespace-nowrap\">Type in <span class=\"text-emerald-500\">Any Native Language</span> Script</span><span class=\"block whitespace-nowrap\">Using Your <span class=\"text-indigo-500\">Latin Keyboard</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Type in&nbsp;<span class=\"text-emerald-500\">Any Native Language</span>&nbsp;Script</span><span class=\"flex justify-center whitespace-nowrap\">Using Your&nbsp;<span class=\"text-indigo-500\">Latin Keyboard</span></span>",
     "subheadline": "Transliterate to Cyrillic, Hebrew, Greek, Georgian, Armenian, and more — all from your Latin keyboard. Plus translation, spellcheck, and a powerful editor. Add any language you need.",
     "ctaPrimary": "Start Free — No Signup",
     "ctaSecondary": "View Pricing",

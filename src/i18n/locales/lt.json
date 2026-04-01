@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Stalinis transliteracijos rinkinys 13+ kalbų",
-    "headline": "<span class=\"block whitespace-nowrap\">Rašykite <span class=\"text-emerald-500\">bet kuria gimtąja kalba</span></span><span class=\"block whitespace-nowrap\">naudodami savo <span class=\"text-indigo-500\">lotynišką klaviatūrą</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Rašykite&nbsp;<span class=\"text-emerald-500\">bet kuria gimtąja kalba</span></span><span class=\"flex justify-center whitespace-nowrap\">naudodami savo&nbsp;<span class=\"text-indigo-500\">lotynišką klaviatūrą</span></span>",
     "subheadline": "Transliteruokite į kirilicą, hebrajų, graikų, sakartvelų, armėnų ir kitas kalbas tiesiai iš savo lotyniškos klaviatūros. Papildomai – vertimas, rašybos tikrinimas ir galingas redaktorius. Pridėkite bet kurią kalbą, kurios jums reikia.",
     "ctaPrimary": "Pradėti nemokamai – be registracijos",
     "ctaSecondary": "Žiūrėti kainas",

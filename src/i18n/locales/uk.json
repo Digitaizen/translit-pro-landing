@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Десктопний пакет транслітерації для 13+ мов",
-    "headline": "<span class=\"block whitespace-nowrap\">Пишіть <span class=\"text-emerald-500\">будь-якою рідною мовою</span></span><span class=\"block whitespace-nowrap\">використовуючи вашу <span class=\"text-indigo-500\">латинську клавіатуру</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Пишіть&nbsp;<span class=\"text-emerald-500\">будь-якою рідною мовою</span></span><span class=\"flex justify-center whitespace-nowrap\">використовуючи вашу&nbsp;<span class=\"text-indigo-500\">латинську клавіатуру</span></span>",
     "subheadline": "Транслітеруйте в кирилицю, іврит, грецьку, грузинську, вірменську та інші мови — усе з вашої латинської клавіатури. Плюс переклад, перевірка орфографії та потужний редактор. Додавайте будь-яку мову, яка вам потрібна.",
     "ctaPrimary": "Почати безкоштовно — без реєстрації",
     "ctaSecondary": "Переглянути ціни",

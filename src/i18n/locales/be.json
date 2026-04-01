@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Дэсктопны пакет транслітарацыі для 13+ моў",
-    "headline": "<span class=\"block whitespace-nowrap\">Пішыце <span class=\"text-emerald-500\">на любой роднай мове</span></span><span class=\"block whitespace-nowrap\">выкарыстоўваючы вашу <span class=\"text-indigo-500\">лацінскую клавіятуру</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Пішыце&nbsp;<span class=\"text-emerald-500\">на любой роднай мове</span></span><span class=\"flex justify-center whitespace-nowrap\">выкарыстоўваючы вашу&nbsp;<span class=\"text-indigo-500\">лацінскую клавіятуру</span></span>",
     "subheadline": "Транслітаруйце ў кірыліцу, іўрыт, грэчаскую, грузінскую, армянскую і іншыя мовы — усё з вашай лацінскай клавіятуры. Плюс пераклад, праверка арфаграфіі і магутны рэдактар. Дадавайце любую мову, якая вам патрэбна.",
     "ctaPrimary": "Пачаць бясплатна — без рэгістрацыі",
     "ctaSecondary": "Праглядзець цэны",

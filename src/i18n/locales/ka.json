@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "დესკტოპ ტრანსლიტერაციის ნაკრები 13+ ენისთვის",
-    "headline": "<span class=\"block whitespace-nowrap\">წერეთ <span class=\"text-emerald-500\">ნებისმიერ მშობლიურ ენაზე</span></span><span class=\"block whitespace-nowrap\">თქვენი <span class=\"text-indigo-500\">ლათინური კლავიატურით</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">წერეთ&nbsp;<span class=\"text-emerald-500\">ნებისმიერ მშობლიურ ენაზე</span></span><span class=\"flex justify-center whitespace-nowrap\">თქვენი&nbsp;<span class=\"text-indigo-500\">ლათინური კლავიატურით</span></span>",
     "subheadline": "გააკეთეთ ტრანსლიტერაცია კირილიცაზე, ებრაულზე, ბერძნულზე, ქართულზე, სომხურზე და სხვა — პირდაპირ თქვენი ლათინური კლავიატურიდან. პლუს თარგმანი, მართლწერის შემოწმება და ძლიერი რედაქტორი. დაამატეთ ნებისმიერი ენა, რომელიც გჭირდებათ.",
     "ctaPrimary": "დაიწყეთ უფასოდ — რეგისტრაციის გარეშე",
     "ctaSecondary": "იხილეთ ფასები",

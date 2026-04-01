@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Десктопный пакет транслітерації про 13+ языків",
-    "headline": "<span class=\"block whitespace-nowrap\">Пиште <span class=\"text-emerald-500\">любым родным языком</span></span><span class=\"block whitespace-nowrap\">через вашу <span class=\"text-indigo-500\">латиньску клавіатуру</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Пиште&nbsp;<span class=\"text-emerald-500\">любым родным языком</span></span><span class=\"flex justify-center whitespace-nowrap\">через вашу&nbsp;<span class=\"text-indigo-500\">латиньску клавіатуру</span></span>",
     "subheadline": "Транслітеруйте до кирилиці, івриту, ґрецького, ґрузіньского, армяньского і іншых языків — вшытко з вашой латиньской клавіатуры. Плюс переклад, контроль правопису і силный едітор. Додайте хоцьякый язык, якый вам треба.",
     "ctaPrimary": "Зачати задармо — без реґістрації",
     "ctaSecondary": "Посмотрити ціны",

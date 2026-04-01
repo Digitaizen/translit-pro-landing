@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Desktop Σουίτα Μεταγραμματισμού για 13+ Γλώσσες",
-    "headline": "<span class=\"block whitespace-nowrap\">Γράψτε σε <span class=\"text-emerald-500\">Οποιαδήποτε Μητρική Γλώσσα</span></span><span class=\"block whitespace-nowrap\">με το <span class=\"text-indigo-500\">Λατινικό Πληκτρολόγιό σας</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Γράψτε σε&nbsp;<span class=\"text-emerald-500\">Οποιαδήποτε Μητρική Γλώσσα</span></span><span class=\"flex justify-center whitespace-nowrap\">με το&nbsp;<span class=\"text-indigo-500\">Λατινικό Πληκτρολόγιό σας</span></span>",
     "subheadline": "Μεταγραμματίστε σε Κυριλλικά, Εβραϊκά, Ελληνικά, Γεωργιανά, Αρμενικά και άλλα — όλα από το λατινικό σας πληκτρολόγιο. Επιπλέον μετάφραση, ορθογραφικός έλεγχος και ένας ισχυρός επεξεργαστής. Προσθέστε όποια γλώσσα χρειάζεστε.",
     "ctaPrimary": "Ξεκινήστε Δωρεάν — Χωρίς Εγγραφή",
     "ctaSecondary": "Δείτε την Τιμολόγηση",

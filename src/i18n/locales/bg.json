@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "Десктоп пакет за транслитерация на 13+ езика",
-    "headline": "<span class=\"block whitespace-nowrap\">Пишете на <span class=\"text-emerald-500\">всеки роден език</span></span><span class=\"block whitespace-nowrap\">с вашата <span class=\"text-indigo-500\">латинска клавиатура</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Пишете на&nbsp;<span class=\"text-emerald-500\">всеки роден език</span></span><span class=\"flex justify-center whitespace-nowrap\">с вашата&nbsp;<span class=\"text-indigo-500\">латинска клавиатура</span></span>",
     "subheadline": "Транслитерирайте на кирилица, иврит, гръцки, грузински, арменски и други — директно от вашата латинска клавиатура. Плюс превод, проверка на правописа и мощен редактор. Добавете всеки език, който ви е необходим.",
     "ctaPrimary": "Започнете безплатно — без регистрация",
     "ctaSecondary": "Вижте цените",

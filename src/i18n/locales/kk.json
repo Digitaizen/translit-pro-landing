@@ -21,7 +21,7 @@
   },
   "hero": {
     "badge": "13+ тілге арналған десктоптық транслитерация топтамасы",
-    "headline": "<span class=\"block whitespace-nowrap\">Жазыңыз <span class=\"text-emerald-500\">кез келген ана тілінде</span></span><span class=\"block whitespace-nowrap\">өзіңіздің <span class=\"text-indigo-500\">латын пернетақтаңызбен</span></span>",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Жазыңыз&nbsp;<span class=\"text-emerald-500\">кез келген ана тілінде</span></span><span class=\"flex justify-center whitespace-nowrap\">өзіңіздің&nbsp;<span class=\"text-indigo-500\">латын пернетақтаңызбен</span></span>",
     "subheadline": "Латын пернетақтасынан кириллица, иврит, грек, грузин, армян және т.б. тілдерге транслитерация жасаңыз. Сонымен қатар аударма, емле тексерісі және қуатты редактор қолжетімді. Өзіңізге қажетті кез келген тілді қосыңыз.",
     "ctaPrimary": "Тегін бастау — тіркелусіз",
     "ctaSecondary": "Тарифтерді көру",
