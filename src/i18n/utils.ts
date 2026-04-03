@@ -15,6 +15,7 @@ import elTranslations from './locales/el.json';
 import ltTranslations from './locales/lt.json';
 import tgTranslations from './locales/tg.json';
 import rueTranslations from './locales/rue.json';
+import srTranslations from './locales/sr.json';
 import kkTranslations from './locales/kk.json';
 
 export type TranslationKey = string;
@@ -32,6 +33,7 @@ const translations: Record<string, any> = {
   lt: ltTranslations,
   tg: tgTranslations,
   rue: rueTranslations,
+  sr: srTranslations,
   kk: kkTranslations,
 };
 

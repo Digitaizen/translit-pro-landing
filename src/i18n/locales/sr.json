@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "title": "Alat za transliteraciju za 13+ jezika",
+    "description": "Kucajte na latinici, dobijte ćirilicu, hebrejski, grčki, gruzijski, jermenski i još mnogo toga. Desktop paket za transliteraciju sa prevodom, AI proverom pravopisa i moćnim editorom. Dodajte bilo koji jezik koji vam je potreban.",
+    "siteName": "TranslitPro"
+  },
+  "nav": {
+    "features": "Funkcije",
+    "pricing": "Cene",
+    "faq": "Česta pitanja",
+    "signIn": "Prijavi se",
+    "startNow": "Započni sada",
+    "underConstruction": "U izradi"
+  },
+  "languageDropdown": {
+    "translationLabel": "Prevod",
+    "tipLabel": "Savet: Prevedite ovu stranicu",
+    "tipModalTitle": "Prevedite ovu stranicu",
+    "tipModalBody": "Da biste videli ovu stranicu na drugim jezicima, koristite funkciju vašeg veb pregledača „Prevedi ovu stranicu“. Na većini pregledača možete desnim tasterom miša kliknuti bilo gde na stranici i odabrati „Prevedi na [Vaš jezik]“ ili koristiti ikonu za prevod u traci za adresu.",
+    "tipModalClose": "Zatvori"
+  },
+  "hero": {
+    "badge": "Desktop paket za transliteraciju za 13+ jezika",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Kucajte na&nbsp;<span class=\"text-emerald-500\">bilo kom izvornom</span>&nbsp;pismu</span><span class=\"flex justify-center whitespace-nowrap\">koristeći svoju&nbsp;<span class=\"text-indigo-500\">latiničnu tastaturu</span></span>",
+    "subheadline": "Transliterujte na ćirilicu, hebrejski, grčki, gruzijski, jermenski i još mnogo toga — sve sa vaše latinične tastature. Uz to dobijate prevod, proveru pravopisa i moćan editor. Dodajte bilo koji jezik koji vam je potreban.",
+    "ctaPrimary": "Započni besplatno — bez registracije",
+    "ctaSecondary": "Pogledaj cene",
+    "trustBadge1": "Nije potrebna kreditna kartica",
+    "trustBadge2": "13+ ugrađenih jezika",
+    "trustBadge3": "Dodajte sopstvene jezike"
+  },
+  "features": {
+    "title": "Više od same transliteracije",
+    "subtitle": "Kompletan desktop paket za pisanje sa transliteracijom, prevodom, proverom pravopisa i moćnim editorom — za bilo koje pismo koje vam je potrebno.",
+    "typeNaturally": {
+      "title": "Kucajte prirodno",
+      "description": "Koristite svoju standardnu latiničnu tastaturu na desktopu. Nema potrebe za učenjem novih rasporeda ili menjanjem podešavanja tastature."
+    },
+    "languages": {
+      "title": "13+ Jezika",
+      "description": "Ruski, ukrajinski, hebrejski, grčki, gruzijski, jermenski, litvanski, bugarski i još mnogo toga — sve je već ugrađeno."
+    },
+    "addLanguage": {
+      "title": "Dodajte bilo koji jezik",
+      "description": "Kreirajte prilagođene šeme transliteracije za bilo koji jezik. Definišite sopstvene rasporede tastature i mapiranja."
+    },
+    "bookmarklet": {
+      "title": "Bookmarklet (Besplatno — potrebna prijava)",
+      "description": "Besplatno za sve prijavljene korisnike. Kreirajte besplatan nalog da biste ga otključali, a zatim kucajte na ciljanom pismu direktno na većini veb sajtova — društvenim mrežama, forumima i mnogim veb aplikacijama. Napomena: Ne radi na sajtovima sa strogom Politikom bezbednosti sadržaja (CSP) kao što su Google usluge (Gmail, Docs, itd.)."
+    },
+    "translation": {
+      "title": "Prevod",
+      "description": "Prevedite svoj tekst na više jezika direktno unutar editora. Nema potrebe za menjanjem aplikacija."
+    },
+    "aiSpellcheck": {
+      "title": "AI provera pravopisa",
+      "description": "Pametna provera pravopisa podržana veštačkom inteligencijom. Ispravite štamparske greške i dobijte predloge na ciljanom jeziku."
+    },
+    "editor": {
+      "title": "Moćan editor",
+      "description": "Editor obogaćenog teksta sa formatiranjem, stilizovanjem i besprekornom transliteracijom dok kucate."
+    },
+    "export": {
+      "title": "Izvezite bilo gde",
+      "description": "Izvezite u TXT, RTF, HTML, Markdown, DOCX ili PDF. Vaš sadržaj, vaš format."
+    },
+    "exploreAll": "Istražite sve funkcije"
+  },
+  "pricing": {
+    "title": "Jednostavne, transparentne cene",
+    "subtitle": "Počnite besplatno, nadogradite kada vam zatreba više. Bez skrivenih troškova, otkažite bilo kada.",
+    "tabs": {
+      "anonymous": "Pregled",
+      "registered": "Radni prostor",
+      "monthly": "Mesečno",
+      "annual": "Godišnje"
+    },
+    "free": {
+      "name": "Besplatno",
+      "anonymous": {
+        "tagline": "Isprobajte odmah. Nije potreban nalog.",
+        "period": "zauvek",
+        "cta": "Započni besplatno",
+        "features": [
+          "Kucanje na 13+ jezika",
+          "Popularni rasporedi tastature",
+          "Prevod",
+          "3 dugmeta za pretragu",
+          "Stilizovanje fonta"
+        ],
+        "limitations": []
+      },
+      "registered": {
+        "tagline": "Sačuvajte svoj rad. Otključajte više alata.",
+        "period": "zauvek",
+        "cta": "Kreiraj besplatan nalog",
+        "features": [
+          "Sve iz verzije Pregled",
+          "Bookmarklet (kucajte na svom jeziku na bilo kom sajtu)",
+          "Kompletni alati editora",
+          "Sačuvajte do 5 dokumenata",
+          "AI ispravke (50 dnevno)",
+          "Izvoz u TXT"
+        ],
+        "limitations": []
+      }
+    },
+    "basic": {
+      "name": "Basic",
+      "tagline": "Vaš jezik, vaša pravila.",
+      "period": "/mesečno",
+      "periodAnnual": "/godišnje",
+      "cta": "Pređi na Basic",
+      "features": [
+        "Sve iz besplatne verzije",
+        "Prilagođena pravila transliteracije",
+        "Prilagođeni rasporedi tastature",
+        "Prilagođeni jezici interfejsa",
+        "Sačuvajte do 50 dokumenata",
+        "AI ispravke (100 dnevno)",
+        "5 dugmadi za pretragu",
+        "Izvoz u TXT, DOCX i PDF",
+        "Bez reklama"
+      ],
+      "limitations": []
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Dobijte sve bez ograničenja.",
+      "period": "/mesečno",
+      "periodAnnual": "/godišnje",
+      "cta": "Postani Pro",
+      "badge": "Najpopularnije",
+      "features": [
+        "Sve iz Basic verzije",
+        "Neograničene AI ispravke",
+        "Neograničen broj dokumenata",
+        "Neograničena biblioteka upita (Prompt Library)",
+        "Neograničena normalizacija jezika",
+        "Fascikle za dokumente",
+        "Sva dugmad za pretragu",
+        "Svi formati za izvoz",
+        "Prilagođavanje teme"
+      ],
+      "limitations": []
+    },
+    "founder": {
+      "name": "Founder",
+      "tagline": "Platite jednom, posedujte Pro zauvek.",
+      "period": "jednokratno",
+      "launchPricingNote": "Promotivna cena — cena će rasti.",
+      "cta": "Postani Founder",
+      "badge": "Ograničeno vreme",
+      "features": [
+        "Sve iz Pro verzije",
+        "Doživotni pristup",
+        "Nikada više ne plaćajte",
+        "Founder bedž",
+        "Prioritetna podrška"
+      ],
+      "limitations": []
+    },
+    "saveLabel": "Uštedite",
+    "perDayLabel": "/dnevno"
+  },
+  "faq": {
+    "title": "Često postavljana pitanja",
+    "subtitle": "Imate pitanja? Mi imamo odgovore.",
+    "questions": {
+      "whatIsTransliteration": {
+        "question": "Šta je transliteracija?",
+        "answer": "Transliteracija je proces prebacivanja teksta iz jednog pisma u drugo. TranslitPro pretvara latinične karaktere (npr. „privet“) u druga pisma (npr. „привет“ na ruskom) u realnom vremenu dok kucate."
+      },
+      "whichLanguages": {
+        "question": "Koji jezici su podržani?",
+        "answer": "TranslitPro ima 13+ ugrađenih jezika: ruski, ukrajinski, beloruski, bugarski, hebrejski, jermenski, gruzijski, grčki, litvanski, tadžički, rusinski, kazaški i druge. Takođe možete dodati sopstvene prilagođene jezike i rasporede tastature."
+      },
+      "mobileOrDesktop": {
+        "question": "Da li je TranslitPro za mobilne telefone ili desktop?",
+        "answer": "TranslitPro je prvenstveno dizajniran za desktop korisnike. Korisnici mobilnih telefona obično imaju ugrađene tastature za različita pisma. Naša aplikacija najbolje radi na desktop pregledačima gde želite da kucate na pismima koja nisu latinična koristeći svoju standardnu tastaturu."
+      },
+      "whatIsBookmarklet": {
+        "question": "Šta je bookmarklet?",
+        "answer": "Bookmarklet je potpuno besplatan alat za prijavljene korisnike koji vam omogućava da kucate na ciljanom pismu direktno na većini veb sajtova. Radi na društvenim mrežama, forumima i mnogim veb aplikacijama. Napomena: Ne radi na sajtovima sa strogom Politikom bezbednosti sadržaja (CSP) kao što su Google usluge (Gmail, Docs, itd.)."
+      },
+      "beyondTransliteration": {
+        "question": "Šta mogu da radim osim transliteracije?",
+        "answer": "TranslitPro uključuje moćan editor obogaćenog teksta, prevod na više jezika, AI proveru pravopisa na ciljanom jeziku i izvoz u TXT, RTF, HTML, Markdown, DOCX ili PDF."
+      },
+      "freeTrial": {
+        "question": "Postoji li besplatni probni period?",
+        "answer": "Da! Osnovne funkcije transliteracije možete koristiti potpuno besplatno, zauvek — bez potrebe za registracijom. Ako kreirate besplatan nalog, bookmarklet je vaš zauvek besplatno, a dobijate i 30 dana probe naprednih funkcija uključujući AI proveru pravopisa, izvoz i skladištenje u oblaku (5 dokumenata na besplatnom nalogu, 50 u Basic, neograničeno u Pro)."
+      },
+      "addOwnLanguage": {
+        "question": "Mogu li dodati sopstveni jezik?",
+        "answer": "Da! Uz Basic plan ili viši, možete kreirati prilagođene šeme transliteracije i rasporede tastature za bilo koji jezik. Savršeno ako vam je potreban specifičan sistem romanizacije ili jezik koji nije ugrađen u aplikaciju."
+      },
+      "cancelAnytime": {
+        "question": "Mogu li da otkažem pretplatu bilo kada?",
+        "answer": "Apsolutno! Pretplatu možete otkazati u bilo kom trenutku u podešavanjima vašeg naloga. Nastavićete da imate pristup plaćenim funkcijama do kraja obračunskog perioda."
+      },
+      "preventCombinations": {
+        "question": "Mogu li sprečiti da se određene kombinacije slova transliteruju zajedno?",
+        "answer": "Da! Koristite simbol + kao separator. Ovo govori TranslitPro-u da transliteruje svako slovo pojedinačno umesto kao par. Primeri (ćirilica): s+h → „сх“ (umesto „ш“), t+s → „тс“ (umesto „ц“), z+h → „зх“ (umesto „ж“)."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktirajte podršku",
+    "subtitle": "Odgovorićemo vam u najkraćem mogućem roku.",
+    "stillHaveQuestions": "I dalje imate pitanja?",
+    "contactSupport": "Kontaktiraj podršku",
+    "emailLabel": "Vaš Email",
+    "emailPlaceholder": "vi@example.com",
+    "subjectLabel": "Tema",
+    "subjectPlaceholder": "Kako možemo da pomognemo?",
+    "messageLabel": "Poruka",
+    "messagePlaceholder": "Opišite svoj problem ili pitanje...",
+    "sendButton": "Pošalji poruku",
+    "sending": "Slanje u toku...",
+    "successMessage": "Poruka je uspešno poslata!",
+    "errorMessage": "Slanje poruke nije uspelo. Molimo pokušajte ponovo."
+  },
+  "footer": {
+    "tagline": "Desktop paket za transliteraciju za 13+ jezika. Kucajte na latinici, dobijte ćirilicu, hebrejski, grčki i još mnogo toga.",
+    "product": "Proizvod",
+    "scripts": "Pisma",
+    "legal": "Pravne informacije",
+    "openApp": "Otvori aplikaciju",
+    "cyrillic": "Ćirilica",
+    "hebrew": "Hebrejski",
+    "greek": "Grčki",
+    "georgian": "Gruzijski",
+    "armenian": "Jermenski",
+    "custom": "+ Prilagođeno",
+    "privacyPolicy": "Politika privatnosti",
+    "termsOfService": "Uslovi korišćenja",
+    "copyright": "© {{year}} TranslitPro. Sva prava zadržana.",
+    "ownership": "TranslitPro je u vlasništvu i pod upravom 5am Works LLC.",
+    "followLabel": "Pratite nas:",
+    "shareLabel": "Podelite:",
+    "copyLink": "Kopiraj link",
+    "linkCopied": "Kopirano!"
+  }
+}
+

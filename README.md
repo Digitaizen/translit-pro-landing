@@ -254,7 +254,7 @@ The landing page will redirect to the corresponding localized route (e.g. `/ru/`
 
 | Parameter  | Values                                                                        | Effect                    |
 | ---------- | ----------------------------------------------------------------------------- | ------------------------- |
-| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt` | Sets UI language          |
+| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt`, `sr` | Sets UI language          |
 | `?action=` | `login`, `signup`, `trial`, `forgot-password`                                 | Opens corresponding modal |
 | `?plan=`   | `basic`, `pro`, `founder`                                                     | Pre-selects pricing plan  |
 

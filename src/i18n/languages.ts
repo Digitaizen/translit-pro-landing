@@ -23,6 +23,7 @@ export const languages: Language[] = [
   { code: 'lt', name: 'Lithuanian', nativeName: 'Lietuvių', dir: 'ltr' },
   { code: 'tg', name: 'Tajik', nativeName: 'Тоҷикӣ', dir: 'ltr' },
   { code: 'rue', name: 'Rusyn', nativeName: 'Русиньскый', dir: 'ltr' },
+  { code: 'sr', name: 'Serbian', nativeName: 'Српски', dir: 'ltr' },
   { code: 'kk', name: 'Kazakh', nativeName: 'Қазақша', dir: 'ltr' },
 ];
 
