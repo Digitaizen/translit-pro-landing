@@ -66,6 +66,29 @@
     },
     "exploreAll": "Explore all features"
   },
+  "featureSpotlights": {
+    "keyboard": {
+      "eyebrow": "No more keyboard gymnastics",
+      "headline": "Stop Switching Keyboards Forever",
+      "copy": "No more digging through OS settings or memorizing different layouts. Just type the way you already know — TranslitPro converts it instantly, in real time."
+    },
+    "bookmarklet": {
+      "eyebrow": "Works everywhere you type",
+      "headline": "Type in Your Language on Any Website",
+      "subheadline": "Social media. Forums. Emails. Web apps.",
+      "copy": "Install the free bookmarklet once and every text field on the web becomes multilingual. Twitter, Reddit, your company intranet — it just works.",
+      "note": "Works on most websites. Doesn't work on sites with strict security policies (e.g. Google Docs, Gmail)."
+    },
+    "editor": {
+      "eyebrow": "Your complete writing workspace",
+      "headline": "Write, Translate, and Export in One Place",
+      "copy": "A powerful rich text editor with built-in transliteration, translation, AI spellcheck, and export to TXT, DOCX, PDF, and more. No app switching required."
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by Multilingual Writers Worldwide",
+    "subtitle": "From diaspora communities to language teachers — TranslitPro fits the way people actually work."
+  },
   "pricing": {
     "title": "Simple, Transparent Pricing",
     "subtitle": "Start free, upgrade when you need more. No hidden fees, cancel anytime.",
@@ -162,6 +185,14 @@
     },
     "saveLabel": "Save",
     "perDayLabel": "/day"
+  },
+  "cta": {
+    "headline": "Start Typing Without Limits",
+    "subheadline": "Free to start. No setup. No learning curve.",
+    "button": "Start Free — No Signup",
+    "badge1": "No credit card required",
+    "badge2": "13+ languages built-in",
+    "badge3": "Cancel anytime"
   },
   "faq": {
     "title": "Frequently Asked Questions",

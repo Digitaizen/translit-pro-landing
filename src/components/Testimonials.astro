@@ -1,0 +1,116 @@
+---
+/**
+ * Testimonials (Social Proof) section.
+ *
+ * Card content is hardcoded mockup data in English — replace quotes, names,
+ * and roles with real user reviews when you have them. Avatar initials + colors
+ * will auto-adapt to whatever names you put in.
+ *
+ * Section title/subtitle come from t.testimonials (translated via i18n sync).
+ * Renders only when t.testimonials exists.
+ */
+
+interface Props {
+  t: any;
+}
+
+const { t } = Astro.props;
+const s = t.testimonials ?? null;
+
+const testimonials = [
+  {
+    initials: 'MK',
+    name: 'Marta K.',
+    role: 'Journalist · Warsaw, Poland',
+    color: 'bg-indigo-500',
+    quote: 'The bookmarklet alone is worth it. I type Ukrainian directly in our CMS — no workarounds, no keyboard switching. It just works on every site I use for work.',
+    stars: 5,
+  },
+  {
+    initials: 'DS',
+    name: 'Dmitri S.',
+    role: 'Blogger · Berlin, Germany',
+    color: 'bg-violet-500',
+    quote: "I think in Russian and type in Latin — TranslitPro just gets it right every time. The editor is clean and fast. I've been using it for months and never looked back.",
+    stars: 5,
+  },
+  {
+    initials: 'EP',
+    name: 'Eleni P.',
+    role: 'Graphic designer · New York, USA',
+    color: 'bg-sky-500',
+    quote: "My yiayia doesn't read English. I use TranslitPro to write proper Greek messages without the embarrassing autocorrect mistakes I used to get from my phone keyboard.",
+    stars: 5,
+  },
+  {
+    initials: 'AH',
+    name: 'Armen H.',
+    role: 'Software engineer · Yerevan, Armenia',
+    color: 'bg-amber-500',
+    quote: 'Set up my own Armenian keyboard mapping in 10 minutes. Now I type faster in Armenian than I ever did with the system keyboard. The custom layout feature is a game-changer.',
+    stars: 5,
+  },
+  {
+    initials: 'NS',
+    name: 'Naomi S.',
+    role: 'Hebrew teacher · Tel Aviv, Israel',
+    color: 'bg-emerald-500',
+    quote: 'I recommend TranslitPro to all my students learning to type in Hebrew. It removes the keyboard barrier entirely — they focus on the language, not on finding the right key.',
+    stars: 5,
+  },
+  {
+    initials: 'OB',
+    name: 'Olga B.',
+    role: 'Community organizer · Toronto, Canada',
+    color: 'bg-rose-500',
+    quote: 'We use this to help seniors in our Ukrainian community type in Ukrainian on social media. No tech setup needed — they were up and typing in minutes.',
+    stars: 5,
+  },
+];
+---
+
+{s && (
+  <section id="testimonials" class="py-20 sm:py-32 bg-slate-800/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Section header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">{s.title}</h2>
+        <p class="text-lg text-slate-400">{s.subtitle}</p>
+      </div>
+
+      <!-- Cards grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonials.map((r) => (
+          <div class="bg-slate-800/60 rounded-2xl border border-slate-700/50 p-6 flex flex-col gap-4 hover:border-slate-600/50 transition-colors">
+
+            <!-- Stars -->
+            <div class="flex gap-1">
+              {Array.from({ length: r.stars }).map(() => (
+                <svg class="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+
+            <!-- Quote -->
+            <p class="text-slate-300 text-sm leading-relaxed flex-1">"{r.quote}"</p>
+
+            <!-- Author -->
+            <div class="flex items-center gap-3 pt-2 border-t border-slate-700/50">
+              <div class={`w-10 h-10 rounded-full ${r.color} flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}>
+                {r.initials}
+              </div>
+              <div>
+                <div class="text-sm font-semibold text-white">{r.name}</div>
+                <div class="text-xs text-slate-500">{r.role}</div>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+)}

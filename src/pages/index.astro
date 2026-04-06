@@ -3,7 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
+import FeatureSpotlights from '../components/FeatureSpotlights.astro';
+import Testimonials from '../components/Testimonials.astro';
 import Pricing from '../components/Pricing.astro';
+import CallToAction from '../components/CallToAction.astro';
 import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 import { getTranslations } from '../i18n/utils';
@@ -21,8 +24,11 @@ const t = getTranslations(currentLang);
   <main>
     <Hero t={t} currentLang={currentLang} />
     <Features t={t} currentLang={currentLang} />
+    <FeatureSpotlights t={t} currentLang={currentLang} />
+    <Testimonials t={t} />
     <Pricing t={t} currentLang={currentLang} />
     <FAQ t={t} />
+    <CallToAction t={t} currentLang={currentLang} />
   </main>
   <Footer t={t} />
 </BaseLayout>
