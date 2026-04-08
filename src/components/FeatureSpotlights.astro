@@ -184,14 +184,17 @@ const s = t.featureSpotlights ?? null;
         <p class="text-sm font-semibold text-indigo-400 uppercase tracking-wider mb-3">{s.editor.eyebrow}</p>
         <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">{s.editor.headline}</h2>
         <p class="text-lg text-slate-400 leading-relaxed">{s.editor.copy}</p>
+        {s.editor.copy2 && <p class="text-lg text-slate-400 leading-relaxed">{s.editor.copy2}</p>}
+        {s.editor.tagline && <p class="text-lg text-slate-400 leading-relaxed">{s.editor.tagline}</p>}
       </div>
 
       <!-- Full-width image, clickable to open lightbox -->
       <div class="relative group cursor-zoom-in" id="editor-lightbox-trigger">
+        <div class="absolute -inset-4 bg-indigo-500/5 rounded-3xl blur-2xl pointer-events-none"></div>
         <img
           src="/screenshots/TranslitPro_RichTextEditor.png"
           alt="TranslitPro Rich Text Editor"
-          class="rounded-2xl w-full shadow-2xl border border-slate-700/50 transition-opacity group-hover:opacity-90"
+          class="relative rounded-2xl w-full shadow-2xl border border-slate-700/50 transition-opacity group-hover:opacity-90"
         />
         <!-- Click-to-zoom hint -->
         <div class="absolute bottom-4 right-4 flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-xs font-medium px-3 py-1.5 rounded-full border border-slate-700/50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
