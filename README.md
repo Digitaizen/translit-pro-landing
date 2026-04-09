@@ -150,7 +150,7 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 
 ## Landing Page Sections
 
-1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In and Try Free CTAs
+1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In / Back to App (toggled by cookie — see below) and Try Free CTAs
 2. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
 3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
 4. **Pricing** - 4 tiers with tabbed cards:
@@ -263,13 +263,25 @@ The landing page will redirect to the corresponding localized route (e.g. `/ru/`
 | Button                | URL                                                               |
 | --------------------- | ----------------------------------------------------------------- |
 | Header: "Start Now"   | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
-| Header: "Sign In"     | `https://app.translitpro.com/login`                               |
+| Header: "Sign In"     | `https://app.translitpro.com/login` (shown when `tp_logged_in` cookie is absent) |
+| Header: "Back to App" | `https://app.translitpro.com` (shown when `tp_logged_in` cookie is present) |
 | Hero: Primary CTA     | `https://app.translitpro.com` (+ `?lang=xx` if non-English)       |
 | Pricing: Free (Preview) | `https://app.translitpro.com`                                   |
 | Pricing: Free (Workspace) | `https://app.translitpro.com/signup`                          |
 | Pricing: Basic tier   | `https://app.translitpro.com/signup?plan=basic`                   |
 | Pricing: Pro tier     | `https://app.translitpro.com/signup?plan=pro`                     |
 | Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder`                 |
+
+### Shared Login State
+
+When a user logs in at `app.translitpro.com`, the app sets a cookie `tp_logged_in=1` on the `.translitpro.com` domain (7-day expiry). On sign-out the cookie is cleared immediately.
+
+The landing page header reads this cookie via a small inline script and swaps the UI before the first paint — no flicker:
+
+- Cookie **absent** → "Sign In" button linking to `/login`
+- Cookie **present** → "Back to App" button (localized) linking to `app.translitpro.com`
+
+The cookie carries no sensitive data; actual authentication is validated by Supabase on the app side. Localhost development is unaffected because the cookie domain is `.translitpro.com` only.
 
 ### Language Pass-through
 

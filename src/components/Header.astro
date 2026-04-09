@@ -61,18 +61,27 @@ const { currentLang = 'en', t } = Astro.props;
 
         <LanguageDropdown currentLang={currentLang} t={t} />
 
-        <!-- Sign In -->
+        <!-- Sign In / Back to App (swapped client-side based on tp_logged_in cookie) -->
         <a
+          id="header-auth-btn"
           href={buildAppUrl('/login', currentLang)}
+          data-app-url={buildAppUrl('/', currentLang)}
+          data-back-label={t.nav.backToApp}
           class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors"
         >
-          <!-- LogIn icon -->
-          <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+          <!-- LogIn icon (shown when logged out) -->
+          <svg id="header-icon-signin" class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" />
             <polyline points="10 17 15 12 10 7" />
             <line x1="15" y1="12" x2="3" y2="12" />
           </svg>
-          <span class="text-sm text-slate-300">{t.nav.signIn}</span>
+          <!-- Back-to-app icon (hidden by default, shown when logged in) -->
+          <svg id="header-icon-back" class="w-5 h-5 text-slate-300 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          <span id="header-auth-label" class="text-sm text-slate-300">{t.nav.signIn}</span>
         </a>
 
         <!-- Start Now (Start Trial) -->
@@ -121,9 +130,25 @@ const { currentLang = 'en', t } = Astro.props;
 <script>
   const menuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   menuButton?.addEventListener('click', () => {
     mobileMenu?.classList.toggle('hidden');
   });
+
+  // Swap "Sign In" → "Back to App" if the user is already logged into the app
+  (function () {
+    const isLoggedIn = document.cookie.split(';').some(c => c.trim().startsWith('tp_logged_in='));
+    if (!isLoggedIn) return;
+
+    const btn = document.getElementById('header-auth-btn') as HTMLAnchorElement | null;
+    const label = document.getElementById('header-auth-label');
+    const iconSignIn = document.getElementById('header-icon-signin');
+    const iconBack = document.getElementById('header-icon-back');
+
+    if (btn) btn.href = btn.dataset.appUrl ?? btn.href;
+    if (label) label.textContent = btn?.dataset.backLabel ?? label.textContent;
+    iconSignIn?.classList.add('hidden');
+    iconBack?.classList.remove('hidden');
+  })();
 </script>
 
