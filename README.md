@@ -265,21 +265,23 @@ The landing page will redirect to the corresponding localized route (e.g. `/ru/`
 | Header: "Start Now"   | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
 | Header: "Sign In"     | `https://app.translitpro.com/login` (shown when `tp_logged_in` cookie is absent) |
 | Header: "Back to App" | `https://app.translitpro.com` (shown when `tp_logged_in` cookie is present) |
-| Hero: Primary CTA     | `https://app.translitpro.com` (+ `?lang=xx` if non-English)       |
+| Header: "Start Now"   | hidden when `tp_logged_in` cookie is present |
+| Hero: Primary CTA     | `https://app.translitpro.com` (no modal — safe for logged-in users) |
+| CTA section button    | `https://app.translitpro.com` (no modal — safe for logged-in users) |
 | Pricing: Free (Preview) | `https://app.translitpro.com`                                   |
 | Pricing: Free (Workspace) | `https://app.translitpro.com/signup`                          |
-| Pricing: Basic tier   | `https://app.translitpro.com/signup?plan=basic`                   |
-| Pricing: Pro tier     | `https://app.translitpro.com/signup?plan=pro`                     |
-| Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder`                 |
+| Pricing: Basic tier   | `https://app.translitpro.com/signup?plan=basic` (logged-out) / `https://app.translitpro.com/?action=manage-subscription` (logged-in) |
+| Pricing: Pro tier     | `https://app.translitpro.com/signup?plan=pro` (logged-out) / `https://app.translitpro.com/?action=manage-subscription` (logged-in) |
+| Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder` (logged-out) / `https://app.translitpro.com/?action=manage-subscription` (logged-in) |
 
 ### Shared Login State
 
 When a user logs in at `app.translitpro.com`, the app sets a cookie `tp_logged_in=1` on the `.translitpro.com` domain (7-day expiry). On sign-out the cookie is cleared immediately.
 
-The landing page header reads this cookie via a small inline script and swaps the UI before the first paint — no flicker:
+The landing page reads this cookie via small inline scripts and adjusts the UI before the first paint — no flicker:
 
-- Cookie **absent** → "Sign In" button linking to `/login`
-- Cookie **present** → "Back to App" button (localized) linking to `app.translitpro.com`
+- Cookie **absent** → "Sign In" linking to `/login`; "Start Now" visible; paid-plan CTAs go to signup flow
+- Cookie **present** → "Back to App" (localized) linking to app root; "Start Now" hidden; paid-plan CTAs (Basic, Pro, Founder) go to `/?action=manage-subscription` which opens Manage Subscriptions in Account Settings
 
 The cookie carries no sensitive data; actual authentication is validated by Supabase on the app side. Localhost development is unaffected because the cookie domain is `.translitpro.com` only.
 

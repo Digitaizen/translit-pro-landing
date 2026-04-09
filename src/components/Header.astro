@@ -84,8 +84,9 @@ const { currentLang = 'en', t } = Astro.props;
           <span id="header-auth-label" class="text-sm text-slate-300">{t.nav.signIn}</span>
         </a>
 
-        <!-- Start Now (Start Trial) -->
+        <!-- Start Now (Start Trial) — hidden for logged-in users -->
         <a
+          id="header-start-now-btn"
           href={buildAppUrl('/trial', currentLang)}
           class="flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-lg transition-colors text-sm font-medium text-white"
         >
@@ -149,6 +150,8 @@ const { currentLang = 'en', t } = Astro.props;
     if (label) label.textContent = btn?.dataset.backLabel ?? label.textContent;
     iconSignIn?.classList.add('hidden');
     iconBack?.classList.remove('hidden');
+
+    document.getElementById('header-start-now-btn')?.classList.add('hidden');
   })();
 </script>
 
