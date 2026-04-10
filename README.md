@@ -152,8 +152,13 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 
 1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In / Back to App (toggled by cookie — see below) and Try Free CTAs
 2. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
-3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
-4. **Pricing** - 4 tiers with tabbed cards:
+3. **Feature Spotlights** - Three full-width narrative sections pairing copy with a visual:
+   - **Keyboard** (`FeatureSpotlights.astro`) — video: `/videos/TranslitPro - Native vs Latin.mp4`
+   - **Bookmarklet** — video: `/videos/TranslitPro - Bookmarklet.mp4`
+   - **Editor** — screenshot: `/screenshots/TranslitPro_RichTextEditor.png`
+   - All visuals are clickable and open in a full-screen lightbox. Videos play with controls and audio in the lightbox, and reset on close (Escape or click backdrop).
+4. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
+5. **Pricing** - 4 tiers with tabbed cards:
    - **Free** — Preview tab (no account) / Workspace tab (free account); different feature lists per tab
    - **Basic** — $3/mo or $29/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.10/day), annual view shows savings (Save $7)
    - **Pro** — $7/mo or $69/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.23/day), annual view shows savings (Save $15); "Most Popular" yellow badge

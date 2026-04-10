@@ -34,14 +34,36 @@ const s = t.featureSpotlights ?? null;
         <p class="text-lg text-slate-400 leading-relaxed">{s.keyboard.copy}</p>
       </div>
 
-      <!-- Full-width video -->
-      <div class="relative">
+      <!-- Full-width video, clickable to open lightbox -->
+      <div class="relative group cursor-zoom-in" id="keyboard-lightbox-trigger">
         <div class="absolute -inset-4 bg-indigo-500/5 rounded-3xl blur-2xl pointer-events-none"></div>
-        <video src="/videos/TranslitPro - Native vs Latin.mp4" autoplay loop muted playsinline class="relative rounded-2xl w-full shadow-2xl border border-slate-700/50" />
+        <video src="/videos/TranslitPro - Native vs Latin.mp4" autoplay loop muted playsinline class="relative rounded-2xl w-full shadow-2xl border border-slate-700/50 transition-opacity group-hover:opacity-90" />
+        <div class="absolute bottom-4 right-4 flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-xs font-medium px-3 py-1.5 rounded-full border border-slate-700/50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0zm0 0l4 4" />
+          </svg>
+          Click to enlarge
+        </div>
       </div>
 
     </div>
   </section>
+
+  <!-- Keyboard video lightbox -->
+  <div
+    id="keyboard-lightbox"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="TranslitPro — Native vs Latin keyboard demo"
+  >
+    <button id="keyboard-lightbox-close" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors" aria-label="Close">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <video id="keyboard-lightbox-video" src="/videos/TranslitPro - Native vs Latin.mp4" controls loop playsinline class="max-w-full max-h-full rounded-xl shadow-2xl cursor-zoom-out" />
+  </div>
 )}
 
 <!-- ── Section 2: Bookmarklet ────────────────────────────────────────── -->
@@ -57,15 +79,39 @@ const s = t.featureSpotlights ?? null;
         <p class="text-lg text-slate-400 leading-relaxed mb-6">{s.bookmarklet.copy}</p>
       </div>
 
-      <!-- Full-width browser mockup -->
-      <video src="/videos/TranslitPro - Bookmarklet.mp4" autoplay loop muted playsinline class="rounded-2xl w-full shadow-2xl" />
-      <div class="text-center max-w-3xl mx-auto mb-12">
-        <br>
+      <!-- Full-width video, clickable to open lightbox -->
+      <div class="relative group cursor-zoom-in" id="bookmarklet-lightbox-trigger">
+        <div class="absolute -inset-4 bg-cyan-500/5 rounded-3xl blur-2xl pointer-events-none"></div>
+        <video src="/videos/TranslitPro - Bookmarklet.mp4" autoplay loop muted playsinline class="relative rounded-2xl w-full shadow-2xl border border-slate-700/50 transition-opacity group-hover:opacity-90" />
+        <div class="absolute bottom-4 right-4 flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-xs font-medium px-3 py-1.5 rounded-full border border-slate-700/50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0zm0 0l4 4" />
+          </svg>
+          Click to enlarge
+        </div>
+      </div>
+      <div class="text-center max-w-3xl mx-auto mt-6">
         <p class="text-sm text-slate-500 pl-3 text-center leading-relaxed">{s.bookmarklet.note}</p>
       </div>
 
     </div>
   </section>
+
+  <!-- Bookmarklet video lightbox -->
+  <div
+    id="bookmarklet-lightbox"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label="TranslitPro — Bookmarklet demo"
+  >
+    <button id="bookmarklet-lightbox-close" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors" aria-label="Close">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <video id="bookmarklet-lightbox-video" src="/videos/TranslitPro - Bookmarklet.mp4" controls loop playsinline class="max-w-full max-h-full rounded-xl shadow-2xl cursor-zoom-out" />
+  </div>
 )}
 
 <!-- ── Section 3: Editor ──────────────────────────────────────────────── -->
@@ -130,6 +176,31 @@ const s = t.featureSpotlights ?? null;
   </div>
 
   <script>
+    // Helper: wire up a video lightbox
+    function initVideoLightbox(triggerId: string, lightboxId: string, closeId: string, videoId: string) {
+      const trigger = document.getElementById(triggerId);
+      const lightbox = document.getElementById(lightboxId);
+      const closeBtn = document.getElementById(closeId);
+      const video = document.getElementById(videoId) as HTMLVideoElement | null;
+
+      function open() {
+        lightbox?.classList.remove('hidden');
+        video?.play();
+      }
+      function close() {
+        lightbox?.classList.add('hidden');
+        if (video) { video.pause(); video.currentTime = 0; }
+      }
+
+      trigger?.addEventListener('click', open);
+      closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+      lightbox?.addEventListener('click', close);
+    }
+
+    initVideoLightbox('keyboard-lightbox-trigger', 'keyboard-lightbox', 'keyboard-lightbox-close', 'keyboard-lightbox-video');
+    initVideoLightbox('bookmarklet-lightbox-trigger', 'bookmarklet-lightbox', 'bookmarklet-lightbox-close', 'bookmarklet-lightbox-video');
+
+    // Editor image lightbox
     const trigger = document.getElementById('editor-lightbox-trigger');
     const lightbox = document.getElementById('editor-lightbox');
     const closeBtn = document.getElementById('editor-lightbox-close');
@@ -137,8 +208,15 @@ const s = t.featureSpotlights ?? null;
     trigger?.addEventListener('click', () => lightbox?.classList.remove('hidden'));
     closeBtn?.addEventListener('click', () => lightbox?.classList.add('hidden'));
     lightbox?.addEventListener('click', () => lightbox.classList.add('hidden'));
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') lightbox?.classList.add('hidden');
+      if (e.key === 'Escape') {
+        document.querySelectorAll('[id$="-lightbox"]').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('[id$="-lightbox-video"]').forEach(el => {
+          const v = el as HTMLVideoElement;
+          v.pause(); v.currentTime = 0;
+        });
+      }
     });
   </script>
 )}
