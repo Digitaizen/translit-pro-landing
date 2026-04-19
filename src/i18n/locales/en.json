@@ -54,8 +54,8 @@
       "description": "Translate your text to multiple languages directly within the editor. No need to switch apps."
     },
     "aiSpellcheck": {
-      "title": "AI Spellcheck",
-      "description": "Smart spellchecking powered by AI. Catch typos and get suggestions in your target language."
+      "title": "AI Assistance",
+      "description": "Smart corrections powered by AI. Catch typos and get suggestions in your target language."
     },
     "editor": {
       "title": "Powerful Editor",
