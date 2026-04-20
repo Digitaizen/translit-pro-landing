@@ -1,4 +1,4 @@
-﻿{
+{
   "meta": {
     "title": "Տրանսլիտերացիայի գործիք 13+ լեզուների համար",
     "description": "Գրեք լատինատառ, ստացեք կիրիլիցա, եբրայերեն, հունարեն, վրացերեն, հայերեն և այլն: Տրանսլիտերացիայի համակարգչային փաթեթ՝ թարգմանությամբ, AI ուղղագրության ստուգմամբ և հզոր խմբագրիչով: Ավելացրեք ցանկացած լեզու, որն անհրաժեշտ է:",
@@ -10,7 +10,8 @@
     "faq": "ՀՏՀ",
     "signIn": "Մուտք գործել",
     "backToApp": "Վերադառնալ հավելված",
-    "startNow": "Սկսել հիմա"
+    "startNow": "Սկսել հիմա",
+    "underConstruction": "Կառուցման փուլում"
   },
   "languageDropdown": {
     "translationLabel": "Թարգմանություն",
@@ -66,7 +67,7 @@
     },
     "exploreAll": "Բացահայտել բոլոր հնարավորությունները"
   },
-"pricing": {
+  "pricing": {
     "title": "Պարզ և թափանցիկ գնագոյացում",
     "subtitle": "Սկսեք անվճար, թարմացրեք, երբ ավելինի կարիք կունենաք: Ոչ մի թաքնված վճար, չեղարկեք ցանկացած պահի:",
     "tabs": {
@@ -82,27 +83,29 @@
         "period": "ընդմիշտ",
         "cta": "Սկսել անվճար",
         "features": [
-            "Մուտքագրում 13+ լեզուներով",
-            "Հանրաճանաչ ստեղնաշարի շարվածքներ",
-            "Թարգմանություն",
-            "3 որոնման կոճակ",
-            "Տառատեսակի ոճավորում"
+          "Մուտքագրում 13+ լեզուներով",
+          "Հանրաճանաչ ստեղնաշարի շարվածքներ",
+          "Թարգմանություն",
+          "3 որոնման կոճակ",
+          "Տառատեսակի ոճավորում",
+          "Minchev 2 patker dastagrouml (2 ՄԲ)"
         ],
-          "limitations": []
+        "limitations": []
       },
       "registered": {
         "tagline": "Պահպանեք Ձեր աշխատանքը: Բացեք ավելի շատ գործիքներ:",
         "period": "ընդմիշտ",
         "cta": "Ստեղծել անվճար հաշիվ",
         "features": [
-            "Ամեն ինչ «Նախադիտումից»",
-            "Bookmarklet (գրեք Ձեր լեզվով ցանկացած կայքում)",
-            "Խմբագրիչի լիարժեք գործիքներ",
-            "Մինչև 5 փաստաթղթի պահպանում",
-            "AI սրբագրում (50/օր)",
-            "Արտահանում TXT ձևաչափով"
+          "Ամեն ինչ «Նախադիտումից»",
+          "Bookmarklet (գրեք Ձեր լեզվով ցանկացած կայքում)",
+          "Խմբագրիչի լիարժեք գործիքներ",
+          "Մինչև 5 փաստաթղթի պահպանում",
+          "AI սրբագրում (50/օր)",
+          "Արտահանում TXT ձևաչափով",
+          "Minchev 3 patker dastagrouml (5 ՄԲ)"
         ],
-          "limitations": []
+        "limitations": []
       }
     },
     "basic": {
@@ -112,17 +115,18 @@
       "periodAnnual": "/տարի",
       "cta": "Անցնել «Հիմնական» պլանին",
       "features": [
-          "Ամեն ինչ «Անվճարից»",
-          "Տառերի համապատասխանեցման անհատական կանոններ",
+        "Ամեն ինչ «Անվճարից»",
+        "Տառերի համապատասխանեցման անհատական կանոններ",
         "Ստեղնաշարի անհատական շարվածքներ",
         "Ինտերֆեյսի անհատական լեզուներ",
-          "Մինչև 50 փաստաթղթի պահպանում",
-          "AI սրբագրում (100/օր)",
-          "5 որոնման կոճակ",
-          "Արտահանում TXT, DOCX և PDF",
-          "Առանց գովազդի"
+        "Մինչև 50 փաստաթղթի պահպանում",
+        "AI սրբագրում (100/օր)",
+        "5 որոնման կոճակ",
+        "Արտահանում TXT, DOCX և PDF",
+        "Առանց գովազդի",
+        "Minchev 20 patker dastagrouml (10 ՄԲ)"
       ],
-        "limitations": []
+      "limitations": []
     },
     "pro": {
       "name": "Pro",
@@ -132,15 +136,16 @@
       "cta": "Անցնել Pro-ին",
       "badge": "Ամենահանրաճանաչ",
       "features": [
-          "Ամեն ինչ «Հիմնականից»",
-          "Անսահմանափակ AI սրբագրում",
-          "Անսահմանափակ փաստաթղթեր",
-          "Անսահմանափակ հուշումների գրադարան",
-          "Անսահմանափակ լեզվի նորմալացում",
-          "Թղթապանակներ փաստաթղթերի համար",
-          "Բոլոր որոնման կոճակները",
-          "Արտահանման բոլոր ձևաչափերը",
-          "Թեմայի անհատականացում"
+        "Ամեն ինչ «Հիմնականից»",
+        "Անսահմանափակ AI սրբագրում",
+        "Անսահմանափակ փաստաթղթեր",
+        "Անսահմանափակ հուշումների գրադարան",
+        "Անսահմանափակ լեզվի նորմալացում",
+        "Թղթապանակներ փաստաթղթերի համար",
+        "Բոլոր որոնման կոճակները",
+        "Արտահանման բոլոր ձևաչափերը",
+        "Թեմայի անհատականացում",
+        "Ansahman patkerrer dastagreroum"
       ],
       "limitations": []
     },
@@ -152,11 +157,11 @@
       "cta": "Դառնալ Founder",
       "badge": "Սահմանափակ ժամանակ",
       "features": [
-          "Ամեն ինչ Pro-ից",
-          "Ցմահ հասանելիություն",
-          "Այլևս երբեք չվճարել",
-          "Founder-ի տարբերանշան",
-          "Առաջնահերթ աջակցություն"
+        "Ամեն ինչ Pro-ից",
+        "Ցմահ հասանելիություն",
+        "Այլևս երբեք չվճարել",
+        "Founder-ի տարբերանշան",
+        "Առաջնահերթ աջակցություն"
       ],
       "limitations": []
     },
@@ -241,5 +246,38 @@
     "shareLabel": "Կիսվել:",
     "copyLink": "Պատճենել հղումը",
     "linkCopied": "Պատճենված!"
+  },
+  "featureSpotlights": {
+    "keyboard": {
+      "eyebrow": "Ստեղnашарери անcumner'i verjy",
+      "headline": "Ynmisht dadaretstrek steghnaшareri p'oxarkoumy",
+      "copy": "Kariq chi ka OS-i kargavoroumneroum p'ntrelem kam tarber dasavoroutyounnner angirranel. Parzapes moutqagrek aynapēs, inchpes arden giteq — TranslitPro-n anmijapes p'oxarkoum e, iraakan zhamanakoum."
+    },
+    "bookmarklet": {
+      "eyebrow": "Ashxatoum e amamenour, vortegh moutqagreq",
+      "headline": "Moutqagrek dzer lezvaov tzantasatz kaykouml",
+      "subheadline": "Sotsialakaan tsantzerr. Forouмner. Elektronayin posta. Veb-hatsouytsner.",
+      "copy": "Teghdrek anvachar bukmarklet'y mek angam — yev internet'i bolor tekstayin vahner karta bazmalezvan karnan. Twitter, Reddit, korporatayin intranett — oust ashxatoum e.",
+      "note": "Ashxatoum e kaykeri metsambastsnoutyaamb. Chi ashxatoum khist ankoutyaamb kiroarroutyaamb ounetsoghy kaykeroum (orinakil Google Docs, Gmail)."
+    },
+    "editor": {
+      "eyebrow": "Dzer amboghj grasenaky",
+      "headline": "Greq, targmanel ev pahel mek tangоum",
+      "copy": "Hzor boyandakaren tekstayin redaktor nerаkarouytsvats transliteratsiaov, targmanouytyaamb ev AI-asistentov.",
+      "copy2": "Pahel ampool'oum ev eksportatseq TXT, DOCX, PDF ev ayn anhjin anhorhzhoytyaamb.",
+      "tagline": "Kaarouyq chi hakatasats hatkouytnnerit khamoutyts."
+    }
+  },
+  "testimonials": {
+    "title": "Mez vstahoum en bazmalezvan harliqner ashxarhov mek",
+    "subtitle": "Diaspori hamayinknerits minchev lezvi ousoutsiichner — TranslitPro hamarjoumoum e mardinats iraakaan ashkhatoyanqin."
+  },
+  "cta": {
+    "headline": "Sepkek moutqagrel arantz sahmanakoumner",
+    "subheadline": "Anvachar stp. Anpartik nkoumy. Ousoumnaayin korer — chka.",
+    "button": "Sepkek anvachar — arantz grankatsoumar",
+    "badge1": "Bankayin kart chei pahanjvoum",
+    "badge2": "13+ lezou nerakarouytsvatz",
+    "badge3": "Mertyoutyoun ystekelayin zamanakouml"
   }
 }

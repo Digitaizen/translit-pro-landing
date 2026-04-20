@@ -46,8 +46,8 @@
       "description": "Create custom transliteration schemas for any language. Define your own keyboard layouts and mappings."
     },
     "bookmarklet": {
-	      "title": "Bookmarklet (Free — login required)",
-	      "description": "Free for all logged-in users. Create a free account to unlock it, then type in your target script directly on most websites — social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
+      "title": "Bookmarklet (Free — login required)",
+      "description": "Free for all logged-in users. Create a free account to unlock it, then type in your target script directly on most websites — social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
     },
     "translation": {
       "title": "Translation",
@@ -96,92 +96,96 @@
     "title": "Simple, Transparent Pricing",
     "subtitle": "Start free, upgrade when you need more. No hidden fees, cancel anytime.",
     "tabs": {
-	      "anonymous": "Preview",
-	      "registered": "Workspace",
+      "anonymous": "Preview",
+      "registered": "Workspace",
       "monthly": "Monthly",
       "annual": "Annual"
     },
     "free": {
-	      "name": "Free",
+      "name": "Free",
       "anonymous": {
-	        "tagline": "Try instantly. No account required.",
+        "tagline": "Try instantly. No account required.",
         "period": "forever",
         "cta": "Start Free",
         "features": [
-	          "Type in 13+ languages",
-	          "Popular keyboard layouts",
-	          "Translation",
-	          "3 search buttons",
-	          "Font styling"
+          "Type in 13+ languages",
+          "Popular keyboard layouts",
+          "Translation",
+          "3 search buttons",
+          "Font styling",
+          "Up to 2 images per document (2 MB)"
         ],
-	        "limitations": []
+        "limitations": []
       },
       "registered": {
-	        "tagline": "Save your work. Unlock more tools.",
+        "tagline": "Save your work. Unlock more tools.",
         "period": "forever",
         "cta": "Create Free Account",
         "features": [
-	          "Everything from Preview",
-	          "Bookmarklet (type in your language on any website)",
-	          "Full editor tools",
-	          "Save up to 5 documents",
-	          "AI writing assistance (50/day)",
-	          "Export to TXT"
+          "Everything from Preview",
+          "Bookmarklet (type in your language on any website)",
+          "Full editor tools",
+          "Save up to 5 documents",
+          "AI writing assistance (50/day)",
+          "Export to TXT",
+          "Up to 3 images per document (5 MB)"
         ],
-	        "limitations": []
+        "limitations": []
       }
     },
     "basic": {
       "name": "Basic",
-	      "tagline": "Your language, your rules.",
+      "tagline": "Your language, your rules.",
       "period": "/month",
       "periodAnnual": "/year",
-	      "cta": "Upgrade to Basic",
+      "cta": "Upgrade to Basic",
       "features": [
-	        "Everything from Free",
-	        "Custom transliteration rules",
+        "Everything from Free",
+        "Custom transliteration rules",
         "Custom keyboard layouts",
         "Custom UI languages",
-	        "Save up to 50 documents",
-	        "AI writing assistance (100/day)",
-	        "5 search buttons",
-	        "Export to TXT, DOCX & PDF",
-	        "No ads"
+        "Save up to 50 documents",
+        "AI writing assistance (100/day)",
+        "Up to 20 images per document (10 MB)",
+        "5 search buttons",
+        "Export to TXT, DOCX & PDF",
+        "No ads"
       ],
-	      "limitations": []
+      "limitations": []
     },
     "pro": {
       "name": "Pro",
-	      "tagline": "Have it all with no limits.",
+      "tagline": "Have it all with no limits.",
       "period": "/month",
       "periodAnnual": "/year",
       "cta": "Go Pro",
       "badge": "Most Popular",
       "features": [
-	        "Everything from Basic",
-	        "Unlimited AI writing assistance",
-	        "Unlimited documents",
-	        "Unlimited Prompt Library",
-	        "Unlimited Language Normalization",
-	        "Document folders",
-	        "All search buttons",
-	        "All export formats",
-	        "Theme customization"
+        "Everything from Basic",
+        "Document folders",
+        "Unlimited AI writing assistance",
+        "Unlimited Prompt Library",
+        "Unlimited documents",
+        "Unlimited Language Normalization",
+        "Unlimited images in documents",
+        "All search buttons",
+        "All export formats",
+        "Theme customization"
       ],
       "limitations": []
     },
     "founder": {
       "name": "Founder",
-	      "tagline": "Pay once, own Pro forever.",
+      "tagline": "Pay once, own Pro forever.",
       "period": "one-time",
       "launchPricingNote": "Launch pricing - price will increase.",
       "cta": "Become a Founder",
       "badge": "Limited Time",
       "features": [
-	        "Everything from Pro",
+        "Everything from Pro",
         "Lifetime access",
         "Never pay again",
-	        "Founder badge",
+        "Founder badge",
         "Priority support"
       ],
       "limitations": []
@@ -277,4 +281,3 @@
     "linkCopied": "Copied!"
   }
 }
-

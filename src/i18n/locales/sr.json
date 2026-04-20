@@ -87,7 +87,8 @@
           "Popularni rasporedi tastature",
           "Prevod",
           "3 dugmeta za pretragu",
-          "Stilizovanje fonta"
+          "Stilizovanje fonta",
+          "Do 2 slike po dokumentu (2 MB)"
         ],
         "limitations": []
       },
@@ -101,7 +102,8 @@
           "Kompletni alati editora",
           "Sačuvajte do 5 dokumenata",
           "AI ispravke (50 dnevno)",
-          "Izvoz u TXT"
+          "Izvoz u TXT",
+          "Do 3 slike po dokumentu (5 MB)"
         ],
         "limitations": []
       }
@@ -121,7 +123,8 @@
         "AI ispravke (100 dnevno)",
         "5 dugmadi za pretragu",
         "Izvoz u TXT, DOCX i PDF",
-        "Bez reklama"
+        "Bez reklama",
+        "Do 20 slika po dokumentu (10 MB)"
       ],
       "limitations": []
     },
@@ -141,7 +144,8 @@
         "Fascikle za dokumente",
         "Sva dugmad za pretragu",
         "Svi formati za izvoz",
-        "Prilagođavanje teme"
+        "Prilagođavanje teme",
+        "Neograničene slike u dokumentima"
       ],
       "limitations": []
     },
@@ -242,6 +246,38 @@
     "shareLabel": "Podelite:",
     "copyLink": "Kopiraj link",
     "linkCopied": "Kopirano!"
+  },
+  "featureSpotlights": {
+    "keyboard": {
+      "eyebrow": "Kraj prebacivanja tastatura",
+      "headline": "Zauvek prestanite da menjate tastature",
+      "copy": "Ne morate da tražite po OS podešavanjima ili da pamtite različite rasporede. Samo kucajte onako kako već znate — TranslitPro trenutno konvertuje, u realnom vremenu."
+    },
+    "bookmarklet": {
+      "eyebrow": "Radi svuda gde kucate",
+      "headline": "Kucajte na svom jeziku na bilo kom sajtu",
+      "subheadline": "Društvene mreže. Forumi. Imejlovi. Veb aplikacije.",
+      "copy": "Instalirajte besplatni bookmarklet jednom — i svako tekstualno polje na webu postaje višejezično. Twitter, Reddit, vaš korporativni intranet — jednostavno radi.",
+      "note": "Radi na većini veb sajtova. Ne radi na sajtovima sa strogim bezbednosnim politikama (npr. Google Docs, Gmail)."
+    },
+    "editor": {
+      "eyebrow": "Vaš potpuni radni prostor za pisanje",
+      "headline": "Pišite, prevodite i čuvajte na jednom mestu",
+      "copy": "Moćan editor bogatog teksta sa ugrađenom transliteracijom, prevodom i AI asistentom.",
+      "copy2": "Čuvajte u oblaku i izvozite u TXT, DOCX, PDF i još mnogo toga po potrebi.",
+      "tagline": "Nije potrebno prebacivanje između aplikacija."
+    }
+  },
+  "testimonials": {
+    "title": "Veruju nam višejezični pisci širom sveta",
+    "subtitle": "Od dijaspora zajednica do nastavnika jezika — TranslitPro odgovara načinu na koji ljudi zaista rade."
+  },
+  "cta": {
+    "headline": "Počnite da kucate bez ograničenja",
+    "subheadline": "Besplatan početak. Bez podešavanja. Bez krivulje učenja.",
+    "button": "Počnite besplatno — bez registracije",
+    "badge1": "Nije potrebna bankovna kartica",
+    "badge2": "13+ ugrađenih jezika",
+    "badge3": "Otkazivanje u bilo kom trenutku"
   }
 }
-

@@ -1,0 +1,536 @@
+{
+  "ru": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Забудьте о переключении раскладок",
+        "headline": "Навсегда перестаньте переключать клавиатуры",
+        "copy": "Не нужно копаться в настройках ОС или запоминать раскладки. Просто печатайте так, как вы уже умеете — TranslitPro мгновенно конвертирует всё в реальном времени."
+      },
+      "bookmarklet": {
+        "eyebrow": "Работает везде, где вы пишете",
+        "headline": "Пишите на своём языке на любом сайте",
+        "subheadline": "Соцсети. Форумы. Электронная почта. Веб-приложения.",
+        "copy": "Установите бесплатный букмарклет один раз — и каждое текстовое поле в интернете станет многоязычным. Twitter, Reddit, корпоративный интранет — всё просто работает.",
+        "note": "Работает на большинстве сайтов. Не работает на сайтах со строгими политиками безопасности (напр., Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Ваше полное рабочее пространство",
+        "headline": "Пишите, переводите и сохраняйте в одном месте",
+        "copy": "Мощный редактор форматированного текста со встроенной транслитерацией, переводом и ИИ-помощником.",
+        "copy2": "Сохраняйте в облаке и экспортируйте в TXT, DOCX, PDF и другие форматы по необходимости.",
+        "tagline": "Никакого переключения между приложениями."
+      }
+    },
+    "testimonials": {
+      "title": "Нам доверяют многоязычные авторы со всего мира",
+      "subtitle": "От диаспорных сообществ до преподавателей языков — TranslitPro подходит для реальной работы."
+    },
+    "cta": {
+      "headline": "Начните печатать без ограничений",
+      "subheadline": "Бесплатный старт. Без настройки. Без кривой обучения.",
+      "button": "Начать бесплатно — без регистрации",
+      "badge1": "Без банковской карты",
+      "badge2": "13+ языков встроено",
+      "badge3": "Отмена в любое время"
+    },
+    "pricing": {
+      "free_anon": "До 2 изображений в документе (2 МБ)",
+      "free_reg": "До 3 изображений в документе (5 МБ)",
+      "basic": "До 20 изображений в документе (10 МБ)",
+      "pro": "Неограниченные изображения в документах"
+    }
+  },
+  "uk": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Забудьте про перемикання розкладок",
+        "headline": "Назавжди перестаньте перемикати клавіатури",
+        "copy": "Не потрібно копирсатись у налаштуваннях ОС чи запам'ятовувати розкладки. Просто друкуйте так, як ви вже вмієте — TranslitPro миттєво конвертує все в реальному часі."
+      },
+      "bookmarklet": {
+        "eyebrow": "Працює скрізь, де ви пишете",
+        "headline": "Пишіть рідною мовою на будь-якому сайті",
+        "subheadline": "Соцмережі. Форуми. Електронна пошта. Вебзастосунки.",
+        "copy": "Встановіть безкоштовний букмарклет один раз — і кожне текстове поле в інтернеті стане багатомовним. Twitter, Reddit, корпоративний інтранет — все просто працює.",
+        "note": "Працює на більшості сайтів. Не працює на сайтах із суворими політиками безпеки (напр., Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Ваш повний робочий простір",
+        "headline": "Пишіть, перекладайте та зберігайте в одному місці",
+        "copy": "Потужний редактор форматованого тексту зі вбудованою транслітерацією, перекладом та AI-асистентом.",
+        "copy2": "Зберігайте в хмарі та експортуйте в TXT, DOCX, PDF та інші формати за потреби.",
+        "tagline": "Не потрібно перемикатись між застосунками."
+      }
+    },
+    "testimonials": {
+      "title": "Нам довіряють багатомовні автори з усього світу",
+      "subtitle": "Від діаспорних спільнот до викладачів мов — TranslitPro підходить для реальної роботи."
+    },
+    "cta": {
+      "headline": "Почніть друкувати без обмежень",
+      "subheadline": "Безкоштовний старт. Без налаштувань. Без кривої навчання.",
+      "button": "Почати безкоштовно — без реєстрації",
+      "badge1": "Без банківської карти",
+      "badge2": "13+ мов вбудовано",
+      "badge3": "Скасування будь-коли"
+    },
+    "pricing": {
+      "free_anon": "До 2 зображень у документі (2 МБ)",
+      "free_reg": "До 3 зображень у документі (5 МБ)",
+      "basic": "До 20 зображень у документі (10 МБ)",
+      "pro": "Необмежені зображення в документах"
+    }
+  },
+  "be": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Забудзьцеся пра пераключэнне раскладак",
+        "headline": "Назаўжды спыніцеся перамыкаць клавіятуры",
+        "copy": "Не трэба капацца ў наладах АС або запамінаць раскладкі. Проста друкуйце так, як вы ўжо ўмееце — TranslitPro імгненна канвертуе ўсё ў рэальным часе."
+      },
+      "bookmarklet": {
+        "eyebrow": "Працуе ўсюды, дзе вы пішаце",
+        "headline": "Пішыце на сваёй мове на любым сайце",
+        "subheadline": "Сацсеткі. Форумы. Электронная пошта. Вэб-праграмы.",
+        "copy": "Усталюйце бясплатны букмарклет адзін раз — і кожнае тэкставае поле ў інтэрнэце стане шматмоўным. Twitter, Reddit, карпаратыўны інтранет — усё проста працуе.",
+        "note": "Працуе на большасці сайтаў. Не працуе на сайтах са строгімі палітыкамі бяспекі (напр., Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Ваша поўная прастора для пісьма",
+        "headline": "Пішыце, перакладайце і захоўвайце ў адным месцы",
+        "copy": "Магутны рэдактар фарматаванага тэксту з убудаванай транслітарацыяй, перакладам і ІІ-памочнікам.",
+        "copy2": "Захоўвайце ў воблаку і экспартуйце ў TXT, DOCX, PDF і іншыя фарматы па патрэбе.",
+        "tagline": "Ніякага пераключэння паміж праграмамі."
+      }
+    },
+    "testimonials": {
+      "title": "Нам давяраюць шматмоўныя аўтары з усяго свету",
+      "subtitle": "Ад дыяспарных супольнасцей да выкладчыкаў моў — TranslitPro падыходзіць для рэальнай працы."
+    },
+    "cta": {
+      "headline": "Пачніце друкаваць без абмежаванняў",
+      "subheadline": "Бясплатны старт. Без наладак. Без крывой навучання.",
+      "button": "Пачаць бясплатна — без рэгістрацыі",
+      "badge1": "Без банкаўскай карты",
+      "badge2": "13+ моў убудавана",
+      "badge3": "Адмена ў любы час"
+    },
+    "pricing": {
+      "free_anon": "Да 2 відарысаў у дакуменце (2 МБ)",
+      "free_reg": "Да 3 відарысаў у дакуменце (5 МБ)",
+      "basic": "Да 20 відарысаў у дакуменце (10 МБ)",
+      "pro": "Неабмежаваная колькасць відарысаў у дакументах"
+    }
+  },
+  "bg": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Край на смяната на клавиатурите",
+        "headline": "Спрете да превключвате клавиатури завинаги",
+        "copy": "Не е нужно да ровите в настройките на ОС или да запомняте различни наредби. Просто пишете по начина, по който вече знаете — TranslitPro конвертира мигновено, в реално време."
+      },
+      "bookmarklet": {
+        "eyebrow": "Работи навсякъде, където пишете",
+        "headline": "Пишете на вашия език на всеки уебсайт",
+        "subheadline": "Социални мрежи. Форуми. Имейли. Уеб приложения.",
+        "copy": "Инсталирайте безплатния букмарклет веднъж — и всяко текстово поле в интернет става многоезично. Twitter, Reddit, корпоративният ви интранет — просто работи.",
+        "note": "Работи на повечето уебсайтове. Не работи на сайтове със строги политики за сигурност (напр. Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Вашето пълно работно пространство",
+        "headline": "Пишете, превеждайте и запазвайте на едно място",
+        "copy": "Мощен редактор с форматиран текст с вградена транслитерация, превод и AI асистент.",
+        "copy2": "Запазвайте в облака и експортирайте в TXT, DOCX, PDF и други формати при нужда.",
+        "tagline": "Не е нужно да превключвате приложения."
+      }
+    },
+    "testimonials": {
+      "title": "Доверяват ни се многоезични автори по целия свят",
+      "subtitle": "От диаспорни общности до учители по езици — TranslitPro се вписва в начина, по който хората действително работят."
+    },
+    "cta": {
+      "headline": "Започнете да пишете без ограничения",
+      "subheadline": "Безплатен старт. Без настройка. Без крива на обучение.",
+      "button": "Започнете безплатно — без регистрация",
+      "badge1": "Без кредитна карта",
+      "badge2": "13+ езика вградени",
+      "badge3": "Отказ по всяко време"
+    },
+    "pricing": {
+      "free_anon": "До 2 изображения в документ (2 МБ)",
+      "free_reg": "До 3 изображения в документ (5 МБ)",
+      "basic": "До 20 изображения в документ (10 МБ)",
+      "pro": "Неограничени изображения в документите"
+    }
+  },
+  "el": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Τέλος στις εναλλαγές πληκτρολογίου",
+        "headline": "Σταματήστε να αλλάζετε πληκτρολόγια για πάντα",
+        "copy": "Δεν χρειάζεται να ψάχνετε στις ρυθμίσεις του λειτουργικού ή να απομνημονεύετε διατάξεις. Απλά πληκτρολογήστε όπως ξέρετε ήδη — το TranslitPro μετατρέπει ακαριαία, σε πραγματικό χρόνο."
+      },
+      "bookmarklet": {
+        "eyebrow": "Λειτουργεί παντού που γράφετε",
+        "headline": "Γράψτε στη γλώσσα σας σε κάθε ιστοσελίδα",
+        "subheadline": "Μέσα κοινωνικής δικτύωσης. Φόρουμ. Email. Εφαρμογές web.",
+        "copy": "Εγκαταστήστε το δωρεάν bookmarklet μία φορά και κάθε πεδίο κειμένου στο διαδίκτυο γίνεται πολύγλωσσο. Twitter, Reddit, το εταιρικό σας intranet — απλά λειτουργεί.",
+        "note": "Λειτουργεί στις περισσότερες ιστοσελίδες. Δεν λειτουργεί σε ιστοσελίδες με αυστηρές πολιτικές ασφαλείας (π.χ. Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Ο πλήρης χώρος εργασίας σας",
+        "headline": "Γράψτε, μεταφράστε και αποθηκεύστε σε ένα μέρος",
+        "copy": "Ένας ισχυρός επεξεργαστής εμπλουτισμένου κειμένου με ενσωματωμένη μεταγραφή, μετάφραση και βοηθό AI.",
+        "copy2": "Αποθηκεύστε στο cloud και εξαγάγετε σε TXT, DOCX, PDF και άλλα όταν χρειαστεί.",
+        "tagline": "Δεν απαιτείται εναλλαγή εφαρμογών."
+      }
+    },
+    "testimonials": {
+      "title": "Εμπιστεύονται πολύγλωσσοι συγγραφείς παγκοσμίως",
+      "subtitle": "Από κοινότητες διασποράς μέχρι καθηγητές γλωσσών — το TranslitPro ταιριάζει στον τρόπο που οι άνθρωποι πραγματικά εργάζονται."
+    },
+    "cta": {
+      "headline": "Ξεκινήστε να πληκτρολογείτε χωρίς όρια",
+      "subheadline": "Δωρεάν έναρξη. Χωρίς ρύθμιση. Χωρίς καμπύλη εκμάθησης.",
+      "button": "Ξεκινήστε δωρεάν — χωρίς εγγραφή",
+      "badge1": "Δεν απαιτείται πιστωτική κάρτα",
+      "badge2": "13+ γλώσσες ενσωματωμένες",
+      "badge3": "Ακύρωση ανά πάσα στιγμή"
+    },
+    "pricing": {
+      "free_anon": "Έως 2 εικόνες ανά έγγραφο (2 MB)",
+      "free_reg": "Έως 3 εικόνες ανά έγγραφο (5 MB)",
+      "basic": "Έως 20 εικόνες ανά έγγραφο (10 MB)",
+      "pro": "Απεριόριστες εικόνες σε έγγραφα"
+    }
+  },
+  "he": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "סוף להחלפות מקלדת",
+        "headline": "הפסיקו להחליף מקלדות לתמיד",
+        "copy": "אין צורך לחפש בהגדרות מערכת ההפעלה או לשנן פריסות שונות. פשוט הקלידו כפי שאתם כבר יודעים — TranslitPro ממיר באופן מיידי, בזמן אמת."
+      },
+      "bookmarklet": {
+        "eyebrow": "עובד בכל מקום שבו אתם מקלידים",
+        "headline": "הקלידו בשפתכם בכל אתר",
+        "subheadline": "רשתות חברתיות. פורומים. מיילים. אפליקציות ווב.",
+        "copy": "התקינו את הבוקמרקלט החינמי פעם אחת — וכל שדה טקסט ברשת יהפוך לרב-לשוני. Twitter, Reddit, האינטרנט הארגוני שלכם — פשוט עובד.",
+        "note": "עובד ברוב האתרים. לא עובד באתרים עם מדיניות אבטחה מחמירה (לדוגמה, Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "סביבת העבודה המלאה שלכם",
+        "headline": "כתבו, תרגמו ושמרו במקום אחד",
+        "copy": "עורך טקסט עשיר עם תעתיק מובנה, תרגום ועוזר AI.",
+        "copy2": "שמרו בענן וייצאו ל-TXT, DOCX, PDF ועוד כשצריך.",
+        "tagline": "אין צורך לעבור בין אפליקציות."
+      }
+    },
+    "testimonials": {
+      "title": "סומכים עלינו כותבים רב-לשוניים ברחבי העולם",
+      "subtitle": "מקהילות גולים ועד מורי שפות — TranslitPro מתאים לדרך שבה אנשים עובדים בפועל."
+    },
+    "cta": {
+      "headline": "התחילו להקליד ללא מגבלות",
+      "subheadline": "התחלה חינמית. ללא הגדרה. ללא עקומת למידה.",
+      "button": "התחילו בחינם — ללא הרשמה",
+      "badge1": "לא נדרש כרטיס אשראי",
+      "badge2": "13+ שפות מובנות",
+      "badge3": "ביטול בכל עת"
+    },
+    "pricing": {
+      "free_anon": "עד 2 תמונות למסמך (2 MB)",
+      "free_reg": "עד 3 תמונות למסמך (5 MB)",
+      "basic": "עד 20 תמונות למסמך (10 MB)",
+      "pro": "תמונות ללא הגבלה במסמכים"
+    }
+  },
+  "hy": {
+    "nav_underConstruction": "Կառուցման փուլում",
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Ստեղnашарери անcumner'i verjy",
+        "headline": "Ynmisht dadaretstrek steghnaшareri p'oxarkoumy",
+        "copy": "Kariq chi ka OS-i kargavoroumneroum p'ntrelem kam tarber dasavoroutyounnner angirranel. Parzapes moutqagrek aynapēs, inchpes arden giteq — TranslitPro-n anmijapes p'oxarkoum e, iraakan zhamanakoum."
+      },
+      "bookmarklet": {
+        "eyebrow": "Ashxatoum e amamenour, vortegh moutqagreq",
+        "headline": "Moutqagrek dzer lezvaov tzantasatz kaykouml",
+        "subheadline": "Sotsialakaan tsantzerr. Forouмner. Elektronayin posta. Veb-hatsouytsner.",
+        "copy": "Teghdrek anvachar bukmarklet'y mek angam — yev internet'i bolor tekstayin vahner karta bazmalezvan karnan. Twitter, Reddit, korporatayin intranett — oust ashxatoum e.",
+        "note": "Ashxatoum e kaykeri metsambastsnoutyaamb. Chi ashxatoum khist ankoutyaamb kiroarroutyaamb ounetsoghy kaykeroum (orinakil Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Dzer amboghj grasenaky",
+        "headline": "Greq, targmanel ev pahel mek tangоum",
+        "copy": "Hzor boyandakaren tekstayin redaktor nerаkarouytsvats transliteratsiaov, targmanouytyaamb ev AI-asistentov.",
+        "copy2": "Pahel ampool'oum ev eksportatseq TXT, DOCX, PDF ev ayn anhjin anhorhzhoytyaamb.",
+        "tagline": "Kaarouyq chi hakatasats hatkouytnnerit khamoutyts."
+      }
+    },
+    "testimonials": {
+      "title": "Mez vstahoum en bazmalezvan harliqner ashxarhov mek",
+      "subtitle": "Diaspori hamayinknerits minchev lezvi ousoutsiichner — TranslitPro hamarjoumoum e mardinats iraakaan ashkhatoyanqin."
+    },
+    "cta": {
+      "headline": "Sepkek moutqagrel arantz sahmanakoumner",
+      "subheadline": "Anvachar stp. Anpartik nkoumy. Ousoumnaayin korer — chka.",
+      "button": "Sepkek anvachar — arantz grankatsoumar",
+      "badge1": "Bankayin kart chei pahanjvoum",
+      "badge2": "13+ lezou nerakarouytsvatz",
+      "badge3": "Mertyoutyoun ystekelayin zamanakouml"
+    },
+    "pricing": {
+      "free_anon": "Minchev 2 patker dastagrouml (2 ՄԲ)",
+      "free_reg": "Minchev 3 patker dastagrouml (5 ՄԲ)",
+      "basic": "Minchev 20 patker dastagrouml (10 ՄԲ)",
+      "pro": "Ansahman patkerrer dastagreroum"
+    }
+  },
+  "ka": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "კლავიატურის გადართვის დასასრული",
+        "headline": "შეწყვიტეთ კლავიატურების გადართვა სამუდამოდ",
+        "copy": "არ გჭირდებათ OS-ის პარამეტრებში ჩხრეკა ან სხვადასხვა განლაგების დამახსოვრება. უბრალოდ ბეჭდეთ ისე, როგორც უკვე იცით — TranslitPro მყისიერად გარდაქმნის, რეალურ დროში."
+      },
+      "bookmarklet": {
+        "eyebrow": "მუშაობს ყველგან, სადაც ბეჭდავთ",
+        "headline": "ბეჭდეთ თქვენს ენაზე ნებისმიერ ვებსაიტზე",
+        "subheadline": "სოციალური ქსელები. ფორუმები. ელ. ფოსტა. ვებ-აპლიკაციები.",
+        "copy": "დააინსტალირეთ უფასო ბუკმარკლეტი ერთხელ — და ინტერნეტის ყველა ტექსტური ველი მრავალენოვანი გახდება. Twitter, Reddit, კორპორატიული ინტრანეტი — უბრალოდ მუშაობს.",
+        "note": "მუშაობს ვებსაიტების უმეტესობაზე. არ მუშაობს მკაცრი უსაფრთხოების პოლიტიკის მქონე საიტებზე (მაგ. Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "თქვენი სრული სამუშაო სივრცე",
+        "headline": "დაწერეთ, თარგმნეთ და შეინახეთ ერთ ადგილას",
+        "copy": "მძლავრი ტექსტური რედაქტორი ჩაშენებული ტრანსლიტერაციით, თარგმანითა და AI ასისტენტით.",
+        "copy2": "შეინახეთ ღრუბელში და ექსპორტი გააკეთეთ TXT, DOCX, PDF და სხვა ფორმატებში საჭიროებისამებრ.",
+        "tagline": "აპლიკაციებს შორის გადართვა არ გჭირდებათ."
+      }
+    },
+    "testimonials": {
+      "title": "მრავალენოვანი მწერლები მსოფლიოს მასშტაბით გვენდობიან",
+      "subtitle": "დიასპორული თემებიდან ენის მასწავლებლებამდე — TranslitPro შეესაბამება ადამიანების რეალური მუშაობის წესს."
+    },
+    "cta": {
+      "headline": "დაიწყეთ ბეჭდვა შეზღუდვების გარეშე",
+      "subheadline": "უფასო დაწყება. დაყენება არ საჭიროა. სწავლის მრუდი — არ არსებობს.",
+      "button": "დაიწყეთ უფასოდ — რეგისტრაციის გარეშე",
+      "badge1": "საბანკო ბარათი არ გჭირდება",
+      "badge2": "13+ ჩაშენებული ენა",
+      "badge3": "გაუქმება ნებისმიერ დროს"
+    },
+    "pricing": {
+      "free_anon": "დოკუმენტზე მაქსიმუმ 2 სურათი (2 MB)",
+      "free_reg": "დოკუმენტზე მაქსიმუმ 3 სურათი (5 MB)",
+      "basic": "დოკუმენტზე მაქსიმუმ 20 სურათი (10 MB)",
+      "pro": "შეუზღუდავი სურათები დოკუმენტებში"
+    }
+  },
+  "kk": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Пернетақта ауыстыруға нүкте қойыңыз",
+        "headline": "Пернетақталарды ауыстыруды мәңгілікке тоқтатыңыз",
+        "copy": "ОЖ параметрлерін ақтарудың немесе әртүрлі жайпақтарды жаттаудың қажеті жоқ. Қалай жазасыз, солай жазыңыз — TranslitPro бірден, нақты уақытта түрлендіреді."
+      },
+      "bookmarklet": {
+        "eyebrow": "Жазатын жерде жұмыс істейді",
+        "headline": "Кез келген сайтта өз тіліңізде жазыңыз",
+        "subheadline": "Әлеуметтік желілер. Форумдар. Электрондық пошта. Веб-қолданбалар.",
+        "copy": "Тегін букмарклетті бір рет орнатыңыз — және интернеттегі әрбір мәтін өрісі көптілді болады. Twitter, Reddit, корпоративтік интранет — жай жұмыс істейді.",
+        "note": "Көптеген сайттарда жұмыс істейді. Қатаң қауіпсіздік саясаты бар сайттарда жұмыс істемейді (мысалы, Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Толыққанды жазу кеңістігіңіз",
+        "headline": "Бір жерде жазыңыз, аударыңыз және сақтаңыз",
+        "copy": "Транслитерация, аударма және AI көмекшісі кіріктірілген қуатты байытылған мәтін редакторы.",
+        "copy2": "Бұлтта сақтаңыз және қажет болғанда TXT, DOCX, PDF және басқа форматтарға экспорттаңыз.",
+        "tagline": "Қолданбалар арасында ауысудың қажеті жоқ."
+      }
+    },
+    "testimonials": {
+      "title": "Бізге дүние жүзіндегі көптілді жазушылар сенеді",
+      "subtitle": "Диаспора қауымдастықтарынан тіл мұғалімдеріне дейін — TranslitPro адамдардың нақты жұмыс істеу тәсіліне сай келеді."
+    },
+    "cta": {
+      "headline": "Шексіз теруді бастаңыз",
+      "subheadline": "Тегін бастаңыз. Баптаусыз. Үйрену қиындықсыз.",
+      "button": "Тегін бастаңыз — тіркеусіз",
+      "badge1": "Банк картасы қажет емес",
+      "badge2": "13+ тіл кіріктірілген",
+      "badge3": "Кез келген уақытта болдырмаңыз"
+    },
+    "pricing": {
+      "free_anon": "Құжатта 2-ге дейін сурет (2 МБ)",
+      "free_reg": "Құжатта 3-ке дейін сурет (5 МБ)",
+      "basic": "Құжатта 20-ға дейін сурет (10 МБ)",
+      "pro": "Құжаттарда шексіз суреттер"
+    }
+  },
+  "lt": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Baigta klaviatūrų perjunginėjimui",
+        "headline": "Nustokite keisti klaviatūras visam laikui",
+        "copy": "Nereikia ieškoti OS nustatymų ar mokytis skirtingų išdėstymų. Tiesiog rašykite taip, kaip jau mokate — TranslitPro konvertuoja akimirksniu, realiuoju laiku."
+      },
+      "bookmarklet": {
+        "eyebrow": "Veikia visur, kur rašote",
+        "headline": "Rašykite savo kalba bet kurioje svetainėje",
+        "subheadline": "Socialiniai tinklai. Forumai. El. laiškai. Žiniatinklio programos.",
+        "copy": "Įdiekite nemokamą žymeklį vieną kartą — ir kiekvienas teksto laukas internete taps daugiakalbis. Twitter, Reddit, jūsų įmonės intranetas — tiesiog veikia.",
+        "note": "Veikia daugumoje svetainių. Neveikia svetainėse su griežta turinio saugos politika (pvz., Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Jūsų pilna rašymo darbo vieta",
+        "headline": "Rašykite, verskite ir išsaugokite vienoje vietoje",
+        "copy": "Galingas raiškiojo teksto redaktorius su integruota transliteracija, vertimu ir AI pagalbininku.",
+        "copy2": "Išsaugokite debesyje ir eksportuokite į TXT, DOCX, PDF ir kt., kai reikia.",
+        "tagline": "Programų perjunginėjimas nebūtinas."
+      }
+    },
+    "testimonials": {
+      "title": "Mumis pasitiki daugiakalbiai rašytojai visame pasaulyje",
+      "subtitle": "Nuo diasporų bendruomenių iki kalbų mokytojų — TranslitPro tinka tam, kaip žmonės iš tikrųjų dirba."
+    },
+    "cta": {
+      "headline": "Pradėkite rašyti be apribojimų",
+      "subheadline": "Nemokama pradžia. Jokio diegimo. Jokios mokymosi kreivės.",
+      "button": "Pradėkite nemokamai — be registracijos",
+      "badge1": "Kredito kortelė nereikalinga",
+      "badge2": "13+ integruotų kalbų",
+      "badge3": "Atšaukite bet kada"
+    },
+    "pricing": {
+      "free_anon": "Iki 2 vaizdų dokumente (2 MB)",
+      "free_reg": "Iki 3 vaizdų dokumente (5 MB)",
+      "basic": "Iki 20 vaizdų dokumente (10 MB)",
+      "pro": "Neriboti vaizdai dokumentuose"
+    }
+  },
+  "rue": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Конець перемінань клавіатуры",
+        "headline": "Назавжды перестаньте перемінати клавіатуры",
+        "copy": "Не треба гледати в наладах ОС ані запамятёвати розкладкы. Лем пиште так, як вже вмієте — TranslitPro зараз конвертує вшытко в реальнім часі."
+      },
+      "bookmarklet": {
+        "eyebrow": "Функціонує всюды, де пишете",
+        "headline": "Пиште на своїм языку на хоцьякій страніці",
+        "subheadline": "Соціальны сіткы. Форумы. Електронна пошта. Вебовы аплікації.",
+        "copy": "Усталёвте бесплатный букмарклет єден раз — і каждый текстовый поль на інтернеті стане многоязычным. Twitter, Reddit, корпоратівный інтранет — вшытко лем робить.",
+        "note": "Функціонує на векшыні сторінок. Не функціонує на сторінках зо строгов палітіков безпекы (напр., Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Ваш цілый простор для писаня",
+        "headline": "Пиште, перекладайте і складайте в єднім місці",
+        "copy": "Силный едітор форматованого тексту з вбудованов транслітераціов, перекладом і AI-помочніком.",
+        "copy2": "Складайте до хмары і експортуйте до TXT, DOCX, PDF і іншых форматів як треба.",
+        "tagline": "Не треба перемінати меджі аплікаціями."
+      }
+    },
+    "testimonials": {
+      "title": "Нам вірять многоязычны авторы з цілого світа",
+      "subtitle": "Від діаспорных громад до учітелів языків — TranslitPro підходить про реальну роботу."
+    },
+    "cta": {
+      "headline": "Зачніть писати без обмежень",
+      "subheadline": "Бесплатный старт. Без наладок. Без крывой вчіня.",
+      "button": "Зачати бесплатно — без реґістрації",
+      "badge1": "Без банковской карты",
+      "badge2": "13+ языків вбудовано",
+      "badge3": "Відміна в хоцькій час"
+    },
+    "pricing": {
+      "free_anon": "До 2 образків в докуменьті (2 МБ)",
+      "free_reg": "До 3 образків в докуменьті (5 МБ)",
+      "basic": "До 20 образків в докуменьті (10 МБ)",
+      "pro": "Необмежена кількість образків в докуменьтах"
+    }
+  },
+  "sr": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Kraj prebacivanja tastatura",
+        "headline": "Zauvek prestanite da menjate tastature",
+        "copy": "Ne morate da tražite po OS podešavanjima ili da pamtite različite rasporede. Samo kucajte onako kako već znate — TranslitPro trenutno konvertuje, u realnom vremenu."
+      },
+      "bookmarklet": {
+        "eyebrow": "Radi svuda gde kucate",
+        "headline": "Kucajte na svom jeziku na bilo kom sajtu",
+        "subheadline": "Društvene mreže. Forumi. Imejlovi. Veb aplikacije.",
+        "copy": "Instalirajte besplatni bookmarklet jednom — i svako tekstualno polje na webu postaje višejezično. Twitter, Reddit, vaš korporativni intranet — jednostavno radi.",
+        "note": "Radi na većini veb sajtova. Ne radi na sajtovima sa strogim bezbednosnim politikama (npr. Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Vaš potpuni radni prostor za pisanje",
+        "headline": "Pišite, prevodite i čuvajte na jednom mestu",
+        "copy": "Moćan editor bogatog teksta sa ugrađenom transliteracijom, prevodom i AI asistentom.",
+        "copy2": "Čuvajte u oblaku i izvozite u TXT, DOCX, PDF i još mnogo toga po potrebi.",
+        "tagline": "Nije potrebno prebacivanje između aplikacija."
+      }
+    },
+    "testimonials": {
+      "title": "Veruju nam višejezični pisci širom sveta",
+      "subtitle": "Od dijaspora zajednica do nastavnika jezika — TranslitPro odgovara načinu na koji ljudi zaista rade."
+    },
+    "cta": {
+      "headline": "Počnite da kucate bez ograničenja",
+      "subheadline": "Besplatan početak. Bez podešavanja. Bez krivulje učenja.",
+      "button": "Počnite besplatno — bez registracije",
+      "badge1": "Nije potrebna bankovna kartica",
+      "badge2": "13+ ugrađenih jezika",
+      "badge3": "Otkazivanje u bilo kom trenutku"
+    },
+    "pricing": {
+      "free_anon": "Do 2 slike po dokumentu (2 MB)",
+      "free_reg": "Do 3 slike po dokumentu (5 MB)",
+      "basic": "Do 20 slika po dokumentu (10 MB)",
+      "pro": "Neograničene slike u dokumentima"
+    }
+  },
+  "tg": {
+    "featureSpotlights": {
+      "keyboard": {
+        "eyebrow": "Хотима ба иваз кардани клавиатура",
+        "headline": "Иваз кардани клавиатураҳоро барои ҳамеша бас кунед",
+        "copy": "Ниёзе ба кофтугӯй дар танзимоти ОС ё ёд гирифтани чинишҳои гуногун нест. Фақат тавре ки аллакай медонед нависед — TranslitPro фавран, дар вақти воқеӣ табдил медиҳад."
+      },
+      "bookmarklet": {
+        "eyebrow": "Дар ҳама ҷое, ки менависед, кор мекунад",
+        "headline": "Ба забони худ дар ҳар сайт нависед",
+        "subheadline": "Шабакаҳои иҷтимоӣ. Форумҳо. Почтаи электронӣ. Барномаҳои веб.",
+        "copy": "Букмарклети ройгонро як маротиба насб кунед — ва ҳар майдони матнии интернет бисёрзабона мешавад. Twitter, Reddit, интранети корпоративии шумо — оддӣ кор мекунад.",
+        "note": "Дар аксари сайтҳо кор мекунад. Дар сайтҳои дорои сиёсати қатъии амнияти мундариҷа кор намекунад (масалан, Google Docs, Gmail)."
+      },
+      "editor": {
+        "eyebrow": "Фазои пурраи навиштории шумо",
+        "headline": "Нависед, тарҷума кунед ва дар як ҷо нигоҳ доред",
+        "copy": "Муҳаррири тавонои матни бой бо транслитератсия, тарҷума ва дастёри AI-и дохилшуда.",
+        "copy2": "Дар абр нигоҳ доред ва дар сурати зарурат ба TXT, DOCX, PDF ва ғайра содир кунед.",
+        "tagline": "Гузаштан байни барномаҳо зарур нест."
+      }
+    },
+    "testimonials": {
+      "title": "Нависандагони бисёрзабони саросари ҷаҳон ба мо эътимод мекунанд",
+      "subtitle": "Аз ҷамоаҳои диаспора то омӯзгорони забон — TranslitPro бо шеваи воқеии кори одамон мувофиқ аст."
+    },
+    "cta": {
+      "headline": "Бе маҳдудият навиштанро оғоз кунед",
+      "subheadline": "Оғози ройгон. Бидуни танзим. Бидуни эгнаи омӯзиш.",
+      "button": "Ройгон оғоз кунед — бидуни қайд",
+      "badge1": "Корти бонкӣ лозим нест",
+      "badge2": "13+ забони дохилшуда",
+      "badge3": "Бекор кардан дар ҳар вақт"
+    },
+    "pricing": {
+      "free_anon": "То 2 тасвир дар ҳуҷҷат (2 МБ)",
+      "free_reg": "То 3 тасвир дар ҳуҷҷат (5 МБ)",
+      "basic": "То 20 тасвир дар ҳуҷҷат (10 МБ)",
+      "pro": "Тасвирҳои номаҳдуд дар ҳуҷҷатҳо"
+    }
+  }
+}

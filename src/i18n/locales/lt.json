@@ -67,103 +67,107 @@
     },
     "exploreAll": "Naršyti visas funkcijas"
   },
-	  "pricing": {
-	    "title": "Paprastos ir skaidrios kainos",
-	    "subtitle": "Pradėkite nemokamai ir atnaujinkite, kai prireiks daugiau. Jokių paslėptų mokesčių, galite bet kada atšaukti.",
-	    "tabs": {
-		      "anonymous": "Peržiūra",
-		      "registered": "Darbo sritis",
-	      "monthly": "Mėnesinis",
-	      "annual": "Metinis"
-	    },
-		    "free": {
-			      "name": "Nemokamai",
-		      "anonymous": {
-			        "tagline": "Išbandykite akimirksniu. Paskyra nereikalinga.",
-		        "period": "amžinai",
-		        "cta": "Pradėti nemokamai",
-	        "features": [
-		          "Rašykite 13+ kalbomis",
-		          "Populiarūs klaviatūros išdėstymai",
-		          "Vertimas",
-		          "3 paieškos mygtukai",
-		          "Šrifto stiliaus valdymas"
-	        ],
-		        "limitations": []
-		      },
-		      "registered": {
-			        "tagline": "Išsaugokite savo darbą ir atrakinkite daugiau įrankių.",
-		        "period": "amžinai",
-		        "cta": "Sukurti nemokamą paskyrą",
-	        "features": [
-		          "Viskas iš Peržiūros režimo",
-		          "Adresyno nuoroda (rašykite savo kalba bet kuriame tinklalapyje)",
-		          "Pilnas redaktoriaus įrankių rinkinys",
-		          "Išsaugojimas iki 5 dokumentų",
-		          "DI taisymai (50 per dieną)",
-		          "Eksportas į TXT"
-	        ],
-		        "limitations": []
-	      }
-	    },
-		    "basic": {
-		      "name": "Basic",
-			      "tagline": "Jūsų kalba, jūsų taisyklės.",
-		      "period": "/mėn.",
-		      "periodAnnual": "/metus",
-		      "cta": "Atnaujinti į Basic",
-	      "features": [
-		        "Viskas iš Nemokamo plano",
-		        "Pasirinktinės transliteracijos taisyklės",
-	        "Pasirinktiniai klaviatūros išdėstymai",
-	        "Pasirinktinės sąsajos kalbos",
-		        "Išsaugojimas iki 50 dokumentų",
-		        "DI taisymai (100 per dieną)",
-		        "5 paieškos mygtukai",
-		        "Eksportas į TXT, DOCX ir PDF",
-		        "Jokių reklamų"
-	      ],
-		      "limitations": []
-	    },
-		    "pro": {
-		      "name": "Pro",
-			      "tagline": "Visos galimybės be apribojimų.",
-		      "period": "/mėn.",
-		      "periodAnnual": "/metus",
-	      "cta": "Pereiti į Pro",
-	      "badge": "Populiariausias",
-	      "features": [
-		        "Viskas iš Basic plano",
-		        "Neriboti DI taisymai",
-		        "Neribotas dokumentų skaičius",
-		        "Neribota užklausų biblioteka",
-		        "Neribota kalbos normalizacija",
-		        "Dokumentų aplankai",
-		        "Visi paieškos mygtukai",
-		        "Visi eksporto formatai",
-		        "Temos pritaikymas"
-	      ],
-	      "limitations": []
-	    },
-		    "founder": {
-		      "name": "Įkūrėjas",
-			      "tagline": "Sumokėkite kartą ir turėkite Pro visam laikui.",
-		      "period": "vienkartinis",
-	      "launchPricingNote": "Pradinė kaina – vėliau ji didės.",
-	      "cta": "Tapti įkūrėju",
-	      "badge": "Riboto laiko pasiūlymas",
-	      "features": [
-		        "Viskas iš Pro plano",
-	        "Prieiga visam gyvenimui",
-	        "Daugiau niekada nemokėsite",
-		        "Įkūrėjo ženklelis",
-	        "Prioritetinis palaikymas"
-	      ],
-	      "limitations": []
-	    },
-	    "saveLabel": "Sutaupykite",
+  "pricing": {
+    "title": "Paprastos ir skaidrios kainos",
+    "subtitle": "Pradėkite nemokamai ir atnaujinkite, kai prireiks daugiau. Jokių paslėptų mokesčių, galite bet kada atšaukti.",
+    "tabs": {
+      "anonymous": "Peržiūra",
+      "registered": "Darbo sritis",
+      "monthly": "Mėnesinis",
+      "annual": "Metinis"
+    },
+    "free": {
+      "name": "Nemokamai",
+      "anonymous": {
+        "tagline": "Išbandykite akimirksniu. Paskyra nereikalinga.",
+        "period": "amžinai",
+        "cta": "Pradėti nemokamai",
+        "features": [
+          "Rašykite 13+ kalbomis",
+          "Populiarūs klaviatūros išdėstymai",
+          "Vertimas",
+          "3 paieškos mygtukai",
+          "Šrifto stiliaus valdymas",
+          "Iki 2 vaizdų dokumente (2 MB)"
+        ],
+        "limitations": []
+      },
+      "registered": {
+        "tagline": "Išsaugokite savo darbą ir atrakinkite daugiau įrankių.",
+        "period": "amžinai",
+        "cta": "Sukurti nemokamą paskyrą",
+        "features": [
+          "Viskas iš Peržiūros režimo",
+          "Adresyno nuoroda (rašykite savo kalba bet kuriame tinklalapyje)",
+          "Pilnas redaktoriaus įrankių rinkinys",
+          "Išsaugojimas iki 5 dokumentų",
+          "DI taisymai (50 per dieną)",
+          "Eksportas į TXT",
+          "Iki 3 vaizdų dokumente (5 MB)"
+        ],
+        "limitations": []
+      }
+    },
+    "basic": {
+      "name": "Basic",
+      "tagline": "Jūsų kalba, jūsų taisyklės.",
+      "period": "/mėn.",
+      "periodAnnual": "/metus",
+      "cta": "Atnaujinti į Basic",
+      "features": [
+        "Viskas iš Nemokamo plano",
+        "Pasirinktinės transliteracijos taisyklės",
+        "Pasirinktiniai klaviatūros išdėstymai",
+        "Pasirinktinės sąsajos kalbos",
+        "Išsaugojimas iki 50 dokumentų",
+        "DI taisymai (100 per dieną)",
+        "5 paieškos mygtukai",
+        "Eksportas į TXT, DOCX ir PDF",
+        "Jokių reklamų",
+        "Iki 20 vaizdų dokumente (10 MB)"
+      ],
+      "limitations": []
+    },
+    "pro": {
+      "name": "Pro",
+      "tagline": "Visos galimybės be apribojimų.",
+      "period": "/mėn.",
+      "periodAnnual": "/metus",
+      "cta": "Pereiti į Pro",
+      "badge": "Populiariausias",
+      "features": [
+        "Viskas iš Basic plano",
+        "Neriboti DI taisymai",
+        "Neribotas dokumentų skaičius",
+        "Neribota užklausų biblioteka",
+        "Neribota kalbos normalizacija",
+        "Dokumentų aplankai",
+        "Visi paieškos mygtukai",
+        "Visi eksporto formatai",
+        "Temos pritaikymas",
+        "Neriboti vaizdai dokumentuose"
+      ],
+      "limitations": []
+    },
+    "founder": {
+      "name": "Įkūrėjas",
+      "tagline": "Sumokėkite kartą ir turėkite Pro visam laikui.",
+      "period": "vienkartinis",
+      "launchPricingNote": "Pradinė kaina – vėliau ji didės.",
+      "cta": "Tapti įkūrėju",
+      "badge": "Riboto laiko pasiūlymas",
+      "features": [
+        "Viskas iš Pro plano",
+        "Prieiga visam gyvenimui",
+        "Daugiau niekada nemokėsite",
+        "Įkūrėjo ženklelis",
+        "Prioritetinis palaikymas"
+      ],
+      "limitations": []
+    },
+    "saveLabel": "Sutaupykite",
     "perDayLabel": "/dieną"
-	  },
+  },
   "faq": {
     "title": "Dažniausiai užduodami klausimai",
     "subtitle": "Turite klausimų? Mes turime atsakymus.",
@@ -242,5 +246,38 @@
     "shareLabel": "Dalintis:",
     "copyLink": "Kopijuoti nuorodą",
     "linkCopied": "Nukopijuota!"
+  },
+  "featureSpotlights": {
+    "keyboard": {
+      "eyebrow": "Baigta klaviatūrų perjunginėjimui",
+      "headline": "Nustokite keisti klaviatūras visam laikui",
+      "copy": "Nereikia ieškoti OS nustatymų ar mokytis skirtingų išdėstymų. Tiesiog rašykite taip, kaip jau mokate — TranslitPro konvertuoja akimirksniu, realiuoju laiku."
+    },
+    "bookmarklet": {
+      "eyebrow": "Veikia visur, kur rašote",
+      "headline": "Rašykite savo kalba bet kurioje svetainėje",
+      "subheadline": "Socialiniai tinklai. Forumai. El. laiškai. Žiniatinklio programos.",
+      "copy": "Įdiekite nemokamą žymeklį vieną kartą — ir kiekvienas teksto laukas internete taps daugiakalbis. Twitter, Reddit, jūsų įmonės intranetas — tiesiog veikia.",
+      "note": "Veikia daugumoje svetainių. Neveikia svetainėse su griežta turinio saugos politika (pvz., Google Docs, Gmail)."
+    },
+    "editor": {
+      "eyebrow": "Jūsų pilna rašymo darbo vieta",
+      "headline": "Rašykite, verskite ir išsaugokite vienoje vietoje",
+      "copy": "Galingas raiškiojo teksto redaktorius su integruota transliteracija, vertimu ir AI pagalbininku.",
+      "copy2": "Išsaugokite debesyje ir eksportuokite į TXT, DOCX, PDF ir kt., kai reikia.",
+      "tagline": "Programų perjunginėjimas nebūtinas."
+    }
+  },
+  "testimonials": {
+    "title": "Mumis pasitiki daugiakalbiai rašytojai visame pasaulyje",
+    "subtitle": "Nuo diasporų bendruomenių iki kalbų mokytojų — TranslitPro tinka tam, kaip žmonės iš tikrųjų dirba."
+  },
+  "cta": {
+    "headline": "Pradėkite rašyti be apribojimų",
+    "subheadline": "Nemokama pradžia. Jokio diegimo. Jokios mokymosi kreivės.",
+    "button": "Pradėkite nemokamai — be registracijos",
+    "badge1": "Kredito kortelė nereikalinga",
+    "badge2": "13+ integruotų kalbų",
+    "badge3": "Atšaukite bet kada"
   }
 }

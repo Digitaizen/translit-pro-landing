@@ -157,12 +157,13 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
    - **Bookmarklet** — video: `/videos/TranslitPro - Bookmarklet.mp4`
    - **Editor** — screenshot: `/screenshots/TranslitPro_RichTextEditor.png`
    - All visuals are clickable and open in a full-screen lightbox. Videos play with controls and audio in the lightbox, and reset on close (Escape or click backdrop).
-4. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Spellcheck, Powerful Editor, Export
+4. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Assistance, Powerful Editor, Export
 5. **Pricing** - 4 tiers with tabbed cards:
    - **Free** — Preview tab (no account) / Workspace tab (free account); different feature lists per tab
    - **Basic** — $3/mo or $29/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.10/day), annual view shows savings (Save $7)
    - **Pro** — $7/mo or $69/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.23/day), annual view shows savings (Save $15); "Most Popular" yellow badge
    - **Founder** — $79 one-time; "Limited Time" brand-purple badge in tab-sized frame; launch pricing note below price
+   - **Image support limits** per tier: Free Preview — up to 2 images/doc (2 MB); Workspace — up to 3 images/doc (5 MB); Basic — up to 20 images/doc (10 MB); Pro/Founder — unlimited
 5. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
 6. **Contact Modal** - Contact support form with EmailJS integration (RTL-aware)
 7. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
@@ -182,7 +183,7 @@ Key i18n keys under `pricing` in `en.json`:
 - `saveLabel` — prefix used in savings display (e.g. "Save $7")
 - `perDayLabel` — suffix used in the cost-per-day line shown on the monthly tab (e.g. "/day")
 
-**Translation workflow**: finalize `en.json` first; other locale files use a legacy fallback renderer and must be updated separately once English copy is confirmed.
+**Translation workflow**: finalize `en.json` first; other locale files use a legacy fallback renderer and must be updated separately once English copy is confirmed. Use `scripts/add_missing_translations.py` (with `scripts/translations_data.json`) to batch-apply new keys to all 13 locale files.
 
 To update prices, edit the constants in `getPricingTiers.ts` and rebuild.
 
@@ -299,6 +300,7 @@ When a user visits a localized landing page (e.g., `/ru/`), all CTA links automa
 The following translations need manual review:
 
 - [x] **Armenian (hy.json)**: The `preventCombinations` FAQ entry has English placeholder text that needs to be translated to Armenian.
+- [ ] **Armenian (hy.json)**: The newly added `featureSpotlights` and `cta` sections are in Latin transliteration — needs native Armenian speaker review to convert to proper Armenian script.
 
 ## Next Steps Checklist
 
