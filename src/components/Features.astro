@@ -1,9 +1,4 @@
 ---
-/**
- * Features section component - showcases key product features.
- * Uses a grid layout with icons and descriptions.
- */
-
 import { buildAppUrl } from '../config';
 
 interface Props {
@@ -13,39 +8,16 @@ interface Props {
 
 const { t, currentLang = 'en' } = Astro.props;
 
+// To add a lightbox image to a card, replace undefined with a path string: '/screenshots/your-image.png'
 const features = [
-  {
-    icon: '⌨️',
-    ...t.features.typeNaturally
-  },
-  {
-    icon: '🌍',
-    ...t.features.languages
-  },
-  {
-    icon: '➕',
-    ...t.features.addLanguage
-  },
-  {
-    icon: '🔖',
-    ...t.features.bookmarklet
-  },
-  {
-    icon: '🌐',
-    ...t.features.translation
-  },
-  {
-    icon: '🤖',
-    ...t.features.aiSpellcheck
-  },
-  {
-    icon: '📝',
-    ...t.features.editor
-  },
-  {
-    icon: '📄',
-    ...t.features.export
-  }
+  { key: 'typeNaturally', icon: '⌨️', image: '/screenshots/feature-type-naturally.png', ...t.features.typeNaturally },
+  { key: 'languages',     icon: '🌍', image: '/screenshots/feature-languages.png',     ...t.features.languages     },
+  { key: 'addLanguage',   icon: '➕', image: '/screenshots/feature-add-language.png',   ...t.features.addLanguage   },
+  { key: 'bookmarklet',   icon: '🔖', image: '/screenshots/feature-bookmarklet.png',   ...t.features.bookmarklet   },
+  { key: 'translation',   icon: '🌐', image: '/screenshots/feature-translation.png',   ...t.features.translation   },
+  { key: 'aiSpellcheck',  icon: '🤖', image: '/screenshots/feature-ai-spellcheck.png', ...t.features.aiSpellcheck  },
+  { key: 'editor',        icon: '📝', image: '/screenshots/feature-editor.png',        ...t.features.editor        },
+  { key: 'export',        icon: '📄', image: '/screenshots/feature-export.png',        ...t.features.export        },
 ];
 ---
 
@@ -64,10 +36,24 @@ const features = [
     <!-- Features Grid -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
       {features.map((feature) => (
-        <div class="group p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-indigo-500/50 transition-colors">
+        <div
+          class:list={[
+            "group relative p-6 bg-slate-800/50 rounded-2xl border border-slate-700/50 hover:border-indigo-500/50 transition-colors",
+            feature.image && "cursor-zoom-in"
+          ]}
+          id={feature.image ? `feature-${feature.key}-trigger` : undefined}
+        >
           <div class="text-4xl mb-4">{feature.icon}</div>
           <h3 class="text-lg font-semibold text-white mb-2">{feature.title}</h3>
           <p class="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
+          {feature.image && (
+            <div class="absolute bottom-3 right-3 flex items-center gap-1.5 bg-slate-900/80 backdrop-blur-sm text-slate-300 text-xs font-medium px-2.5 py-1 rounded-full border border-slate-700/50 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z" />
+              </svg>
+              View
+            </div>
+          )}
         </div>
       ))}
     </div>
@@ -87,3 +73,49 @@ const features = [
   </div>
 </section>
 
+<!-- Lightbox overlays — one per feature card that has an image -->
+{features.filter(f => f.image).map((feature) => (
+  <div
+    id={`feature-${feature.key}-lightbox`}
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-label={feature.title}
+  >
+    <button
+      id={`feature-${feature.key}-lightbox-close`}
+      class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+      aria-label="Close"
+    >
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <img
+      src={feature.image}
+      alt={feature.title}
+      class="max-w-full max-h-full rounded-xl shadow-2xl object-contain cursor-zoom-out"
+    />
+  </div>
+))}
+
+<script>
+  document.querySelectorAll<HTMLElement>('[id^="feature-"][id$="-trigger"]').forEach(trigger => {
+    const match = trigger.id.match(/^feature-(.+)-trigger$/);
+    if (!match) return;
+    const key = match[1];
+    const lightbox = document.getElementById(`feature-${key}-lightbox`);
+    const closeBtn = document.getElementById(`feature-${key}-lightbox-close`);
+
+    trigger.addEventListener('click', () => lightbox?.classList.remove('hidden'));
+    closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); lightbox?.classList.add('hidden'); });
+    lightbox?.addEventListener('click', () => lightbox.classList.add('hidden'));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll<HTMLElement>('[id^="feature-"][id$="-lightbox"]').forEach(el => {
+      el.classList.add('hidden');
+    });
+  });
+</script>
