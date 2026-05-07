@@ -59,12 +59,15 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   ├── index.astro       # Main landing page (English)
 │   │   ├── [lang]/
 │   │   │   └── index.astro   # Localized landing pages (ru, uk, he, …)
-│   │   └── scripts/
-│   │       ├── cyrillic.astro  # SEO landing page — /scripts/cyrillic
-│   │       ├── hebrew.astro    # SEO landing page — /scripts/hebrew
-│   │       ├── greek.astro     # SEO landing page — /scripts/greek
-│   │       ├── georgian.astro  # SEO landing page — /scripts/georgian
-│   │       └── armenian.astro  # SEO landing page — /scripts/armenian
+│   │   ├── scripts/
+│   │   │   ├── cyrillic.astro  # SEO landing page — /scripts/cyrillic
+│   │   │   ├── hebrew.astro    # SEO landing page — /scripts/hebrew
+│   │   │   ├── greek.astro     # SEO landing page — /scripts/greek
+│   │   │   ├── georgian.astro  # SEO landing page — /scripts/georgian
+│   │   │   └── armenian.astro  # SEO landing page — /scripts/armenian
+│   │   └── ru/
+│   │       └── scripts/
+│   │           └── russian.astro  # Russian-language SEO page — /ru/scripts/russian
 │   ├── styles/
 │   │   └── global.css        # Global styles (Tailwind imports)
 │   └── theme.config.ts       # Centralized theme configuration
