@@ -69,7 +69,23 @@ const hreflangs = languages.map(lang => ({
 	      }
 
 	      // Build the target localized path (English lives at the root).
-	      const targetPath = requestedLang === 'en' ? '/' : `/${requestedLang}/`;
+	      let targetPath;
+		      const pathParts = window.location.pathname.split('/').filter(Boolean);
+
+		      // Check if we're already in a localized route (e.g. /ru/ or /ru/scripts/...)
+		      const currentPathLang = supportedLangs.includes(pathParts[0]) ? pathParts[0] : 'en';
+		      const relativePath = currentPathLang === 'en' ? pathParts : pathParts.slice(1);
+
+		      if (requestedLang === 'en') {
+		        targetPath = '/' + relativePath.join('/');
+		      } else {
+		        targetPath = `/${requestedLang}/` + relativePath.join('/');
+		      }
+
+		      // Ensure trailing slash if it's not a file
+		      if (targetPath && !targetPath.endsWith('/') && !targetPath.split('/').pop().includes('.')) {
+		        targetPath += '/';
+		      }
 
 	      // Preserve any other query parameters, but remove `lang`.
 	      url.searchParams.delete('lang');

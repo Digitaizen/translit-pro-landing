@@ -57,8 +57,10 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   └── BaseLayout.astro  # Base HTML layout with SEO meta tags
 │   ├── pages/
 │   │   ├── index.astro       # Main landing page (English)
-│   │   └── [lang]/
-│   │       └── index.astro   # Localized landing pages
+│   │   ├── [lang]/
+│   │   │   └── index.astro   # Localized landing pages (ru, uk, he, …)
+│   │   └── scripts/
+│   │       └── cyrillic.astro  # SEO landing page — /scripts/cyrillic
 │   ├── styles/
 │   │   └── global.css        # Global styles (Tailwind imports)
 │   └── theme.config.ts       # Centralized theme configuration
@@ -234,6 +236,19 @@ The landing page supports 13 languages with full localization:
 - hreflang tags for all language variants
 - Canonical URLs for each language
 
+### Script-targeted SEO pages
+
+Standalone pages under `src/pages/scripts/` target high-intent search queries for specific writing scripts (e.g. "cyrillic transliteration tool"). Each page has:
+
+- A unique, keyword-targeted `<h1>` and meta title/description
+- A supported-languages grid specific to that script
+- A how-it-works section with a Latin → script mapping table
+- Shared bottom-of-funnel sections: Features, Pricing, FAQ, CTA
+
+**Language switcher behaviour on SEO pages**: these pages are English-only. Switching language in the header sends the user to the root of that locale (e.g. `/ru/`), not a localized equivalent (none exists yet).
+
+**Adding a new script page**: copy `src/pages/scripts/cyrillic.astro`, update the `title`, `description`, `languages` array, and `mappings` array for the new script.
+
 ## Main App Integration
 
 The landing page CTAs link directly to the main app at `app.translitpro.com` with deep linking support for authentication modals and language preferences.
@@ -313,6 +328,7 @@ The following translations need manual review:
 - [x] **Branding**: Logo, title, and favicon images integrated
 - [x] **Contact Form**: Contact support modal with EmailJS integration
 - [ ] **Analytics**: Add Cloudflare Web Analytics or Google Analytics
+- [x] **SEO pages**: Script-targeted landing pages under `/scripts/` (cyrillic done; hebrew, greek, georgian, armenian pending)
 - [ ] **Blog**: Consider adding a blog section for SEO content marketing
 - [ ] **A/B Testing**: Set up conversion tracking for CTA buttons
 - [ ] **Performance**: Run Lighthouse audit and optimize as needed

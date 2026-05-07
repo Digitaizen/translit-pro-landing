@@ -25,6 +25,15 @@ There are no lint or test commands.
 - Hebrew (`he`) gets `dir="rtl"` on `<html>`; all others are LTR
 - `BaseLayout.astro` contains a client-side script that reads a `?lang=xx` query param and redirects to the matching locale route (preserving hash anchors). This is how external links pass language context.
 
+### SEO pages
+
+Script-targeted English-only landing pages live under `src/pages/scripts/`. Each is a standalone `.astro` file (e.g. `cyrillic.astro`) with unique content — a custom hero, a language grid, and a how-it-works section — followed by the shared `Features`, `Pricing`, `FAQ`, and `CallToAction` components.
+
+- URL pattern: `/scripts/{script}` (e.g. `/scripts/cyrillic`)
+- These pages are **English-only**. The language switcher in the header is present but sends users to the root of the selected locale (e.g. `/ru/`) rather than a localized equivalent, because no localized SEO pages exist yet.
+- Script names for titles/descriptions are pulled from `t.footer[script]` (e.g. `t.footer.cyrillic`) so they stay in sync with the rest of the site copy without extra i18n keys.
+- Add new script pages by creating `src/pages/scripts/{script}.astro`. Follow `cyrillic.astro` as the template.
+
 ### Translation system
 
 Locale JSON files live in `src/i18n/locales/{lang}.json`. Load them via:
