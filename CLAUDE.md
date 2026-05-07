@@ -65,6 +65,16 @@ Used in both `FeatureSpotlights.astro` (videos + images) and `Features.astro` (f
 
 In `Features.astro`, set `image: '/screenshots/filename.png'` on any feature object to activate its lightbox. Leave as `undefined` to keep the card non-interactive.
 
+### Generated files — `.astro/`
+
+The `.astro/` directory (`types.d.ts`, `content.d.ts`, etc.) is **auto-generated** by Astro on every `npm run dev` or `npm run build` and is listed in `.gitignore`. Do not commit it.
+
+After a fresh clone, the IDE may show transient TypeScript errors until Astro generates these files. Fix by running:
+
+```bash
+npm run dev   # or: npx astro sync
+```
+
 ### Esbuild / TypeScript caveat
 
 Astro frontmatter TypeScript is processed by esbuild in TSX mode. **Avoid object-type index signatures** (`{ [key: string]: T }`) and generic utility types (`Partial<Record<...>>`) in frontmatter — esbuild chokes on them. Use `any`, inline values, or no type annotation instead.
