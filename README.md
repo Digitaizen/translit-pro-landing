@@ -60,7 +60,11 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   ├── [lang]/
 │   │   │   └── index.astro   # Localized landing pages (ru, uk, he, …)
 │   │   └── scripts/
-│   │       └── cyrillic.astro  # SEO landing page — /scripts/cyrillic
+│   │       ├── cyrillic.astro  # SEO landing page — /scripts/cyrillic
+│   │       ├── hebrew.astro    # SEO landing page — /scripts/hebrew
+│   │       ├── greek.astro     # SEO landing page — /scripts/greek
+│   │       ├── georgian.astro  # SEO landing page — /scripts/georgian
+│   │       └── armenian.astro  # SEO landing page — /scripts/armenian
 │   ├── styles/
 │   │   └── global.css        # Global styles (Tailwind imports)
 │   └── theme.config.ts       # Centralized theme configuration
@@ -328,7 +332,7 @@ The following translations need manual review:
 - [x] **Branding**: Logo, title, and favicon images integrated
 - [x] **Contact Form**: Contact support modal with EmailJS integration
 - [ ] **Analytics**: Add Cloudflare Web Analytics or Google Analytics
-- [x] **SEO pages**: Script-targeted landing pages under `/scripts/` (cyrillic done; hebrew, greek, georgian, armenian pending)
+- [x] **SEO pages**: Script-targeted landing pages under `/scripts/` (cyrillic, hebrew, greek, georgian, armenian)
 - [ ] **Blog**: Consider adding a blog section for SEO content marketing
 - [ ] **A/B Testing**: Set up conversion tracking for CTA buttons
 - [ ] **Performance**: Run Lighthouse audit and optimize as needed
