@@ -34,6 +34,16 @@ Script-targeted English-only landing pages live under `src/pages/scripts/`. Each
 - Script names for titles/descriptions are pulled from `t.footer[script]` (e.g. `t.footer.cyrillic`) so they stay in sync with the rest of the site copy without extra i18n keys.
 - Add new script pages by creating `src/pages/scripts/{script}.astro`. Follow `cyrillic.astro` as the template.
 
+### Competitor comparison page
+
+`src/pages/alternatives.astro` — a single-page comparison of TranslitPro against Google Input Tools, Translit.ru, Transliteration.io, and AnyKeyboard. Lives at `/alternatives/`.
+
+- **English-only**, no i18n equivalent.
+- Brand colors are applied via inline `style` attributes (not Tailwind classes) since the hex values are not in the default palette: `#20b571` (Translit green), `#6c65d4` (Pro purple). Helper strings `TP` and `TR` are defined in frontmatter and injected via `set:html` wherever the brand names appear.
+- Competitor colors (card borders, backgrounds, name highlights) use standard Tailwind classes and are self-contained in the `competitors` array — each entry has a `nameHtml` field rendered with `set:html`.
+- Brand colors are used for TranslitPro mentions throughout the page, but **not** inside buttons or plain body-text competitor name references — only in headings and the dedicated pick/card contexts.
+- The `pickHtml()` helper in frontmatter centralises the "Use: X" label rendering in the "Choosing the Right Tool" section.
+
 ### Translation system
 
 Locale JSON files live in `src/i18n/locales/{lang}.json`. Load them via:

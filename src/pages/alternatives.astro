@@ -1,0 +1,471 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Features from '../components/Features.astro';
+import Pricing from '../components/Pricing.astro';
+import FAQ from '../components/FAQ.astro';
+import CallToAction from '../components/CallToAction.astro';
+import Footer from '../components/Footer.astro';
+import { getTranslations } from '../i18n/utils';
+import { buildAppUrl } from '../config';
+
+const currentLang = 'en';
+const t = getTranslations(currentLang);
+
+const title = 'TranslitPro vs Google Input Tools, Translit.ru & More — Full Comparison 2026';
+const description = 'Honest comparison of TranslitPro against Google Input Tools, Translit.ru, Transliteration.io, and AnyKeyboard. See which transliteration tool fits your actual desktop writing workflow.';
+
+// Brand color HTML fragments — used inline and via set:html throughout the page
+const TP = '<span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span>';
+const TR = '<span style="color:#fb923c">Translit.ru</span>';
+
+const pickHtml = (pick: string, color: string) => {
+  if (pick === 'TranslitPro') return `<span class="font-semibold">${TP}</span>`;
+  if (pick === 'Translit.ru') return `<span class="font-semibold">${TR}</span>`;
+  return `<span class="font-semibold ${color}">${pick}</span>`;
+};
+
+const competitors = [
+  {
+    name: 'Google Input Tools',
+    nameHtml: '<span class="text-blue-400">Google Input Tools</span>',
+    url: 'https://www.google.com/inputtools/',
+    type: 'Input Method / Browser Extension',
+    colorBorder: 'border-blue-500/30',
+    colorBg: 'bg-blue-500/5',
+    icon: '🔵',
+    bestFor: 'Occasional script input inside Google Workspace. If you already live in Google Docs and just need to type a few words in another script, this is the path of least resistance.',
+    lacks: [
+      'No real writing editor — it is purely an input overlay',
+      'No AI-assisted corrections or suggestions',
+      'No custom transliteration schemas',
+      'No cloud documents or export formats',
+      'UI unchanged for a decade; actively feels abandoned',
+    ],
+    verdict: 'A familiar brand that works well enough for quick, casual input. The moment you need to write anything longer than a sentence — or need it to work across different websites — the gaps become obvious.',
+  },
+  {
+    name: 'Translit.ru',
+    nameHtml: TR,
+    url: 'https://translit.ru/',
+    type: 'Russian / CIS Converter',
+    colorBorder: 'border-orange-500/30',
+    colorBg: 'bg-orange-500/5',
+    icon: '🟠',
+    bestFor: 'Quick transliteration across 10 languages — Russian (multiple layouts), Hebrew, Armenian, Ukrainian, Rusyn, Belarusian, Greek, Georgian, Lithuanian, and Tajik — no account, no setup, works immediately in a browser tab.',
+    lacks: [
+      'Fixed set of 10 supported languages — no way to add or extend',
+      'Only two transliteration standards (GOST 7.79 and ISO 9) — no custom schemas',
+      'Simple textarea: no persistent documents, no sessions, resets when you close the tab',
+      'No export, no AI, no modern workflow features',
+      'Dated design with no meaningful updates in years',
+    ],
+    verdict: 'A solid, no-frills converter for its supported languages. What you see is exactly what you get — a textarea, a virtual keyboard, and two fixed standards. There is nothing wrong with that for a quick one-off job, but it is a dead end the moment you need anything more.',
+  },
+  {
+    name: 'Transliteration.io',
+    nameHtml: '<span class="text-purple-400">Transliteration.io</span>',
+    url: 'https://transliteration.io/',
+    type: 'Online Converter',
+    colorBorder: 'border-purple-500/30',
+    colorBg: 'bg-purple-500/5',
+    icon: '🟣',
+    bestFor: 'Fast, no-frills one-off conversions across a broad range of languages. Nothing to install, nothing to configure.',
+    lacks: [
+      'No real-time editor — just a textarea',
+      'No persistence: everything disappears when you close the tab',
+      'No customization, AI, or workflow layer',
+      'No export formats beyond copy-paste',
+      'Minimal retention: there is no reason to come back',
+    ],
+    verdict: 'The fastest path to a single conversion. If you need a result once and will never think about the tool again, it works. If you write in other scripts regularly, it offers nothing to build on.',
+  },
+  {
+    name: 'AnyKeyboard.io',
+    nameHtml: '<span class="text-teal-400">AnyKeyboard.io</span>',
+    url: 'https://anykeyboard.io/',
+    type: 'Virtual Keyboard Platform',
+    colorBorder: 'border-teal-500/30',
+    colorBg: 'bg-teal-500/5',
+    icon: '🟢',
+    bestFor: 'Sheer language breadth and virtual keyboard visualization. Useful when you actually need to see where the keys are on an unfamiliar layout.',
+    lacks: [
+      'Virtual keyboards are slower than phonetic typing for any script you know phonetically',
+      'No real editor or document workflow',
+      'No AI layer, no custom schemas, no exports',
+      'Commodity feature set with little differentiation',
+      'Low retention: nothing to bring users back daily',
+    ],
+    verdict: 'Impressive language count, but optimized for a slower input model. Phonetic transliteration — type how the word sounds — is faster and more natural for diaspora users and multilingual writers. AnyKeyboard is a reference tool, not a writing tool.',
+  },
+];
+
+type Mark = 'yes' | 'partial' | 'no';
+
+const mark = (v: Mark) => ({
+  yes:     { symbol: '✓', cls: 'text-emerald-400 font-bold text-base' },
+  partial: { symbol: '◐', cls: 'text-amber-400 font-bold text-base' },
+  no:      { symbol: '✗', cls: 'text-slate-600 font-bold text-base' },
+}[v]);
+
+interface FeatureRow {
+  name: string;
+  tp: Mark; git: Mark; tr: Mark; tlio: Mark; ak: Mark;
+}
+
+const featureRows: FeatureRow[] = [
+  { name: 'Phonetic (type-how-it-sounds) input',            tp: 'yes',     git: 'yes',     tr: 'yes',  tlio: 'yes',     ak: 'partial' },
+  { name: 'Real-time typing editor',                        tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
+  { name: 'Cyrillic scripts (Russian, Ukrainian…)',         tp: 'yes',     git: 'yes',     tr: 'yes',  tlio: 'yes',     ak: 'yes'     },
+  { name: 'Non-Cyrillic scripts (Hebrew, Arabic, Greek…)',  tp: 'yes',     git: 'yes',     tr: 'partial', tlio: 'yes',   ak: 'yes'     },
+  { name: 'AI-assisted corrections',                        tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
+  { name: 'Custom transliteration schemas',                 tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
+  { name: 'Cloud document saving',                          tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
+  { name: 'Export (Word, PDF, plain text)',                  tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
+  { name: 'Type on most websites (bookmarklet / extension)', tp: 'yes',     git: 'partial', tr: 'no',   tlio: 'no',      ak: 'no'      },
+  { name: 'Works without installation',                     tp: 'yes',     git: 'partial', tr: 'yes',  tlio: 'yes',     ak: 'yes'     },
+  { name: 'Modern UI / actively developed',                 tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'partial', ak: 'partial' },
+  { name: 'Free tier available',                            tp: 'yes',     git: 'yes',     tr: 'yes',  tlio: 'yes',     ak: 'yes'     },
+];
+
+const colHeaders = [
+  { label: TP,                   sub: 'Writing Workspace', highlight: true  },
+  { label: 'Google Input Tools', sub: 'Input Method',      highlight: false },
+  { label: 'Translit.ru',        sub: 'Russian Converter',  highlight: false },
+  { label: 'Transliteration.io', sub: 'Online Converter',  highlight: false },
+  { label: 'AnyKeyboard',        sub: 'Virtual Keyboard',  highlight: false },
+];
+
+const switchReasons = [
+  {
+    icon: '⚡',
+    title: 'You write, not just convert',
+    body: `Every alternative on this list is a conversion utility. ${TP} is an editor — you type, see the result in real time, and build documents without leaving the tool.`,
+  },
+  {
+    icon: '🧠',
+    title: 'AI that understands multilingual context',
+    body: 'Built-in AI checks spelling, grammar, and syntax; translates long passages; suggests rephrasing; and normalizes mixed-language sentences. No other tool in this comparison comes close.',
+  },
+  {
+    icon: '🎛️',
+    title: 'Your rules, your schema',
+    body: `Every diaspora community has its own transliteration conventions. ${TP} lets you define custom schemas so the tool types the way you think, not the way someone else standardized.`,
+  },
+  {
+    icon: '🔖',
+    title: 'Type anywhere, not just inside the app',
+    body: 'The bookmarklet turns text fields on most websites into transliteration-enabled inputs — Twitter, Reddit, a CMS, a web form. Note: sites with strict Content Security Policies (Google products, for example) block bookmarklets by design.',
+  },
+  {
+    icon: '☁️',
+    title: 'Your documents follow you',
+    body: 'Cloud-saved documents mean your multilingual drafts exist across sessions and devices. Competitors reset when you close the tab.',
+  },
+  {
+    icon: '📤',
+    title: 'Export in the format you actually need',
+    body: 'Copy-paste is a workflow bottleneck. Export directly to Word, PDF, or plain text and continue working in your existing tools.',
+  },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  currentLang={currentLang}
+  canonicalURL="https://www.translitpro.com/alternatives/"
+>
+  <Header currentLang={currentLang} t={t} />
+  <main>
+
+    <!-- Hero -->
+    <section class="relative pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-indigo-900/20 via-slate-900 to-slate-900"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-indigo-500/15 rounded-full blur-3xl"></div>
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="inline-flex items-center px-4 py-1.5 text-sm font-medium text-indigo-300 bg-indigo-500/10 rounded-full border border-indigo-500/20 mb-6">
+          <span class="mr-2">⚖️</span>
+          Honest Comparison — Updated 2026
+        </div>
+        <h1 class="text-[clamp(1.75rem,5vw,3.5rem)] font-bold tracking-tight text-white mb-6">
+          <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> vs<br/>
+          <span class="text-indigo-400">Google Input Tools, Translit.ru</span><br/>
+          <span class="text-slate-400">and More</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-4">
+          Most transliteration tools are input utilities: type into their editor, copy the result, paste it where you actually need it.
+          <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> is a <span class="text-white font-medium">desktop multilingual writing workspace</span> — a different category entirely.
+        </p>
+        <p class="text-base text-slate-500 max-w-xl mx-auto mb-10">
+          This page breaks down exactly what each tool does well, where it falls short, and who it is actually for — so you can make an informed choice.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href={buildAppUrl('', currentLang)}
+             class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-500/25 transition-all">
+            Try TranslitPro Free
+            <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+          </a>
+          <a href="#comparison-table"
+             class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 rounded-xl transition-colors">
+            Jump to Comparison Table
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The core distinction -->
+    <section class="py-14 bg-slate-800/40 border-y border-slate-700/40">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-3">The category problem</p>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+              These tools answer the same question differently
+            </h2>
+            <p class="text-slate-400 leading-relaxed">
+              Every tool on this page lets you type in a foreign script from a Latin keyboard. That is where the similarity ends.
+              Google Input Tools, Translit.ru, Transliteration.io, and AnyKeyboard are all <span class="text-white">input utilities</span> — they solve the single problem of character conversion.
+            </p>
+            <p class="text-slate-400 leading-relaxed mt-3">
+              <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> solves the broader problem of <span class="text-white">multilingual desktop writing</span>: where do the characters go after you type them, how do you save and export them, and how do you make the conversion fit your specific language conventions?
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            {[
+              { label: 'Input utilities',   desc: 'Convert text. Close tab. Repeat.', dim: true  },
+              { label: 'Writing workspace', desc: 'Write, save, export, customize.',  dim: false },
+              { label: 'One-time use',      desc: 'No memory of your past sessions.', dim: true  },
+              { label: 'Persistent',        desc: 'Documents, schemas, preferences.', dim: false },
+            ].map(card => (
+              <div class={`rounded-xl border p-4 ${card.dim ? 'border-slate-700/50 bg-slate-800/30' : 'border-indigo-500/30 bg-indigo-500/10'}`}>
+                <p class={`text-sm font-semibold mb-1 ${card.dim ? 'text-slate-500' : 'text-indigo-300'}`}>{card.label}</p>
+                <p class={`text-xs leading-relaxed ${card.dim ? 'text-slate-600' : 'text-slate-400'}`}>{card.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Competitor cards -->
+    <section class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">The Alternatives, Honestly Reviewed</h2>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            We have used each of these tools. Here is what they are actually good for — and where they stop.
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-6">
+          {competitors.map(c => (
+            <div class={`rounded-2xl border ${c.colorBorder} ${c.colorBg} p-7`}>
+              <div class="flex items-start justify-between mb-5">
+                <div>
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="text-xl">{c.icon}</span>
+                    <h3 class="text-xl font-bold" set:html={c.nameHtml} />
+                  </div>
+                  <span class="inline-block text-xs font-medium text-slate-500 bg-slate-800/60 rounded-full px-3 py-0.5 border border-slate-700/50">
+                    {c.type}
+                  </span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Best for</p>
+                <p class="text-slate-300 text-sm leading-relaxed">{c.bestFor}</p>
+              </div>
+
+              <div class="mb-5">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">What it lacks</p>
+                <ul class="space-y-1.5">
+                  {c.lacks.map(item => (
+                    <li class="flex items-start gap-2 text-sm text-slate-400">
+                      <span class="text-slate-600 mt-0.5 flex-shrink-0">✗</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="pt-4 border-t border-slate-700/40">
+                <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Verdict</p>
+                <p class="text-slate-300 text-sm leading-relaxed">{c.verdict}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison table -->
+    <section id="comparison-table" class="py-20 bg-slate-800/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Feature-by-Feature Comparison</h2>
+          <p class="text-slate-400 text-lg">
+            ✓ Supported &nbsp;·&nbsp;
+            <span class="text-amber-400">◐</span> Partial or limited &nbsp;·&nbsp;
+            <span class="text-slate-600">✗</span> Not available
+          </p>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-700/50">
+          <table class="w-full min-w-[680px] border-collapse">
+            <thead>
+              <tr class="border-b border-slate-700/50">
+                <th class="text-left py-4 px-5 text-slate-400 font-medium text-sm bg-slate-800/60 w-[34%]">Feature</th>
+                {colHeaders.map(h => (
+                  <th class={`py-4 px-3 text-center text-sm font-semibold ${h.highlight ? 'bg-indigo-500/15 text-indigo-300' : 'bg-slate-800/60 text-slate-400'}`}>
+                    <span class="block" set:html={h.label} />
+                    <span class={`text-xs font-normal block mt-0.5 ${h.highlight ? 'text-indigo-400/70' : 'text-slate-600'}`}>{h.sub}</span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {featureRows.map((row, i) => {
+                const tpMark   = mark(row.tp);
+                const gitMark  = mark(row.git);
+                const trMark   = mark(row.tr);
+                const tlioMark = mark(row.tlio);
+                const akMark   = mark(row.ak);
+                return (
+                  <tr class={`border-b border-slate-700/30 last:border-0 ${i % 2 === 0 ? 'bg-slate-800/20' : ''}`}>
+                    <td class="py-3.5 px-5 text-slate-300 text-sm">{row.name}</td>
+                    <td class="py-3.5 px-3 text-center bg-indigo-500/5">
+                      <span class={tpMark.cls}>{tpMark.symbol}</span>
+                    </td>
+                    <td class="py-3.5 px-3 text-center">
+                      <span class={gitMark.cls}>{gitMark.symbol}</span>
+                    </td>
+                    <td class="py-3.5 px-3 text-center">
+                      <span class={trMark.cls}>{trMark.symbol}</span>
+                    </td>
+                    <td class="py-3.5 px-3 text-center">
+                      <span class={tlioMark.cls}>{tlioMark.symbol}</span>
+                    </td>
+                    <td class="py-3.5 px-3 text-center">
+                      <span class={akMark.cls}>{akMark.symbol}</span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-slate-600 text-xs text-center mt-4">
+          Accuracy reflects each tool's publicly available features as of May 2026. Partial (◐) means the feature exists but requires installation, has significant limitations, or is only available in a paid tier of a competitor.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why people switch -->
+    <section class="py-20 bg-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Why Desktop Writers Switch to <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span>
+          </h2>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            These are the specific gaps that send users looking for an alternative in the first place.
+          </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {switchReasons.map(r => (
+            <div class="bg-slate-800/50 rounded-2xl border border-slate-700/50 p-6">
+              <div class="text-3xl mb-4">{r.icon}</div>
+              <h3 class="text-white font-semibold text-lg mb-2">{r.title}</h3>
+              <p class="text-slate-400 text-sm leading-relaxed" set:html={r.body} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Who should use what -->
+    <section class="py-20 bg-slate-800/30">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Choosing the Right Tool</h2>
+          <p class="text-slate-400 text-lg">Not every tool is wrong for everyone. Here is the honest breakdown.</p>
+        </div>
+        <div class="space-y-4">
+          {[
+            {
+              condition: 'You need a one-off Russian conversion right now',
+              pick: 'Translit.ru',
+              pickColor: 'text-orange-400',
+              reason: 'Simplest option — just a single text area, nothing else to think about.',
+            },
+            {
+              condition: 'You already use Google Docs and need occasional input help',
+              pick: 'Google Input Tools',
+              pickColor: 'text-blue-400',
+              reason: 'Familiar, already trusted, works inside the Google ecosystem without adding a new tool.',
+            },
+            {
+              condition: 'You need to see what the foreign keyboard looks like',
+              pick: 'AnyKeyboard.io',
+              pickColor: 'text-teal-400',
+              reason: 'Best virtual keyboard visualization of the group. Good as a reference.',
+            },
+            {
+              condition: 'You write regularly in another script and need a real workflow',
+              pick: 'TranslitPro',
+              pickColor: '',
+              reason: 'Real-time editor, cloud documents, custom schemas, AI corrections, and bookmarklet. Built for writers, not converters.',
+            },
+            {
+              condition: 'You are diaspora, a journalist, translator, or content creator who regularly writes in more than one script',
+              pick: 'TranslitPro',
+              pickColor: '',
+              reason: 'The only tool in this list that retains your work, respects your transliteration conventions, and integrates into your existing writing workflow.',
+            },
+          ].map((item) => (
+            <div class="bg-slate-800/40 rounded-xl border border-slate-700/40 px-6 py-5">
+              <p class="text-slate-300 text-sm mb-1.5">
+                <span class="text-slate-500">If:</span> {item.condition}
+              </p>
+              <p class="text-sm">
+                <span class="text-slate-500">Use:</span>{' '}
+                <span set:html={pickHtml(item.pick, item.pickColor)} />
+                <span class="text-slate-500 mx-1.5">—</span>
+                <span class="text-slate-400">{item.reason}</span>
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom CTA strip -->
+    <section class="py-16 bg-indigo-600/10 border-y border-indigo-500/20">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+          Ready to move beyond basic converters?
+        </h2>
+        <p class="text-slate-400 mb-8 text-lg">
+          <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> is free to start — no signup required. Open the app and start writing in your language in seconds.
+        </p>
+        <a href={buildAppUrl('', currentLang)}
+           class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-xl shadow-lg shadow-indigo-500/25 transition-all">
+          Start Free — No Signup
+          <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <Features t={t} currentLang={currentLang} />
+    <Pricing t={t} currentLang={currentLang} />
+    <FAQ t={t} />
+    <CallToAction t={t} currentLang={currentLang} />
+  </main>
+  <Footer t={t} />
+</BaseLayout>
