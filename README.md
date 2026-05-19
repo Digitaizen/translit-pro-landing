@@ -1,10 +1,10 @@
 # TranslitPro Landing Page
 
-Marketing landing page for [TranslitPro](https://app.translitpro.com) - a desktop transliteration suite for 13+ languages.
+Marketing landing page for [TranslitPro](https://app.translitpro.com) — a multilingual writing workspace with transliteration, AI-assisted cleanup, translation, cloud documents, and export tools.
 
 ## Overview
 
-This is a static landing page built with Astro and Tailwind CSS, deployed to Cloudflare Pages. It showcases TranslitPro's features, pricing, and FAQs to convert visitors into users.
+This is a static landing page built with Astro and Tailwind CSS, deployed to Cloudflare Pages. The English homepage at `/` now positions TranslitPro as an AI-powered multilingual writing workspace, while `/transliteration/` preserves the original transliteration-first landing experience. Localized `/{lang}/` pages still use the existing transliteration-focused structure.
 
 ## Tech Stack
 
@@ -26,13 +26,17 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 ├── src/
 │   ├── components/
 │   │   ├── Header.astro      # Navigation header with language dropdown
-│   │   ├── Hero.astro        # Hero section with CTA
-│   │   ├── Features.astro    # Features grid
+│   │   ├── Hero.astro        # Legacy transliteration hero used on /transliteration and localized pages
+│   │   ├── Features.astro    # Legacy feature grid used on /transliteration and localized pages
 │   │   ├── Pricing.astro     # Pricing tiers
 │   │   ├── FAQ.astro         # FAQ accordion with structured data
 │   │   ├── Footer.astro      # Footer with links
 │   │   ├── ContactModal.astro # Contact support modal with EmailJS
-│   │   └── LanguageDropdown.astro  # Language switcher component
+│   │   ├── LanguageDropdown.astro  # Language switcher component
+│   │   └── workspace/
+│   │       ├── WorkspaceHero.astro      # English / hero for the workspace-positioned homepage
+│   │       ├── WorkspacePillars.astro   # Three-pillar positioning section
+│   │       └── WorkspaceAnywhere.astro  # Capture → Assist → Deliver workflow section
 │   ├── features/
 │   │   └── pricing/
 │   │       └── getPricingTiers.ts # Centralized plan prices (single source of truth)
@@ -56,9 +60,10 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # Base HTML layout with SEO meta tags
 │   ├── pages/
-│   │   ├── index.astro       # Main landing page (English)
+│   │   ├── index.astro       # English workspace-positioned homepage at /
+│   │   ├── transliteration.astro # English transliteration-first landing page at /transliteration/
 │   │   ├── [lang]/
-│   │   │   └── index.astro   # Localized landing pages (ru, uk, he, …)
+│   │   │   └── index.astro   # Localized transliteration-focused landing pages (ru, uk, he, …)
 │   │   ├── scripts/
 │   │   │   ├── cyrillic.astro  # SEO landing page — /scripts/cyrillic
 │   │   │   ├── hebrew.astro    # SEO landing page — /scripts/hebrew
@@ -117,6 +122,14 @@ To test the landing page CTAs with a locally running main app:
 
 **Note:** Remove or comment out `PUBLIC_APP_URL` in `.env` before deploying, or simply delete the `.env` file. The production default (`https://app.translitpro.com`) will be used automatically.
 
+## Route Structure
+
+- `/` — English homepage positioned as the multilingual writing workspace
+- `/transliteration/` — English transliteration-focused landing page
+- `/{lang}/` — localized transliteration-focused landing pages
+- `/scripts/{script}` — English-only script SEO pages
+- `/ru/scripts/russian/` — Russian-language SEO page
+
 ## Styling
 
 The landing page uses **Tailwind CSS v4** with static utility classes for styling.
@@ -159,23 +172,35 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 
 ## Landing Page Sections
 
+### English homepage (`/`)
+
 1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In / Back to App (toggled by cookie — see below) and Try Free CTAs
-2. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
-3. **Feature Spotlights** - Three full-width narrative sections pairing copy with a visual:
-   - **Keyboard** (`FeatureSpotlights.astro`) — video: `/videos/TranslitPro - Native vs Latin.mp4`
-   - **Bookmarklet** — video: `/videos/TranslitPro - Bookmarklet.mp4`
-   - **Editor** — screenshot: `/screenshots/TranslitPro_RichTextEditor.png`
-   - All visuals are clickable and open in a full-screen lightbox. Videos play with controls and audio in the lightbox, and reset on close (Escape or click backdrop).
-4. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Assistance, Powerful Editor, Export
-5. **Pricing** - 4 tiers with tabbed cards:
+2. **Workspace Hero** - Workspace positioning, brand-colored headline emphasis, CTA buttons, and multilingual editor mockup
+3. **Workspace Pillars** - Three positioning cards: multilingual writing, AI assistance, and workspace organization
+4. **Workspace Anywhere** - Capture → Assist → Deliver workflow section framing transliteration as the entry point to a broader writing flow
+5. **Testimonials** - Social proof grid
+6. **Pricing** - 4 tiers with tabbed cards:
    - **Free** — Preview tab (no account) / Workspace tab (free account); different feature lists per tab
    - **Basic** — $3/mo or $29/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.10/day), annual view shows savings (Save $7)
    - **Pro** — $7/mo or $69/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.23/day), annual view shows savings (Save $15); "Most Popular" yellow badge
    - **Founder** — $79 one-time; "Limited Time" brand-purple badge in tab-sized frame; launch pricing note below price
    - **Image support limits** per tier: Free Preview — up to 2 images/doc (2 MB); Workspace — up to 3 images/doc (5 MB); Basic — up to 20 images/doc (10 MB); Pro/Founder — unlimited
-5. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
-6. **Contact Modal** - Contact support form with EmailJS integration (RTL-aware)
-7. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
+7. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
+8. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
+
+### Transliteration landing (`/transliteration/` and localized `/{lang}/` pages)
+
+1. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
+2. **Feature Spotlights** - Three full-width narrative sections pairing copy with a visual:
+   - **Keyboard** (`FeatureSpotlights.astro`) — video: `/videos/TranslitPro - Native vs Latin.mp4`
+   - **Bookmarklet** — video: `/videos/TranslitPro - Bookmarklet.mp4`
+   - **Editor** — screenshot: `/screenshots/TranslitPro_RichTextEditor.png`
+   - All visuals are clickable and open in a full-screen lightbox. Videos play with controls and audio in the lightbox, and reset on close (Escape or click backdrop).
+3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Assistance, Powerful Editor, Export
+4. **Testimonials** - Social proof grid
+5. **Pricing** - Shared pricing section
+6. **FAQ** - Shared FAQ section
+7. **Footer** - Shared footer section
 
 ### Pricing configuration
 

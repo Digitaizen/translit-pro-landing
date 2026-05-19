@@ -19,11 +19,20 @@ There are no lint or test commands.
 ### Routing & i18n
 
 - `/` → English (no prefix)
+- `/transliteration/` → English transliteration-focused landing page
 - `/{lang}/` → all other languages (e.g. `/ru/`, `/he/`)
-- `src/pages/index.astro` — English page
-- `src/pages/[lang]/index.astro` — generates all other locales via `getStaticPaths()`
+- `src/pages/index.astro` — English workspace-positioned homepage
+- `src/pages/transliteration.astro` — English transliteration-focused landing page
+- `src/pages/[lang]/index.astro` — generates all other locales via `getStaticPaths()` and keeps the transliteration-focused layout
 - Hebrew (`he`) gets `dir="rtl"` on `<html>`; all others are LTR
 - `BaseLayout.astro` contains a client-side script that reads a `?lang=xx` query param and redirects to the matching locale route (preserving hash anchors). This is how external links pass language context.
+
+### Homepage split
+
+- The English `/` homepage now positions TranslitPro as an AI-powered multilingual writing workspace.
+- The previous English homepage experience was preserved at `/transliteration/`.
+- New workspace-only sections live under `src/components/workspace/` (`WorkspaceHero.astro`, `WorkspacePillars.astro`, `WorkspaceAnywhere.astro`).
+- Localized `/{lang}/` pages still use the transliteration-focused page until translated equivalents are intentionally created.
 
 ### SEO pages
 

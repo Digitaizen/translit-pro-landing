@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
-import WorkspaceHero from '../components/workspace/WorkspaceHero.astro';
-import WorkspacePillars from '../components/workspace/WorkspacePillars.astro';
-import WorkspaceAnywhere from '../components/workspace/WorkspaceAnywhere.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import FeatureSpotlights from '../components/FeatureSpotlights.astro';
 import Testimonials from '../components/Testimonials.astro';
 import Pricing from '../components/Pricing.astro';
 import CallToAction from '../components/CallToAction.astro';
@@ -13,21 +13,19 @@ import { getTranslations } from '../i18n/utils';
 
 const currentLang = 'en';
 const t = getTranslations(currentLang);
-
-const title = 'AI-Powered Multilingual Writing Workspace';
-const description = 'Write naturally in any language with TranslitPro: AI-assisted corrections, transliteration, translation, cloud documents, exports, and writing tools that work across the web.';
 ---
 
 <BaseLayout
-  title={title}
-  description={description}
+  title={t.meta.title}
+  description={t.meta.description}
   currentLang={currentLang}
+  canonicalURL="https://www.translitpro.com/transliteration/"
 >
   <Header currentLang={currentLang} t={t} />
   <main>
-    <WorkspaceHero currentLang={currentLang} />
-    <WorkspacePillars />
-    <WorkspaceAnywhere currentLang={currentLang} />
+    <Hero t={t} currentLang={currentLang} />
+    <Features t={t} currentLang={currentLang} />
+    <FeatureSpotlights t={t} currentLang={currentLang} />
     <Testimonials t={t} />
     <Pricing t={t} currentLang={currentLang} />
     <FAQ t={t} />
