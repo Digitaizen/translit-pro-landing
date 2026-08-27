@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 - **Screenshots**: Added `public/screenshots/feature-ai-rewrite.png` to the marketing asset set.
 
 ### Changed
+- **Pricing**: 2026-08-27 repricing — Basic → Plus $6/mo·$48/yr, Pro $12/mo·$96/yr (2× each), matching `translit-pro`'s `tierLimits.ts`. Founder card removed from the public pricing grid (retired for new sales; constant kept in `getPricingTiers.ts` for grandfathered billing-portal references).
+  - **Files:** `src/features/pricing/getPricingTiers.ts`, `src/components/Pricing.astro`
 - **Homepage**: Repositioned the English `/` landing page around an AI-powered multilingual writing workspace while keeping localized `/{lang}/` pages on the existing transliteration-focused structure.
 - **WorkspaceHero**: Updated the hero headline copy and applied brand-color emphasis to “multilingual” and “workspace”.
 - **Screenshots**: Replaced `public/screenshots/feature-type-naturally.png` with an updated image.
