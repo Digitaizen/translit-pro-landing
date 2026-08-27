@@ -19,12 +19,16 @@
 export function getPricingTiers() {
   const CURRENCY_SYMBOL = '$';
 
-  // Prices (kept as numbers for easy future manipulation)
-  const BASIC_MONTHLY = 3;
-  const BASIC_ANNUAL = 29;
+  // Prices (kept as numbers for easy future manipulation).
+  // 2026-08-27 repricing (docs/product/TIERS_AND_PRICING.md §8.2 in the main
+  // repo): 2x each tier, annual is the anchor (not monthly x 12). Founder is
+  // retired for new sales but the constant stays for grandfathered buyers'
+  // billing portal — see Pricing.astro, which no longer renders it.
+  const BASIC_MONTHLY = 6;
+  const BASIC_ANNUAL = 48;
 
-  const PRO_MONTHLY = 7;
-  const PRO_ANNUAL = 69;
+  const PRO_MONTHLY = 12;
+  const PRO_ANNUAL = 96;
 
   const FOUNDER_ONETIME = 79;
 

@@ -39,7 +39,9 @@ const isTabbedPricingCopy = Boolean(
 
 /**
  * Legacy tiers to keep other locales building until they are updated.
- * Note: no "trial" tier is rendered anymore (4 plans total).
+ * Founder retired for new sales (2026-08-27 repricing, TIERS_AND_PRICING.md
+ * §8.5) — no longer rendered on the pricing page. Note: no "trial" tier is
+ * rendered either (3 plans total).
  */
 const legacyTiers = !isTabbedPricingCopy
 	? [
@@ -73,15 +75,6 @@ const legacyTiers = !isTabbedPricingCopy
 	      priceAmount: pricing.pro.amount,
 	      annualPriceAmount: pricing.pro.annualAmount,
 	    },
-	    {
-	      ...t.pricing.founder,
-	      ...pricing.founder,
-	      href: buildAppUrl('/signup', currentLang, 'plan=founder'),
-	      loggedInHref: buildAppUrl('/', currentLang, 'action=manage-subscription'),
-	      highlighted: false,
-	      badge: t.pricing.founder.badge,
-	      priceAmount: pricing.founder.amount,
-	    },
 	  ]
 	: [];
 ---
@@ -100,7 +93,7 @@ const legacyTiers = !isTabbedPricingCopy
 
 	    {isTabbedPricingCopy ? (
 	      <!-- Pricing Grid (tabbed, EN master copy) -->
-	      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+	      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 		        <!-- Free (Preview | Workspace) -->
 		        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
 	          <div data-pricing-tabs-root data-default-tab="anonymous" data-tab-style="slate" class="flex flex-col flex-1">
@@ -344,53 +337,10 @@ const legacyTiers = !isTabbedPricingCopy
 	          </a>
 	        </div>
 
-		        <!-- Founder (no tabs) -->
-		        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
-		          <div class="mb-4 js-pricing-card-header">
-	            <div class="js-pricing-card-title">
-	              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.founder.name}</h3>
-	              <p class="text-sm text-slate-400 min-h-[2.5rem]">{t.pricing.founder.tagline}</p>
-	            </div>
-	            <div class="mt-4 flex justify-center js-pricing-card-tabs">
-		              <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" aria-hidden="true">
-			                <span class="js-pricing-tab-static inline-flex items-center justify-center px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white text-center">
-	                  {t.pricing.founder.badge}
-	                </span>
-	              </div>
-	            </div>
-		        <div class="mt-4 js-pricing-card-price">
-		          <div class="flex items-baseline justify-center gap-1">
-		            <span class="text-sm text-slate-400">{pricing.currencySymbol}</span>
-		            <span class="text-4xl font-bold text-white">{pricing.founder.amount}</span>
-		            <span class="text-md text-slate-400"> {t.pricing.founder.period}</span>
-		          </div>
-		          <p class="mt-2 text-sm text-slate-500 text-center">{t.pricing.founder.launchPricingNote}</p>
-		        </div>
-	          </div>
-
-	          <ul class="flex-1 space-y-3 mb-6">
-	            {t.pricing.founder.features.map((feature: any) => (
-	              <li class="flex items-start gap-2">
-	                <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-	                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-	                </svg>
-	                <span class="text-sm text-slate-300">{feature}</span>
-	              </li>
-	            ))}
-	          </ul>
-
-	          <a
-	            href={buildAppUrl('/signup', currentLang, 'plan=founder')}
-	            data-logged-in-href={buildAppUrl('/', currentLang, 'action=manage-subscription')}
-	            class="js-paid-plan-cta block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
-	          >
-	            {t.pricing.founder.cta}
-	          </a>
-	        </div>
 	      </div>
 	    ) : (
 	      <!-- Pricing Grid (legacy fallback for other locales) -->
-	      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+	      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 	        {legacyTiers.map((tier: any) => (
 	          <div class:list={[
 	            "relative flex flex-col p-6 rounded-2xl border",
