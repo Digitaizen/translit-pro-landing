@@ -11,7 +11,7 @@
     "signIn": "Sign In",
     "backToApp": "Back to App",
     "startNow": "Start Now",
-    "underConstruction": "TranslitPro is under reconstruction — moving to Notylus. Basic copy-paste transliteration stays here, free."
+    "underConstruction": "TranslitPro is under reconstruction — advanced functionality is moving to Notylus. The core transliteration functionality will stay here, free to use."
   },
   "languageDropdown": {
     "translationLabel": "Translation",
