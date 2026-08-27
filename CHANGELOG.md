@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
 - **Screenshots**: Added `public/screenshots/feature-ai-rewrite.png` to the marketing asset set.
 
 ### Changed
+- **Pricing copy**: The 2026-08-27 repricing changed the prices but not the published feature lists, so the grid advertised the pre-repricing caps beside the new prices in all 14 locales. Corrected: Free is "Save up to 100 documents" (was 5) with "500 MB storage" and "AI writing assistance (10/day)" (was 50 — Starter's real spellcheck cap) and now lists document folders (moved out of the Pro-only gate); Plus is "Unlimited documents" (was "up to 50") with "5 GB storage", device sync, "AI writing assistance (50/day)" (was 100) and images at 5 MB (was 10 — the real `IMAGE_SIZE_LIMITS_MB.basic`); Pro replaces "Unlimited AI writing assistance" with "(250/day)" and adds "25 GB storage", dropping the two bullets that now sit in Plus. Also fixed three pre-existing romanized-Armenian bullets in `hy.json` ("Minchev 3 patker dastagrouml" → Armenian script).
+  - **Files:** `src/i18n/locales/*.json` (all 14)
 - **Pricing**: 2026-08-27 repricing — Basic → Plus $6/mo·$48/yr, Pro $12/mo·$96/yr (2× each), matching `translit-pro`'s `tierLimits.ts`. Founder card removed from the public pricing grid (retired for new sales; constant kept in `getPricingTiers.ts` for grandfathered billing-portal references).
   - **Files:** `src/features/pricing/getPricingTiers.ts`, `src/components/Pricing.astro`
 - **Homepage**: Repositioned the English `/` landing page around an AI-powered multilingual writing workspace while keeping localized `/{lang}/` pages on the existing transliteration-focused structure.

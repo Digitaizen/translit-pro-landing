@@ -100,10 +100,12 @@
           "Sve iz verzije Pregled",
           "Bookmarklet (kucajte na svom jeziku na bilo kom sajtu)",
           "Kompletni alati editora",
-          "Sačuvajte do 5 dokumenata",
-          "AI ispravke (50 dnevno)",
+          "Sačuvajte do 100 dokumenata",
+          "500 MB prostora",
+          "AI ispravke (10 dnevno)",
           "Izvoz u TXT",
-          "Do 3 slike po dokumentu (5 MB)"
+          "Do 3 slike po dokumentu (5 MB)",
+          "Fascikle za dokumente"
         ],
         "limitations": []
       }
@@ -119,12 +121,14 @@
         "Prilagođena pravila transliteracije",
         "Prilagođeni rasporedi tastature",
         "Prilagođeni jezici interfejsa",
-        "Sačuvajte do 50 dokumenata",
-        "AI ispravke (100 dnevno)",
+        "Neograničen broj dokumenata",
+        "5 GB prostora",
+        "Sinhronizacija između uređaja",
+        "AI ispravke (50 dnevno)",
         "5 dugmadi za pretragu",
         "Izvoz u TXT, DOCX i PDF",
         "Bez reklama",
-        "Do 20 slika po dokumentu (10 MB)"
+        "Do 20 slika po dokumentu (5 MB)"
       ],
       "limitations": []
     },
@@ -137,11 +141,10 @@
       "badge": "Najpopularnije",
       "features": [
         "Sve iz Basic verzije",
-        "Neograničene AI ispravke",
-        "Neograničen broj dokumenata",
+        "AI ispravke (250 dnevno)",
+        "25 GB prostora",
         "Neograničena biblioteka upita (Prompt Library)",
         "Neograničena normalizacija jezika",
-        "Fascikle za dokumente",
         "Sva dugmad za pretragu",
         "Svi formati za izvoz",
         "Prilagođavanje teme",

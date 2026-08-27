@@ -100,10 +100,12 @@
           "Viskas iš Peržiūros režimo",
           "Adresyno nuoroda (rašykite savo kalba bet kuriame tinklalapyje)",
           "Pilnas redaktoriaus įrankių rinkinys",
-          "Išsaugojimas iki 5 dokumentų",
-          "DI taisymai (50 per dieną)",
+          "Išsaugojimas iki 100 dokumentų",
+          "500 MB saugyklos",
+          "DI taisymai (10 per dieną)",
           "Eksportas į TXT",
-          "Iki 3 vaizdų dokumente (5 MB)"
+          "Iki 3 vaizdų dokumente (5 MB)",
+          "Dokumentų aplankai"
         ],
         "limitations": []
       }
@@ -119,12 +121,14 @@
         "Pasirinktinės transliteracijos taisyklės",
         "Pasirinktiniai klaviatūros išdėstymai",
         "Pasirinktinės sąsajos kalbos",
-        "Išsaugojimas iki 50 dokumentų",
-        "DI taisymai (100 per dieną)",
+        "Neribotas dokumentų skaičius",
+        "5 GB saugyklos",
+        "Sinchronizavimas tarp įrenginių",
+        "DI taisymai (50 per dieną)",
         "5 paieškos mygtukai",
         "Eksportas į TXT, DOCX ir PDF",
         "Jokių reklamų",
-        "Iki 20 vaizdų dokumente (10 MB)"
+        "Iki 20 vaizdų dokumente (5 MB)"
       ],
       "limitations": []
     },
@@ -137,11 +141,10 @@
       "badge": "Populiariausias",
       "features": [
         "Viskas iš Basic plano",
-        "Neriboti DI taisymai",
-        "Neribotas dokumentų skaičius",
+        "DI taisymai (250 per dieną)",
+        "25 GB saugyklos",
         "Neribota užklausų biblioteka",
         "Neribota kalbos normalizacija",
-        "Dokumentų aplankai",
         "Visi paieškos mygtukai",
         "Visi eksporto formatai",
         "Temos pritaikymas",

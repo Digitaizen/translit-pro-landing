@@ -125,10 +125,12 @@
           "Everything from Preview",
           "Bookmarklet (type in your language on any website)",
           "Full editor tools",
-          "Save up to 5 documents",
-          "AI writing assistance (50/day)",
+          "Save up to 100 documents",
+          "500 MB storage",
+          "AI writing assistance (10/day)",
           "Export to TXT",
-          "Up to 3 images per document (5 MB)"
+          "Up to 3 images per document (5 MB)",
+          "Document folders"
         ],
         "limitations": []
       }
@@ -144,9 +146,11 @@
         "Custom transliteration rules",
         "Custom keyboard layouts",
         "Custom UI languages",
-        "Save up to 50 documents",
-        "AI writing assistance (100/day)",
-        "Up to 20 images per document (10 MB)",
+        "Unlimited documents",
+        "5 GB storage",
+        "Sync across all your devices",
+        "AI writing assistance (50/day)",
+        "Up to 20 images per document (5 MB)",
         "5 search buttons",
         "Export to TXT, DOCX & PDF",
         "No ads"
@@ -162,10 +166,9 @@
       "badge": "Most Popular",
       "features": [
         "Everything from Basic",
-        "Document folders",
-        "Unlimited AI writing assistance",
+        "AI writing assistance (250/day)",
+        "25 GB storage",
         "Unlimited Prompt Library",
-        "Unlimited documents",
         "Unlimited Language Normalization",
         "Unlimited images in documents",
         "All search buttons",
