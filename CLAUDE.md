@@ -12,27 +12,44 @@ npm run preview  # preview production build locally
 
 There are no lint or test commands.
 
+## Scope: this repo is the TranslitPro site only
+
+This repo serves **`www.translitpro.com`** — the transliteration product. The
+Notylus workspace marketing site is a **separate repo** (`notylus-landing`) on
+**`www.notylus.net`**. Do not add workspace/second-brain positioning here; see
+`docs/product/SPLIT_CONTRACT.md` §3 in the `translit-pro` repo for which surface
+owns which message.
+
+The two roots are deliberately **not** redirected to each other: this domain
+carries the transliteration search authority that acquires users, and
+`notylus.net` starts from zero. Cross-linking only — the under-construction
+banner in `Header.astro` links to `NOTYLUS_SITE_URL`.
+
 ## Architecture
 
 **Astro 5 static site** deployed to Cloudflare Pages. All 13 language variants are pre-rendered at build time.
 
 ### Routing & i18n
 
-- `/` → English (no prefix)
-- `/transliteration/` → English transliteration-focused landing page
+- `/` → English transliteration homepage (no prefix)
 - `/{lang}/` → all other languages (e.g. `/ru/`, `/he/`)
-- `src/pages/index.astro` — English workspace-positioned homepage
-- `src/pages/transliteration.astro` — English transliteration-focused landing page
-- `src/pages/[lang]/index.astro` — generates all other locales via `getStaticPaths()` and keeps the transliteration-focused layout
+- `src/pages/index.astro` — English transliteration homepage
+- `src/pages/[lang]/index.astro` — generates all other locales via `getStaticPaths()` with the same section order as `index.astro`
 - Hebrew (`he`) gets `dir="rtl"` on `<html>`; all others are LTR
 - `BaseLayout.astro` contains a client-side script that reads a `?lang=xx` query param and redirects to the matching locale route (preserving hash anchors). This is how external links pass language context.
 
-### Homepage split
+### Redirects
 
-- The English `/` homepage now positions TranslitPro as an AI-powered multilingual writing workspace.
-- The previous English homepage experience was preserved at `/transliteration/`.
-- New workspace-only sections live under `src/components/workspace/` (`WorkspaceHero.astro`, `WorkspacePillars.astro`, `WorkspaceAnywhere.astro`).
-- Localized `/{lang}/` pages still use the transliteration-focused page until translated equivalents are intentionally created.
+`public/_redirects` (Cloudflare Pages) 301s `/transliteration*` → `/`. Between
+2026-08-07 and 2026-08-28 `/` carried the Notylus workspace pitch and
+`/transliteration/` held the transliteration page; that pitch moved to
+`notylus-landing`, so the URL is now a duplicate of the root.
+
+Two gotchas if you add more redirects: Pages only consults `_redirects` when no
+static asset matches the path, so the corresponding page under `src/pages/` has
+to be **deleted**, not just redirected; and Astro's built-in `redirects` config
+would emit a meta-refresh HTML page instead, which keeps competing in the search
+index.
 
 ### SEO pages
 
@@ -69,6 +86,15 @@ Adding a new language requires: a new locale JSON file, an entry in `src/i18n/la
 ### Pricing
 
 `src/features/pricing/getPricingTiers.ts` is the single source of truth for all prices. It auto-computes savings and cost-per-day from the base constants. Prices are intentionally **not** in locale files so browser translation extensions can't mangle them.
+
+`BaseLayout.astro`'s `SoftwareApplication` JSON-LD reads from the same module. It
+used to hardcode its offers and drifted to advertising pre-repricing prices and a
+retired Founder SKU to Google long after the visible page was fixed — never
+inline a price in structured data.
+
+The Notylus site (`notylus-landing`) keeps its own copy of this file. One plan
+unlocks both products, so the numbers must match there, here, and in the app's
+`app_tier_pricing` table.
 
 ### App URL building
 

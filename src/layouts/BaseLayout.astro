@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { languages, getLanguageByCode } from '../i18n/languages';
+import { getPricingTiers } from '../features/pricing/getPricingTiers';
 
 interface Props {
   title: string;
@@ -28,6 +29,15 @@ const langDir = currentLanguage?.dir || 'ltr';
  * This is embedded into the client-side redirect script.
  */
 const supportedLangCodes = languages.map((lang) => lang.code);
+
+/**
+ * Prices for the `SoftwareApplication` structured data below. Read from the
+ * pricing module rather than written inline: the hardcoded copy here still
+ * advertised the pre-repricing $1.50 / $5 and a Founder offer that is no longer
+ * for sale, which is exactly the kind of stale price Google surfaces in a rich
+ * result long after the page itself is fixed.
+ */
+const pricing = getPricingTiers();
 
 // Generate hreflang URLs for all languages
 const baseUrl = Astro.site?.toString() || 'https://www.translitpro.com';
@@ -139,13 +149,13 @@ const hreflangs = languages.map(lang => ({
         {
           "@type": "Offer",
           "name": "Free",
-          "price": "0",
+          "price": String(pricing.free.amount),
           "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
           "name": "Basic",
-          "price": "1.50",
+          "price": String(pricing.basic.amount),
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
@@ -155,18 +165,12 @@ const hreflangs = languages.map(lang => ({
         {
           "@type": "Offer",
           "name": "Pro",
-          "price": "5",
+          "price": String(pricing.pro.amount),
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
             "billingDuration": "P1M"
           }
-        },
-        {
-          "@type": "Offer",
-          "name": "Founder",
-          "price": "50",
-          "priceCurrency": "USD"
         }
       ]
     })} />

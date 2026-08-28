@@ -17,6 +17,14 @@ export const SHOW_UNDER_CONSTRUCTION = true;
 export const APP_BASE_URL = import.meta.env.PUBLIC_APP_URL || 'https://app.translitpro.com';
 
 /**
+ * Marketing site for Notylus, the multilingual workspace built on the same
+ * account. Lives in its own repo (`notylus-landing`) on its own host — the two
+ * roots are deliberately not redirected to each other, since this domain holds
+ * the transliteration search traffic and `notylus.net` starts from zero.
+ */
+export const NOTYLUS_SITE_URL = 'https://www.notylus.net';
+
+/**
  * Build a URL to the main app with optional path and language parameter.
  * @param path - Optional path (e.g., '/login', '/signup', '/trial')
  * @param currentLang - Current language code (adds ?lang= param if not 'en')

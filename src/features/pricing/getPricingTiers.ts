@@ -21,16 +21,14 @@ export function getPricingTiers() {
 
   // Prices (kept as numbers for easy future manipulation).
   // 2026-08-27 repricing (docs/product/TIERS_AND_PRICING.md §8.2 in the main
-  // repo): 2x each tier, annual is the anchor (not monthly x 12). Founder is
-  // retired for new sales but the constant stays for grandfathered buyers'
-  // billing portal — see Pricing.astro, which no longer renders it.
+  // repo): 2x each tier, annual is the anchor (not monthly x 12). Founder was
+  // retired for new sales and, as of 2026-08-28, removed from the app's
+  // purchase paths and from Stripe — so no Founder price is published here.
   const BASIC_MONTHLY = 6;
   const BASIC_ANNUAL = 48;
 
   const PRO_MONTHLY = 12;
   const PRO_ANNUAL = 96;
-
-  const FOUNDER_ONETIME = 79;
 
   const FREE = 0;
 
@@ -122,11 +120,5 @@ export function getPricingTiers() {
       annualSavings: formatWithCurrency(proAnnualSavingsAmount),
     },
 
-    founder: {
-      /** Numeric one-time Founder price. */
-      amount: FOUNDER_ONETIME,
-      /** One-time price formatted with currency, e.g. "$79". */
-      price: formatWithCurrency(FOUNDER_ONETIME),
-    },
   };
 }

@@ -1,0 +1,9 @@
+# Cloudflare Pages redirects.
+#
+# `/transliteration/` was the English transliteration page while `/` carried the
+# AI-workspace pitch. That pitch now lives on www.notylus.net, so `/` is the
+# transliteration page again and this URL is a duplicate. 301 rather than delete:
+# it was live long enough to be linked and indexed.
+/transliteration       /   301
+/transliteration/      /   301
+/transliteration/*     /   301

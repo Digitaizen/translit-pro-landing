@@ -6,7 +6,6 @@
  * - Starter: Anonymous | Registered
  * - Basic: Monthly | Annual (shows "Save $X")
  * - Pro: Monthly | Annual (shows "Save $X")
- * - Founder: no tabs
  *
  * Other locales may not have the new pricing copy yet; this component includes
  * a legacy fallback rendering to keep all locale routes prerenderable.
@@ -33,15 +32,14 @@ const isTabbedPricingCopy = Boolean(
 	  t?.pricing?.free?.anonymous &&
 	  t?.pricing?.free?.registered &&
 	  t?.pricing?.basic &&
-	  t?.pricing?.pro &&
-	  t?.pricing?.founder
+	  t?.pricing?.pro
 );
 
 /**
  * Legacy tiers to keep other locales building until they are updated.
- * Founder retired for new sales (2026-08-27 repricing, TIERS_AND_PRICING.md
- * §8.5) — no longer rendered on the pricing page. Note: no "trial" tier is
- * rendered either (3 plans total).
+ * Founder is retired and no longer purchasable anywhere (2026-08-28) — not
+ * rendered on the pricing page. Note: no "trial" tier is rendered either
+ * (3 plans total).
  */
 const legacyTiers = !isTabbedPricingCopy
 	? [
