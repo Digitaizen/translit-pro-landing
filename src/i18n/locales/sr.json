@@ -143,8 +143,8 @@
         "Sve iz Basic verzije",
         "AI ispravke (250 dnevno)",
         "25 GB prostora",
-        "Neograničena biblioteka upita (Prompt Library)",
-        "Neograničena normalizacija jezika",
+        "Biblioteka upita / Prompt Library (100 sačuvanih)",
+        "Normalizacija jezika (250/dan)",
         "Sva dugmad za pretragu",
         "Svi formati za izvoz",
         "Prilagođavanje teme",
@@ -197,7 +197,7 @@
       },
       "freeTrial": {
         "question": "Postoji li besplatni probni period?",
-        "answer": "Da! Osnovne funkcije transliteracije možete koristiti potpuno besplatno, zauvek — bez potrebe za registracijom. Ako kreirate besplatan nalog, bookmarklet je vaš zauvek besplatno, a dobijate i 30 dana probe naprednih funkcija uključujući AI proveru pravopisa, izvoz i skladištenje u oblaku (5 dokumenata na besplatnom nalogu, 50 u Basic, neograničeno u Pro)."
+        "answer": "Da! Osnovne funkcije transliteracije možete koristiti potpuno besplatno, zauvek — bez potrebe za registracijom. Ako kreirate besplatan nalog, bookmarklet je vaš zauvek besplatno, a dobijate i 30 dana probe naprednih funkcija uključujući AI proveru pravopisa, izvoz i skladištenje u oblaku (500 MB besplatno, 5 GB u Basic, 25 GB u Pro)."
       },
       "addOwnLanguage": {
         "question": "Mogu li dodati sopstveni jezik?",

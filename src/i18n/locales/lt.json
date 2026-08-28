@@ -143,8 +143,8 @@
         "Viskas iš Basic plano",
         "DI taisymai (250 per dieną)",
         "25 GB saugyklos",
-        "Neribota užklausų biblioteka",
-        "Neribota kalbos normalizacija",
+        "Užklausų biblioteka (100 išsaugotų)",
+        "Kalbos normalizacija (250/dieną)",
         "Visi paieškos mygtukai",
         "Visi eksporto formatai",
         "Temos pritaikymas",
@@ -197,7 +197,7 @@
       },
       "freeTrial": {
         "question": "Ar yra nemokamas bandomasis laikotarpis?",
-        "answer": "Taip! Pagrindinėmis transliteracijos funkcijomis galite naudotis visiškai nemokamai visą laiką. Užsiregistravę taip pat gaunate Pro funkcijų bandomąją versiją, įskaitant adresyno nuorodą, DI rašybos patikrą, eksportą į įvairius formatus ir saugyklą (vietinę bandomajame laikotarpyje, debesyje Pro versijoje)."
+        "answer": "Taip! Pagrindinėmis transliteracijos funkcijomis galite naudotis visiškai nemokamai visą laiką. Užsiregistravę taip pat gaunate Pro funkcijų bandomąją versiją, įskaitant adresyno nuorodą, DI rašybos patikrą, eksportą į įvairius formatus ir saugyklą (500 MB nemokamai, 5 GB su Basic, 25 GB su Pro)."
       },
       "addOwnLanguage": {
         "question": "Ar galiu pridėti savo kalbą?",

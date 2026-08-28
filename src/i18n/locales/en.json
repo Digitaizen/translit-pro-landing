@@ -168,8 +168,8 @@
         "Everything from Basic",
         "AI writing assistance (250/day)",
         "25 GB storage",
-        "Unlimited Prompt Library",
-        "Unlimited Language Normalization",
+        "Prompt library (100 saved)",
+        "Language normalization (250/day)",
         "Unlimited images in documents",
         "All search buttons",
         "All export formats",
@@ -230,7 +230,7 @@
       },
       "freeTrial": {
         "question": "Is there a free trial?",
-        "answer": "Yes! You can use the basic transliteration features completely free, forever — no signup required. If you create a free account, the bookmarklet is yours free forever, and you also get a 30-day trial of advanced features including AI writing assistance, export, and cloud storage (5 docs in free account, 50 in Basic, unlimited in Pro)."
+        "answer": "Yes! You can use the basic transliteration features completely free, forever — no signup required. If you create a free account, the bookmarklet is yours free forever, and you also get a 30-day trial of advanced features including AI writing assistance, export, and cloud storage (500 MB free, 5 GB on Basic, 25 GB on Pro)."
       },
       "addOwnLanguage": {
         "question": "Can I add my own language?",
