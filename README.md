@@ -122,6 +122,22 @@ To test the landing page CTAs with a locally running main app:
 
 **Note:** Remove or comment out `PUBLIC_APP_URL` in `.env` before deploying, or simply delete the `.env` file. The production default (`https://app.translitpro.com`) will be used automatically.
 
+### Reconstruction / Beta banner
+
+`Header.astro` renders a dismissable "under reconstruction" notice whose
+visibility is controlled from `public.app_status_banner.translitpro_show`
+(a Supabase table shared with the main `translit-pro` app and
+`notylus-landing`, each keyed to its own column) — flip it in the Supabase
+dashboard, no redeploy needed. It replaces the old hardcoded
+`SHOW_UNDER_CONSTRUCTION` constant.
+
+Requires `PUBLIC_SUPABASE_URL` / `PUBLIC_SUPABASE_ANON_KEY` in `.env` (see
+`.env.example`) — the same anon key the main app uses. This is a static
+build, so both must also be set in Cloudflare Pages' build environment
+variables before building; they're inlined at build time, not read at
+runtime. A visitor's dismissal (✕) persists for the browser session via
+`sessionStorage`, so it reappears next session while the flag is still on.
+
 ## Route Structure
 
 - `/` — English homepage positioned as the multilingual writing workspace

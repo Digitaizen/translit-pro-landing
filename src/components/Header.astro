@@ -5,7 +5,7 @@
  */
 
 import LanguageDropdown from './LanguageDropdown.astro';
-import { buildAppUrl, NOTYLUS_SITE_URL, SHOW_UNDER_CONSTRUCTION } from '../config';
+import { buildAppUrl, NOTYLUS_SITE_URL } from '../config';
 
 interface Props {
   currentLang?: string;
@@ -16,20 +16,19 @@ const { currentLang = 'en', t } = Astro.props;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50">
-  {SHOW_UNDER_CONSTRUCTION && (
-    <!--
-      Reconstruction / Notylus move notice.
-      The whole banner links to the Notylus site: the notice already names
-      Notylus in all 13 locales, so making it the link adds the cross-domain
-      pointer without introducing a new string to translate.
-    -->
-    <a
-      href={NOTYLUS_SITE_URL}
-      class="block bg-amber-500 hover:bg-amber-400 text-slate-900 text-center py-1.5 px-4 text-sm font-medium leading-snug transition-colors"
-    >
-      🚧 {t.nav.underConstruction}
-    </a>
-  )}
+  <!--
+    Reconstruction / Notylus move notice — visibility is DB-backed
+    (public.app_status_banner.translitpro_show, read anonymously below), so it
+    can be flipped without a deploy. Starts hidden; the script un-hides it
+    once the flag comes back true and the visitor hasn't dismissed it this
+    session. The notice text links to the Notylus site (it already names
+    Notylus in all 13 locales), with a separate dismiss control beside it so
+    dismissing doesn't also navigate.
+  -->
+  <div id="status-banner" class="hidden bg-amber-500 text-slate-900 text-center py-1.5 px-4 text-sm font-medium leading-snug">
+    <a href={NOTYLUS_SITE_URL} class="align-middle hover:underline">🚧 {t.nav.underConstruction}</a>
+    <button id="status-banner-dismiss" aria-label="Dismiss" class="ml-2 align-middle text-slate-900/70 hover:text-slate-900 font-bold">✕</button>
+  </div>
   <div class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
   <nav class="w-full px-4 sm:px-6 lg:px-8">
     <div class="relative flex items-center justify-between h-16">
@@ -160,6 +159,41 @@ const { currentLang = 'en', t } = Astro.props;
     iconBack?.classList.remove('hidden');
 
     document.getElementById('header-start-now-btn')?.classList.add('hidden');
+  })();
+
+  // Reconstruction / Beta notice — reads public.app_status_banner directly
+  // over PostgREST (anon key, RLS-gated public read). Fails closed (banner
+  // stays hidden) on any missing config, network error, or non-2xx response.
+  (async function () {
+    const SESSION_KEY = 'tp_status_banner_dismissed';
+    const banner = document.getElementById('status-banner');
+    const dismissBtn = document.getElementById('status-banner-dismiss');
+    if (!banner) return;
+
+    dismissBtn?.addEventListener('click', () => {
+      sessionStorage.setItem(SESSION_KEY, 'true');
+      banner.classList.add('hidden');
+    });
+
+    if (sessionStorage.getItem(SESSION_KEY) === 'true') return;
+
+    const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+    const supabaseAnonKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+    if (!supabaseUrl || !supabaseAnonKey) return;
+
+    try {
+      const res = await fetch(
+        `${supabaseUrl}/rest/v1/app_status_banner?select=translitpro_show&id=eq.true`,
+        { headers: { apikey: supabaseAnonKey, Authorization: `Bearer ${supabaseAnonKey}` } }
+      );
+      if (!res.ok) return;
+      const rows = await res.json();
+      if (rows?.[0]?.translitpro_show) {
+        banner.classList.remove('hidden');
+      }
+    } catch {
+      // Network/DB error — leave the banner hidden.
+    }
   })();
 </script>
 

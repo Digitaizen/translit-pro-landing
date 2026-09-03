@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Header banner**: The "under reconstruction" notice is now DB-backed and dismissable instead of a hardcoded, permanent `SHOW_UNDER_CONSTRUCTION` constant. It reads `public.app_status_banner.translitpro_show` client-side over PostgREST (new `PUBLIC_SUPABASE_URL`/`PUBLIC_SUPABASE_ANON_KEY` env vars — must be set in Cloudflare Pages, static build inlines them), so it can be toggled from Supabase without a redeploy, and a dismiss (✕) persists for the session via `sessionStorage`.
 - **Routing**: Added a dedicated English `/transliteration/` page that preserves the original transliteration-focused landing experience.
 - **Homepage**: Added modular workspace landing sections in `src/components/workspace/` (`WorkspaceHero`, `WorkspacePillars`, `WorkspaceAnywhere`) for the English root page.
 - **Screenshots**: Added `public/screenshots/feature-ai-rewrite.png` to the marketing asset set.
