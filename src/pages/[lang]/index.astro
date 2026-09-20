@@ -4,7 +4,6 @@ import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import Features from '../../components/Features.astro';
 import FeatureSpotlights from '../../components/FeatureSpotlights.astro';
-import Testimonials from '../../components/Testimonials.astro';
 import Pricing from '../../components/Pricing.astro';
 import CallToAction from '../../components/CallToAction.astro';
 import FAQ from '../../components/FAQ.astro';
@@ -26,7 +25,7 @@ const t = getTranslations(lang as string);
 
 <BaseLayout 
   title={t.meta.title} 
-  description={t.meta.description}
+  description={`${t.features.typeNaturally.description} ${t.features.languages.description}`}
   currentLang={lang}
 >
   <Header currentLang={lang} t={t} />
@@ -34,11 +33,9 @@ const t = getTranslations(lang as string);
     <Hero t={t} currentLang={lang} />
     <Features t={t} currentLang={lang} />
     <FeatureSpotlights t={t} currentLang={lang} />
-    <Testimonials t={t} />
     <Pricing t={t} currentLang={lang} />
     <FAQ t={t} />
     <CallToAction t={t} currentLang={lang} />
   </main>
   <Footer t={t} />
 </BaseLayout>
-

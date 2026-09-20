@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Transliteration Tool for 13+ Languages",
-    "description": "Type in Latin, get Cyrillic, Hebrew, Greek, Georgian, Armenian, and more. Desktop transliteration suite with translation, AI writing assistance, and a powerful editor. Add any language you need.",
+    "description": "Type in Latin and get Cyrillic, Hebrew, Greek, Georgian, Armenian, and more in real time. Use a rich editor, virtual keyboard, free bookmarklet, and portable exports.",
     "siteName": "TranslitPro"
   },
   "nav": {
@@ -11,7 +11,7 @@
     "signIn": "Sign In",
     "backToApp": "Back to App",
     "startNow": "Start Now",
-    "underConstruction": "TranslitPro is under reconstruction — advanced functionality is moving to Notylus. The core transliteration functionality will stay here, free to use."
+    "underConstruction": "TranslitPro is now the focused script-typing utility. Cloud notes, AI, and connected knowledge features live in Notylus."
   },
   "languageDropdown": {
     "translationLabel": "Translation",
@@ -23,7 +23,7 @@
   "hero": {
     "badge": "Desktop Transliteration Suite for 13+ Languages",
     "headline": "<span class=\"flex justify-center whitespace-nowrap\">Type in&nbsp;<span class=\"text-emerald-500\">Any Native Language</span>&nbsp;Script</span><span class=\"flex justify-center whitespace-nowrap\">Using Your&nbsp;<span class=\"text-indigo-500\">Latin Keyboard</span></span>",
-    "subheadline": "Transliterate to Cyrillic, Hebrew, Greek, Georgian, Armenian, and more — all from your Latin keyboard. Plus translation, spellcheck, and a powerful editor. Add any language you need.",
+    "subheadline": "Transliterate to Cyrillic, Hebrew, Greek, Georgian, Armenian, and more from your Latin keyboard. Format, copy, or export your text without creating an account.",
     "ctaPrimary": "Start Free — No Signup",
     "ctaSecondary": "View Pricing",
     "trustBadge1": "No credit card required",
@@ -31,8 +31,8 @@
     "trustBadge3": "Add your own languages"
   },
   "features": {
-    "title": "More Than Just Transliteration",
-    "subtitle": "A complete desktop writing suite with transliteration, AI corrections, translation, and a powerful editor — for any script you need.",
+    "title": "Everything You Need to Type Another Script",
+    "subtitle": "Fast transliteration, a virtual keyboard, useful formatting, portable exports, and tools for typing on other websites.",
     "typeNaturally": {
       "title": "Type Naturally",
       "description": "Use your regular Latin keyboard on desktop. No need to learn new layouts or switch keyboard settings."
@@ -46,16 +46,16 @@
       "description": "Create custom transliteration schemas for any language. Define your own keyboard layouts and mappings."
     },
     "bookmarklet": {
-      "title": "Bookmarklet (Free — login required)",
-      "description": "Free for all logged-in users. Create a free account to unlock it, then type in your target script directly on most websites — social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
+      "title": "Free Bookmarklet",
+      "description": "Type in your target script directly on most websites without an account. Sites with strict Content Security Policy, including some Google services, may block it."
     },
     "translation": {
       "title": "Translation",
-      "description": "Translate your text to multiple languages directly within the editor. No need to switch apps."
+      "description": "Translate a selection with the built-in non-AI translation tool."
     },
     "aiSpellcheck": {
-      "title": "AI Assistance",
-      "description": "Smart corrections powered by AI. Catch typos and get suggestions in your target language."
+      "title": "Search Shortcuts",
+      "description": "Send selected text to your favorite search tools without retyping it."
     },
     "editor": {
       "title": "Powerful Editor",
@@ -63,7 +63,7 @@
     },
     "export": {
       "title": "Export Anywhere",
-      "description": "Export to TXT, RTF, HTML, Markdown, DOCX, or PDF. Your content, your format."
+      "description": "Export free to TXT, PDF, DOCX, or .notylus. Plus also unlocks RTF, HTML, and Markdown."
     },
     "exploreAll": "Explore all features"
   },
@@ -81,11 +81,11 @@
       "note": "Works on most websites. Doesn't work on sites with strict security policies (e.g. Google Docs, Gmail)."
     },
     "editor": {
-      "eyebrow": "Your complete writing workspace",
-      "headline": "Write, Translate, and Save in One Place",
-      "copy": "A powerful rich text editor with built-in transliteration, translation, and AI writing assistance.",
-      "copy2": "Save to the cloud and export to TXT, DOCX, PDF, and more when needed.",
-      "tagline": "No app switching required."
+      "eyebrow": "One fast writing surface",
+      "headline": "Format, Copy, and Export Your Text",
+      "copy": "Use a rich editor with live transliteration and a focused toolbar.",
+      "copy2": "Your buffer stays local; export it free to TXT, PDF, DOCX, or .notylus.",
+      "tagline": "For a persistent cloud workspace, continue in Notylus."
     }
   },
   "testimonials": {
@@ -118,19 +118,14 @@
         "limitations": []
       },
       "registered": {
-        "tagline": "Save your work. Unlock more tools.",
+        "tagline": "Keep preferences and custom typing tools with your account.",
         "period": "forever",
         "cta": "Create Free Account",
         "features": [
-          "Everything from Preview",
-          "Bookmarklet (type in your language on any website)",
-          "Full editor tools",
-          "Save up to 100 documents",
-          "500 MB storage",
-          "AI writing assistance (10/day)",
-          "Export to TXT",
-          "Up to 3 images per document (5 MB)",
-          "Document folders"
+          "Everything available without an account",
+          "Custom transliteration languages and variants",
+          "Custom keyboard layouts",
+          "Custom interface languages"
         ],
         "limitations": []
       }
@@ -198,11 +193,11 @@
   },
   "cta": {
     "headline": "Start Typing Without Limits",
-    "subheadline": "Free to start. No setup. No learning curve.",
+    "subheadline": "Free to use without an account. Upgrade only when you want more customization.",
     "button": "Start Free — No Signup",
     "badge1": "No credit card required",
     "badge2": "13+ languages built-in",
-    "badge3": "Cancel anytime"
+    "badge3": "Free portable export"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -222,19 +217,19 @@
       },
       "whatIsBookmarklet": {
         "question": "What is the bookmarklet?",
-        "answer": "The bookmarklet is a completely free tool for logged-in users that lets you type in your target script directly on most websites. It works on social media, forums, and many web apps. Note: It doesn't work on sites with strict Content Security Policy (CSP) like Google services (Gmail, Docs, etc.)."
+        "answer": "The bookmarklet is a completely free tool that lets you type in your target script directly on most websites, with no account required. Sites with strict Content Security Policy, including some Google services, may block it."
       },
       "beyondTransliteration": {
         "question": "What can I do beyond transliteration?",
-        "answer": "TranslitPro includes a powerful rich text editor, translation to multiple languages, AI-powered spellcheck in your target language, and export to TXT, RTF, HTML, Markdown, DOCX, or PDF."
+        "answer": "TranslitPro includes a rich text editor, virtual keyboard, non-AI selection translation, search shortcuts, a free bookmarklet, and portable export. Cloud documents and AI tools belong to Notylus."
       },
       "freeTrial": {
         "question": "Is there a free trial?",
-        "answer": "Yes! You can use the basic transliteration features completely free, forever — no signup required. If you create a free account, the bookmarklet is yours free forever, and you also get a 30-day trial of advanced features including AI writing assistance, export, and cloud storage (500 MB free, 5 GB on Basic, 25 GB on Pro)."
+        "answer": "You do not need a trial to use TranslitPro. Core typing, the bookmarklet, and TXT, PDF, DOCX, and .notylus export are free. TranslitPro Plus adds more editor tools, all export formats, themes, unlimited search buttons, and no ads."
       },
       "addOwnLanguage": {
         "question": "Can I add my own language?",
-        "answer": "Yes! With a Basic plan or higher, you can create custom transliteration schemas and keyboard layouts for any language. Perfect if you need a specific romanization system or a language not built into the app."
+        "answer": "Yes. Any free account can create custom transliteration schemas, variants, keyboard layouts, and interface languages."
       },
       "cancelAnytime": {
         "question": "Can I cancel my subscription anytime?",
