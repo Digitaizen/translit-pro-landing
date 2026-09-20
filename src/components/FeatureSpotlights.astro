@@ -175,49 +175,49 @@ const SHOW_EDITOR_SPOTLIGHT = false;
       id="editor-lightbox-img"
     />
   </div>
+)}
 
-  <script>
-    // Helper: wire up a video lightbox
-    function initVideoLightbox(triggerId: string, lightboxId: string, closeId: string, videoId: string) {
-      const trigger = document.getElementById(triggerId);
-      const lightbox = document.getElementById(lightboxId);
-      const closeBtn = document.getElementById(closeId);
-      const video = document.getElementById(videoId) as HTMLVideoElement | null;
+<script>
+  // Helper: wire up a video lightbox
+  function initVideoLightbox(triggerId: string, lightboxId: string, closeId: string, videoId: string) {
+    const trigger = document.getElementById(triggerId);
+    const lightbox = document.getElementById(lightboxId);
+    const closeBtn = document.getElementById(closeId);
+    const video = document.getElementById(videoId) as HTMLVideoElement | null;
 
-      function open() {
-        lightbox?.classList.remove('hidden');
-        video?.play();
-      }
-      function close() {
-        lightbox?.classList.add('hidden');
-        if (video) { video.pause(); video.currentTime = 0; }
-      }
-
-      trigger?.addEventListener('click', open);
-      closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); close(); });
-      lightbox?.addEventListener('click', close);
+    function open() {
+      lightbox?.classList.remove('hidden');
+      video?.play();
+    }
+    function close() {
+      lightbox?.classList.add('hidden');
+      if (video) { video.pause(); video.currentTime = 0; }
     }
 
-    initVideoLightbox('keyboard-lightbox-trigger', 'keyboard-lightbox', 'keyboard-lightbox-close', 'keyboard-lightbox-video');
-    initVideoLightbox('bookmarklet-lightbox-trigger', 'bookmarklet-lightbox', 'bookmarklet-lightbox-close', 'bookmarklet-lightbox-video');
+    trigger?.addEventListener('click', open);
+    closeBtn?.addEventListener('click', (e) => { e.stopPropagation(); close(); });
+    lightbox?.addEventListener('click', close);
+  }
 
-    // Editor image lightbox
-    const trigger = document.getElementById('editor-lightbox-trigger');
-    const lightbox = document.getElementById('editor-lightbox');
-    const closeBtn = document.getElementById('editor-lightbox-close');
+  initVideoLightbox('keyboard-lightbox-trigger', 'keyboard-lightbox', 'keyboard-lightbox-close', 'keyboard-lightbox-video');
+  initVideoLightbox('bookmarklet-lightbox-trigger', 'bookmarklet-lightbox', 'bookmarklet-lightbox-close', 'bookmarklet-lightbox-video');
 
-    trigger?.addEventListener('click', () => lightbox?.classList.remove('hidden'));
-    closeBtn?.addEventListener('click', () => lightbox?.classList.add('hidden'));
-    lightbox?.addEventListener('click', () => lightbox.classList.add('hidden'));
+  // Editor image lightbox
+  const trigger = document.getElementById('editor-lightbox-trigger');
+  const lightbox = document.getElementById('editor-lightbox');
+  const closeBtn = document.getElementById('editor-lightbox-close');
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('[id$="-lightbox"]').forEach(el => el.classList.add('hidden'));
-        document.querySelectorAll('[id$="-lightbox-video"]').forEach(el => {
-          const v = el as HTMLVideoElement;
-          v.pause(); v.currentTime = 0;
-        });
-      }
-    });
-  </script>
-)}
+  trigger?.addEventListener('click', () => lightbox?.classList.remove('hidden'));
+  closeBtn?.addEventListener('click', () => lightbox?.classList.add('hidden'));
+  lightbox?.addEventListener('click', () => lightbox.classList.add('hidden'));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('[id$="-lightbox"]').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('[id$="-lightbox-video"]').forEach(el => {
+        const v = el as HTMLVideoElement;
+        v.pause(); v.currentTime = 0;
+      });
+    }
+  });
+</script>
