@@ -20,6 +20,7 @@ interface Props {
 
 const { t } = Astro.props;
 const s = t.featureSpotlights ?? null;
+const SHOW_EDITOR_SPOTLIGHT = false;
 ---
 
 <!-- ── Section 1: Stop Switching Keyboards ──────────────────────────── -->
@@ -115,7 +116,7 @@ const s = t.featureSpotlights ?? null;
 )}
 
 <!-- ── Section 3: Editor ──────────────────────────────────────────────── -->
-{s && (
+{SHOW_EDITOR_SPOTLIGHT && s && (
   <section class="py-20 sm:py-32 bg-slate-900 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 

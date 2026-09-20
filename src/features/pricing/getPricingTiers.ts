@@ -19,16 +19,10 @@
 export function getPricingTiers() {
   const CURRENCY_SYMBOL = '$';
 
-  // Prices (kept as numbers for easy future manipulation).
-  // 2026-08-27 repricing (docs/product/TIERS_AND_PRICING.md §8.2 in the main
-  // repo): 2x each tier, annual is the anchor (not monthly x 12). Founder was
-  // retired for new sales and, as of 2026-08-28, removed from the app's
-  // purchase paths and from Stripe — so no Founder price is published here.
-  const BASIC_MONTHLY = 6;
-  const BASIC_ANNUAL = 48;
-
-  const PRO_MONTHLY = 12;
-  const PRO_ANNUAL = 96;
+  // TranslitPro has one paid SKU. Notylus Basic and Pro prices deliberately
+  // do not belong on this site (SPLIT_CONTRACT.md §6).
+  const PLUS_MONTHLY = 3;
+  const PLUS_ANNUAL = 29;
 
   const FREE = 0;
 
@@ -39,41 +33,11 @@ export function getPricingTiers() {
   const computeAnnualSavingsAmount = (monthly: number, annual: number): number =>
     monthly * 12 - annual;
 
-  /** Number of days used to compute the daily cost from a monthly price. */
-  const DAYS_PER_MONTH = 30;
-
-  /**
-   * Whether to display the approximate cost per day below the monthly price.
-   * Set to `false` to hide the cost-per-day line without touching the template.
-   */
-  const SHOW_COST_PER_DAY = true;
-
-  /**
-   * Computes the approximate daily cost from a monthly price.
-   * Returns a string rounded to two decimal places (e.g. "0.10").
-   */
-  const computeCostPerDay = (monthly: number): string =>
-    (monthly / DAYS_PER_MONTH).toFixed(2);
-
-  const basicAnnualSavingsAmount = computeAnnualSavingsAmount(
-    BASIC_MONTHLY,
-    BASIC_ANNUAL,
-  );
-  const proAnnualSavingsAmount = computeAnnualSavingsAmount(
-    PRO_MONTHLY,
-    PRO_ANNUAL,
-  );
+  const plusAnnualSavingsAmount = computeAnnualSavingsAmount(PLUS_MONTHLY, PLUS_ANNUAL);
 
   return {
     /** Shared currency symbol so the UI can render it separately. */
     currencySymbol: CURRENCY_SYMBOL,
-
-    /**
-     * When `true`, the monthly-price panel for Basic and Pro shows an
-     * approximate cost-per-day line (e.g. "~$0.10/day").
-     * Toggle this flag here to show or hide the line globally.
-     */
-    showCostPerDay: SHOW_COST_PER_DAY,
 
     free: {
       /** Numeric amount for the Free tier (used for the large number). */
@@ -82,42 +46,21 @@ export function getPricingTiers() {
       price: formatWithCurrency(FREE),
     },
 
-    basic: {
+    plus: {
       /** Numeric monthly amount. */
-      amount: BASIC_MONTHLY,
+      amount: PLUS_MONTHLY,
       /** Monthly price formatted with currency, e.g. "$3". */
-      price: formatWithCurrency(BASIC_MONTHLY),
-      /** Approximate daily cost derived from the monthly price, e.g. "0.10". */
-      costPerDay: computeCostPerDay(BASIC_MONTHLY),
+      price: formatWithCurrency(PLUS_MONTHLY),
 
       /** Numeric annual billing amount. */
-      annualAmount: BASIC_ANNUAL,
+      annualAmount: PLUS_ANNUAL,
       /** Annual billing price formatted with currency, e.g. "$29". */
-      annualPrice: formatWithCurrency(BASIC_ANNUAL),
+      annualPrice: formatWithCurrency(PLUS_ANNUAL),
 
       /** Numeric savings when billed annually instead of monthly. */
-      annualSavingsAmount: basicAnnualSavingsAmount,
+      annualSavingsAmount: plusAnnualSavingsAmount,
       /** Savings formatted with currency, e.g. "$7". */
-      annualSavings: formatWithCurrency(basicAnnualSavingsAmount),
-    },
-
-    pro: {
-      /** Numeric monthly amount. */
-      amount: PRO_MONTHLY,
-      /** Monthly price formatted with currency, e.g. "$7". */
-      price: formatWithCurrency(PRO_MONTHLY),
-      /** Approximate daily cost derived from the monthly price, e.g. "0.23". */
-      costPerDay: computeCostPerDay(PRO_MONTHLY),
-
-      /** Numeric annual billing amount. */
-      annualAmount: PRO_ANNUAL,
-      /** Annual billing price formatted with currency, e.g. "$69". */
-      annualPrice: formatWithCurrency(PRO_ANNUAL),
-
-      /** Numeric savings when billed annually instead of monthly. */
-      annualSavingsAmount: proAnnualSavingsAmount,
-      /** Savings formatted with currency, e.g. "$15". */
-      annualSavings: formatWithCurrency(proAnnualSavingsAmount),
+      annualSavings: formatWithCurrency(plusAnnualSavingsAmount),
     },
 
   };

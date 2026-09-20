@@ -1,10 +1,10 @@
 # TranslitPro Landing Page
 
-Marketing landing page for [TranslitPro](https://app.translitpro.com) — a multilingual writing workspace with transliteration, AI-assisted cleanup, translation, cloud documents, and export tools.
+Marketing landing page for [TranslitPro](https://app.translitpro.com) — the focused script-typing and transliteration utility from 5am Works LLC.
 
 ## Overview
 
-This is a static landing page built with Astro and Tailwind CSS, deployed to Cloudflare Pages. The English homepage at `/` now positions TranslitPro as an AI-powered multilingual writing workspace, while `/transliteration/` preserves the original transliteration-first landing experience. Localized `/{lang}/` pages still use the existing transliteration-focused structure.
+This is a static landing page built with Astro and Tailwind CSS, deployed to Cloudflare Pages. After the TranslitPro/Notylus product split, every locale positions TranslitPro as a one-buffer typing utility: transliteration, virtual keyboard, formatting, copy, bookmarklet, and export. Persistent documents, cloud sync, and AI belong to Notylus.
 
 ## Tech Stack
 
@@ -28,15 +28,11 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   ├── Header.astro      # Navigation header with language dropdown
 │   │   ├── Hero.astro        # Legacy transliteration hero used on /transliteration and localized pages
 │   │   ├── Features.astro    # Legacy feature grid used on /transliteration and localized pages
-│   │   ├── Pricing.astro     # Pricing tiers
+│   │   ├── Pricing.astro     # Free and TranslitPro Plus pricing
 │   │   ├── FAQ.astro         # FAQ accordion with structured data
 │   │   ├── Footer.astro      # Footer with links
 │   │   ├── ContactModal.astro # Contact support modal with EmailJS
 │   │   ├── LanguageDropdown.astro  # Language switcher component
-│   │   └── workspace/
-│   │       ├── WorkspaceHero.astro      # English / hero for the workspace-positioned homepage
-│   │       ├── WorkspacePillars.astro   # Three-pillar positioning section
-│   │       └── WorkspaceAnywhere.astro  # Capture → Assist → Deliver workflow section
 │   ├── features/
 │   │   └── pricing/
 │   │       └── getPricingTiers.ts # Centralized plan prices (single source of truth)
@@ -60,8 +56,7 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   ├── layouts/
 │   │   └── BaseLayout.astro  # Base HTML layout with SEO meta tags
 │   ├── pages/
-│   │   ├── index.astro       # English workspace-positioned homepage at /
-│   │   ├── transliteration.astro # English transliteration-first landing page at /transliteration/
+│   │   ├── index.astro       # English transliteration homepage at /
 │   │   ├── [lang]/
 │   │   │   └── index.astro   # Localized transliteration-focused landing pages (ru, uk, he, …)
 │   │   ├── scripts/
@@ -140,8 +135,7 @@ runtime. A visitor's dismissal (✕) persists for the browser session via
 
 ## Route Structure
 
-- `/` — English homepage positioned as the multilingual writing workspace
-- `/transliteration/` — English transliteration-focused landing page
+- `/` — English transliteration-focused homepage
 - `/{lang}/` — localized transliteration-focused landing pages
 - `/scripts/{script}` — English-only script SEO pages
 - `/ru/scripts/russian/` — Russian-language SEO page
@@ -191,47 +185,37 @@ Or connect the GitHub repo to Cloudflare Pages for automatic deployments on push
 ### English homepage (`/`)
 
 1. **Header** - Fixed navigation with logo, nav links (Features, Pricing, FAQ), Sign In / Back to App (toggled by cookie — see below) and Try Free CTAs
-2. **Workspace Hero** - Workspace positioning, brand-colored headline emphasis, CTA buttons, and multilingual editor mockup
-3. **Workspace Pillars** - Three positioning cards: multilingual writing, AI assistance, and workspace organization
-4. **Workspace Anywhere** - Capture → Assist → Deliver workflow section framing transliteration as the entry point to a broader writing flow
-5. **Testimonials** - Social proof grid
-6. **Pricing** - 4 tiers with tabbed cards:
-   - **Free** — Preview tab (no account) / Workspace tab (free account); different feature lists per tab
-   - **Basic** — $3/mo or $29/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.10/day), annual view shows savings (Save $7)
-   - **Pro** — $7/mo or $69/yr; Monthly/Annual tabs; monthly view shows approximate cost per day (~$0.23/day), annual view shows savings (Save $15); "Most Popular" yellow badge
-   - **Founder** — $79 one-time; "Limited Time" brand-purple badge in tab-sized frame; launch pricing note below price
-   - **Image support limits** per tier: Free Preview — up to 2 images/doc (2 MB); Workspace — up to 3 images/doc (5 MB); Basic — up to 20 images/doc (10 MB); Pro/Founder — unlimited
-7. **FAQ** - 8 expandable questions with SEO structured data, Contact Support button
-8. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
+2. **Hero** - Transliteration-first positioning, CTA buttons, and multilingual script examples
+3. **Feature grid** - Typing, built-in and custom languages, free bookmarklet, editor, and export
+4. **Feature spotlights** - Keyboard and bookmarklet videos with full-screen lightboxes
+5. **Pricing** - Free and TranslitPro Plus ($3/month or $29/year), followed by a clear hand-off to Notylus for cloud notes and AI
+6. **FAQ** - Product-specific questions with SEO structured data and a Contact Support button
+7. **Footer** - Product links, Scripts (Cyrillic, Hebrew, Greek, etc.), Legal, Social (Twitter, Facebook)
 
-### Transliteration landing (`/transliteration/` and localized `/{lang}/` pages)
+### Localized landing pages (`/{lang}/`)
 
 1. **Hero** - Main headline, subheadline, CTA buttons, visual demo, trust indicators
-2. **Feature Spotlights** - Three full-width narrative sections pairing copy with a visual:
+2. **Feature Spotlights** - Two full-width narrative sections pairing copy with a visual:
    - **Keyboard** (`FeatureSpotlights.astro`) — video: `/videos/TranslitPro - Native vs Latin.mp4`
    - **Bookmarklet** — video: `/videos/TranslitPro - Bookmarklet.mp4`
-   - **Editor** — screenshot: `/screenshots/TranslitPro_RichTextEditor.png`
    - All visuals are clickable and open in a full-screen lightbox. Videos play with controls and audio in the lightbox, and reset on close (Escape or click backdrop).
-3. **Features** - 8 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Translation, AI Assistance, Powerful Editor, Export
-4. **Testimonials** - Social proof grid
-5. **Pricing** - Shared pricing section
-6. **FAQ** - Shared FAQ section
-7. **Footer** - Shared footer section
+3. **Features** - 6 feature cards: Type Naturally, 13+ Languages, Add Any Language, Bookmarklet, Powerful Editor, Export
+4. **Pricing** - Shared Free / TranslitPro Plus section
+5. **FAQ** - Shared product-specific FAQ
+6. **Footer** - Shared footer
 
 ### Pricing configuration
 
 Plan prices are **not** stored in translation files.
 
-- **Single source of truth**: `src/features/pricing/getPricingTiers.ts` — edit constants here to change prices. The file computes `annualSavings` for Basic and Pro, as well as the approximate `costPerDay` (monthly price ÷ 30). Set `SHOW_COST_PER_DAY = false` to hide the cost-per-day line globally without touching the template.
-- **i18n locales** (`src/i18n/locales/*.json`) contain only localized copy: plan names, taglines, feature lists, period labels, CTA text, badge text, and the `launchPricingNote` for the Founder tier.
+- **Single source of truth**: `src/features/pricing/getPricingTiers.ts` — edit the TranslitPro Plus monthly and annual constants here. The app itself reads the same prices from `app_plan_pricing`; keep both sources aligned.
+- **i18n locales** (`src/i18n/locales/*.json`) provide localized labels and feature copy. `Pricing.astro` selects only copy that matches the current Free / Plus contract.
 
 Key i18n keys under `pricing` in `en.json`:
 - `tabs.anonymous` / `tabs.registered` — tab labels for the Free card
-- `tabs.monthly` / `tabs.annual` — tab labels for Basic and Pro cards
+- `tabs.monthly` / `tabs.annual` — TranslitPro Plus billing-period labels
 - `free.anonymous` / `free.registered` — separate tagline, period, CTA, and features per Free tab
-- `founder.launchPricingNote` — subtle note displayed below the Founder price
 - `saveLabel` — prefix used in savings display (e.g. "Save $7")
-- `perDayLabel` — suffix used in the cost-per-day line shown on the monthly tab (e.g. "/day")
 
 **Translation workflow**: finalize `en.json` first; other locale files use a legacy fallback renderer and must be updated separately once English copy is confirmed. Use `scripts/add_missing_translations.py` (with `scripts/translations_data.json`) to batch-apply new keys to all 13 locale files.
 
@@ -310,38 +294,24 @@ The main app can link to the landing page with a `?lang=xx` query parameter to a
 
 The landing page will redirect to the corresponding localized route (e.g. `/ru/`) while preserving the hash (e.g. `#features`, `#pricing`, `#faq`).
 
-### Supported Routes
-
-| Route              | Modal Opened           |
-| ------------------ | ---------------------- |
-| `/login`           | Login modal            |
-| `/signup`          | Signup modal (generic) |
-| `/trial`           | Start Free Trial modal |
-| `/forgot-password` | Forgot password modal  |
-
 ### Main app URL parameters
 
 | Parameter  | Values                                                                        | Effect                    |
 | ---------- | ----------------------------------------------------------------------------- | ------------------------- |
 | `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt`, `sr` | Sets UI language          |
-| `?action=` | `login`, `signup`, `trial`, `forgot-password`                                 | Opens corresponding modal |
-| `?plan=`   | `basic`, `pro`, `founder`                                                     | Pre-selects pricing plan  |
 
 ### Landing Page Button Mapping
 
 | Button                | URL                                                               |
 | --------------------- | ----------------------------------------------------------------- |
-| Header: "Start Now"   | `https://app.translitpro.com/trial` (+ `?lang=xx` if non-English) |
+| Header: "Start Now"   | `https://app.translitpro.com` (+ `?lang=xx` if non-English) |
 | Header: "Sign In"     | `https://app.translitpro.com/login` (shown when `tp_logged_in` cookie is absent) |
 | Header: "Back to App" | `https://app.translitpro.com` (shown when `tp_logged_in` cookie is present) |
 | Header: "Start Now"   | hidden when `tp_logged_in` cookie is present |
 | Hero: Primary CTA     | `https://app.translitpro.com` (no modal — safe for logged-in users) |
 | CTA section button    | `https://app.translitpro.com` (no modal — safe for logged-in users) |
-| Pricing: Free (Preview) | `https://app.translitpro.com`                                   |
-| Pricing: Free (Workspace) | `https://app.translitpro.com/signup`                          |
-| Pricing: Basic tier   | `https://app.translitpro.com/signup?plan=basic` (logged-out) / `https://app.translitpro.com/?action=manage-subscription` (logged-in) |
-| Pricing: Pro tier     | `https://app.translitpro.com/signup?plan=pro` (logged-out) / `https://app.translitpro.com/?action=manage-subscription` (logged-in) |
-| Pricing: Founder tier | `https://app.translitpro.com/signup?plan=founder` (logged-out) / `https://app.translitpro.com/?action=manage-subscription` (logged-in) |
+| Pricing: Free        | `https://app.translitpro.com` |
+| Pricing: Plus        | `https://app.translitpro.com` (the app's Get Plus control opens the account-first purchase flow) |
 
 ### Shared Login State
 
@@ -349,8 +319,8 @@ When a user logs in at `app.translitpro.com`, the app sets a cookie `tp_logged_i
 
 The landing page reads this cookie via small inline scripts and adjusts the UI before the first paint — no flicker:
 
-- Cookie **absent** → "Sign In" linking to `/login`; "Start Now" visible; paid-plan CTAs go to signup flow
-- Cookie **present** → "Back to App" (localized) linking to app root; "Start Now" hidden; paid-plan CTAs (Basic, Pro, Founder) go to `/?action=manage-subscription` which opens Manage Subscriptions in Account Settings
+- Cookie **absent** → "Sign In" linking to `/login`; "Start Now" visible
+- Cookie **present** → "Back to App" (localized) linking to app root; "Start Now" hidden
 
 The cookie carries no sensitive data; actual authentication is validated by Supabase on the app side. Localhost development is unaffected because the cookie domain is `.translitpro.com` only.
 

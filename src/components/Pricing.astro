@@ -1,563 +1,131 @@
 ---
 /**
- * Pricing section component.
- *
- * EN (master) supports a tabbed pricing UI:
- * - Starter: Anonymous | Registered
- * - Basic: Monthly | Annual (shows "Save $X")
- * - Pro: Monthly | Annual (shows "Save $X")
- *
- * Other locales may not have the new pricing copy yet; this component includes
- * a legacy fallback rendering to keep all locale routes prerenderable.
+ * Product pricing for the post-split TranslitPro surface.
+ * TranslitPro has two commercial bands: Free and TranslitPro Plus.
  */
-
-import { buildAppUrl } from '../config';
+import { buildAppUrl, NOTYLUS_SITE_URL } from '../config';
 import { getPricingTiers } from '../features/pricing/getPricingTiers';
 
-interface Props {
-  t: any;
-  currentLang?: string;
-}
-
+interface Props { t: any; currentLang?: string; }
 const { t, currentLang = 'en' } = Astro.props;
-
 const pricing = getPricingTiers();
 
-/**
- * Whether current locale already contains the new tabbed pricing copy structure.
- * This is true for English, and false for other locales until they are updated.
- */
-const isTabbedPricingCopy = Boolean(
-	t?.pricing?.tabs &&
-	  t?.pricing?.free?.anonymous &&
-	  t?.pricing?.free?.registered &&
-	  t?.pricing?.basic &&
-	  t?.pricing?.pro
-);
-
-/**
- * Legacy tiers to keep other locales building until they are updated.
- * Founder is retired and no longer purchasable anywhere (2026-08-28) — not
- * rendered on the pricing page. Note: no "trial" tier is rendered either
- * (3 plans total).
- */
-const legacyTiers = !isTabbedPricingCopy
-	? [
-	    {
-	      ...t.pricing.free,
-	      ...pricing.free,
-	      href: buildAppUrl('', currentLang),
-	      highlighted: false,
-	      badge: null,
-	      // Numeric copy of the price so the legacy layout can style the
-	      // amount separately from the currency symbol.
-	      priceAmount: pricing.free.amount,
-	    },
-	    {
-	      ...t.pricing.basic,
-	      ...pricing.basic,
-	      href: buildAppUrl('/signup', currentLang, 'plan=basic'),
-	      loggedInHref: buildAppUrl('/', currentLang, 'action=manage-subscription'),
-	      highlighted: false,
-	      badge: null,
-	      priceAmount: pricing.basic.amount,
-	      annualPriceAmount: pricing.basic.annualAmount,
-	    },
-	    {
-	      ...t.pricing.pro,
-	      ...pricing.pro,
-	      href: buildAppUrl('/signup', currentLang, 'plan=pro'),
-	      loggedInHref: buildAppUrl('/', currentLang, 'action=manage-subscription'),
-	      highlighted: true,
-	      badge: t.pricing.pro.badge,
-	      priceAmount: pricing.pro.amount,
-	      annualPriceAmount: pricing.pro.annualAmount,
-	    },
-	  ]
-	: [];
+const isEnglish = currentLang === 'en';
+const plusSearch = t.pricing.pro.features[isEnglish ? 6 : 5];
+const plusExports = t.pricing.pro.features[isEnglish ? 7 : 6];
+const plusTheme = t.pricing.pro.features[isEnglish ? 8 : 7];
+const noAds = t.pricing.basic.features[isEnglish ? 11 : 10];
+const plusEditorTools: Record<string, string> = {
+  en: 'More editor tools', ru: 'Больше инструментов редактора', uk: 'Більше інструментів редактора',
+  be: 'Больш інструментаў рэдактара', bg: 'Още инструменти за редактиране', he: 'כלי עריכה נוספים',
+  hy: 'Խմբագրիչի ավելի շատ գործիքներ', ka: 'რედაქტორის მეტი ხელსაწყო', el: 'Περισσότερα εργαλεία επεξεργασίας',
+  lt: 'Daugiau redagavimo įrankių', tg: 'Абзорҳои бештари муҳаррир', rue: 'Веце редакторьскых інструментів',
+  sr: 'Više alata za uređivanje', kk: 'Көбірек өңдеу құралдары',
+};
+const anonymousFeatures = [
+  t.pricing.free.anonymous.features[0],
+  t.pricing.free.anonymous.features[1],
+  t.pricing.free.anonymous.features[3],
+  t.features['export'].title + ': TXT, PDF, DOCX, .notylus',
+  t.featureSpotlights.bookmarklet.headline,
+  t.features.editor.title,
+];
+const accountFeatures = [
+  t.pricing.free.registered.features[0],
+  t.pricing.basic.features[1],
+  t.pricing.basic.features[2],
+  t.pricing.basic.features[3],
+];
+const plusFeatures = [plusEditorTools[currentLang] ?? plusEditorTools.en, plusSearch, plusExports, plusTheme, noAds];
 ---
 
 <section id="pricing" class="py-20 sm:py-32 bg-slate-950">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-        {t.pricing.title}
-      </h2>
-      <p class="text-lg text-slate-400">
-        {t.pricing.subtitle}
-      </p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">{t.pricing.title}</h2>
+      <p class="text-lg text-slate-400">{t.pricing.subtitle}</p>
     </div>
 
-	    {isTabbedPricingCopy ? (
-	      <!-- Pricing Grid (tabbed, EN master copy) -->
-	      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-		        <!-- Free (Preview | Workspace) -->
-		        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
-	          <div data-pricing-tabs-root data-default-tab="anonymous" data-tab-style="slate" class="flex flex-col flex-1">
-		      <div class="mb-4 js-pricing-card-header">
-	              <div class="js-pricing-card-title">
-	                <h3 class="text-xl font-bold text-white mb-1">{t.pricing.free.name}</h3>
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+      <article class="flex flex-col p-6 sm:p-8 rounded-2xl border bg-slate-800/50 border-slate-700">
+        <div class="mb-6">
+          <h3 class="text-2xl font-bold text-white mb-2">{t.pricing.free.name}</h3>
+          <p class="text-slate-400">{t.pricing.free.anonymous.tagline}</p>
+          <div class="mt-5 flex items-baseline gap-1">
+            <span class="text-sm text-slate-400">{pricing.currencySymbol}</span>
+            <span class="text-5xl font-bold text-white">{pricing.free.amount}</span>
+            <span class="text-slate-400">{t.pricing.free.anonymous.period}</span>
+          </div>
+        </div>
 
-	                <!-- Slogan (tabbed) -->
-	                <div data-tab-panels class="min-h-[2.5rem]">
-	                  <p data-panel="anonymous" class="text-sm text-slate-400">{t.pricing.free.anonymous.tagline}</p>
-	                  <p data-panel="registered" class="hidden text-sm text-slate-400">{t.pricing.free.registered.tagline}</p>
-	                </div>
-	              </div>
+        <div class="flex-1 space-y-6 mb-8">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-wider text-indigo-300 mb-3">{t.pricing.tabs.anonymous}</p>
+            <ul class="space-y-3">
+              {anonymousFeatures.map((feature: string) => (
+                <li class="flex items-start gap-2 text-sm text-slate-300"><span class="mt-0.5 text-emerald-400" aria-hidden="true">✓</span><span>{feature}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div class="pt-5 border-t border-slate-700/70">
+            <p class="text-xs font-semibold uppercase tracking-wider text-indigo-300 mb-3">{t.pricing.free.registered.cta}</p>
+            <ul class="space-y-3">
+              {accountFeatures.map((feature: string) => (
+                <li class="flex items-start gap-2 text-sm text-slate-300"><span class="mt-0.5 text-emerald-400" aria-hidden="true">✓</span><span>{feature}</span></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <a href={buildAppUrl('', currentLang)} class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg bg-slate-700 text-white hover:bg-slate-600 transition-colors">{t.pricing.free.anonymous.cta}</a>
+      </article>
 
-	              <!-- Tabs (centered) -->
-	              <div class="mt-4 flex justify-center js-pricing-card-tabs">
-	                <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" role="tablist">
-	                  <button
-	                    type="button"
-	                    data-tab="anonymous"
-	                    role="tab"
-	                    aria-selected="true"
-	                    class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-700 text-white"
-	                  >
-	                    {t.pricing.tabs.anonymous}
-	                  </button>
-	                  <button
-	                    type="button"
-	                    data-tab="registered"
-	                    role="tab"
-	                    aria-selected="false"
-	                    class="px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white"
-	                  >
-	                    {t.pricing.tabs.registered}
-	                  </button>
-	                </div>
-	              </div>
+      <article class="relative flex flex-col p-6 sm:p-8 rounded-2xl border bg-indigo-950/35 border-indigo-500/60 shadow-xl shadow-indigo-950/30">
+        <div class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-indigo-500 text-xs font-bold text-white">PLUS</div>
+        <div class="mb-6">
+          <h3 class="text-2xl font-bold text-white mb-2">TranslitPro Plus</h3>
+          <p class="text-slate-400">{t.pricing.basic.tagline}</p>
+        </div>
+        <div data-pricing-tabs-root data-default-tab="annual" class="flex flex-col flex-1">
+          <div class="inline-flex self-start items-center gap-1 p-1 rounded-xl bg-slate-900/70 border border-slate-700/60 mb-5" role="tablist">
+            <button type="button" data-tab="monthly" role="tab" aria-selected="false" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white">{t.pricing.tabs.monthly}</button>
+            <button type="button" data-tab="annual" role="tab" aria-selected="true" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-indigo-600 text-white">{t.pricing.tabs.annual}</button>
+          </div>
+          <div data-tab-panels class="mb-7">
+            <div data-panel="monthly" class="hidden"><div class="flex items-baseline gap-1"><span class="text-sm text-slate-400">{pricing.currencySymbol}</span><span class="text-5xl font-bold text-white">{pricing.plus.amount}</span><span class="text-slate-400">{t.pricing.basic.period}</span></div></div>
+            <div data-panel="annual"><div class="flex items-baseline gap-1"><span class="text-sm text-slate-400">{pricing.currencySymbol}</span><span class="text-5xl font-bold text-white">{pricing.plus.annualAmount}</span><span class="text-slate-400">{t.pricing.basic.periodAnnual}</span></div><p class="mt-1 text-sm text-emerald-300">{t.pricing.saveLabel} {pricing.currencySymbol}{pricing.plus.annualSavingsAmount}</p></div>
+          </div>
+          <ul class="flex-1 space-y-3 mb-8">
+            {plusFeatures.map((feature: string) => (
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="mt-0.5 text-emerald-400" aria-hidden="true">✓</span><span>{feature}</span></li>
+            ))}
+          </ul>
+          <a href={buildAppUrl('', currentLang)} class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 transition-colors">{t.nav.startNow} — TranslitPro Plus</a>
+        </div>
+      </article>
+    </div>
 
-              <!-- Price (tabbed) -->
-              <div class="mt-4 js-pricing-card-price" data-tab-panels>
-	                <div data-panel="anonymous" class="flex items-baseline justify-center gap-1">
-	                  <span class="text-sm text-slate-400">{pricing.currencySymbol}</span>
-	                  <span class="text-4xl font-bold text-white">{pricing.free.amount}</span>
-	                  <span class="text-md text-slate-400"> {t.pricing.free.anonymous.period}</span>
-	                </div>
-	                <div data-panel="registered" class="hidden">
-	                  <div class="flex items-baseline justify-center gap-1">
-	                    <span class="text-sm text-slate-400">{pricing.currencySymbol}</span>
-	                    <span class="text-4xl font-bold text-white">{pricing.free.amount}</span>
-	                    <span class="text-md text-slate-400"> {t.pricing.free.registered.period}</span>
-	                  </div>
-	                </div>
-	              </div>
-	            </div>
-
-		            <!-- Features (tabbed) -->
-		            <div class="flex-1 mb-6" data-tab-panels>
-			            <div data-panel="anonymous">
-			              <ul class="flex-1 space-y-3">
-			                {t.pricing.free.anonymous.features.map((feature: any) => (
-			                  <li class="flex items-start gap-2">
-			                    <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-			                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-			                    </svg>
-			                    <span class="text-sm text-slate-300">{feature}</span>
-			                  </li>
-			                ))}
-			              </ul>
-			            </div>
-
-			            <div data-panel="registered" class="hidden">
-			              <ul class="flex-1 space-y-3">
-			                {t.pricing.free.registered.features.map((feature: any) => (
-			                  <li class="flex items-start gap-2">
-			                    <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-			                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-			                    </svg>
-			                    <span class="text-sm text-slate-300">{feature}</span>
-			                  </li>
-			                ))}
-			              </ul>
-			            </div>
-			          </div>
-		          <!-- CTA (tabbed) -->
-		          <div data-tab-panels>
-			            <a
-			              data-panel="anonymous"
-			              href={buildAppUrl('', currentLang)}
-			              class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
-			            >
-			              {t.pricing.free.anonymous.cta}
-			            </a>
-			            <a
-			              data-panel="registered"
-			              href={buildAppUrl('/signup', currentLang)}
-			              class="hidden block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
-			            >
-			              {t.pricing.free.registered.cta}
-			            </a>
-			          </div>
-		        </div>
-	        </div>
-
-	        <!-- Basic (Monthly | Annual) -->
-	        <div class="relative flex flex-col p-6 rounded-2xl border bg-slate-800/50 border-slate-700">
-		      <div class="mb-4 js-pricing-card-header">
-	            <div class="js-pricing-card-title">
-	              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.basic.name}</h3>
-	              <p class="text-sm text-slate-400 min-h-[2.5rem]">{t.pricing.basic.tagline}</p>
-	            </div>
-
-	            <div class="mt-4" data-pricing-tabs-root data-default-tab="monthly" data-tab-style="slate">
-	              <div class="flex justify-center js-pricing-card-tabs">
-	                <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-900/60 border border-slate-700/50" role="tablist">
-	                  <button type="button" data-tab="monthly" role="tab" aria-selected="true" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-700 text-white">
-	                    {t.pricing.tabs.monthly}
-	                  </button>
-	                  <button type="button" data-tab="annual" role="tab" aria-selected="false" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-300 hover:text-white">
-	                    {t.pricing.tabs.annual}
-	                  </button>
-	                </div>
-	              </div>
-
-		            <div class="mt-4 js-pricing-card-price" data-tab-panels>
-		              <div data-panel="monthly" class="flex flex-col items-center gap-0">
-	                <div class="flex items-baseline justify-center gap-1">
-	                  <span class="text-sm text-slate-400">{pricing.currencySymbol}</span>
-	                  <span class="text-4xl font-bold text-white">{pricing.basic.amount}</span>
-	                  <span class="text-md text-slate-400">{t.pricing.basic.period}</span>
-	                </div>
-	                {pricing.showCostPerDay && (
-	                  <div class="mt-1 text-sm text-slate-400 text-center">
-	                    ~{pricing.currencySymbol}{pricing.basic.costPerDay}{t.pricing.perDayLabel}
-	                  </div>
-	                )}
-	              </div>
-	                <div data-panel="annual" class="hidden">
-		                <div class="flex items-baseline justify-center gap-1">
-	                    <span class="text-sm text-slate-400">{pricing.currencySymbol}</span>
-	                    <span class="text-4xl font-bold text-white">{pricing.basic.annualAmount}</span>
-	                    <span class="text-md text-slate-400">{t.pricing.basic.periodAnnual}</span>
-	                  </div>
-	                  <div class="mt-1 text-sm text-slate-400 text-center">
-	                    ({t.pricing.saveLabel} {pricing.currencySymbol}{pricing.basic.annualSavingsAmount})
-	                  </div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-
-	          <ul class="flex-1 space-y-3 mb-6">
-	            {t.pricing.basic.features.map((feature: any) => (
-	              <li class="flex items-start gap-2">
-	                <svg class="w-5 h-5 shrink-0 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-	                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-	                </svg>
-	                <span class="text-sm text-slate-300">{feature}</span>
-	              </li>
-	            ))}
-	          </ul>
-
-	          <a
-	            href={buildAppUrl('/signup', currentLang, 'plan=basic')}
-	            data-logged-in-href={buildAppUrl('/', currentLang, 'action=manage-subscription')}
-	            class="js-paid-plan-cta block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-slate-700 text-white hover:bg-slate-800"
-	          >
-	            {t.pricing.basic.cta}
-	          </a>
-	        </div>
-
-	        <!-- Pro (Monthly | Annual) -->
-	        <div class="relative flex flex-col p-6 rounded-2xl border bg-indigo-600 border-indigo-500 shadow-xl shadow-indigo-500/20">
-	          {t.pricing.pro.badge && (
-			            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 text-xs font-semibold rounded-full bg-yellow-400 text-slate-950 text-center">
-	              {t.pricing.pro.badge}
-	            </div>
-		          )}
-
-		      <div class="mb-4 js-pricing-card-header">
-	            <div class="js-pricing-card-title">
-	              <h3 class="text-xl font-bold text-white mb-1">{t.pricing.pro.name}</h3>
-	              <p class="text-sm text-indigo-200 min-h-[2.5rem]">{t.pricing.pro.tagline}</p>
-	            </div>
-
-	            <div class="mt-4" data-pricing-tabs-root data-default-tab="monthly" data-tab-style="indigo">
-	              <div class="flex justify-center js-pricing-card-tabs">
-	                <div class="inline-flex items-center gap-1 p-1 rounded-xl bg-indigo-500/20 border border-indigo-400/30" role="tablist">
-	                  <button type="button" data-tab="monthly" role="tab" aria-selected="true" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-white text-indigo-700">
-	                    {t.pricing.tabs.monthly}
-	                  </button>
-	                  <button type="button" data-tab="annual" role="tab" aria-selected="false" class="px-3 py-1.5 text-xs font-semibold rounded-lg text-indigo-100 hover:text-white">
-	                    {t.pricing.tabs.annual}
-	                  </button>
-	                </div>
-	              </div>
-
-		            <div class="mt-4 js-pricing-card-price" data-tab-panels>
-		              <div data-panel="monthly" class="flex flex-col items-center gap-0">
-	                <div class="flex items-baseline justify-center gap-1">
-	                  <span class="text-sm text-indigo-200">{pricing.currencySymbol}</span>
-	                  <span class="text-4xl font-bold text-white">{pricing.pro.amount}</span>
-	                  <span class="text-md text-indigo-200">{t.pricing.pro.period}</span>
-	                </div>
-	                {pricing.showCostPerDay && (
-	                  <div class="mt-1 text-sm text-indigo-200 text-center">
-	                    ~{pricing.currencySymbol}{pricing.pro.costPerDay}{t.pricing.perDayLabel}
-	                  </div>
-	                )}
-	              </div>
-	                <div data-panel="annual" class="hidden">
-		                <div class="flex items-baseline justify-center gap-1">
-	                    <span class="text-sm text-indigo-200">{pricing.currencySymbol}</span>
-	                    <span class="text-4xl font-bold text-white">{pricing.pro.annualAmount}</span>
-	                    <span class="text-md text-indigo-200">{t.pricing.pro.periodAnnual}</span>
-	                  </div>
-	                  <div class="mt-1 text-sm text-indigo-200 text-center">
-	                    ({t.pricing.saveLabel} {pricing.currencySymbol}{pricing.pro.annualSavingsAmount})
-	                  </div>
-	                </div>
-	              </div>
-	            </div>
-	          </div>
-
-	          <ul class="flex-1 space-y-3 mb-6">
-	            {t.pricing.pro.features.map((feature: any) => (
-	              <li class="flex items-start gap-2">
-	                <svg class="w-5 h-5 shrink-0 text-indigo-200" fill="currentColor" viewBox="0 0 20 20">
-	                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-	                </svg>
-	                <span class="text-sm text-white">{feature}</span>
-	              </li>
-	            ))}
-	          </ul>
-
-	          <a
-	            href={buildAppUrl('/signup', currentLang, 'plan=pro')}
-	            data-logged-in-href={buildAppUrl('/', currentLang, 'action=manage-subscription')}
-	            class="js-paid-plan-cta block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors bg-white text-indigo-600 hover:bg-indigo-100"
-	          >
-	            {t.pricing.pro.cta}
-	          </a>
-	        </div>
-
-	      </div>
-	    ) : (
-	      <!-- Pricing Grid (legacy fallback for other locales) -->
-	      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-	        {legacyTiers.map((tier: any) => (
-	          <div class:list={[
-	            "relative flex flex-col p-6 rounded-2xl border",
-	            tier.highlighted
-	              ? "bg-indigo-600 border-indigo-500 shadow-xl shadow-indigo-500/20"
-	              : "bg-slate-800/50 border-slate-700"
-	          ]}>
-	            {tier.badge && (
-	              <div class:list={[
-	                "absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 text-xs font-semibold rounded-full flex items-center justify-center text-center",
-			                tier.highlighted ? "bg-yellow-400 text-slate-950" : "bg-indigo-600 text-white"
-	              ]}>
-	                {tier.badge}
-	              </div>
-	            )}
-
-		      <div class="mb-4">
-	              <h3 class="text-xl font-bold text-white mb-1">{tier.name}</h3>
-	              <p class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-	                {tier.tagline}
-	              </p>
-	            </div>
-
-		      <div class="mb-4">
-		        <div class="flex items-baseline justify-center gap-1">
-	                <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-	                  {pricing.currencySymbol}
-	                </span>
-	                <span class="text-4xl font-bold text-white">{tier.priceAmount}</span>
-	                <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-	                  {tier.period}
-	                </span>
-	              </div>
-
-		        {tier.annualPriceAmount && tier.periodAnnual && (
-		          <div class:list={["mt-2 flex items-baseline justify-center gap-1 text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-	                  <span>{pricing.currencySymbol}</span>
-	                  <span class="font-semibold text-white">{tier.annualPriceAmount}</span>
-	                  <span class:list={["text-sm", tier.highlighted ? "text-indigo-200" : "text-slate-400"]}>
-	                    {tier.periodAnnual}
-	                  </span>
-	                </div>
-	              )}
-	            </div>
-
-	            <ul class="flex-1 space-y-3 mb-6">
-	              {tier.features.map((feature: any) => (
-	                <li class="flex items-start gap-2">
-	                  <svg class:list={["w-5 h-5 shrink-0", tier.highlighted ? "text-indigo-300" : "text-green-400"]} fill="currentColor" viewBox="0 0 20 20">
-	                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-	                  </svg>
-	                  <span class:list={["text-sm", tier.highlighted ? "text-white" : "text-slate-300"]}>{feature}</span>
-	                </li>
-	              ))}
-	            </ul>
-
-	            <a
-	              href={tier.href}
-	              data-logged-in-href={tier.loggedInHref}
-	              class:list={[
-	                !!tier.loggedInHref && 'js-paid-plan-cta',
-	                "block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg transition-colors",
-	                tier.highlighted
-	                  ? "bg-white text-indigo-600 hover:bg-indigo-100"
-	                  : "bg-slate-700 text-white hover:bg-slate-800"
-	              ]}
-	            >
-	              {tier.cta}
-	            </a>
-	          </div>
-	        ))}
-	      </div>
-	    )}
+    <aside class="mt-10 rounded-2xl border border-slate-700/70 bg-slate-900/70 p-6 sm:p-8 text-center">
+      <h3 class="text-xl sm:text-2xl font-bold text-white mb-3">Notylus</h3>
+      <p class="text-slate-400 max-w-2xl mx-auto mb-5">{t.nav.underConstruction}</p>
+      <a href={NOTYLUS_SITE_URL} class="inline-flex items-center justify-center px-5 py-2.5 rounded-lg border border-emerald-500/40 text-emerald-300 hover:bg-emerald-500/10 transition-colors">Notylus <span class="ml-2" aria-hidden="true">→</span></a>
+    </aside>
   </div>
 </section>
 
 <script>
-  /**
-   * Initialize all pricing tab roots on the page.
-   *
-   * Markup contract:
-   * - Root: [data-pricing-tabs-root][data-default-tab]
-   * - Buttons: button[data-tab]
-   * - Panels: [data-tab-panels] [data-panel]
-   */
-  function initPricingTabs() {
-	    const TAB_BASE_CLASSES = 'px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors';
-	    const TAB_STYLES = {
-	      slate: {
-	        active: 'bg-slate-700 text-white',
-	        inactive: 'text-slate-300 hover:text-white',
-	      },
-	      indigo: {
-	        active: 'bg-white text-indigo-700',
-	        inactive: 'text-indigo-100 hover:text-white',
-	      },
-	    };
-
-    const roots = document.querySelectorAll('[data-pricing-tabs-root]');
-
-    function setActive(root, tab) {
-      const buttons = root.querySelectorAll('button[data-tab]');
-      const panels = root.querySelectorAll('[data-tab-panels] [data-panel]');
-	      const styleKey = root.getAttribute('data-tab-style') || 'slate';
-	      const style = TAB_STYLES[styleKey] || TAB_STYLES.slate;
-
-      buttons.forEach((btn) => {
-        const isActive = btn.getAttribute('data-tab') === tab;
-        btn.setAttribute('aria-selected', String(isActive));
-	        btn.className = `${TAB_BASE_CLASSES} ${isActive ? style.active : style.inactive}`;
+  document.querySelectorAll<HTMLElement>('[data-pricing-tabs-root]').forEach(root => {
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-tab]'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('[data-panel]'));
+    const activate = (tab: string) => {
+      buttons.forEach(button => {
+        const active = button.dataset.tab === tab;
+        button.setAttribute('aria-selected', String(active));
+        button.classList.toggle('bg-indigo-600', active);
+        button.classList.toggle('text-white', active);
+        button.classList.toggle('text-slate-300', !active);
       });
-
-      panels.forEach((panel) => {
-        const isActive = panel.getAttribute('data-panel') === tab;
-        panel.classList.toggle('hidden', !isActive);
-      });
-
-			      if (typeof syncPricingCardHeights === 'function') syncPricingCardHeights();
-			      if (typeof syncTabButtonHeights === 'function') syncTabButtonHeights();
-    }
-
-    roots.forEach((root) => {
-      const defaultTab = root.getAttribute('data-default-tab');
-      const firstButton = root.querySelector('button[data-tab]');
-      const initialTab = defaultTab || firstButton?.getAttribute('data-tab');
-
-      if (initialTab) {
-        setActive(root, initialTab);
-      }
-
-      const buttons = root.querySelectorAll('button[data-tab]');
-      buttons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const next = btn.getAttribute('data-tab');
-          if (next) setActive(root, next);
-        });
-      });
-    });
-  }
-
-		  function syncPricingCardHeights() {
-		    const selectors = [
-		      '.js-pricing-card-header',
-		      '.js-pricing-card-title',
-		      '.js-pricing-card-price',
-		    ];
-
-		    selectors.forEach((selector) => {
-		      const elements = document.querySelectorAll(selector);
-		      if (!elements.length) return;
-
-		      // Reset previous min-heights before measuring.
-		      elements.forEach((el) => {
-		        (el as HTMLElement).style.minHeight = '';
-		      });
-
-		      let maxHeight = 0;
-		      elements.forEach((el) => {
-		        const height = (el as HTMLElement).offsetHeight;
-		        if (height > maxHeight) maxHeight = height;
-		      });
-
-		      elements.forEach((el) => {
-		        (el as HTMLElement).style.minHeight = `${maxHeight}px`;
-		      });
-		    });
-		  }
-
-			  function syncTabButtonHeights() {
-			    // Make all pricing tabs share the same height, based on the
-			    // tallest tab on the page (typically a 2-line label like Workspace).
-			    const buttons = document.querySelectorAll(
-			      '[data-pricing-tabs-root] button[data-tab], .js-pricing-tab-static'
-			    );
-			    if (!buttons.length) return;
-
-			    // Reset min-height before measuring.
-			    buttons.forEach((btn) => {
-			      (btn as HTMLElement).style.minHeight = '';
-			    });
-
-			    let maxHeight = 0;
-			    buttons.forEach((btn) => {
-			      const height = (btn as HTMLElement).offsetHeight;
-			      if (height > maxHeight) maxHeight = height;
-			    });
-
-			    buttons.forEach((btn) => {
-			      (btn as HTMLElement).style.minHeight = `${maxHeight}px`;
-			    });
-			  }
-
-		  function runAllSyncs() {
-		    syncPricingCardHeights();
-		    syncTabButtonHeights();
-		  }
-
-		  initPricingTabs();
-		  runAllSyncs();
-
-		  // Re-sync after web fonts finish loading — text may reflow once real fonts
-		  // replace fallback fonts, changing element heights and breaking alignment.
-		  document.fonts.ready.then(runAllSyncs);
-
-		  // Re-sync after all page resources have loaded (belt-and-suspenders).
-		  window.addEventListener('load', runAllSyncs);
-
-		  window.addEventListener('resize', runAllSyncs);
-
-  // If the user is already logged in (tp_logged_in cookie), send paid-plan CTAs
-  // to Manage Subscriptions in the app instead of the signup flow.
-  (function () {
-    const isLoggedIn = document.cookie.split(';').some(c => c.trim().startsWith('tp_logged_in='));
-    if (!isLoggedIn) return;
-
-    document.querySelectorAll<HTMLAnchorElement>('.js-paid-plan-cta').forEach((el) => {
-      const loggedInHref = el.dataset.loggedInHref;
-      if (loggedInHref) el.href = loggedInHref;
-    });
-  })();
+      panels.forEach(panel => panel.classList.toggle('hidden', panel.dataset.panel !== tab));
+    };
+    buttons.forEach(button => button.addEventListener('click', () => activate(button.dataset.tab ?? 'annual')));
+  });
 </script>
-

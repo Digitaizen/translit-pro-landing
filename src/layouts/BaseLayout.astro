@@ -154,18 +154,8 @@ const hreflangs = languages.map(lang => ({
         },
         {
           "@type": "Offer",
-          "name": "Basic",
-          "price": String(pricing.basic.amount),
-          "priceCurrency": "USD",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "billingDuration": "P1M"
-          }
-        },
-        {
-          "@type": "Offer",
-          "name": "Pro",
-          "price": String(pricing.pro.amount),
+          "name": "TranslitPro Plus",
+          "price": String(pricing.plus.amount),
           "priceCurrency": "USD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
@@ -179,4 +169,3 @@ const hreflangs = languages.map(lang => ({
     <slot />
   </body>
 </html>
-
