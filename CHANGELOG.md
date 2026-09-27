@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+- **Header**: "Sign In" no longer opens the Notylus login. It linked to `app.translitpro.com/login` — a path copied from `notylus-landing`'s header, where that route is real, but TranslitPro Lite has no `/login` route and that path isn't in `app.translitpro.com`'s Cloudflare rewrite/exclusion list either, so it fell through the edge redirect to `app.notylus.net/login`. Now links to the app root with a `?auth=login` query param (`buildAppUrl('', currentLang, 'auth=login')`), which the `translit-pro` app reads to open its sign-in modal directly — a path the edge already routes to TranslitPro. Companion change in `translit-pro`: `src/lite/authDeepLink.ts`.
+  - **Files:** `src/components/Header.astro`
+
 ### Added
 - **Header banner**: The "under reconstruction" notice is now DB-backed and dismissable instead of a hardcoded, permanent `SHOW_UNDER_CONSTRUCTION` constant. It reads `public.app_status_banner.translitpro_show` client-side over PostgREST (new `PUBLIC_SUPABASE_URL`/`PUBLIC_SUPABASE_ANON_KEY` env vars — must be set in Cloudflare Pages, static build inlines them), so it can be toggled from Supabase without a redeploy, and a dismiss (✕) persists for the session via `sessionStorage`.
 - **Routing**: Added a dedicated English `/transliteration/` page that preserves the original transliteration-focused landing experience.

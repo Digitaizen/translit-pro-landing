@@ -71,7 +71,7 @@ const { currentLang = 'en', t } = Astro.props;
         <!-- Sign In / Back to App (swapped client-side based on tp_logged_in cookie) -->
         <a
           id="header-auth-btn"
-          href={buildAppUrl('/login', currentLang)}
+          href={buildAppUrl('', currentLang, 'auth=login')}
           data-app-url={buildAppUrl('/', currentLang)}
           data-back-label={t.nav.backToApp}
           class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-slate-800 transition-colors"
