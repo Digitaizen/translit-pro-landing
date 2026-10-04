@@ -10,33 +10,10 @@ interface Props { t: any; currentLang?: string; }
 const { t, currentLang = 'en' } = Astro.props;
 const pricing = getPricingTiers();
 
-const isEnglish = currentLang === 'en';
-const plusSearch = t.pricing.pro.features[isEnglish ? 6 : 5];
-const plusExports = t.pricing.pro.features[isEnglish ? 7 : 6];
-const plusTheme = t.pricing.pro.features[isEnglish ? 8 : 7];
-const noAds = t.pricing.basic.features[isEnglish ? 11 : 10];
-const plusEditorTools: Record<string, string> = {
-  en: 'More editor tools', ru: 'Больше инструментов редактора', uk: 'Більше інструментів редактора',
-  be: 'Больш інструментаў рэдактара', bg: 'Още инструменти за редактиране', he: 'כלי עריכה נוספים',
-  hy: 'Խմբագրիչի ավելի շատ գործիքներ', ka: 'რედაქტორის მეტი ხელსაწყო', el: 'Περισσότερα εργαλεία επεξεργασίας',
-  lt: 'Daugiau redagavimo įrankių', tg: 'Абзорҳои бештари муҳаррир', rue: 'Веце редакторьскых інструментів',
-  sr: 'Više alata za uređivanje', kk: 'Көбірек өңдеу құралдары',
-};
-const anonymousFeatures = [
-  t.pricing.free.anonymous.features[0],
-  t.pricing.free.anonymous.features[1],
-  t.pricing.free.anonymous.features[3],
-  t.features['export'].title + ': TXT, PDF, DOCX, .notylus',
-  t.featureSpotlights.bookmarklet.headline,
-  t.features.editor.title,
-];
-const accountFeatures = [
-  t.pricing.free.registered.features[0],
-  t.pricing.basic.features[1],
-  t.pricing.basic.features[2],
-  t.pricing.basic.features[3],
-];
-const plusFeatures = [plusEditorTools[currentLang] ?? plusEditorTools.en, plusSearch, plusExports, plusTheme, noAds];
+// Band lists per locale (pricing.translitpro), matching the band table in the
+// translit-pro repo's docs/product/TRANSLITPRO_PLUS_BUILD_SPEC.md §2.
+const { noAccount: anonymousFeatures, account: accountFeatures, plus: plusFeatures, plusIncludedNote } =
+  t.pricing.translitpro;
 ---
 
 <section id="pricing" class="py-20 sm:py-32 bg-slate-950">
@@ -98,6 +75,7 @@ const plusFeatures = [plusEditorTools[currentLang] ?? plusEditorTools.en, plusSe
             {plusFeatures.map((feature: string) => (
               <li class="flex items-start gap-2 text-sm text-slate-300"><span class="mt-0.5 text-emerald-400" aria-hidden="true">✓</span><span>{feature}</span></li>
             ))}
+            <li class="pt-2 text-xs text-slate-400">{plusIncludedNote}</li>
           </ul>
           <a href={buildAppUrl('', currentLang)} class="block w-full py-3 px-4 text-center text-sm font-semibold rounded-lg bg-indigo-600 text-white hover:bg-indigo-500 transition-colors">{t.nav.startNow} — TranslitPro Plus</a>
         </div>

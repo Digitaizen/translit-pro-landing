@@ -189,7 +189,35 @@
       "limitations": []
     },
     "saveLabel": "Save",
-    "perDayLabel": "/day"
+    "perDayLabel": "/day",
+    "translitpro": {
+      "noAccount": [
+        "Type in 13+ languages",
+        "Popular keyboard layouts",
+        "3 search buttons",
+        "Export Anywhere: TXT, PDF, DOCX, .notylus",
+        "Type in Your Language on Any Website",
+        "Browser extension: type on up to 3 sites",
+        "Powerful Editor"
+      ],
+      "account": [
+        "Everything available without an account",
+        "5 search buttons",
+        "Custom transliteration rules",
+        "Custom keyboard layouts",
+        "Custom UI languages"
+      ],
+      "plus": [
+        "Browser extension: type on unlimited sites",
+        "Unlimited search buttons, including your own",
+        "All export formats",
+        "More editor tools",
+        "Zen view: distraction-free full screen",
+        "Theme customization",
+        "No ads"
+      ],
+      "plusIncludedNote": "Included with Notylus Basic and Pro"
+    }
   },
   "cta": {
     "headline": "Start Typing Without Limits",

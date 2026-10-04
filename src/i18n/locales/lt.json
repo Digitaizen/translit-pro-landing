@@ -169,7 +169,35 @@
       "limitations": []
     },
     "saveLabel": "Sutaupykite",
-    "perDayLabel": "/dieną"
+    "perDayLabel": "/dieną",
+    "translitpro": {
+      "noAccount": [
+        "Rašykite 13+ kalbomis",
+        "Populiarūs klaviatūros išdėstymai",
+        "3 paieškos mygtukai",
+        "Eksportuokite bet kur: TXT, PDF, DOCX, .notylus",
+        "Rašykite savo kalba bet kurioje svetainėje",
+        "Naršyklės plėtinys: rašymas iki 3 svetainių",
+        "Galingas redaktorius"
+      ],
+      "account": [
+        "Viskas iš Peržiūros režimo",
+        "5 paieškos mygtukai",
+        "Pasirinktinės transliteracijos taisyklės",
+        "Pasirinktiniai klaviatūros išdėstymai",
+        "Pasirinktinės sąsajos kalbos"
+      ],
+      "plus": [
+        "Naršyklės plėtinys: rašymas neribotame svetainių skaičiuje",
+        "Neriboti paieškos mygtukai, įskaitant jūsų pačių",
+        "Visi eksporto formatai",
+        "Daugiau redagavimo įrankių",
+        "Zen rodinys: visas ekranas be blaškymo",
+        "Temos pritaikymas",
+        "Jokių reklamų"
+      ],
+      "plusIncludedNote": "Įtraukta į Notylus Basic ir Pro"
+    }
   },
   "faq": {
     "title": "Dažniausiai užduodami klausimai",

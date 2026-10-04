@@ -169,7 +169,35 @@
       "limitations": []
     },
     "saveLabel": "Uštedite",
-    "perDayLabel": "/dnevno"
+    "perDayLabel": "/dnevno",
+    "translitpro": {
+      "noAccount": [
+        "Kucanje na 13+ jezika",
+        "Popularni rasporedi tastature",
+        "3 dugmeta za pretragu",
+        "Izvezite bilo gde: TXT, PDF, DOCX, .notylus",
+        "Kucajte na svom jeziku na bilo kom sajtu",
+        "Proširenje za pregledač: kucanje na do 3 sajta",
+        "Moćan editor"
+      ],
+      "account": [
+        "Sve iz verzije Pregled",
+        "5 dugmadi za pretragu",
+        "Prilagođena pravila transliteracije",
+        "Prilagođeni rasporedi tastature",
+        "Prilagođeni jezici interfejsa"
+      ],
+      "plus": [
+        "Proširenje za pregledač: kucanje na neograničeno sajtova",
+        "Neograničena dugmad za pretragu, uključujući vaša",
+        "Svi formati za izvoz",
+        "Više alata za uređivanje",
+        "Zen prikaz: ceo ekran bez ometanja",
+        "Prilagođavanje teme",
+        "Bez reklama"
+      ],
+      "plusIncludedNote": "Uključeno u Notylus Basic i Pro"
+    }
   },
   "faq": {
     "title": "Često postavljana pitanja",
