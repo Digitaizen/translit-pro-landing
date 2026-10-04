@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Fixed
+- **TranslitPro Plus card (2026-10-04)**: it lacked its main benefit, the browser extension's Type on unlimited sites. The cards picked lines by index from the pre-split Basic/Pro lists, which never had it. Each locale now has explicit band lists under `pricing.translitpro`, following `TRANSLITPRO_PLUS_BUILD_SPEC.md` §2: Plus adds the extension on unlimited sites, unlimited search buttons including your own, Zen view, and "Included with Notylus Basic and Pro"; Free adds the extension on up to 3 sites and a free account's 5 search buttons.
+  - **Files:** `src/components/Pricing.astro`, `src/i18n/locales/*.json`
+- **Translated pages after the product split (2026-10-04)**: the split alignment (155b409) updated `en.json` only, so the other 13 locales still showed the pre-split copy: "TranslitPro is under reconstruction" in the banner, translation/spellcheck/AI and cloud saving in the meta description, hero and features, a bookmarklet marked "Pro" or "login required", export without the free/Plus split, the old editor spotlight, free-account lists with 100 documents, storage and AI, and "Cancel anytime". The 22 affected strings are re-translated in all 13 (machine-written). The languages FAQ now names all 13 built-in languages (Serbian was missing, in English too). Armenian's keyboard and bookmarklet spotlights and call to action were in Latin transliteration; they are now in Armenian script.
+  - **Files:** `src/i18n/locales/*.json`
+- **Comparison page**: `/alternatives/` no longer claims AI corrections, cloud document saving or a "writing workspace". Its TranslitPro arguments are now the editor, custom schemas, exports, the bookmarklet and the browser extension, and it points people who want saved, synced notes to Notylus.
+  - **Files:** `src/pages/alternatives.astro`
+
+### Removed
+- Dead pre-split copy in every locale, so nobody edits or reuses it by mistake: the translation and AI spellcheck feature cards, the `beyondTransliteration`, `freeTrial` and `addOwnLanguage` FAQ entries, the Basic/Pro/Founder feature lists, and the testimonials. Also the unused `Testimonials.astro`.
+
+### Fixed
 - **Header**: "Sign In" no longer opens the Notylus login. It linked to `app.translitpro.com/login` — a path copied from `notylus-landing`'s header, where that route is real, but TranslitPro Lite has no `/login` route and that path isn't in `app.translitpro.com`'s Cloudflare rewrite/exclusion list either, so it fell through the edge redirect to `app.notylus.net/login`. Now links to the app root with a `?auth=login` query param (`buildAppUrl('', currentLang, 'auth=login')`), which the `translit-pro` app reads to open its sign-in modal directly — a path the edge already routes to TranslitPro. Companion change in `translit-pro`: `src/lite/authDeepLink.ts`.
   - **Files:** `src/components/Header.astro`
 

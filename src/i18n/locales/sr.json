@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Alat za transliteraciju za 13+ jezika",
-    "description": "Kucajte na latinici, dobijte ćirilicu, hebrejski, grčki, gruzijski, jermenski i još mnogo toga. Desktop paket za transliteraciju sa prevodom, AI proverom pravopisa i moćnim editorom. Dodajte bilo koji jezik koji vam je potreban.",
+    "description": "Kucajte latinicom i dobijte ćirilicu, hebrejski, grčki, gruzijski, jermenski i druga pisma u realnom vremenu. Uređivač, virtuelna tastatura, besplatan bookmarklet i izvoz.",
     "siteName": "TranslitPro"
   },
   "nav": {
@@ -11,7 +11,7 @@
     "signIn": "Prijavi se",
     "backToApp": "Nazad u aplikaciju",
     "startNow": "Započni sada",
-    "underConstruction": "TranslitPro se obnavlja — napredne funkcije se sele na Notylus. Osnovna funkcija transliteracije ostaje ovde, besplatno za korišćenje."
+    "underConstruction": "TranslitPro je sada alat za kucanje drugim pismima. Beleške u oblaku, AI i povezano znanje su u Notylus-u."
   },
   "languageDropdown": {
     "translationLabel": "Prevod",
@@ -23,7 +23,7 @@
   "hero": {
     "badge": "Desktop paket za transliteraciju za 13+ jezika",
     "headline": "<span class=\"flex justify-center whitespace-nowrap\">Kucajte na&nbsp;<span class=\"text-emerald-500\">bilo kom izvornom</span>&nbsp;pismu</span><span class=\"flex justify-center whitespace-nowrap\">koristeći svoju&nbsp;<span class=\"text-indigo-500\">latiničnu tastaturu</span></span>",
-    "subheadline": "Transliterujte na ćirilicu, hebrejski, grčki, gruzijski, jermenski i još mnogo toga — sve sa vaše latinične tastature. Uz to dobijate prevod, proveru pravopisa i moćan editor. Dodajte bilo koji jezik koji vam je potreban.",
+    "subheadline": "Transliteracija na ćirilicu, hebrejski, grčki, gruzijski, jermenski i druga pisma sa vaše latinične tastature. Formatirajte, kopirajte ili izvezite tekst bez naloga.",
     "ctaPrimary": "Započni besplatno — bez registracije",
     "ctaSecondary": "Pogledaj cene",
     "trustBadge1": "Nije potrebna kreditna kartica",
@@ -31,8 +31,8 @@
     "trustBadge3": "Dodajte sopstvene jezike"
   },
   "features": {
-    "title": "Više od same transliteracije",
-    "subtitle": "Kompletan desktop paket za pisanje sa transliteracijom, prevodom, proverom pravopisa i moćnim editorom — za bilo koje pismo koje vam je potrebno.",
+    "title": "Sve što vam treba za kucanje drugim pismom",
+    "subtitle": "Brza transliteracija, virtuelna tastatura, korisno formatiranje, izvoz i alati za kucanje na drugim sajtovima.",
     "typeNaturally": {
       "title": "Kucajte prirodno",
       "description": "Koristite svoju standardnu latiničnu tastaturu na desktopu. Nema potrebe za učenjem novih rasporeda ili menjanjem podešavanja tastature."
@@ -46,16 +46,8 @@
       "description": "Kreirajte prilagođene šeme transliteracije za bilo koji jezik. Definišite sopstvene rasporede tastature i mapiranja."
     },
     "bookmarklet": {
-      "title": "Bookmarklet (Besplatno — potrebna prijava)",
-      "description": "Besplatno za sve prijavljene korisnike. Kreirajte besplatan nalog da biste ga otključali, a zatim kucajte na ciljanom pismu direktno na većini veb sajtova — društvenim mrežama, forumima i mnogim veb aplikacijama. Napomena: Ne radi na sajtovima sa strogom Politikom bezbednosti sadržaja (CSP) kao što su Google usluge (Gmail, Docs, itd.)."
-    },
-    "translation": {
-      "title": "Prevod",
-      "description": "Prevedite svoj tekst na više jezika direktno unutar editora. Nema potrebe za menjanjem aplikacija."
-    },
-    "aiSpellcheck": {
-      "title": "AI provera pravopisa",
-      "description": "Pametna provera pravopisa podržana veštačkom inteligencijom. Ispravite štamparske greške i dobijte predloge na ciljanom jeziku."
+      "title": "Besplatan bookmarklet",
+      "description": "Kucajte željenim pismom direktno na većini sajtova, bez naloga. Sajtovi sa strogom bezbednosnom politikom sadržaja (CSP), uključujući neke Google servise, mogu da ga blokiraju."
     },
     "editor": {
       "title": "Moćan editor",
@@ -63,7 +55,7 @@
     },
     "export": {
       "title": "Izvezite bilo gde",
-      "description": "Izvezite u TXT, RTF, HTML, Markdown, DOCX ili PDF. Vaš sadržaj, vaš format."
+      "description": "Besplatan izvoz u TXT, PDF, DOCX ili .notylus. Plus dodaje RTF, HTML i Markdown."
     },
     "exploreAll": "Istražite sve funkcije"
   },
@@ -72,7 +64,6 @@
     "subtitle": "Počnite besplatno, nadogradite kada vam zatreba više. Bez skrivenih troškova, otkažite bilo kada.",
     "tabs": {
       "anonymous": "Pregled",
-      "registered": "Radni prostor",
       "monthly": "Mesečno",
       "annual": "Godišnje"
     },
@@ -81,33 +72,18 @@
       "anonymous": {
         "tagline": "Isprobajte odmah. Nije potreban nalog.",
         "period": "zauvek",
-        "cta": "Započni besplatno",
-        "features": [
-          "Kucanje na 13+ jezika",
-          "Popularni rasporedi tastature",
-          "Prevod",
-          "3 dugmeta za pretragu",
-          "Stilizovanje fonta",
-          "Do 2 slike po dokumentu (2 MB)"
-        ],
-        "limitations": []
+        "cta": "Započni besplatno"
       },
       "registered": {
-        "tagline": "Sačuvajte svoj rad. Otključajte više alata.",
+        "tagline": "Čuvajte podešavanja i svoje alate za kucanje na nalogu.",
         "period": "zauvek",
         "cta": "Kreiraj besplatan nalog",
         "features": [
-          "Sve iz verzije Pregled",
-          "Bookmarklet (kucajte na svom jeziku na bilo kom sajtu)",
-          "Kompletni alati editora",
-          "Sačuvajte do 100 dokumenata",
-          "500 MB prostora",
-          "AI ispravke (10 dnevno)",
-          "Izvoz u TXT",
-          "Do 3 slike po dokumentu (5 MB)",
-          "Fascikle za dokumente"
-        ],
-        "limitations": []
+          "Sve što je dostupno bez naloga",
+          "Sopstveni jezici transliteracije i varijante",
+          "Sopstveni rasporedi tastature",
+          "Sopstveni jezici interfejsa"
+        ]
       }
     },
     "basic": {
@@ -115,58 +91,7 @@
       "tagline": "Vaš jezik, vaša pravila.",
       "period": "/mesečno",
       "periodAnnual": "/godišnje",
-      "cta": "Pređi na Basic",
-      "features": [
-        "Sve iz besplatne verzije",
-        "Prilagođena pravila transliteracije",
-        "Prilagođeni rasporedi tastature",
-        "Prilagođeni jezici interfejsa",
-        "Neograničen broj dokumenata",
-        "5 GB prostora",
-        "Sinhronizacija između uređaja",
-        "AI ispravke (50 dnevno)",
-        "5 dugmadi za pretragu",
-        "Izvoz u TXT, DOCX i PDF",
-        "Bez reklama",
-        "Do 20 slika po dokumentu (5 MB)"
-      ],
-      "limitations": []
-    },
-    "pro": {
-      "name": "Pro",
-      "tagline": "Dobijte sve bez ograničenja.",
-      "period": "/mesečno",
-      "periodAnnual": "/godišnje",
-      "cta": "Postani Pro",
-      "badge": "Najpopularnije",
-      "features": [
-        "Sve iz Basic verzije",
-        "AI ispravke (250 dnevno)",
-        "25 GB prostora",
-        "Biblioteka upita / Prompt Library (100 sačuvanih)",
-        "Normalizacija jezika (250/dan)",
-        "Sva dugmad za pretragu",
-        "Svi formati za izvoz",
-        "Prilagođavanje teme",
-        "Neograničene slike u dokumentima"
-      ],
-      "limitations": []
-    },
-    "founder": {
-      "name": "Founder",
-      "tagline": "Platite jednom, posedujte Pro zauvek.",
-      "period": "jednokratno",
-      "launchPricingNote": "Promotivna cena — cena će rasti.",
-      "cta": "Postani Founder",
-      "badge": "Ograničeno vreme",
-      "features": [
-        "Sve iz Pro verzije",
-        "Doživotni pristup",
-        "Nikada više ne plaćajte",
-        "Founder bedž",
-        "Prioritetna podrška"
-      ],
-      "limitations": []
+      "cta": "Pređi na Basic"
     },
     "saveLabel": "Uštedite",
     "perDayLabel": "/dnevno",
@@ -181,7 +106,7 @@
         "Moćan editor"
       ],
       "account": [
-        "Sve iz verzije Pregled",
+        "Sve što je dostupno bez naloga",
         "5 dugmadi za pretragu",
         "Prilagođena pravila transliteracije",
         "Prilagođeni rasporedi tastature",
@@ -209,7 +134,7 @@
       },
       "whichLanguages": {
         "question": "Koji jezici su podržani?",
-        "answer": "TranslitPro ima 13+ ugrađenih jezika: ruski, ukrajinski, beloruski, bugarski, hebrejski, jermenski, gruzijski, grčki, litvanski, tadžički, rusinski, kazaški i druge. Takođe možete dodati sopstvene prilagođene jezike i rasporede tastature."
+        "answer": "TranslitPro ima 13 ugrađenih jezika: ruski, ukrajinski, beloruski, bugarski, srpski, rusinski, kazaški, tadžički, hebrejski, jermenski, gruzijski, grčki i litvanski. Sa besplatnim nalogom možete dodati i sopstvene jezike i rasporede tastature."
       },
       "mobileOrDesktop": {
         "question": "Da li je TranslitPro za mobilne telefone ili desktop?",
@@ -217,19 +142,7 @@
       },
       "whatIsBookmarklet": {
         "question": "Šta je bookmarklet?",
-        "answer": "Bookmarklet je potpuno besplatan alat za prijavljene korisnike koji vam omogućava da kucate na ciljanom pismu direktno na većini veb sajtova. Radi na društvenim mrežama, forumima i mnogim veb aplikacijama. Napomena: Ne radi na sajtovima sa strogom Politikom bezbednosti sadržaja (CSP) kao što su Google usluge (Gmail, Docs, itd.)."
-      },
-      "beyondTransliteration": {
-        "question": "Šta mogu da radim osim transliteracije?",
-        "answer": "TranslitPro uključuje moćan editor obogaćenog teksta, prevod na više jezika, AI proveru pravopisa na ciljanom jeziku i izvoz u TXT, RTF, HTML, Markdown, DOCX ili PDF."
-      },
-      "freeTrial": {
-        "question": "Postoji li besplatni probni period?",
-        "answer": "Da! Osnovne funkcije transliteracije možete koristiti potpuno besplatno, zauvek — bez potrebe za registracijom. Ako kreirate besplatan nalog, bookmarklet je vaš zauvek besplatno, a dobijate i 30 dana probe naprednih funkcija uključujući AI proveru pravopisa, izvoz i skladištenje u oblaku (500 MB besplatno, 5 GB u Basic, 25 GB u Pro)."
-      },
-      "addOwnLanguage": {
-        "question": "Mogu li dodati sopstveni jezik?",
-        "answer": "Da! Uz Basic plan ili viši, možete kreirati prilagođene šeme transliteracije i rasporede tastature za bilo koji jezik. Savršeno ako vam je potreban specifičan sistem romanizacije ili jezik koji nije ugrađen u aplikaciju."
+        "answer": "Bookmarklet je potpuno besplatan alat koji vam omogućava da kucate željenim pismom direktno na većini sajtova, bez naloga. Sajtovi sa strogom bezbednosnom politikom sadržaja (CSP), uključujući neke Google servise, mogu da ga blokiraju."
       },
       "cancelAnytime": {
         "question": "Mogu li da otkažem pretplatu bilo kada?",
@@ -292,23 +205,19 @@
       "note": "Radi na većini veb sajtova. Ne radi na sajtovima sa strogim bezbednosnim politikama (npr. Google Docs, Gmail)."
     },
     "editor": {
-      "eyebrow": "Vaš potpuni radni prostor za pisanje",
-      "headline": "Pišite, prevodite i čuvajte na jednom mestu",
-      "copy": "Moćan editor bogatog teksta sa ugrađenom transliteracijom, prevodom i AI asistentom.",
-      "copy2": "Čuvajte u oblaku i izvozite u TXT, DOCX, PDF i još mnogo toga po potrebi.",
-      "tagline": "Nije potrebno prebacivanje između aplikacija."
+      "eyebrow": "Jedna brza površina za pisanje",
+      "headline": "Formatirajte, kopirajte i izvezite tekst",
+      "copy": "Uređivač sa formatiranjem, transliteracijom u realnom vremenu i sažetom trakom alata.",
+      "copy2": "Tekst ostaje u vašem pregledaču; izvezite ga besplatno u TXT, PDF, DOCX ili .notylus.",
+      "tagline": "Za trajni radni prostor u oblaku nastavite u Notylus-u."
     }
-  },
-  "testimonials": {
-    "title": "Veruju nam višejezični pisci širom sveta",
-    "subtitle": "Od dijaspora zajednica do nastavnika jezika — TranslitPro odgovara načinu na koji ljudi zaista rade."
   },
   "cta": {
     "headline": "Počnite da kucate bez ograničenja",
-    "subheadline": "Besplatan početak. Bez podešavanja. Bez krivulje učenja.",
+    "subheadline": "Besplatno i bez naloga. Nadogradite samo ako želite više podešavanja.",
     "button": "Počnite besplatno — bez registracije",
     "badge1": "Nije potrebna bankovna kartica",
     "badge2": "13+ ugrađenih jezika",
-    "badge3": "Otkazivanje u bilo kom trenutku"
+    "badge3": "Besplatan izvoz"
   }
 }

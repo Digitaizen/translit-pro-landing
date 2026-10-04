@@ -37,9 +37,8 @@ const competitors = [
     bestFor: 'Occasional script input inside Google Workspace. If you already live in Google Docs and just need to type a few words in another script, this is the path of least resistance.',
     lacks: [
       'No real writing editor — it is purely an input overlay',
-      'No AI-assisted corrections or suggestions',
       'No custom transliteration schemas',
-      'No cloud documents or export formats',
+      'No export formats',
       'UI unchanged for a decade; actively feels abandoned',
     ],
     verdict: 'A familiar brand that works well enough for quick, casual input. The moment you need to write anything longer than a sentence — or need it to work across different websites — the gaps become obvious.',
@@ -56,8 +55,8 @@ const competitors = [
     lacks: [
       'Fixed set of 10 supported languages — no way to add or extend',
       'Only two transliteration standards (GOST 7.79 and ISO 9) — no custom schemas',
-      'Simple textarea: no persistent documents, no sessions, resets when you close the tab',
-      'No export, no AI, no modern workflow features',
+      'Simple textarea: no formatting and no rich editor',
+      'No export, and no way to type directly on other websites',
       'Dated design with no meaningful updates in years',
     ],
     verdict: 'A solid, no-frills converter for its supported languages. What you see is exactly what you get — a textarea, a virtual keyboard, and two fixed standards. There is nothing wrong with that for a quick one-off job, but it is a dead end the moment you need anything more.',
@@ -73,8 +72,7 @@ const competitors = [
     bestFor: 'Fast, no-frills one-off conversions across a broad range of languages. Nothing to install, nothing to configure.',
     lacks: [
       'No real-time editor — just a textarea',
-      'No persistence: everything disappears when you close the tab',
-      'No customization, AI, or workflow layer',
+      'No custom schemas or keyboard layouts',
       'No export formats beyond copy-paste',
       'Minimal retention: there is no reason to come back',
     ],
@@ -92,7 +90,7 @@ const competitors = [
     lacks: [
       'Virtual keyboards are slower than phonetic typing for any script you know phonetically',
       'No real editor or document workflow',
-      'No AI layer, no custom schemas, no exports',
+      'No custom schemas, no exports',
       'Commodity feature set with little differentiation',
       'Low retention: nothing to bring users back daily',
     ],
@@ -118,9 +116,7 @@ const featureRows: FeatureRow[] = [
   { name: 'Real-time typing editor',                        tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
   { name: 'Cyrillic scripts (Russian, Ukrainian…)',         tp: 'yes',     git: 'yes',     tr: 'yes',  tlio: 'yes',     ak: 'yes'     },
   { name: 'Non-Cyrillic scripts (Hebrew, Arabic, Greek…)',  tp: 'yes',     git: 'yes',     tr: 'partial', tlio: 'yes',   ak: 'yes'     },
-  { name: 'AI-assisted corrections',                        tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
   { name: 'Custom transliteration schemas',                 tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
-  { name: 'Cloud document saving',                          tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
   { name: 'Export (Word, PDF, plain text)',                  tp: 'yes',     git: 'no',      tr: 'no',   tlio: 'no',      ak: 'no'      },
   { name: 'Type on most websites (bookmarklet / extension)', tp: 'yes',     git: 'partial', tr: 'no',   tlio: 'no',      ak: 'no'      },
   { name: 'Works without installation',                     tp: 'yes',     git: 'partial', tr: 'yes',  tlio: 'yes',     ak: 'yes'     },
@@ -129,7 +125,7 @@ const featureRows: FeatureRow[] = [
 ];
 
 const colHeaders = [
-  { label: TP,                   sub: 'Writing Workspace', highlight: true  },
+  { label: TP,                   sub: 'Typing Editor'    , highlight: true  },
   { label: 'Google Input Tools', sub: 'Input Method',      highlight: false },
   { label: 'Translit.ru',        sub: 'Russian Converter',  highlight: false },
   { label: 'Transliteration.io', sub: 'Online Converter',  highlight: false },
@@ -143,9 +139,9 @@ const switchReasons = [
     body: `Every alternative on this list is a conversion utility. ${TP} is an editor — you type, see the result in real time, and build documents without leaving the tool.`,
   },
   {
-    icon: '🧠',
-    title: 'AI that understands multilingual context',
-    body: 'Built-in AI checks spelling, grammar, and syntax; translates long passages; suggests rephrasing; and normalizes mixed-language sentences. No other tool in this comparison comes close.',
+    icon: '🧩',
+    title: 'A browser extension for the sites you use',
+    body: `The ${TP} browser extension types in your script right inside the sites you choose — three for free, unlimited with TranslitPro Plus — with no copy-paste round trip.`,
   },
   {
     icon: '🎛️',
@@ -155,17 +151,17 @@ const switchReasons = [
   {
     icon: '🔖',
     title: 'Type anywhere, not just inside the app',
-    body: 'The bookmarklet turns text fields on most websites into transliteration-enabled inputs — Twitter, Reddit, a CMS, a web form. Note: sites with strict Content Security Policies (Google products, for example) block bookmarklets by design.',
+    body: 'No install needed: the free bookmarklet turns text fields on most websites into transliteration-enabled inputs — Twitter, Reddit, a CMS, a web form. Note: sites with strict Content Security Policies (Google products, for example) block bookmarklets by design.',
   },
   {
-    icon: '☁️',
-    title: 'Your documents follow you',
-    body: 'Cloud-saved documents mean your multilingual drafts exist across sessions and devices. Competitors reset when you close the tab.',
+    icon: '🔓',
+    title: 'Free to start, no account',
+    body: 'Type, format, and export without signing up. A free account adds custom schemas, keyboard layouts, and interface languages; TranslitPro Plus lifts the limits and removes ads.',
   },
   {
     icon: '📤',
     title: 'Export in the format you actually need',
-    body: 'Copy-paste is a workflow bottleneck. Export directly to Word, PDF, or plain text and continue working in your existing tools.',
+    body: 'Copy-paste is a workflow bottleneck. Export directly to Word, PDF, or plain text for free — TranslitPro Plus adds RTF, HTML, and Markdown — and continue working in your existing tools.',
   },
 ];
 ---
@@ -195,7 +191,7 @@ const switchReasons = [
         </h1>
         <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-4">
           Most transliteration tools are input utilities: type into their editor, copy the result, paste it where you actually need it.
-          <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> is a <span class="text-white font-medium">desktop multilingual writing workspace</span> — a different category entirely.
+          <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> is a <span class="text-white font-medium">desktop typing editor for other scripts</span> — a different category.
         </p>
         <p class="text-base text-slate-500 max-w-xl mx-auto mb-10">
           This page breaks down exactly what each tool does well, where it falls short, and who it is actually for — so you can make an informed choice.
@@ -230,15 +226,15 @@ const switchReasons = [
               Google Input Tools, Translit.ru, Transliteration.io, and AnyKeyboard are all <span class="text-white">input utilities</span> — they solve the single problem of character conversion.
             </p>
             <p class="text-slate-400 leading-relaxed mt-3">
-              <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> solves the broader problem of <span class="text-white">multilingual desktop writing</span>: where do the characters go after you type them, how do you save and export them, and how do you make the conversion fit your specific language conventions?
+              <span style="color:#20b571">Translit</span><span style="color:#6c65d4">Pro</span> solves the broader problem of <span class="text-white">multilingual desktop writing</span>: how do you format and export what you typed, how do you type straight into other websites, and how do you make the conversion fit your specific language conventions?
             </p>
           </div>
           <div class="grid grid-cols-2 gap-4">
             {[
               { label: 'Input utilities',   desc: 'Convert text. Close tab. Repeat.', dim: true  },
-              { label: 'Writing workspace', desc: 'Write, save, export, customize.',  dim: false },
-              { label: 'One-time use',      desc: 'No memory of your past sessions.', dim: true  },
-              { label: 'Persistent',        desc: 'Documents, schemas, preferences.', dim: false },
+              { label: 'Typing editor',     desc: 'Write, format, export, customize.', dim: false },
+              { label: 'One fixed scheme',  desc: 'Their conventions, not yours.',    dim: true  },
+              { label: 'Your conventions',  desc: 'Custom schemas and layouts.',      dim: false },
             ].map(card => (
               <div class={`rounded-xl border p-4 ${card.dim ? 'border-slate-700/50 bg-slate-800/30' : 'border-indigo-500/30 bg-indigo-500/10'}`}>
                 <p class={`text-sm font-semibold mb-1 ${card.dim ? 'text-slate-500' : 'text-indigo-300'}`}>{card.label}</p>
@@ -418,13 +414,19 @@ const switchReasons = [
               condition: 'You write regularly in another script and need a real workflow',
               pick: 'TranslitPro',
               pickColor: '',
-              reason: 'Real-time editor, cloud documents, custom schemas, AI corrections, and bookmarklet. Built for writers, not converters.',
+              reason: 'Real-time editor, custom schemas, portable exports, the bookmarklet, and a browser extension. Built for writers, not converters.',
             },
             {
               condition: 'You are diaspora, a journalist, translator, or content creator who regularly writes in more than one script',
               pick: 'TranslitPro',
               pickColor: '',
-              reason: 'The only tool in this list that retains your work, respects your transliteration conventions, and integrates into your existing writing workflow.',
+              reason: 'The only tool in this list that respects your transliteration conventions, types straight into other websites, and exports to the formats your workflow uses.',
+            },
+            {
+              condition: 'You want your multilingual notes saved, organized, and searchable across devices',
+              pick: 'Notylus',
+              pickColor: 'text-emerald-400',
+              reason: 'The workspace built on the same typing engine: cloud notes, folders, language tags, and search. One account works for both.',
             },
           ].map((item) => (
             <div class="bg-slate-800/40 rounded-xl border border-slate-700/40 px-6 py-5">
