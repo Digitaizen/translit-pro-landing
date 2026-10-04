@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "title": "Outil de translittération pour plus de 13 langues",
+    "description": "Écrivez en caractères latins et obtenez en temps réel du cyrillique, de l’hébreu, du grec, du géorgien, de l’arménien et plus encore. Éditeur de texte riche, clavier virtuel, bookmarklet gratuit et exports portables.",
+    "siteName": "TranslitPro"
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "faq": "FAQ",
+    "signIn": "Se connecter",
+    "backToApp": "Retour à l’app",
+    "startNow": "Commencer",
+    "underConstruction": "TranslitPro est désormais l’outil dédié à l’écriture dans d’autres écritures. Les notes dans le cloud, l’IA et les connaissances reliées se trouvent dans Notylus."
+  },
+  "languageDropdown": {
+    "translationLabel": "Traduction",
+    "tipLabel": "Astuce : traduisez cette page",
+    "tipModalTitle": "Traduire cette page",
+    "tipModalBody": "Pour afficher cette page dans d’autres langues, utilisez la fonction « Traduire cette page » de votre navigateur. Dans la plupart des navigateurs, vous pouvez faire un clic droit n’importe où sur la page et choisir « Traduire en [votre langue] », ou utiliser l’icône de traduction dans la barre d’adresse.",
+    "tipModalClose": "Fermer"
+  },
+  "hero": {
+    "badge": "Suite de translittération de bureau pour plus de 13 langues",
+    "headline": "<span class=\"flex justify-center whitespace-nowrap\">Écrivez dans&nbsp;<span class=\"text-emerald-500\">toute écriture</span></span><span class=\"flex justify-center whitespace-nowrap\">avec votre&nbsp;<span class=\"text-indigo-500\">clavier latin</span></span>",
+    "subheadline": "Translittérez vers le cyrillique, l’hébreu, le grec, le géorgien, l’arménien et bien d’autres depuis votre clavier latin. Mettez en forme, copiez ou exportez votre texte sans créer de compte.",
+    "ctaPrimary": "Commencer gratuitement — sans inscription",
+    "ctaSecondary": "Voir les tarifs",
+    "trustBadge1": "Aucune carte bancaire requise",
+    "trustBadge2": "Plus de 13 langues intégrées",
+    "trustBadge3": "Ajoutez vos propres langues"
+  },
+  "features": {
+    "title": "Tout ce qu’il faut pour écrire dans une autre écriture",
+    "subtitle": "Translittération rapide, clavier virtuel, mise en forme utile, exports portables et outils pour écrire sur d’autres sites web.",
+    "typeNaturally": {
+      "title": "Écrivez naturellement",
+      "description": "Utilisez votre clavier latin habituel sur ordinateur. Inutile d’apprendre de nouvelles dispositions ou de changer les réglages du clavier."
+    },
+    "languages": {
+      "title": "Plus de 13 langues",
+      "description": "Russe, ukrainien, hébreu, grec, géorgien, arménien, lituanien, bulgare et bien d’autres — toutes intégrées."
+    },
+    "addLanguage": {
+      "title": "Ajoutez n’importe quelle langue",
+      "description": "Créez des schémas de translittération personnalisés pour n’importe quelle langue. Définissez vos propres dispositions de clavier et correspondances."
+    },
+    "bookmarklet": {
+      "title": "Bookmarklet gratuit",
+      "description": "Écrivez directement dans votre écriture cible sur la plupart des sites web, sans compte. Les sites dotés d’une Content Security Policy stricte, dont certains services Google, peuvent le bloquer."
+    },
+    "editor": {
+      "title": "Éditeur puissant",
+      "description": "Éditeur de texte riche avec mise en forme, styles et translittération fluide pendant la frappe."
+    },
+    "export": {
+      "title": "Exportez partout",
+      "description": "Export gratuit en TXT, PDF, DOCX ou .notylus. Plus débloque aussi RTF, HTML et Markdown."
+    },
+    "exploreAll": "Découvrir toutes les fonctionnalités"
+  },
+  "featureSpotlights": {
+    "keyboard": {
+      "eyebrow": "Fini les acrobaties de clavier",
+      "headline": "Arrêtez de changer de clavier, pour de bon",
+      "copy": "Plus besoin de fouiller dans les réglages du système ni de mémoriser des dispositions différentes. Écrivez comme vous en avez l’habitude : TranslitPro convertit instantanément, en temps réel."
+    },
+    "bookmarklet": {
+      "eyebrow": "Fonctionne partout où vous écrivez",
+      "headline": "Écrivez dans votre langue sur n’importe quel site web",
+      "subheadline": "Réseaux sociaux. Forums. E-mails. Applications web.",
+      "copy": "Installez le bookmarklet gratuit une seule fois et chaque champ de texte du web devient multilingue. Twitter, Reddit, l’intranet de votre entreprise — ça fonctionne, tout simplement.",
+      "note": "Fonctionne sur la plupart des sites web. Ne fonctionne pas sur les sites aux politiques de sécurité strictes (p. ex. Google Docs, Gmail)."
+    },
+    "editor": {
+      "eyebrow": "Une seule surface d’écriture, rapide",
+      "headline": "Mettez en forme, copiez et exportez votre texte",
+      "copy": "Utilisez un éditeur de texte riche avec translittération en direct et une barre d’outils sobre.",
+      "copy2": "Votre tampon reste en local ; exportez-le gratuitement en TXT, PDF, DOCX ou .notylus.",
+      "tagline": "Pour un espace de travail durable dans le cloud, poursuivez dans Notylus."
+    }
+  },
+  "pricing": {
+    "title": "Des tarifs simples et transparents",
+    "subtitle": "Commencez gratuitement, passez à l’offre supérieure quand vous en avez besoin. Aucun frais caché, résiliable à tout moment.",
+    "tabs": {
+      "anonymous": "Aperçu",
+      "monthly": "Mensuel",
+      "annual": "Annuel"
+    },
+    "free": {
+      "name": "Gratuit",
+      "anonymous": {
+        "tagline": "Essayez immédiatement. Aucun compte requis.",
+        "period": "pour toujours",
+        "cta": "Commencer gratuitement"
+      },
+      "registered": {
+        "tagline": "Conservez vos préférences et vos outils de saisie personnalisés avec votre compte.",
+        "period": "pour toujours",
+        "cta": "Créer un compte gratuit",
+        "features": [
+          "Tout ce qui est disponible sans compte",
+          "Langues et variantes de translittération personnalisées",
+          "Dispositions de clavier personnalisées",
+          "Langues d’interface personnalisées"
+        ]
+      }
+    },
+    "basic": {
+      "name": "Basic",
+      "tagline": "Votre langue, vos règles.",
+      "period": "/mois",
+      "periodAnnual": "/an",
+      "cta": "Passer à Basic"
+    },
+    "saveLabel": "Économisez",
+    "perDayLabel": "/jour",
+    "translitpro": {
+      "noAccount": [
+        "Écrivez dans plus de 13 langues",
+        "Dispositions de clavier courantes",
+        "3 boutons de recherche",
+        "Exportez partout : TXT, PDF, DOCX, .notylus",
+        "Écrivez dans votre langue sur n’importe quel site web",
+        "Extension de navigateur : écrivez sur 3 sites maximum",
+        "Éditeur puissant"
+      ],
+      "account": [
+        "Tout ce qui est disponible sans compte",
+        "5 boutons de recherche",
+        "Règles de translittération personnalisées",
+        "Dispositions de clavier personnalisées",
+        "Langues d’interface personnalisées"
+      ],
+      "plus": [
+        "Extension de navigateur : écrivez sur un nombre illimité de sites",
+        "Boutons de recherche illimités, y compris les vôtres",
+        "Tous les formats d’export",
+        "Plus d’outils d’édition",
+        "Vue Zen : plein écran sans distraction",
+        "Personnalisation du thème",
+        "Sans publicité"
+      ],
+      "plusIncludedNote": "Inclus avec Notylus Basic et Pro"
+    }
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "subtitle": "Des questions ? Nous avons les réponses.",
+    "questions": {
+      "whatIsTransliteration": {
+        "question": "Qu’est-ce que la translittération ?",
+        "answer": "La translittération consiste à convertir un texte d’une écriture à une autre. TranslitPro convertit les caractères latins (comme « privet ») en d’autres écritures (comme « привет » en russe) en temps réel pendant que vous écrivez."
+      },
+      "whichLanguages": {
+        "question": "Quelles langues sont prises en charge ?",
+        "answer": "TranslitPro intègre 13 langues : russe, ukrainien, biélorusse, bulgare, serbe, ruthène, kazakh, tadjik, hébreu, arménien, géorgien, grec et lituanien. Avec un compte gratuit, vous pouvez aussi ajouter vos propres langues et dispositions de clavier."
+      },
+      "mobileOrDesktop": {
+        "question": "TranslitPro est-il conçu pour mobile ou pour ordinateur ?",
+        "answer": "TranslitPro est avant tout conçu pour les utilisateurs d’ordinateur. Les appareils mobiles disposent généralement de claviers intégrés pour différentes écritures. Notre application fonctionne mieux dans les navigateurs de bureau, lorsque vous voulez écrire dans des écritures non latines avec votre clavier habituel."
+      },
+      "whatIsBookmarklet": {
+        "question": "Qu’est-ce que le bookmarklet ?",
+        "answer": "Le bookmarklet est un outil entièrement gratuit qui vous permet d’écrire directement dans votre écriture cible sur la plupart des sites web, sans compte. Les sites dotés d’une Content Security Policy stricte, dont certains services Google, peuvent le bloquer."
+      },
+      "cancelAnytime": {
+        "question": "Puis-je résilier mon abonnement à tout moment ?",
+        "answer": "Absolument ! Vous pouvez résilier votre abonnement à tout moment depuis les paramètres de votre compte. Vous conservez l’accès aux fonctionnalités payantes jusqu’à la fin de votre période de facturation."
+      },
+      "preventCombinations": {
+        "question": "Puis-je empêcher que certaines combinaisons de lettres soient translittérées ensemble ?",
+        "answer": "Oui ! Utilisez le symbole + comme séparateur. TranslitPro translittérera alors chaque lettre séparément plutôt qu’en paire. Exemples (cyrillique) : s+h → « сх » (au lieu de « ш »), t+s → « тс » (au lieu de « ц »), z+h → « зх » (au lieu de « ж »)."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacter l’assistance",
+    "subtitle": "Nous vous répondrons dès que possible.",
+    "stillHaveQuestions": "Encore des questions ?",
+    "contactSupport": "Contacter l’assistance",
+    "emailLabel": "Votre adresse e-mail",
+    "emailPlaceholder": "you@example.com",
+    "subjectLabel": "Objet",
+    "subjectPlaceholder": "Comment pouvons-nous vous aider ?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Décrivez votre problème ou votre question...",
+    "sendButton": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "successMessage": "Message envoyé avec succès !",
+    "errorMessage": "Échec de l’envoi du message. Veuillez réessayer."
+  },
+  "footer": {
+    "tagline": "Suite de translittération de bureau pour plus de 13 langues. Écrivez en latin, obtenez du cyrillique, de l’hébreu, du grec et plus encore.",
+    "product": "Produit",
+    "scripts": "Écritures",
+    "legal": "Mentions légales",
+    "openApp": "Ouvrir l’app",
+    "cyrillic": "Cyrillique",
+    "hebrew": "Hébreu",
+    "greek": "Grec",
+    "georgian": "Géorgien",
+    "armenian": "Arménien",
+    "custom": "+ Personnalisée",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d’utilisation",
+    "copyright": "© {{year}} TranslitPro. Tous droits réservés.",
+    "ownership": "TranslitPro appartient à 5am Works LLC, qui l’exploite.",
+    "followLabel": "Suivez-nous :",
+    "shareLabel": "Partager :",
+    "copyLink": "Copier le lien",
+    "linkCopied": "Copié !"
+  },
+  "cta": {
+    "headline": "Écrivez sans limites",
+    "subheadline": "Gratuit et sans compte. Passez à l’offre supérieure seulement si vous voulez plus de personnalisation.",
+    "button": "Commencer gratuitement — sans inscription",
+    "badge1": "Aucune carte bancaire requise",
+    "badge2": "Plus de 13 langues intégrées",
+    "badge3": "Export portable gratuit"
+  }
+}

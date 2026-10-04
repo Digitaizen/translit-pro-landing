@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file.
   - **Files:** `src/components/Header.astro`
 
 ### Added
+- **German, Spanish, French and Italian (2026-10-04)**: the site now has the app's 18 interface languages, at `/de/`, `/es/`, `/fr/` and `/it/` (hreflang, sitemap and the language dropdown pick them up from `languages.ts`). Each is a full locale file with the same keys as `en.json`, in the app's own register (Sie and vous, tú and tu) and its terms (Bookmarklet, Zen-Ansicht / Vista Zen / Vue Zen). Machine-written by the assistant, not reviewed by a native speaker. The hero headlines are worded shorter than a literal translation so they fit a 360 px phone; the nowrap headline is cut off on a phone in English and the other 13 languages too (not changed here).
+  - **Files:** `src/i18n/locales/{de,es,fr,it}.json`, `src/i18n/languages.ts`, `src/i18n/utils.ts`, `astro.config.mjs`, `README.md`, `CLAUDE.md`
 - **Header banner**: The "under reconstruction" notice is now DB-backed and dismissable instead of a hardcoded, permanent `SHOW_UNDER_CONSTRUCTION` constant. It reads `public.app_status_banner.translitpro_show` client-side over PostgREST (new `PUBLIC_SUPABASE_URL`/`PUBLIC_SUPABASE_ANON_KEY` env vars — must be set in Cloudflare Pages, static build inlines them), so it can be toggled from Supabase without a redeploy, and a dismiss (✕) persists for the session via `sessionStorage`.
 - **Routing**: Added a dedicated English `/transliteration/` page that preserves the original transliteration-focused landing experience.
 - **Homepage**: Added modular workspace landing sections in `src/components/workspace/` (`WorkspaceHero`, `WorkspacePillars`, `WorkspaceAnywhere`) for the English root page.

@@ -25,6 +25,10 @@ export const languages: Language[] = [
   { code: 'rue', name: 'Rusyn', nativeName: 'Русиньскый', dir: 'ltr' },
   { code: 'sr', name: 'Serbian', nativeName: 'Српски', dir: 'ltr' },
   { code: 'kk', name: 'Kazakh', nativeName: 'Қазақша', dir: 'ltr' },
+  { code: 'fr', name: 'French', nativeName: 'Français', dir: 'ltr' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', dir: 'ltr' },
+  { code: 'de', name: 'German', nativeName: 'Deutsch', dir: 'ltr' },
+  { code: 'it', name: 'Italian', nativeName: 'Italiano', dir: 'ltr' },
 ];
 
 export const defaultLang = 'en';

@@ -27,7 +27,7 @@ banner in `Header.astro` links to `NOTYLUS_SITE_URL`.
 
 ## Architecture
 
-**Astro 5 static site** deployed to Cloudflare Pages. All 13 language variants are pre-rendered at build time.
+**Astro 5 static site** deployed to Cloudflare Pages. All 18 language variants (the app's interface languages) are pre-rendered at build time.
 
 ### Routing & i18n
 
@@ -81,7 +81,7 @@ const t = getTranslations(lang); // falls back to 'en'
 
 Every component receives `t: any` and `currentLang: string` as props and accesses keys directly (`t.hero.headline`, `t.features.title`, etc.). Translations do **not** cover pricing — those live in code (see below).
 
-Adding a new language requires: a new locale JSON file, an entry in `src/i18n/languages.ts`, and a new locale in `astro.config.mjs`.
+Adding a new language requires: a new locale JSON file, an entry in `src/i18n/languages.ts` (which drives the routes, the dropdown, hreflang and the `?lang=` redirect), an import and map entry in `src/i18n/utils.ts` (a locale file that isn't imported there silently falls back to English), and a new locale in `astro.config.mjs`. Keep the JSON's keys, array lengths, `{{year}}` placeholder and the hero headline's `<span>` markup identical to `en.json`. The hero headline lines are `whitespace-nowrap`, so measure a new language at 360 px: a line wider than the phone is cut off at both edges.
 
 ### Pricing
 

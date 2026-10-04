@@ -15,7 +15,7 @@ Translation files live in **`src/i18n/locales/`** as standard JSON files:
 - `ka.json` — Georgian (high Unicode-corruption risk)
 - `he.json` — Hebrew (high Unicode-corruption risk)
 - `el.json` — Greek (high Unicode-corruption risk)
-- `lt.json` — Lithuanian (Latin, safe)
+- `lt.json`, `fr.json`, `es.json`, `de.json`, `it.json` — Latin script (safe)
 
 The JSON files have arbitrary nesting depth and contain arrays of strings (e.g. pricing feature lists).
 

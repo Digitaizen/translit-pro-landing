@@ -11,7 +11,7 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 - **Framework**: [Astro](https://astro.build/) v5.x
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) v4.x
 - **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
-- **i18n**: Multi-language support for 13 languages
+- **i18n**: Multi-language support for 18 languages
 - **SEO**: Auto-generated sitemap, structured data for FAQs, hreflang tags
 
 ## Project Structure
@@ -50,7 +50,12 @@ This is a static landing page built with Astro and Tailwind CSS, deployed to Clo
 │   │   │   ├── lt.json       # Lithuanian
 │   │   │   ├── tg.json       # Tajik
 │   │   │   ├── rue.json      # Rusyn
-│   │   │   └── kk.json       # Kazakh
+│   │   │   ├── sr.json       # Serbian
+│   │   │   ├── kk.json       # Kazakh
+│   │   │   ├── fr.json       # French
+│   │   │   ├── es.json       # Spanish
+│   │   │   ├── de.json       # German
+│   │   │   └── it.json       # Italian
 │   │   ├── languages.ts      # Language configuration and metadata
 │   │   └── utils.ts          # i18n utilities and translation loader
 │   ├── layouts/
@@ -223,7 +228,7 @@ To update prices, edit the constants in `getPricingTiers.ts` and rebuild.
 
 ## Internationalization (i18n)
 
-The landing page supports 13 languages with full localization:
+The landing page supports 18 languages with full localization (the same 18 as the app's interface):
 
 ### Supported Languages
 
@@ -239,7 +244,12 @@ The landing page supports 13 languages with full localization:
 10. **Lithuanian** (lt) - `/lt/`
 11. **Tajik** (tg) - `/tg/`
 12. **Rusyn** (rue) - `/rue/`
-13. **Kazakh** (kk) - `/kk/`
+13. **Serbian** (sr) - `/sr/`
+14. **Kazakh** (kk) - `/kk/`
+15. **French** (fr) - `/fr/`
+16. **Spanish** (es) - `/es/`
+17. **German** (de) - `/de/`
+18. **Italian** (it) - `/it/`
 
 ### Features
 
@@ -298,7 +308,7 @@ The landing page will redirect to the corresponding localized route (e.g. `/ru/`
 
 | Parameter  | Values                                                                        | Effect                    |
 | ---------- | ----------------------------------------------------------------------------- | ------------------------- |
-| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt`, `sr` | Sets UI language          |
+| `?lang=xx` | `en`, `ru`, `uk`, `be`, `bg`, `tg`, `hy`, `ka`, `el`, `kk`, `he`, `rue`, `lt`, `sr`, `fr`, `es`, `de`, `it` | Sets UI language          |
 
 ### Landing Page Button Mapping
 

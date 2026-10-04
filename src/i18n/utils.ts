@@ -17,6 +17,10 @@ import tgTranslations from './locales/tg.json';
 import rueTranslations from './locales/rue.json';
 import srTranslations from './locales/sr.json';
 import kkTranslations from './locales/kk.json';
+import frTranslations from './locales/fr.json';
+import esTranslations from './locales/es.json';
+import deTranslations from './locales/de.json';
+import itTranslations from './locales/it.json';
 
 export type TranslationKey = string;
 
@@ -35,6 +39,10 @@ const translations: Record<string, any> = {
   rue: rueTranslations,
   sr: srTranslations,
   kk: kkTranslations,
+  fr: frTranslations,
+  es: esTranslations,
+  de: deTranslations,
+  it: itTranslations,
 };
 
 export function getTranslations(lang: string = defaultLang) {
