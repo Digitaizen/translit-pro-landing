@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Transliteracijos įrankis 13+ kalbų",
-    "description": "Rašykite lotyniškais rašmenimis, gaukite kirilicą, hebrajų, graikų, sakartvelų, armėnų ir kitas kalbas. Stalinis transliteracijos rinkinys su vertimu, DI rašybos tikrinimu ir galingu redaktoriumi. Pridėkite bet kurią reikiamą kalbą.",
+    "description": "Rašykite lotyniškai ir gaukite kirilicą, hebrajų, graikų, gruzinų, armėnų ir kitus raštus realiu laiku. Redaktorius, virtuali klaviatūra, nemokama adresyno nuoroda ir eksportas.",
     "siteName": "TranslitPro"
   },
   "nav": {
@@ -11,7 +11,7 @@
     "signIn": "Prisijungti",
     "backToApp": "Grįžti į programą",
     "startNow": "Pradėti",
-    "underConstruction": "TranslitPro yra atnaujinamas — pažangesnės funkcijos keliasi į Notylus. Pagrindinė transliteracijos funkcija liks čia, nemokamai naudoti."
+    "underConstruction": "TranslitPro dabar yra įrankis rašyti kitais raštais. Debesies užrašai, DI ir susietos žinios yra Notylus."
   },
   "languageDropdown": {
     "translationLabel": "Vertimas",
@@ -23,7 +23,7 @@
   "hero": {
     "badge": "Stalinis transliteracijos rinkinys 13+ kalbų",
     "headline": "<span class=\"flex justify-center whitespace-nowrap\">Rašykite&nbsp;<span class=\"text-emerald-500\">bet kuria gimtąja kalba</span></span><span class=\"flex justify-center whitespace-nowrap\">naudodami savo&nbsp;<span class=\"text-indigo-500\">lotynišką klaviatūrą</span></span>",
-    "subheadline": "Transliteruokite į kirilicą, hebrajų, graikų, sakartvelų, armėnų ir kitas kalbas tiesiai iš savo lotyniškos klaviatūros. Papildomai – vertimas, rašybos tikrinimas ir galingas redaktorius. Pridėkite bet kurią kalbą, kurios jums reikia.",
+    "subheadline": "Transliteracija į kirilicą, hebrajų, graikų, gruzinų, armėnų ir kitus raštus iš lotyniškos klaviatūros. Formatuokite, kopijuokite ar eksportuokite tekstą be paskyros.",
     "ctaPrimary": "Pradėti nemokamai – be registracijos",
     "ctaSecondary": "Žiūrėti kainas",
     "trustBadge1": "Kreditinė kortelė nereikalinga",
@@ -31,8 +31,8 @@
     "trustBadge3": "Pridėkite savo kalbas"
   },
   "features": {
-    "title": "Daugiau nei tik transliteracija",
-    "subtitle": "Išsamus rašymo įrankių rinkinys su transliteracija, vertimu, rašybos tikrinimu ir galingu redaktoriumi – bet kokiam jums reikalingam raštui.",
+    "title": "Viskas, ko reikia rašyti kitu raštu",
+    "subtitle": "Greita transliteracija, virtuali klaviatūra, patogus formatavimas, eksportas ir įrankiai rašyti kitose svetainėse.",
     "typeNaturally": {
       "title": "Rašykite natūraliai",
       "description": "Naudokite savo įprastą lotynišką klaviatūrą. Nereikia mokytis naujų išdėstymų ar keisti klaviatūros nustatymų."
@@ -46,16 +46,8 @@
       "description": "Kurkite pasirinktines transliteracijos schemas bet kuriai kalbai. Apibrėžkite savo klaviatūros išdėstymus ir atitikmenis."
     },
     "bookmarklet": {
-      "title": "Adresyno nuoroda (Pro)",
-      "description": "Rašykite pasirinktu raštu daugumoje svetainių. Veikia visur, išskyrus griežtą CSP politiką turinčias svetaines, tokias kaip „Google“."
-    },
-    "translation": {
-      "title": "Vertimas",
-      "description": "Verskite tekstą į kelias kalbas tiesiai redaktoriuje. Nereikia perjunginėti programų."
-    },
-    "aiSpellcheck": {
-      "title": "DI rašybos patikra",
-      "description": "Išmanioji rašybos patikra, pagrįsta dirbtiniu intelektu. Ištaisykite klaidas ir gaukite pasiūlymus tiksline kalba."
+      "title": "Nemokama adresyno nuoroda",
+      "description": "Rašykite norimu raštu tiesiog daugelyje svetainių, be paskyros. Svetainės su griežta turinio saugumo politika (CSP), įskaitant kai kurias Google paslaugas, gali ją blokuoti."
     },
     "editor": {
       "title": "Galingas redaktorius",
@@ -63,7 +55,7 @@
     },
     "export": {
       "title": "Eksportuokite bet kur",
-      "description": "Eksportuokite į TXT, RTF, HTML, Markdown, DOCX arba PDF. Jūsų turinys, jūsų formatas."
+      "description": "Nemokamas eksportas į TXT, PDF, DOCX ar .notylus. Plus prideda RTF, HTML ir Markdown."
     },
     "exploreAll": "Naršyti visas funkcijas"
   },
@@ -72,7 +64,6 @@
     "subtitle": "Pradėkite nemokamai ir atnaujinkite, kai prireiks daugiau. Jokių paslėptų mokesčių, galite bet kada atšaukti.",
     "tabs": {
       "anonymous": "Peržiūra",
-      "registered": "Darbo sritis",
       "monthly": "Mėnesinis",
       "annual": "Metinis"
     },
@@ -81,33 +72,18 @@
       "anonymous": {
         "tagline": "Išbandykite akimirksniu. Paskyra nereikalinga.",
         "period": "amžinai",
-        "cta": "Pradėti nemokamai",
-        "features": [
-          "Rašykite 13+ kalbomis",
-          "Populiarūs klaviatūros išdėstymai",
-          "Vertimas",
-          "3 paieškos mygtukai",
-          "Šrifto stiliaus valdymas",
-          "Iki 2 vaizdų dokumente (2 MB)"
-        ],
-        "limitations": []
+        "cta": "Pradėti nemokamai"
       },
       "registered": {
-        "tagline": "Išsaugokite savo darbą ir atrakinkite daugiau įrankių.",
+        "tagline": "Išsaugokite nustatymus ir savo rašymo įrankius paskyroje.",
         "period": "amžinai",
         "cta": "Sukurti nemokamą paskyrą",
         "features": [
-          "Viskas iš Peržiūros režimo",
-          "Adresyno nuoroda (rašykite savo kalba bet kuriame tinklalapyje)",
-          "Pilnas redaktoriaus įrankių rinkinys",
-          "Išsaugojimas iki 100 dokumentų",
-          "500 MB saugyklos",
-          "DI taisymai (10 per dieną)",
-          "Eksportas į TXT",
-          "Iki 3 vaizdų dokumente (5 MB)",
-          "Dokumentų aplankai"
-        ],
-        "limitations": []
+          "Viskas, kas prieinama be paskyros",
+          "Savos transliteracijos kalbos ir variantai",
+          "Savi klaviatūros išdėstymai",
+          "Savos sąsajos kalbos"
+        ]
       }
     },
     "basic": {
@@ -115,61 +91,38 @@
       "tagline": "Jūsų kalba, jūsų taisyklės.",
       "period": "/mėn.",
       "periodAnnual": "/metus",
-      "cta": "Atnaujinti į Basic",
-      "features": [
-        "Viskas iš Nemokamo plano",
-        "Pasirinktinės transliteracijos taisyklės",
-        "Pasirinktiniai klaviatūros išdėstymai",
-        "Pasirinktinės sąsajos kalbos",
-        "Neribotas dokumentų skaičius",
-        "5 GB saugyklos",
-        "Sinchronizavimas tarp įrenginių",
-        "DI taisymai (50 per dieną)",
-        "5 paieškos mygtukai",
-        "Eksportas į TXT, DOCX ir PDF",
-        "Jokių reklamų",
-        "Iki 20 vaizdų dokumente (5 MB)"
-      ],
-      "limitations": []
-    },
-    "pro": {
-      "name": "Pro",
-      "tagline": "Visos galimybės be apribojimų.",
-      "period": "/mėn.",
-      "periodAnnual": "/metus",
-      "cta": "Pereiti į Pro",
-      "badge": "Populiariausias",
-      "features": [
-        "Viskas iš Basic plano",
-        "DI taisymai (250 per dieną)",
-        "25 GB saugyklos",
-        "Užklausų biblioteka (100 išsaugotų)",
-        "Kalbos normalizacija (250/dieną)",
-        "Visi paieškos mygtukai",
-        "Visi eksporto formatai",
-        "Temos pritaikymas",
-        "Neriboti vaizdai dokumentuose"
-      ],
-      "limitations": []
-    },
-    "founder": {
-      "name": "Įkūrėjas",
-      "tagline": "Sumokėkite kartą ir turėkite Pro visam laikui.",
-      "period": "vienkartinis",
-      "launchPricingNote": "Pradinė kaina – vėliau ji didės.",
-      "cta": "Tapti įkūrėju",
-      "badge": "Riboto laiko pasiūlymas",
-      "features": [
-        "Viskas iš Pro plano",
-        "Prieiga visam gyvenimui",
-        "Daugiau niekada nemokėsite",
-        "Įkūrėjo ženklelis",
-        "Prioritetinis palaikymas"
-      ],
-      "limitations": []
+      "cta": "Atnaujinti į Basic"
     },
     "saveLabel": "Sutaupykite",
-    "perDayLabel": "/dieną"
+    "perDayLabel": "/dieną",
+    "translitpro": {
+      "noAccount": [
+        "Rašykite 13+ kalbomis",
+        "Populiarūs klaviatūros išdėstymai",
+        "3 paieškos mygtukai",
+        "Eksportuokite bet kur: TXT, PDF, DOCX, .notylus",
+        "Rašykite savo kalba bet kurioje svetainėje",
+        "Naršyklės plėtinys: rašymas iki 3 svetainių",
+        "Galingas redaktorius"
+      ],
+      "account": [
+        "Viskas, kas prieinama be paskyros",
+        "5 paieškos mygtukai",
+        "Pasirinktinės transliteracijos taisyklės",
+        "Pasirinktiniai klaviatūros išdėstymai",
+        "Pasirinktinės sąsajos kalbos"
+      ],
+      "plus": [
+        "Naršyklės plėtinys: rašymas neribotame svetainių skaičiuje",
+        "Neriboti paieškos mygtukai, įskaitant jūsų pačių",
+        "Visi eksporto formatai",
+        "Daugiau redagavimo įrankių",
+        "Zen rodinys: visas ekranas be blaškymo",
+        "Temos pritaikymas",
+        "Jokių reklamų"
+      ],
+      "plusIncludedNote": "Įtraukta į Notylus Basic ir Pro"
+    }
   },
   "faq": {
     "title": "Dažniausiai užduodami klausimai",
@@ -181,7 +134,7 @@
       },
       "whichLanguages": {
         "question": "Kurios kalbos yra palaikomos?",
-        "answer": "„TranslitPro“ turi 13+ integruotų kalbų: lietuvių, ukrainiečių, baltarusių, bulgarų, rusų, hebrajų, armėnų, sakartvelų, graikų, tadžikų, rusinų, kazachų ir kitas. Taip pat galite pridėti savo pasirinktines kalbas ir klaviatūros išdėstymus."
+        "answer": "TranslitPro turi 13 integruotų kalbų: rusų, ukrainiečių, baltarusių, bulgarų, serbų, rusinų, kazachų, tadžikų, hebrajų, armėnų, gruzinų, graikų ir lietuvių. Su nemokama paskyra galite pridėti ir savų kalbų bei klaviatūros išdėstymų."
       },
       "mobileOrDesktop": {
         "question": "Ar „TranslitPro“ skirtas mobiliesiems ar kompiuteriams?",
@@ -189,19 +142,7 @@
       },
       "whatIsBookmarklet": {
         "question": "Kas yra adresyno nuoroda (bookmarklet)?",
-        "answer": "Adresyno nuoroda (tik Pro plane) leidžia rašyti pasirinktu raštu tiesiogiai daugumoje svetainių. Ji veikia socialiniuose tinkluose, forumuose ir daugelyje žiniatinklio programų. Pastaba: ji neveikia svetainėse su griežta turinio saugumo politika (CSP), pvz., „Google“ paslaugose („Gmail“, „Docs“ ir kt.)."
-      },
-      "beyondTransliteration": {
-        "question": "Ką dar galiu daryti be transliteracijos?",
-        "answer": "„TranslitPro“ apima galingą raiškiojo teksto redaktorių, vertimą į kelias kalbas, DI pagrįstą rašybos tikrinimą tiksline kalba ir eksportą į TXT, RTF, HTML, Markdown, DOCX arba PDF."
-      },
-      "freeTrial": {
-        "question": "Ar yra nemokamas bandomasis laikotarpis?",
-        "answer": "Taip! Pagrindinėmis transliteracijos funkcijomis galite naudotis visiškai nemokamai visą laiką. Užsiregistravę taip pat gaunate Pro funkcijų bandomąją versiją, įskaitant adresyno nuorodą, DI rašybos patikrą, eksportą į įvairius formatus ir saugyklą (500 MB nemokamai, 5 GB su Basic, 25 GB su Pro)."
-      },
-      "addOwnLanguage": {
-        "question": "Ar galiu pridėti savo kalbą?",
-        "answer": "Taip! Turėdami „Basic“ ar aukštesnį planą, galite kurti pasirinktines transliteracijos schemas ir klaviatūros išdėstymus bet kuriai kalbai. Tai puikiai tinka, jei jums reikia specifinės romanizacijos sistemos arba kalbos, kurios nėra programoje."
+        "answer": "Adresyno nuoroda (bookmarklet) – visiškai nemokamas įrankis, leidžiantis rašyti norimu raštu tiesiog daugelyje svetainių, be paskyros. Svetainės su griežta turinio saugumo politika (CSP), įskaitant kai kurias Google paslaugas, gali ją blokuoti."
       },
       "cancelAnytime": {
         "question": "Ar galiu bet kada atšaukti prenumeratą?",
@@ -264,23 +205,19 @@
       "note": "Veikia daugumoje svetainių. Neveikia svetainėse su griežta turinio saugos politika (pvz., Google Docs, Gmail)."
     },
     "editor": {
-      "eyebrow": "Jūsų pilna rašymo darbo vieta",
-      "headline": "Rašykite, verskite ir išsaugokite vienoje vietoje",
-      "copy": "Galingas raiškiojo teksto redaktorius su integruota transliteracija, vertimu ir AI pagalbininku.",
-      "copy2": "Išsaugokite debesyje ir eksportuokite į TXT, DOCX, PDF ir kt., kai reikia.",
-      "tagline": "Programų perjunginėjimas nebūtinas."
+      "eyebrow": "Vienas greitas rašymo laukas",
+      "headline": "Formatuokite, kopijuokite ir eksportuokite tekstą",
+      "copy": "Redaktorius su formatavimu, transliteracija realiu laiku ir kompaktiška įrankių juosta.",
+      "copy2": "Tekstas lieka jūsų naršyklėje; eksportuokite jį nemokamai į TXT, PDF, DOCX ar .notylus.",
+      "tagline": "Nuolatinei darbo erdvei debesyje tęskite Notylus."
     }
-  },
-  "testimonials": {
-    "title": "Mumis pasitiki daugiakalbiai rašytojai visame pasaulyje",
-    "subtitle": "Nuo diasporų bendruomenių iki kalbų mokytojų — TranslitPro tinka tam, kaip žmonės iš tikrųjų dirba."
   },
   "cta": {
     "headline": "Pradėkite rašyti be apribojimų",
-    "subheadline": "Nemokama pradžia. Jokio diegimo. Jokios mokymosi kreivės.",
+    "subheadline": "Nemokama ir be paskyros. Atnaujinkite tik jei norite daugiau nustatymų.",
     "button": "Pradėkite nemokamai — be registracijos",
     "badge1": "Kredito kortelė nereikalinga",
     "badge2": "13+ integruotų kalbų",
-    "badge3": "Atšaukite bet kada"
+    "badge3": "Nemokamas eksportas"
   }
 }

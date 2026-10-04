@@ -49,14 +49,6 @@
       "title": "Free Bookmarklet",
       "description": "Type in your target script directly on most websites without an account. Sites with strict Content Security Policy, including some Google services, may block it."
     },
-    "translation": {
-      "title": "Translation",
-      "description": "Translate a selection with the built-in non-AI translation tool."
-    },
-    "aiSpellcheck": {
-      "title": "Search Shortcuts",
-      "description": "Send selected text to your favorite search tools without retyping it."
-    },
     "editor": {
       "title": "Powerful Editor",
       "description": "Rich text editor with formatting, styling, and seamless transliteration as you type."
@@ -88,16 +80,11 @@
       "tagline": "For a persistent cloud workspace, continue in Notylus."
     }
   },
-  "testimonials": {
-    "title": "Trusted by Multilingual Writers Worldwide",
-    "subtitle": "From diaspora communities to language teachers — TranslitPro fits the way people actually work."
-  },
   "pricing": {
     "title": "Simple, Transparent Pricing",
     "subtitle": "Start free, upgrade when you need more. No hidden fees, cancel anytime.",
     "tabs": {
       "anonymous": "Preview",
-      "registered": "Workspace",
       "monthly": "Monthly",
       "annual": "Annual"
     },
@@ -106,16 +93,7 @@
       "anonymous": {
         "tagline": "Try instantly. No account required.",
         "period": "forever",
-        "cta": "Start Free",
-        "features": [
-          "Type in 13+ languages",
-          "Popular keyboard layouts",
-          "Translation",
-          "3 search buttons",
-          "Font styling",
-          "Up to 2 images per document (2 MB)"
-        ],
-        "limitations": []
+        "cta": "Start Free"
       },
       "registered": {
         "tagline": "Keep preferences and custom typing tools with your account.",
@@ -126,8 +104,7 @@
           "Custom transliteration languages and variants",
           "Custom keyboard layouts",
           "Custom interface languages"
-        ],
-        "limitations": []
+        ]
       }
     },
     "basic": {
@@ -135,61 +112,38 @@
       "tagline": "Your language, your rules.",
       "period": "/month",
       "periodAnnual": "/year",
-      "cta": "Upgrade to Basic",
-      "features": [
-        "Everything from Free",
-        "Custom transliteration rules",
-        "Custom keyboard layouts",
-        "Custom UI languages",
-        "Unlimited documents",
-        "5 GB storage",
-        "Sync across all your devices",
-        "AI writing assistance (50/day)",
-        "Up to 20 images per document (5 MB)",
-        "5 search buttons",
-        "Export to TXT, DOCX & PDF",
-        "No ads"
-      ],
-      "limitations": []
-    },
-    "pro": {
-      "name": "Pro",
-      "tagline": "Have it all with no limits.",
-      "period": "/month",
-      "periodAnnual": "/year",
-      "cta": "Go Pro",
-      "badge": "Most Popular",
-      "features": [
-        "Everything from Basic",
-        "AI writing assistance (250/day)",
-        "25 GB storage",
-        "Prompt library (100 saved)",
-        "Language normalization (250/day)",
-        "Unlimited images in documents",
-        "All search buttons",
-        "All export formats",
-        "Theme customization"
-      ],
-      "limitations": []
-    },
-    "founder": {
-      "name": "Founder",
-      "tagline": "Pay once, own Pro forever.",
-      "period": "one-time",
-      "launchPricingNote": "Launch pricing - price will increase.",
-      "cta": "Become a Founder",
-      "badge": "Limited Time",
-      "features": [
-        "Everything from Pro",
-        "Lifetime access",
-        "Never pay again",
-        "Founder badge",
-        "Priority support"
-      ],
-      "limitations": []
+      "cta": "Upgrade to Basic"
     },
     "saveLabel": "Save",
-    "perDayLabel": "/day"
+    "perDayLabel": "/day",
+    "translitpro": {
+      "noAccount": [
+        "Type in 13+ languages",
+        "Popular keyboard layouts",
+        "3 search buttons",
+        "Export Anywhere: TXT, PDF, DOCX, .notylus",
+        "Type in Your Language on Any Website",
+        "Browser extension: type on up to 3 sites",
+        "Powerful Editor"
+      ],
+      "account": [
+        "Everything available without an account",
+        "5 search buttons",
+        "Custom transliteration rules",
+        "Custom keyboard layouts",
+        "Custom UI languages"
+      ],
+      "plus": [
+        "Browser extension: type on unlimited sites",
+        "Unlimited search buttons, including your own",
+        "All export formats",
+        "More editor tools",
+        "Zen view: distraction-free full screen",
+        "Theme customization",
+        "No ads"
+      ],
+      "plusIncludedNote": "Included with Notylus Basic and Pro"
+    }
   },
   "cta": {
     "headline": "Start Typing Without Limits",
@@ -209,7 +163,7 @@
       },
       "whichLanguages": {
         "question": "Which languages are supported?",
-        "answer": "TranslitPro has 13+ languages built-in: Russian, Ukrainian, Belarusian, Bulgarian, Hebrew, Armenian, Georgian, Greek, Lithuanian, Tajik, Rusyn, Kazakh, and more. You can also add your own custom languages and keyboard layouts."
+        "answer": "TranslitPro has 13 languages built in: Russian, Ukrainian, Belarusian, Bulgarian, Serbian, Rusyn, Kazakh, Tajik, Hebrew, Armenian, Georgian, Greek, and Lithuanian. With a free account you can also add your own languages and keyboard layouts."
       },
       "mobileOrDesktop": {
         "question": "Is TranslitPro for mobile or desktop?",
@@ -218,18 +172,6 @@
       "whatIsBookmarklet": {
         "question": "What is the bookmarklet?",
         "answer": "The bookmarklet is a completely free tool that lets you type in your target script directly on most websites, with no account required. Sites with strict Content Security Policy, including some Google services, may block it."
-      },
-      "beyondTransliteration": {
-        "question": "What can I do beyond transliteration?",
-        "answer": "TranslitPro includes a rich text editor, virtual keyboard, non-AI selection translation, search shortcuts, a free bookmarklet, and portable export. Cloud documents and AI tools belong to Notylus."
-      },
-      "freeTrial": {
-        "question": "Is there a free trial?",
-        "answer": "You do not need a trial to use TranslitPro. Core typing, the bookmarklet, and TXT, PDF, DOCX, and .notylus export are free. TranslitPro Plus adds more editor tools, all export formats, themes, unlimited search buttons, and no ads."
-      },
-      "addOwnLanguage": {
-        "question": "Can I add my own language?",
-        "answer": "Yes. Any free account can create custom transliteration schemas, variants, keyboard layouts, and interface languages."
       },
       "cancelAnytime": {
         "question": "Can I cancel my subscription anytime?",
